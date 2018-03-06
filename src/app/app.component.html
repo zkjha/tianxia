@@ -1,34 +1,614 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-    <div class="header" style="">
-        <div class="w">
-            <a href class="logo1" [style.background-image]="'url(/assets/head/logo1.png)'"></a>
-            <a href class="logo" [style.background-image]="'url(/assets/head/logo.png)'"></a>
-        <div class="loginBefore">
-            <form>
-                <div class="col1" style="margin-left: 55px;">
-                    <input type="text" class="txt user" id="J-user-name" data-name="name" name="user-name" placeholder="账号">
-                    <input type="password" class="txt password" id="J-user-password" data-name="password" name="user-password" placeholder="密码">
-                </div>
-                <div class="col2" id="J-panel-vcode" style="display:none;">
-                    <input type="text" class="txt yzm" placeholder="验证码" maxlength="5">
-                    <img src="/images/head/yzm.png" class="yzm-img">
-                </div>
-                <div class="col3">
-                    <div id="J-msg-show" data-display="hide" class="msg-show" style="height: 0px;"></div>
-                    <input id="J-form-submit" class="submit fl" type="button" value="登 录">
+<div class="indexPage">
+
+<!--header-->
+<div class="header">
+  <div class="w">
+    <a href="" class="logo1"></a>
+    <a href="" class="logo"></a>
+    <!--登录前-->
+    <div class="loginBefore">
+      <form action="">
+        <div class="col1" style="margin-left: 55px;">
+          <input type="text" class="txt user" id="J-user-name" data-name="name" name="user-name" placeholder="账号">
+          <input type="password" class="txt password" id="J-user-password" data-name="password" name="user-password" placeholder="密码">
+        </div>
+        <div class="col2" id="J-panel-vcode" style="display:none;">
+          <input type="text" class="txt yzm" placeholder="验证码" maxlength="5">
+          <img src="/images/head/yzm.png" class="yzm-img">
+        </div>
+        <div class="col3">
+          <div id="J-msg-show" data-display="hide" class="msg-show"></div>
+          <input id="J-form-submit" class="submit fl" type="button" value="登 录">
 
 
-                    <a href="/Login/UserRegister" class="regbtn fr" target="_blank">
-                      注册
-                    </a>
+          <a href="/Login/UserRegister" class="regbtn fr" target="_blank">
+            注册
+          </a>
+        </div>
+        <input name="__RequestVerificationToken" type="hidden" value="VIUVss6UUcGqA_OJEUSQcyqe4jQg_1mCLLRwmr_jfE8Op3Fhc9zropMayVst0tEHgQE2Z7myNzHuKrW-r6h9Aw2">
+      </form>
+    </div>
+    <!--nav-->
+    <div class="nav">
+      <ul>
+        <li>
+          <a href="/Login/Login" class="a1 on" id="a1"><span>首页</span></a>
+
+        </li>
+        <li><a href="/Login/Caipiao" class="a2" id="a2"><span>彩票专区</span></a>
+        </li>
+        <li><a href="/Login/ZhenRen" class="a3" id="a3"><span>真人娱乐</span></a>
+        </li>
+        <li><a href="/login/DianZi" class="a4" id="a4"><span>电子游艺</span></a>
+        </li>
+        <li><a href="/Login/Doji" class="a5" id="a5"><span>斗鸡现场</span></a>
+        </li>
+        <li><a href="/Login/TiYu" class="a6" id="a6"><span>体育博弈</span></a>
+        </li>
+        <li><a href="/Login/Youhui" class="a7" id="a7"><span>优惠专区</span></a>
+        </li>
+
+        <li>
+          <a href="&lt;script language=&quot;javascript&quot; src=&quot;http://api.pop800.com/800.js?n=332283&amp;s=01&amp;p=l&amp;l=cn&quot;&gt;&lt;/script&gt;&lt;div style=&quot;display:none;&quot;&gt;&lt;a href=&quot;http://www.pop800.com&quot;&gt;在线客服&lt;/a&gt;&lt;/div&gt;" target="_blank" class="a8" id="a8"><span>在线客服</span></a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+<!--header end-->
+<script src="/Scripts/login.js" type="text/javascript"></script>
+
+
+
+
+<!--banner-->
+<div class="banner">
+  <div class="bd">
+    <ul style="position: relative; width: 1366px; height: 440px;">
+      <li style="background-image: url(&quot;/images/index/banner1.png&quot;); position: absolute; width: 1366px; left: 0px; top: 0px; display: none;">
+
+      </li>
+      <li style="background-image: url(&quot;/images/index/banner1.png&quot;); position: absolute; width: 1366px; left: 0px; top: 0px; display: block;">
+
+      </li>
+      <li style="background-image: url(&quot;/images/index/banner1.png&quot;); position: absolute; width: 1366px; left: 0px; top: 0px; display: none;">
+
+      </li>
+    </ul>
+  </div>
+  <div class="hd"><span class=""></span><span class="on"></span><span class=""></span></div>
+</div>
+<script type="text/javascript">
+  $(".banner").slide({
+    titCell:".hd",
+    mainCell:".bd ul",
+    autoPage:"<span></span>",
+    autoPlay:true,
+    effect:"fold"
+  })
+</script>
+
+<!--notice
+  <div class="notice-row">
+      <div class="notice">
+          <div class="inner">
+              <div class="bd">
+              <ul id="OfficialNotice">
+                       <li onclick="uf_link_gonggao();">代理开户返点配额 2016-04-06 17:59:40</li><li onclick="uf_link_gonggao();">提现恢复正常 2016-03-13 20:01:05</li><li onclick="uf_link_gonggao();">支付宝已经恢复正常使用 2016-03-13 20:00:38</li><li onclick="uf_link_gonggao();">重要提示 ;提现时间更新为： 2016-03-03 00:51:59</li><li onclick="uf_link_gonggao();">尊敬的会员您好  平台于03月3号全面升... 2016-03-03 00:39:34</li></ul>
+              </div>
+          </div>
+      </div>
+  </div>
+  <script type="text/javascript">
+      $(".notice").slide({
+          mainCell:".bd ul",
+          autoPlay:true,
+          effect:"topLoop"
+      })
+  </script>-->
+<!--main-->
+<div class="indexMain-row">
+  <div class="w">
+    <div class="indexMain ">
+      <div class="indexMain-r fr">
+        <!--客户端-->
+        <a href="/client/game.zip" class="download-row">
+          <img src="/images/index/download.jpg">
+        </a>
+        <!--新手指南-->
+        <a href="" onclick="showMsg('请先登录，再操作！');" class="guide-row">
+          <img src="/images/index/guide.jpg">
+        </a>
+        <!--vip俱乐部-->
+        <a href="" onclick="showMsg('请先登录，再操作！');" class="vipClub">
+          <img src="/images/index/vipclub.jpg">
+        </a>
+        <!--优惠活动-->
+        <div class="index-activity">
+          <div class="index-title">
+            <h3>
+              优惠活动
+            </h3>
+          </div>
+          <div class="bd">
+            <a href="" onclick="showMsg('请先登录，再操作！');" class="img">
+              <img src="/images/index/230x70.jpg">
+            </a>
+            <h3>
+              畅玩无极限，注册18元！
+            </h3>
+            <p>
+              新注册玩家世界用户，可向平台客服申请
+            </p>
+            <div class="tc">
+              <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-red">
+                查看详情
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--取款时间-->
+        <div class="cashTime">
+          <img src="/images/index/cashTimebg.jpg">
+        </div>
+      </div>
+
+      <div class="indexMai-l fl">
+        <!--精彩推荐-->
+        <div class="hot-recommend J-tabBox">
+          <div class="index-title">
+            <h3>
+              精彩推荐
+            </h3>
+            <div class="hd">
+              <ul>
+                <li class="on">
+                  时时彩
+                </li>
+                <li>
+                  全天彩
+                </li>
+                <li>11选5</li>
+                <li>快乐彩</li>
+              </ul>
+            </div>
+          </div>
+          <div class="bd">
+            <!--时时彩-->
+            <div class="box hide">
+              <div class="img">
+                <img src="/images/index/hot/ssc.png" width="92">
+
+              </div>
+              <div class="txt">
+                <div class="title">
+                  第 <strong>20180307010</strong> 期 正在投注
                 </div>
-        </form>
+                <div class="time321 timea">
+										 	 <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t min-left">0</span>
+                  <span class="t min-right">0</span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t sec-left">1</span>
+                  <span class="t sec-right">9</span>
+                </div>
+                <div class="tc">
+                  <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                    立即投注
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--全天彩-->
+            <div class="box hide" style="display: none;">
+              <div class="img">
+                <img src="/images/index/hot/ssc.png" width="92">
+
+              </div>
+              <div class="txt">
+                <div class="title">
+                  第 <strong>20161125-052</strong> 期 正在投注
+                </div>
+                <div class="time321">
+										 	 <span class="t">
+										 	 	1
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                </div>
+                <div class="tc">
+                  <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                    立即投注
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--11选5-->
+            <div class="box hide" style="display: none;">
+              <div class="img">
+                <img src="/images/index/hot/ssc.png" width="92">
+
+              </div>
+              <div class="txt">
+                <div class="title">
+                  第 <strong>20161125-052</strong> 期 正在投注
+                </div>
+                <div class="time321">
+										 	 <span class="t">
+										 	 	2
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                </div>
+                <div class="tc">
+                  <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                    立即投注
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!--快乐彩-->
+            <div class="box hide" style="display: none;">
+              <div class="img">
+                <img src="/images/index/hot/ssc.png" width="92">
+
+              </div>
+              <div class="txt">
+                <div class="title">
+                  第 <strong>20161125-052</strong> 期 正在投注
+                </div>
+                <div class="time321">
+										 	 <span class="t">
+										 	 	3
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="m">&nbsp;</span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                  <span class="t">
+										 	 	0
+										 	 </span>
+                </div>
+                <div class="tc">
+                  <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                    立即投注
+                  </a>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+        <!--彩票游戏-->
+        <div class="gameListBox">
+          <ul>
+            <li class="li0"></li>
+            <li class="li1">
+              <div class="list">
+                <div class="inner">
+                  <a href="" onclick="showMsg('请先登录，再操作！');">
+                    重庆时时彩
+                  </a>
+                  <a href="" onclick="showMsg('请先登录，再操作！');">
+                    天津时时彩
+                  </a>
+                  <a href="" onclick="showMsg('请先登录，再操作！');">
+                    新疆时时彩
+
+                  </a>
+                </div>
+              </div>
+              <i class="tag tag-hot"></i>
+            </li>
+            <li class="li2">
+              <div class="list">
+                <div class="inner">
+                  <a href="" onclick="showMsg('请先登录，再操作！');">
+                    重庆时时彩
+                  </a>
+                  <a href="" onclick="showMsg('请先登录，再操作！');">
+                    天津时时彩
+                  </a>
+                  <a href="" onclick="showMsg('请先登录，再操作！');">
+                    新疆时时彩
+
+                  </a>
+                </div>
+              </div>
+              <i class="tag tag-new"></i>
+            </li>
+            <li class="li3"><div class="list">
+              <div class="inner">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  山东11选5
+                </a>
+                <ahref="" onclick="showMsg('请先登录，再操作！');">
+                广东11选5
+
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  江西11选5
+                </a>
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  重庆11选5
+                </a>
+                </ahref=""></div>
+            </div></li>
+            <li class="li4"><div class="list">
+              <div class="inner">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  1分彩
+                </a>
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  2分彩
+                </a>
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  5分彩
+                </a>
+
+              </div>
+            </div></li>
+            <li class="li5"><div class="list">
+              <div class="inner">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  福利彩票3D
+                </a>
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  体彩排列3
+                </a>
+
+              </div>
+            </div></li>
+            <li class="li6"><div class="list">
+              <div class="inner">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  上海时时乐
+                </a>
+
+              </div>
+            </div></li>
+            <li class="li7"><div class="list">
+              <div class="inner">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  北京赛车
+                </a>
+
+              </div>
+            </div></li>
+
+          </ul>
+        </div>
+
+        <!--韩国彩票-->
+        <div class="cai-hanguo">
+          <div class="index-title">
+
+				 				<span class="fr">
+				 					<i class="xie">
+				 						全新彩种，畅玩无极限！
+				 					</i>
+				 				</span>
+            <h3>
+              韩国1.5分彩
+            </h3>
+
+
+          </div>
+          <a href="" onclick="showMsg('请先登录，再操作！');" class="link" title="点击开始游戏">
+            <img src="/images/index/hanguo.jpg">
+          </a>
+        </div>
+
+      </div>
+
+      <div class="clear"></div>
+
+      <!--彩票列表2-->
+      <div class="gameListBox2">
+        <i class="ico"></i>
+        <div class="bd">
+          <ul>
+            <li>
+              <div class="title">
+                东京1.5分彩
+              </div>
+              <div class="img">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  <img src="/images/index/cai-dj.png">
+                </a>
+              </div>
+              <div class="tc">
+                <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                  进入游戏
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="title">
+                新加坡2分彩
+              </div>
+              <div class="img">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  <img src="/images/index/cai-xjp.png">
+                </a>
+              </div>
+              <div class="tc">
+                <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                  进入游戏
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="title">
+                台湾5分彩
+              </div>
+              <div class="img">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  <img src="/images/index/cai-dj.png">
+                </a>
+              </div>
+              <div class="tc">
+                <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                  进入游戏
+                </a>
+              </div>
+            </li>
+            <li>
+              <div class="title">
+                北京pk10
+              </div>
+              <div class="img">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
+                  <img src="/images/index/cai-dj.png">
+                </a>
+              </div>
+              <div class="tc">
+                <a href="" onclick="showMsg('请先登录，再操作！');" class="btn btn-orange">
+                  进入游戏
+                </a>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
 
     </div>
   </div>
+</div>
+
+<!--footer-->
+<!--优势-->
+<div style="border-top: 1px solid #ddd;"></div>
+<div class="w">
+  <!--<img src="/images/index/safebg.jpg"/> -->
+  <a href="/ChargeWithdrawal/ChargeIndex"><img src="/images/index/safebg_01.jpg"></a>
+  <a href="/UserInformation/QueryUserBasicInfo"><img src="/images/index/safebg_02.jpg"></a>
+  <a href="/gameUserCenter/queryOrders"><img src="/images/index/safebg_03.jpg"></a>
+  <a href="/Help/Helpone"><img src="/images/index/safebg_04.jpg"></a>
+  <a href="&lt;script language=&quot;javascript&quot; src=&quot;http://api.pop800.com/800.js?n=332283&amp;s=01&amp;p=l&amp;l=cn&quot;&gt;&lt;/script&gt;&lt;div style=&quot;display:none;&quot;&gt;&lt;a href=&quot;http://www.pop800.com&quot;&gt;在线客服&lt;/a&gt;&lt;/div&gt;" target="_blank"><img src="/images/index/safebg_05.jpg"></a>	</div>
+<div class="footer">
+  <div class="w">
+    <div class="foot1">
+				<span class="fr">
+					<a href="">
+						赌博委员会监管条款
+					</a>
+					|
+					<a href="">
+						隐私政策
+					</a>
+					|
+					<a href="">
+						责任博彩
+					</a>
+					|
+					<a href="">
+						安全性
+					</a>
+					|
+					<a href="">
+						免责声明
+					</a>
+				</span>
+      <a href="" class="a1" title="客户端下载">客户端下载</a>
+      <a href="" class="a2" title="域名验证">域名验证</a>
+      <a href="" class="a3" title="线路检测">线路检测</a>
+      <atarget="_blank" id="custom-service" href="<script language=&quot;javascript&quot; src=&quot;http://api.pop800.com/800.js?n=332283&amp;s=01&amp;p=l&amp;l=cn&quot;></script><div style=&quot;display:none;&quot;><a href=&quot;http://www.pop800.com&quot;>在线客服</a></div>" class="a4" title="在线客服">在线客服
+      </atarget="_blank"></div>
+    <div class="foot2 tc">
+      Copyright © 2016 天下无双  版权所有 All Rights Reserved.
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">$("#a1").addClass("on").parent().show()</script>
+<script>
+  var sEndTime = 13164828570811 ;
+  var sNowTime = 13164828456811 ;
+  $(function () {
+    var saveTime = {};
+    var topTimer = new phoenix.CountDown({
+      //结束时间
+      'endTime': sEndTime,
+      //开始时间
+      'startTime': sNowTime,
+      //是否需要循环计时
+      'isLoop': false,
+      //需要渲染的DOM结构
+      'showDom': '.time321',
+      expands: {
+        //覆盖showTime渲染方法
+        _showTime: function (time) {
+          var me = this,
+            dom = $(me.defConfig.showDom),
+            h = me.checkNum(time.h) + '',
+            m = me.checkNum(time.m) + '',
+            s = me.checkNum(time.s) + '';
+          //渲染时间输出
+          dom.find('.hour-left').text(h.substring(0, 1));
+          dom.find('.hour-right').text(h.substring(1, 2));
+          dom.find('.min-left').text(m.substring(0, 1));
+          dom.find('.min-right').text(m.substring(1, 2));
+          dom.find('.sec-left').text(s.substring(0, 1));
+          dom.find('.sec-right').text(s.substring(1, 2));
+          //console.log(time);
+          me.fireEvent('afterShowTime', time, me);
+        }
+      }
+    });
+  });
+</script>
+
 
 
 </div>
-
