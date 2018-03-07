@@ -1,59 +1,163 @@
-.header{
-  height: 154px;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 100;
-}
-.w{
-  width: 1035px;
-  min-width: 1035px;
-  margin: 0 auto
-}
-.header .w{
-  height: 154px;
-  position: relative;
-}
-.logo1{
-  width: 321px;
-  height: 36px;
-  display: block;
-  position: absolute;
-  top: 23px;
-  left: 0;
-  background-repeat: no-repeat;
-}
-.logo{
-  background-repeat:no-repeat;
-  background-position: center;
-  width: 178px;
-  height: 82px;
-  display: block;
-  text-indent: -9999px;
-  position: absolute;
-  left: 399px;
-  top: 61px;
-  z-index: 10;
-}
-.loginBefore {
-  width: 376px;
-  height: 53px;
-  position: absolute;
-  right: 0;
-  top: 14px;
-}
-.loginBefore .col1 {
-  float: left;
-  width: 149px;
-  margin-right: 5px;
-}
-
-
-
-
 @charset "utf-8";
 
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font: inherit; vertical-align: baseline;
+}
+
+/* HTML5标签初始化
+--------------------------------------------------*/
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display: block; }
+
+/* 标签初始化
+--------------------------------------------------*/
+body { line-height: 1; color:#333;font:14px/1.5 Arial, Helvetica, Verdana, sans-serif}
+ol, ul,li{ list-style: none; }
+blockquote, q {
+  quotes: none;
+  border-left: solid 4px #39c;
+  margin-left: 10px;
+  padding-left: 10px;
+  background: whitesmoke;
+  margin: 10px auto;
+  padding: 6px 10px;
+  color: #666;
+  font-size: 20px;
+}
+i,em{
+  font-style:normal;
+  font-weight:100;
+}
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+table { border-collapse: collapse; border-spacing: 0; }
+a img{ border:0; }
+h1{ font-size:24px; font-weight: normal;}
+h2{ font-size:20px;  font-weight: normal;}
+h3{ font-size:18px; font-weight: normal; }
+h4{ font-size:14px;  font-weight: normal;}
+h5, h6{ font-size:12px;  font-weight: normal;}
+a,a:hover{ text-decoration:none; }
+div{display:block;}
+.tl{text-align: left;}
+.tc{text-align: center;}
+.tr{text-align: right;}
+
+table{ border-collapse: separate;border-spacing: 0;}th, td {text-align: left; font-weight: normal;} img, iframe {border: none; text-decoration:none;}input, textarea, select, button {font-size: 100%;font-family: inherit;margin:0;padding:0;}select {margin: inherit;} hr {margin: 0;padding: 0;border: 0;color: #000;background-color: #000;height: 1px}
+strong,b{font-weight:100;}
+input,button{border: 0;outline:none;}
+/* 解决Google浏览器字体不小于12px的问题
+--------------------------------------------------*/
+html{ -webkit-text-size-adjust:none;}
+a{color: #39c;
+  text-decoration: none;}
+a:hover{ text-decoration: underline;}
+a{outline: none;}
+a:active{*star: expression(this.onFocus=this.blur());}
+a:focus{*outline: 0; }
+
+/*清除浮动*/
+.clearfix:before,.clearfix:after {content:"";display:table;}
+.clearfix:after{ clear:both; }/* For IE 6/7 (trigger hasLayout) */
+.clearfix{ zoom:1;}
+.clear{clear:both;height:0px;overflow:hidden;}
+.clear{clear:both;height:0px;overflow:hidden;}
+
+/*常用样式*/
+.pr{ position:relative}
+.fb,strong{ font-weight:700;}
+.fb0{ font-weight:100;}
+.hid{overflow:hidden;}
+.f12{ font-size:12px;}
+.f14{ font-size:14px;}
+.f16{ font-size:16px;}
+.f18{ font-size:18px;}
+.f20{ font-size:20px;}
+.db{display: block;}
+.imglink{display: block;text-align: center;}
+
+/*input 框提示文字 html5*/
+.placeholder{
+  color:#888888;
+}
+input::-webkit-input-placeholder{
+  color: #888888;
+}
+input::-moz-placeholder{
+  color: #888888;
+}
+textarea::-webkit-input-placeholder{
+  color: #888888;
+}
+textarea::-moz-placeholder{
+  color: #888888;
+}
+
+.hide{display: none;}
+
+#pop{background:#fff;width:260px;border:1px solid #e0e0e0;font-size:12px;position: fixed;right:10px;bottom:10px}
+#popHead{line-height:32px;background:#f6f0f3;border-bottom:1px solid #e0e0e0;position:relative;font-size:12px;padding:0 0 0 10px}
+#popHead h2{font-size:14px;color:#666;line-height:32px;height:32px}
+#popHead #popClose{position:absolute;right:10px;top:1px}
+#popHead a#popClose:hover{color:#f00;cursor:pointer}
+#popContent{padding:5px 10px}
+#popTitle a{line-height:24px;font-size:14px;font-family:'微软雅黑';color:#333;font-weight:bold;text-decoration:none}
+#popTitle a:hover{color:#f60}
+#popIntro{text-indent:24px;line-height:160%;margin:5px 0;color:#666}
+#popMore{text-align:right;border-top:1px dotted #ccc;line-height:24px;margin:8px 0 0 0}
+#popMore a{color:#f60}
+#popMore a:hover{color:#f00}
+
+/* pop */
+.pop{width:488px;padding:10px;border:1px solid #A92833;background-color:#fff;text-align:center;word-wrap: break-word;color: #333;}
+.pop .hd{height:28px;line-height:18px;border-bottom:1px solid #A92833;font-size:14px;font-weight:700;text-align:left}
+.pop .hd-info{margin-left:10px;font-size:12px;font-weight:100}
+.pop .close{float:right;width:15px;height:14px;background-position:-240px -20px;cursor:pointer}
+.pop .close:hover{height:15px;background-position:-240px 0}.pop .bd{padding:10px;text-align:left}
+.pop-title{padding:5px;text-align:center;font-size:14px}
+.pop-btn{padding-top:20px;text-align:center}
+.pop-btn .btn{margin:0 10px}
+.pop .input{width:160px}
+.pop .ui-select{width:170px}
+.pop-error,.pop-success{text-align:center}
+.pop .ico-success,.pop .ico-error{display:inline-block;*display:inline;*zoom:1;width:24px;height:24px;margin-right:5px;vertical-align:middle}
+.pop .ico-success{background-position:-120px -80px}
+.pop .ico-error{background-position:-150px -80px}
+.pop-text{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;text-align:left;line-height:24px;font-size:14px;overflow:hidden;color:#333;}
+.pop .bd .ico-success,.pop .bd .ico-error,.pop .bd .ico-waring{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;width:30px;height:30px;margin-right:10px}
+.pop .bd .ico-success{background-position:0 -80px}
+.pop .bd .ico-error{background-position:-40px -80px}
+.pop .bd .ico-waring{background-position:-80px -80px}
+
+.pop .btn{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #A92833;
+  color: #fff;margin: 0 5px;
+}
+.pop .btn.closeTip{
+  background: darkgrey;
+  color: #fff;
+}
+
+
+
+
+/*常用css*/
 .fl {
   float: left;
   _display: inline;
@@ -102,19 +206,51 @@ a:hover {
 .btn {
   cursor: pointer;
 }
-body {
-  font-size: 13px;
-  color: #4E4E4E;
-  line-height: 24px;
-  min-width: 1020px;
-  font-family: 'Microsoft YaHei';
-}
+
 .l {
   color: #9B0000 !important;
 }
-
-
-
+.w {
+  width: 1038px;
+  min-width: 1038px;
+  margin: 0 auto;
+}
+/*header*/
+.indexPage {
+  background: url(/assets/index/bg.jpg) center 0 no-repeat #FFFFFF;
+}
+.header {
+  height: 154px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100;
+}
+.header .w {
+  height: 154px;
+  position: relative;
+}
+.logo1 {
+  width: 321px;
+  height: 36px;
+  display: block;
+  position: absolute;
+  top: 23px;
+  left: 0;
+  background: url(/assets/head/logo1.png) no-repeat;
+}
+.logo {
+  background: url(/assets/head/logo.png) center no-repeat;
+  width: 178px;
+  height: 82px;
+  display: block;
+  text-indent: -9999px;
+  position: absolute;
+  left: 399px;
+  top: 61px;
+  z-index: 10;
+}
 .loginBefore {
   width: 376px;
   height: 53px;
@@ -140,10 +276,12 @@ body {
 .loginBefore .user {
   width: 118px;
   padding-left: 29px;
+  background: url(/assets/head/user.png) 4px center no-repeat #F7F7F7;
 }
 .loginBefore .password {
   width: 118px;
   padding-left: 29px;
+  background: url(/assets/head/password.png) 4px center no-repeat #F7F7F7;
 }
 .loginBefore .yzm {
   width: 62px;
@@ -169,11 +307,13 @@ body {
   height: 53px;
   cursor: pointer;
   text-indent: -9999px;
+  background: url(/assets/head/loginbg.png) no-repeat;
 }
 .loginBefore .regbtn {
   width: 70px;
   height: 53px;
   text-indent: -9999px;
+  background: url(/assets/head/regbg.png) no-repeat;
 }
 .loginAfter {
   position: absolute;
@@ -196,6 +336,7 @@ body {
   width: 44px;
   height: 33px;
   text-indent: -9999px;
+  background: url(/assets/head/loginout.png) no-repeat;
   margin-left: 10px;
 }
 .yue {
@@ -290,12 +431,15 @@ body {
   height: 27px;
   margin-left: -10px;
   text-indent: -9999px;
+  background: url(/assets/head/nav1.png) 0 center no-repeat;
 }
 .nav a.on,
 .nav a:hover {
+  background: url(/assets/head/navhover.png) center no-repeat;
 }
 .nav a.on span,
 .nav a:hover span {
+  background-image: url(/assets/head/nav2.png);
 }
 .nav .a1 span {
   background-position: 32px center;
@@ -328,7 +472,7 @@ body {
 .banner {
   width: 100%!important;
   height: 440px;
-  margin-top: 167px;
+  padding-top: 167px;
   position: relative;
   overflow: hidden;
 }
@@ -340,6 +484,7 @@ body {
   width: 100%!important;
   height: 440px;
   position: relative;
+  background: url() center no-repeat;
 }
 .banner .hd {
   position: absolute;
@@ -352,6 +497,7 @@ body {
 }
 .banner .hd span {
   display: inline-block;
+  background: url(/assets/index/dian.png) no-repeat;
   width: 13px;
   height: 13px;
   line-height: 13px;
@@ -370,9 +516,11 @@ body {
   height: 40px;
   margin: 0 auto;
   position: relative;
+  background: url(/assets/index/noticebg.png) no-repeat;
 }
 .notice:after {
   content: "";
+  background: url(/assets/head/notice-tree.png) no-repeat;
   width: 69px;
   height: 82px;
   position: absolute;
@@ -383,6 +531,7 @@ body {
   padding-left: 76px;
   height: 40px;
   line-height: 45px;
+  background: url(/assets/icon/notice.png) 43px center no-repeat;
 }
 .notice li {
   font-size: 14px;
@@ -442,6 +591,7 @@ body {
   padding-left: 30px;
   font-size: 14px;
   color: #DE4D1B;
+  background: url(/assets/icon/icon-title.png) 12px center no-repeat;
 }
 .index-title .hd {
   position: absolute;
@@ -587,6 +737,7 @@ body {
   height: 164px;
   position: relative;
   overflow: hidden;
+  background: url(/assets/index/hot/bg.jpg) no-repeat;
 }
 .hot-recommend .box {
   display: block;
@@ -615,6 +766,7 @@ body {
   display: inline-block;
 }
 .hot-recommend .time321 .t {
+  background: url(/assets/index/qiubg.png) no-repeat;
   width: 42px;
   height: 64px;
   text-align: center;
@@ -628,6 +780,7 @@ body {
   width: 10px;
   position: relative;
   top: -5px;
+  background: url(/assets/icon/mh.png) center no-repeat;
 }
 /*彩票游戏*/
 .gameListBox {
@@ -648,6 +801,7 @@ body {
   position: relative;
   cursor: pointer;
   overflow: hidden;
+  background: url(/assets/index/caibg.png) no-repeat;
 }
 .gameListBox .tag {
   display: block;
@@ -656,24 +810,34 @@ body {
   height: 41px;
   left: 0;
   top: 0;
+  background: url() no-repeat;
 }
 .gameListBox .tag-new {
+  background-image: url(/assets/icon/ico-new.png);
 }
 .gameListBox .tag-hot {
+  background-image: url(/assets/icon/ico-hot.png);
 }
 .gameListBox .li1 {
+  background-image: url(/assets/index/cai1.png);
 }
 .gameListBox .li2 {
+  background-image: url(/assets/index/cai2.png);
 }
 .gameListBox .li3 {
+  background-image: url(/assets/index/cai3.png);
 }
 .gameListBox .li4 {
+  background-image: url(/assets/index/cai4.png);
 }
 .gameListBox .li5 {
+  background-image: url(/assets/index/cai5.png);
 }
 .gameListBox .li6 {
+  background-image: url(/assets/index/cai6.png);
 }
 .gameListBox .li7 {
+  background-image: url(/assets/index/cai7.png);
 }
 .gameListBox li:hover .list {
   left: 0;
@@ -725,6 +889,7 @@ body {
   width: 63px;
   height: 36px;
   z-index: 5;
+  background: url(/assets/index/leftDownBg.png) no-repeat;
 }
 .gameListBox2:before {
   content: "";
@@ -734,10 +899,12 @@ body {
   width: 63px;
   height: 36px;
   z-index: 5;
+  background: url(/assets/index/rightDownBg.png) no-repeat;
 }
 .gameListBox2 .ico {
   position: absolute;
   display: block;
+  background: url(/assets/index/rightTopBg.png) no-repeat;
   width: 60px;
   height: 43px;
   z-index: 5;
@@ -773,6 +940,7 @@ body {
   text-align: center;
   margin: 0 auto 10px;
   border: 1px solid #E0E0E0;
+  background: url(/assets/index/240x130.jpg) no-repeat;
 }
 .gameListBox2 .img a {
   text-align: center;
@@ -800,9 +968,11 @@ body {
   height: 105px;
   margin-top: 20px;
   position: relative;
+  background: url(/assets/head/footerbg.jpg) center no-repeat #2F2F2F;
 }
 .footer:after {
   content: "";
+  background: url(/assets/head/foot-left.png) no-repeat;
   width: 433px;
   height: 68px;
   display: block;
@@ -812,6 +982,7 @@ body {
 }
 .footer:before {
   content: "";
+  background: url(/assets/head/foot-right.png) no-repeat;
   width: 433px;
   height: 68px;
   display: block;
@@ -859,10 +1030,12 @@ body {
 }
 /*彩票大厅*/
 .lotteryPage {
+  background: url(/assets/lottery/bg.jpg) center 0 no-repeat #fff;
 }
 .lotteryMain {
   height: 1702px;
   position: relative;
+  background: url(/assets/lottery/mainbg.jpg) no-repeat;
 }
 .lotteryMain:after {
   content: "";
@@ -872,6 +1045,7 @@ body {
   position: absolute;
   left: 0;
   top: -55px;
+  background: url(/assets/lottery/txt-lottery.png) no-repeat;
 }
 .lotteryMain .hd {
   padding: 10px 0 10px 35px;
@@ -879,24 +1053,32 @@ body {
 }
 .lotteryMain .hd a {
   display: inline-block;
+  background: url() center no-repeat;
   width: 95px;
   height: 28px;
   float: left;
   margin-right: 10px;
 }
 .lotteryMain .hd .a1 {
+  background-image: url(/assets/lottery/lotteryTxt1.png);
 }
 .lotteryMain .hd .a2 {
+  background-image: url(/assets/lottery/lotteryTxt2.png);
 }
 .lotteryMain .hd .a3 {
+  background-image: url(/assets/lottery/lotteryTxt3.png);
 }
 .lotteryMain .hd .a4 {
+  background-image: url(/assets/lottery/lotteryTxt4.png);
 }
 .lotteryMain .hd .a5 {
+  background-image: url(/assets/lottery/lotteryTxt5.png);
 }
 .lotteryMain .hd .a6 {
+  background-image: url(/assets/lottery/lotteryTxt6.png);
 }
 .lotteryMain .hd .a7 {
+  background-image: url(/assets/lottery/lotteryTxt7.png);
 }
 .lotteryMain .bd {
   padding-left: 23px;
@@ -905,6 +1087,7 @@ body {
   width: 968px;
   height: 248px;
   position: relative;
+  background: url() no-repeat;
   margin-bottom: 14px;
 }
 .lotteryItem .about {
@@ -915,6 +1098,7 @@ body {
   left: 71px;
   bottom: 50px;
   text-indent: -9999px;
+  background: url(/assets/lottery/about.png) no-repeat;
 }
 .lotteryItem .rightDown {
   float: right;
@@ -923,18 +1107,25 @@ body {
   bottom: 10px;
 }
 .lotteryStyle1 {
+  background: url(/assets/lottery/lotteryStyle1.png);
 }
 .lotteryStyle2 {
+  background: url(/assets/lottery/lotteryStyle2.png);
 }
 .lotteryStyle3 {
+  background: url(/assets/lottery/lotteryStyle3.png);
 }
 .lotteryStyle4 {
+  background: url(/assets/lottery/lotteryStyle4.png);
 }
 .lotteryStyle5 {
+  background: url(/assets/lottery/lotteryStyle5.png);
 }
 .lotteryStyle6 {
+  background: url(/assets/lottery/lotteryStyle6.png);
 }
 .lotteryStyle7 {
+  background: url(/assets/lottery/lotteryStyle7.png);
 }
 .lotteryList {
   padding-left: 186px;
@@ -957,6 +1148,7 @@ body {
 }
 /*真人娱乐*/
 .zhenrenPage {
+  background: url(/assets/zhenren/bg.jpg) center 0 no-repeat #fff;
 }
 .huawen-box {
   position: relative;
@@ -969,6 +1161,7 @@ body {
   bottom: 39px;
   position: absolute;
   z-index: 10;
+  background: url(/assets/icon/ico-hw-r.png);
 }
 .huawen-box:before {
   content: "";
@@ -978,6 +1171,7 @@ body {
   left: 0px;
   position: absolute;
   z-index: 10;
+  background: url(/assets/icon/ico-hw-l.png);
 }
 .huawen-box-in {
   position: relative;
@@ -991,6 +1185,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
+  background: url(/assets/icon/ico-hw-t.png);
 }
 .huawen-box-in:before {
   content: "";
@@ -999,8 +1194,10 @@ body {
   position: absolute;
   left: 0;
   bottom: 0;
+  background: url(/assets/icon/ico-hw-b.png);
 }
 .zhenren-list {
+  background: url(/assets/zhenren/mainbg.jpg) 0 bottom no-repeat #E4E4E4;
   padding-top: 43px;
   padding-left: 10px;
   padding-bottom: 52px;
@@ -1021,9 +1218,11 @@ body {
 }
 /*电子游戏*/
 .dianziPage {
+  background: url(/assets/dianzi/bg.jpg) center 0 no-repeat #FFFFFF;
 }
 .dianzi-list-box {
   padding: 20px;
+  background: url(/assets/dianzi/mainbg.jpg) 0 bottom no-repeat #E8E8E8;
 }
 .dianzi-list-box .hd {
   padding-bottom: 8px;
@@ -3763,4 +3962,6 @@ body {
 .pw-contract .extra a {
   color: #34bff8;
 }
-
+.body{
+  margin:0px !important;
+}

@@ -1,7 +1,8 @@
-<div class="indexPage">
+<!--<body class="indexPage">-->
+<div class="indexPage" style="position: relative">
 
 <!--header-->
-<div class="header">
+<div class="header ">
   <div class="w">
     <a href="" class="logo1"></a>
     <a href="" class="logo"></a>
@@ -14,7 +15,7 @@
         </div>
         <div class="col2" id="J-panel-vcode" style="display:none;">
           <input type="text" class="txt yzm" placeholder="验证码" maxlength="5">
-          <img src="/images/head/yzm.png" class="yzm-img">
+          <img ng-src="/assets/head/yzm.png" class="yzm-img">
         </div>
         <div class="col3">
           <div id="J-msg-show" data-display="hide" class="msg-show"></div>
@@ -56,8 +57,7 @@
 
   </div>
 </div>
-<!--header end-->
-<script src="/Scripts/login.js" type="text/javascript"></script>
+
 
 
 
@@ -66,13 +66,13 @@
 <div class="banner">
   <div class="bd">
     <ul style="position: relative; width: 1366px; height: 440px;">
-      <li style="background-image: url(&quot;/images/index/banner1.png&quot;); position: absolute; width: 1366px; left: 0px; top: 0px; display: none;">
+      <li style="background-image: url(/assets/index/banner1.png); position: absolute; width: 1366px; left: 0px; top: 0px; display: none;">
 
       </li>
-      <li style="background-image: url(&quot;/images/index/banner1.png&quot;); position: absolute; width: 1366px; left: 0px; top: 0px; display: block;">
+      <li style="background-image: url(/assets/index/banner1.png); position: absolute; width: 1366px; left: 0px; top: 0px; display: block;">
 
       </li>
-      <li style="background-image: url(&quot;/images/index/banner1.png&quot;); position: absolute; width: 1366px; left: 0px; top: 0px; display: none;">
+      <li style="background-image: url(/assets/index/banner1.png); position: absolute; width: 1366px; left: 0px; top: 0px; display: none;">
 
       </li>
     </ul>
@@ -114,15 +114,15 @@
       <div class="indexMain-r fr">
         <!--客户端-->
         <a href="/client/game.zip" class="download-row">
-          <img src="/images/index/download.jpg">
+          <img src="/assets/index/download.jpg">
         </a>
         <!--新手指南-->
         <a href="" onclick="showMsg('请先登录，再操作！');" class="guide-row">
-          <img src="/images/index/guide.jpg">
+          <img src="/assets/index/guide.jpg">
         </a>
         <!--vip俱乐部-->
         <a href="" onclick="showMsg('请先登录，再操作！');" class="vipClub">
-          <img src="/images/index/vipclub.jpg">
+          <img src="/assets/index/vipclub.jpg">
         </a>
         <!--优惠活动-->
         <div class="index-activity">
@@ -133,7 +133,7 @@
           </div>
           <div class="bd">
             <a href="" onclick="showMsg('请先登录，再操作！');" class="img">
-              <img src="/images/index/230x70.jpg">
+              <img src="/assets/index/230x70.jpg">
             </a>
             <h3>
               畅玩无极限，注册18元！
@@ -150,7 +150,7 @@
         </div>
         <!--取款时间-->
         <div class="cashTime">
-          <img src="/images/index/cashTimebg.jpg">
+          <img src="/assets/index/cashTimebg.jpg">
         </div>
       </div>
 
@@ -178,7 +178,7 @@
             <!--时时彩-->
             <div class="box hide">
               <div class="img">
-                <img src="/images/index/hot/ssc.png" width="92">
+                <img src="/assets/index/hot/ssc.png" width="92">
 
               </div>
               <div class="txt">
@@ -210,7 +210,7 @@
             <!--全天彩-->
             <div class="box hide" style="display: none;">
               <div class="img">
-                <img src="/images/index/hot/ssc.png" width="92">
+                <img src="/assets/index/hot/ssc.png" width="92">
 
               </div>
               <div class="txt">
@@ -250,7 +250,7 @@
             <!--11选5-->
             <div class="box hide" style="display: none;">
               <div class="img">
-                <img src="/images/index/hot/ssc.png" width="92">
+                <img src="/assets/index/hot/ssc.png" width="92">
 
               </div>
               <div class="txt">
@@ -290,7 +290,7 @@
             <!--快乐彩-->
             <div class="box hide" style="display: none;">
               <div class="img">
-                <img src="/images/index/hot/ssc.png" width="92">
+                <img src="/assets/index/hot/ssc.png" width="92">
 
               </div>
               <div class="txt">
@@ -373,8 +373,9 @@
                 <a href="" onclick="showMsg('请先登录，再操作！');">
                   山东11选5
                 </a>
-                <ahref="" onclick="showMsg('请先登录，再操作！');">
+                <a href="" onclick="showMsg('请先登录，再操作！');">
                 广东11选5
+                </a>
 
                 <a href="" onclick="showMsg('请先登录，再操作！');">
                   江西11选5
@@ -382,7 +383,7 @@
                 <a href="" onclick="showMsg('请先登录，再操作！');">
                   重庆11选5
                 </a>
-                </ahref=""></div>
+                </div>
             </div></li>
             <li class="li4"><div class="list">
               <div class="inner">
@@ -445,7 +446,7 @@
 
           </div>
           <a href="" onclick="showMsg('请先登录，再操作！');" class="link" title="点击开始游戏">
-            <img src="/images/index/hanguo.jpg">
+            <img src="/assets/index/hanguo.jpg">
           </a>
         </div>
 
@@ -464,7 +465,7 @@
               </div>
               <div class="img">
                 <a href="" onclick="showMsg('请先登录，再操作！');">
-                  <img src="/images/index/cai-dj.png">
+                  <img src="/assets/index/cai-dj.png">
                 </a>
               </div>
               <div class="tc">
@@ -479,7 +480,7 @@
               </div>
               <div class="img">
                 <a href="" onclick="showMsg('请先登录，再操作！');">
-                  <img src="/images/index/cai-xjp.png">
+                  <img src="/assets/index/cai-xjp.png">
                 </a>
               </div>
               <div class="tc">
@@ -494,7 +495,7 @@
               </div>
               <div class="img">
                 <a href="" onclick="showMsg('请先登录，再操作！');">
-                  <img src="/images/index/cai-dj.png">
+                  <img src="/assets/index/cai-dj.png">
                 </a>
               </div>
               <div class="tc">
@@ -509,7 +510,7 @@
               </div>
               <div class="img">
                 <a href="" onclick="showMsg('请先登录，再操作！');">
-                  <img src="/images/index/cai-dj.png">
+                  <img src="/assets/index/cai-dj.png">
                 </a>
               </div>
               <div class="tc">
@@ -530,12 +531,12 @@
 <!--优势-->
 <div style="border-top: 1px solid #ddd;"></div>
 <div class="w">
-  <!--<img src="/images/index/safebg.jpg"/> -->
-  <a href="/ChargeWithdrawal/ChargeIndex"><img src="/images/index/safebg_01.jpg"></a>
-  <a href="/UserInformation/QueryUserBasicInfo"><img src="/images/index/safebg_02.jpg"></a>
-  <a href="/gameUserCenter/queryOrders"><img src="/images/index/safebg_03.jpg"></a>
-  <a href="/Help/Helpone"><img src="/images/index/safebg_04.jpg"></a>
-  <a href="&lt;script language=&quot;javascript&quot; src=&quot;http://api.pop800.com/800.js?n=332283&amp;s=01&amp;p=l&amp;l=cn&quot;&gt;&lt;/script&gt;&lt;div style=&quot;display:none;&quot;&gt;&lt;a href=&quot;http://www.pop800.com&quot;&gt;在线客服&lt;/a&gt;&lt;/div&gt;" target="_blank"><img src="/images/index/safebg_05.jpg"></a>	</div>
+  <!--<img src="/assets/index/safebg.jpg"/> -->
+  <a href="/ChargeWithdrawal/ChargeIndex"><img src="/assets/index/safebg_01.jpg"></a>
+  <a href="/UserInformation/QueryUserBasicInfo"><img src="/assets/index/safebg_02.jpg"></a>
+  <a href="/gameUserCenter/queryOrders"><img src="/assets/index/safebg_03.jpg"></a>
+  <a href="/Help/Helpone"><img src="/assets/index/safebg_04.jpg"></a>
+  <a ><img src="/assets/index/safebg_05.jpg"></a>	</div>
 <div class="footer">
   <div class="w">
     <div class="foot1">
@@ -563,52 +564,10 @@
       <a href="" class="a1" title="客户端下载">客户端下载</a>
       <a href="" class="a2" title="域名验证">域名验证</a>
       <a href="" class="a3" title="线路检测">线路检测</a>
-      <atarget="_blank" id="custom-service" href="<script language=&quot;javascript&quot; src=&quot;http://api.pop800.com/800.js?n=332283&amp;s=01&amp;p=l&amp;l=cn&quot;></script><div style=&quot;display:none;&quot;><a href=&quot;http://www.pop800.com&quot;>在线客服</a></div>" class="a4" title="在线客服">在线客服
-      </atarget="_blank"></div>
+    </div>
     <div class="foot2 tc">
       Copyright © 2016 天下无双  版权所有 All Rights Reserved.
     </div>
   </div>
-</div>
-
-<script type="text/javascript">$("#a1").addClass("on").parent().show()</script>
-<script>
-  var sEndTime = 13164828570811 ;
-  var sNowTime = 13164828456811 ;
-  $(function () {
-    var saveTime = {};
-    var topTimer = new phoenix.CountDown({
-      //结束时间
-      'endTime': sEndTime,
-      //开始时间
-      'startTime': sNowTime,
-      //是否需要循环计时
-      'isLoop': false,
-      //需要渲染的DOM结构
-      'showDom': '.time321',
-      expands: {
-        //覆盖showTime渲染方法
-        _showTime: function (time) {
-          var me = this,
-            dom = $(me.defConfig.showDom),
-            h = me.checkNum(time.h) + '',
-            m = me.checkNum(time.m) + '',
-            s = me.checkNum(time.s) + '';
-          //渲染时间输出
-          dom.find('.hour-left').text(h.substring(0, 1));
-          dom.find('.hour-right').text(h.substring(1, 2));
-          dom.find('.min-left').text(m.substring(0, 1));
-          dom.find('.min-right').text(m.substring(1, 2));
-          dom.find('.sec-left').text(s.substring(0, 1));
-          dom.find('.sec-right').text(s.substring(1, 2));
-          //console.log(time);
-          me.fireEvent('afterShowTime', time, me);
-        }
-      }
-    });
-  });
-</script>
-
-
-
+  <script type="text/javascript">$("#a1").addClass("on").parent().show()</script>
 </div>
