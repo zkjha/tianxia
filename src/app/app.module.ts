@@ -12,6 +12,8 @@ import { DianziComponent } from './dianzi/dianzi.component';
 import { DojiComponent } from './doji/doji.component';
 import { TiyuComponent } from './tiyu/tiyu.component';
 import { YouhuiComponent } from './youhui/youhui.component';
+import { SscComponent } from './ssc/ssc.component';
+import { LoginAfterComponent } from './login-after/login-after.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { YouhuiComponent } from './youhui/youhui.component';
     DianziComponent,
     DojiComponent,
     TiyuComponent,
-    YouhuiComponent
+    YouhuiComponent,
+    SscComponent,
+    LoginAfterComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,14 @@ import { YouhuiComponent } from './youhui/youhui.component';
       }, {
         path: 'TiYu',
         component: TiyuComponent
+      }, {
+        path: 'GameBet',
+        children: [
+          {
+            path: 'GameBetPage/Ssc',
+            component: SscComponent
+          }
+        ]
       }, {
         path: 'Youhui',
         component: YouhuiComponent
