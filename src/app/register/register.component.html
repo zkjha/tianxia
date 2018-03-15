@@ -12,12 +12,12 @@
     <div class="loginBefore">
       <form action="">
         <div class="col1" style="margin-left: 55px;">
-          <input type="text" class="txt user" id="J-user-name" data-name="name" name="user-name"  placeholder="账号"/>
-          <input type="password" class="txt password" id="J-user-password" data-name="password" name="user-password" placeholder="密码"/>
+          <input type="text" class="txt user"  id="J-user-name" data-name="name" name="username" [(ngModel)]='username'  placeholder="账号"/>
+          <input type="password" class="txt password"  name='password' [(ngModel)]='password' placeholder="密码"/>
         </div>
         <div class="col2"  id="J-panel-vcode"  style="display:none;">
           <input type="text" class="txt yzm" placeholder="验证码" maxlength="5"/>
-          <img src="/assets/head/yzm.png" class="yzm-img"/>
+          <img src="/assets/head/yzm.png" (click)='getCodeZC()'  class="yzm-img"/>
         </div>
         <div class="col3">
           <div id="J-msg-show" data-display="hide" class="msg-show"></div>
@@ -94,7 +94,7 @@
             </tr>
             <tr>
               <th class="col8">
-                登录密码：<input type="password" class="txt" name="userPassword" id="userPassword" value="">
+                登录密码：<input type="password" class="txt" name="userPassword" [(ngModel)]='password' id="userPassword" value="">
                 <span class="ui-check"></span>
               </th>
             </tr>
@@ -113,7 +113,7 @@
             </tr>
             <tr>
               <th class="col8">
-                &nbsp;&nbsp;&nbsp;验证码：<input type="text" class="txt code" name="checkCode" id="checkCode" value=""> <img class="ui-label" style="cursor:pointer;margin-left:10px" id="valiCodeImg" src="/Login/GetValidateCode" width="50" height="25" alt="验证码">
+                &nbsp;&nbsp;&nbsp;验证码：<input type="text" class="txt code" name="checkCode" id="checkCode" value=""> <img class="ui-label" (click)="getCodeZC()" style="cursor:pointer;margin-left:10px" id="valiCodeImg" src="/Login/GetValidateCode" width="50" height="25" alt="验证码">
                 <span class="ui-check"></span>
                 <input type="hidden" name="keyValue" id="keyValue">
 
@@ -202,277 +202,6 @@
   </div>
   <a class="btn closeTip" id="closeTip1" style="" href="javascript:void(0);">开始游戏</a>
 </div>
-<script>
-  (function ($) {
-    var me = this;
-
-    //输入框
-    userName = $('#userName'),
-      password = $('#userPassword'),
-      password_new = $('#userPassword2'),
-      userEmail = $("#email"),
-      checkCode = $("#checkCode");
-
-
-    box = new LightBox("Idivs");
-    mask = phoenix.Mask.getInstance();
-
-    $("#valiCodeImg").bind("click", function() {
-      this.src = "/Login/GetValidateCode?time=" + (new Date()).getTime();
-    });
-
-
-    //提示消息
-    var maskMsg = {
-      el: $('#J-ui-mask-msg'),
-      show: function (isSuccess, msg) {
-        var me = this;
-        if (isSuccess) {
-          me.el.find('i').removeClass().addClass('ico-success');
-          me.el.removeClass().addClass('pop pop-success w-4');
-        } else {
-          me.el.find('i').removeClass().addClass('ico-error');
-          me.el.removeClass().addClass('pop pop-error w-6');
-        }
-        me.el.find('.pop-text').html(msg);
-        phoenix.util.toViewCenter(me.el);
-        me.el.show();
-        mask.show();
-      },
-      hide: function () {
-        var me = this;
-        me.el.hide();
-        mask.hide();
-      }
-    };
-
-    var eventFocus = function (el, msg) {
-      $(el).parent().find('.ui-check').html(msg).removeClass().addClass('ui-check ui-check-tip').show();
-    };
-    var showError = function (el, msg) {
-      $(el).parent().find('.ui-check').html('<i></i>' + msg).removeClass().addClass('ui-check').show();
-    };
-    var showLoading = function (el) {
-      $(el).parent().find('.ui-check').html('&nbsp;&nbsp;&nbsp;&nbsp;').removeClass().addClass('ui-check ui-check-loading').show();
-    };
-    var hideLoading = function (el) {
-      $(el).parent().find('.ui-check').removeClass().addClass('ui-check').hide();
-    };
-    var showRight = function (el, msg) {
-      var msg = typeof msg == 'undefined' ? '' : msg;
-      $(el).parent().find('.ui-check').html(msg).removeClass().addClass('ui-check ui-check-right').show();
-    };
-    var hideTip = function (el) {
-      $(el).parent().find('.ui-check').removeClass().addClass('ui-check').hide();
-    };
-
-    //获取密码复杂等级
-    var getPassowrdLevel = function (v) {
-      var level = 0;
-      if ((/^\d+$/).test(v) || (/^[A-Za-z]+$/).test(v) || (/^[^a-zA-Z0-9]+$/).test(v)) {
-        level = 1;
-      }
-      if (((/\d+/).test(v) && (/[A-Za-z]+/).test(v)) || ((/\d+/).test(v) && (/[^a-zA-Z0-9]+/).test(v)) || ((/[A-Za-z]+/).test(v) && (/[^a-zA-Z0-9]+/).test(v))) {
-        level = 2;
-      }
-      if ((/\d+/).test(v) && (/[A-Za-z]+/).test(v) && (/[^a-zA-Z0-9]+/).test(v)) {
-        level = 3;
-      }
-      return level;
-    };
-    var checkPasswordNew = function () {
-      var el = password, v = $.trim(el.val()), isPass = false, level, levelStr = '';
-      if (v == '') {
-        showError(el, '登陆密码不能为空');
-        isPass = false;
-      } else if (!(/^.{6,20}$/).test(v)) {
-        showError(el, '长度有误，请输入6-20位字符');
-        isPass = false;
-      } else {
-        isPass = true;
-        level = getPassowrdLevel(v);
-
-        if (level == 1) {
-          levelStr = '弱';
-        }
-        if (level == 2) {
-          levelStr = '中';
-        }
-        if (level == 3) {
-          levelStr = '强';
-        }
-        showRight(el, '密码强度：' + levelStr);
-      }
-      return isPass;
-    };
-    var checkPasswordNew2 = function () {
-      var el = password_new, v = $.trim(el.val()), isPass = false, level, levelStr = '';
-      if (v == '') {
-        showError(el, '确认新密码不能为空');
-        isPass = false;
-      } else if (v != $.trim(password.val())) {
-        showError(el, '两次密码输入不一致');
-        isPass = false;
-      } else {
-        isPass = true;
-        showRight(el);
-      }
-      return isPass;
-    };
-
-    var checkUserName = function () {
-      var el = userName, v = $.trim(el.val()), isPass = false, level, levelStr = '';
-      if (v == '') {
-        showError(el, '登录用户名不能为空');
-        isPass = false;
-      } else if (!(/^.{6,20}$/).test(v)) {
-        showError(el, '长度有误，请输入6-20位字符');
-        isPass = false;
-      } else {
-        isPass = true;
-        showRight(el);
-      }
-      return isPass;
-    };
-
-    var checkCheckCode = function () {
-      var el = checkCode, v = $.trim(el.val()), isPass = false, level, levelStr = '';
-      if (v == '') {
-        showError(el, '验证码不能为空');
-        isPass = false;
-      } else if (!(/^.{5}$/).test(v)) {
-        showError(el, '验证码长度有误');
-        isPass = false;
-      } else {
-        isPass = true;
-        showRight(el);
-      }
-      return isPass;
-    };
-
-    var checkUserEmail = function () {
-      var el = userEmail, v = $.trim(el.val()), isPass = false, level, levelStr = '';
-      if (v == '') {
-        showError(el, '安全邮箱不可为空');
-        isPass = false;
-      } else if (!valid_email(v)) {
-        showError(el, '请输入正确的邮箱！');
-        isPass = false;
-      } else {
-        isPass = true;
-        showRight(el);
-      }
-      return isPass;
-    };
-
-    function valid_email(email) {
-      var patten = new RegExp(/^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]+$/);
-      return patten.test(email);
-    }
-
-    $('#closeTip1').click(function () {
-      box.Close();
-      location.href = "/home/index";
-
-    });
-
-    //新登陆密码
-    userName.focus(function () {
-      eventFocus(this, '6-20位字符组成，区分大小写');
-    });
-    userName.blur(function () {
-      checkUserName();
-    });
-    //新登陆密码
-    password.focus(function () {
-      eventFocus(this, '6-20位字符组成，区分大小写');
-    });
-    password.blur(function () {
-      checkPasswordNew();
-    });
-    //确认新登陆密码
-    password_new.focus(function () {
-      eventFocus(this, '请再次输入登录密码');
-    });
-    password_new.blur(function () {
-      checkPasswordNew2();
-    });
-
-    userEmail.focus(function () {
-      eventFocus(this, '请输入常用邮箱，用于密码找回');
-    });
-    userEmail.blur(function () {
-      checkUserEmail();
-    });
-
-    checkCode.focus(function () {
-      eventFocus(this, '');
-    });
-    checkCode.blur(function () {
-      checkCheckCode();
-    });
-
-
-    //提交
-    $('#J-button-submit-password').click(function () {
-      if (checkUserName() && checkPasswordNew() && checkPasswordNew2() && checkUserEmail() && checkCheckCode) {
-
-        var interval;
-        try {
-          $.ajax({
-            url: '/Login/RegisterUserJson',
-            method: 'post',
-            cache: false,
-            dataType: 'json',
-            data: { 'key': $.trim($("#keyValue").val()), 'RegisterUserName': $.trim($("#userName").val()), 'RegisterPassWord': $.trim($("#userPassword").val()), 'RegisterEmail': $.trim($("#email").val()), 'code': $.trim($("#checkCode").val()) },
-            beforeSend: function () {
-              var button = $('#J-button-submit-text'), list = ['提交中   ', '提交中.  ', '提交中.. ', '提交中...'], i = 0;
-              interval = setInterval(function () {
-                button.text(list[i]);
-                i += 1;
-                if (i >= list.length) {
-                  i = 0;
-                }
-              }, 300);
-            },
-            success: function (data) {
-              clearInterval(interval);
-              if (Number(data['isSuccess']) == 1) {
-                if (Sys.ie != null) { fn("Idivs"); }
-                else {
-                  box.OverLay.Color = "rgb(51, 51, 51)";
-                  box.Over = true;
-                  box.OverLay.Opacity = 50;
-                  box.Fixed = true;
-                  box.Center = true; box.Show();
-                }
-              } else {
-                maskMsg.show(false, data['msg']);
-                setTimeout(function () {
-                  maskMsg.hide();
-
-                }, 2000);
-              }
-            }
-          });
-        } catch (err) {
-          clearInterval(interval);
-        }
-      }
-    });
-
-    //操作后提示
-    function fn(obj) {
-      var Idivdok = document.getElementById(obj);
-      Idivdok.style.display = "block";
-      Idivdok.style.left = (document.documentElement.clientWidth - Idivdok.clientWidth) / 2 + document.documentElement.scrollLeft + "px";
-      Idivdok.style.top = (document.documentElement.clientHeight - Idivdok.clientHeight) / 2 + document.documentElement.scrollTop - 40 + "px";
-    }
-
-
-  })(jQuery);
-
-</script>
 <style>
   .ui-check-tip{color:#999}
   .ui-check-right{padding-left:24px;color:green}

@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://www.lurck.net",
+    "secure": "false",
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

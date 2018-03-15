@@ -2,6 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {HttpService} from './service/http-service.service';
+import {LoadingService} from './service/loading.service';
+import { CookieService } from './service/cookie.service';
+import { FormsModule } from '@angular/forms';
+import {StorageService} from './service/storage.service';
+
 
 import { AppComponent } from './app.component';
 import { CaipiaoComponent } from './caipiao/caipiao.component';
@@ -31,6 +38,8 @@ import { LoginAfterComponent } from './login-after/login-after.component';
     LoginAfterComponent
   ],
   imports: [
+    FormsModule,
+    HttpClientModule,
     BrowserModule,
     RouterModule.forRoot([
       {
@@ -90,7 +99,12 @@ import { LoginAfterComponent } from './login-after/login-after.component';
       }
     ])
   ],
-  providers: [],
+  providers: [
+    HttpService,
+    LoadingService,
+    CookieService,
+    StorageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
