@@ -2,12 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+import {NgZorroAntdModule} from 'ng-zorro-antd';
+
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpService} from './service/http-service.service';
 import {LoadingService} from './service/loading.service';
 import { CookieService } from './service/cookie.service';
 import { FormsModule } from '@angular/forms';
 import {StorageService} from './service/storage.service';
+import {PlayService} from './ssc/play-service/play.service';
+import {PublicMethodService} from './ssc/play-service/public-method.service';
 
 
 import { AppComponent } from './app.component';
@@ -21,6 +25,12 @@ import { TiyuComponent } from './tiyu/tiyu.component';
 import { YouhuiComponent } from './youhui/youhui.component';
 import { SscComponent } from './ssc/ssc.component';
 import { LoginAfterComponent } from './login-after/login-after.component';
+import { SscHeaderComponent } from './ssc/ssc-header/ssc-header.component';
+import { SscLeftComponent } from './ssc/ssc-left/ssc-left.component';
+import { SscDetailComponent } from './ssc/ssc-detail/ssc-detail.component';
+import { SscSelectComponent } from './ssc/ssc-select/ssc-select.component';
+import { BettingDjangoComponent } from './ssc/django/betting-django/betting-django.component';
+import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
 
 
 @NgModule({
@@ -35,12 +45,19 @@ import { LoginAfterComponent } from './login-after/login-after.component';
     TiyuComponent,
     YouhuiComponent,
     SscComponent,
-    LoginAfterComponent
+    LoginAfterComponent,
+    SscHeaderComponent,
+    SscLeftComponent,
+    SscDetailComponent,
+    SscSelectComponent,
+    BettingDjangoComponent,
+    ChaseDjangoComponent,
   ],
   imports: [
     FormsModule,
     HttpClientModule,
     BrowserModule,
+    NgZorroAntdModule.forRoot(),
     RouterModule.forRoot([
       {
         path: 'home' ,
@@ -71,7 +88,12 @@ import { LoginAfterComponent } from './login-after/login-after.component';
         path: 'GameBet',
         children: [
           {
-            path: 'GameBetPage/Ssc',
+            path: '',
+            redirectTo: 'GameBetPage/Ssc/1',
+            pathMatch: 'full'
+          },
+          {
+            path: 'GameBetPage/Ssc/:id',
             component: SscComponent
           }
         ]
@@ -103,7 +125,9 @@ import { LoginAfterComponent } from './login-after/login-after.component';
     HttpService,
     LoadingService,
     CookieService,
-    StorageService
+    StorageService,
+    PlayService,
+    PublicMethodService
   ],
   bootstrap: [AppComponent]
 })

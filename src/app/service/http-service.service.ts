@@ -129,7 +129,9 @@ export class HttpService implements HttpServiceInterface {
     body: any = {},
     isUserId: Boolean = true
   ): Observable<any> {
+
     if (isUserId) {
+      this.storage.setStorage("1958EB8322AA7B1C9996CDDCC9D908B4", "user_id");
       body["user_id"] = this.storage.getStorage("user_id");
     }
     return this.httpClient.post(url, body).pluck("result");

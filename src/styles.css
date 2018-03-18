@@ -526,7 +526,7 @@ a:hover {
 /*banner*/
 .banner {
   width: 100%!important;
-  height: 440px;
+  height: 572px !important;
   padding-top: 167px;
   position: relative;
   overflow: hidden;

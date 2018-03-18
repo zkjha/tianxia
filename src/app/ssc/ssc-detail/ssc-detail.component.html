@@ -1,0 +1,33 @@
+<!-- 头部 -->
+<div id="change" class="detail-top d-bc d-border">
+    <ul *ngIf="df " class='d-active2 play-select-title clearfix'>
+        <li *ngFor="let item of lotteryData; let i = index"
+        [class.current]="item.active"
+        (click)="onClickTop(i)"
+        [style.display]='item.isRen'>
+            <span >{{item.title}}</span>
+        </li>
+        <li *ngIf="isRen" (click)='clickRen()' class="renxuan ">任选玩法</li>
+    </ul>
+    <ul *ngIf="!df" class='d-active2 d-active2 play-select-title clearfix'>
+        <li
+        *ngFor="let item of lotteryData; let i = index"
+        [class.current]="item.active"
+        (click)="onClickTop(i)"
+        [style.display]='item.isChang'>
+            <span>{{item.title}}</span>
+        </li>
+        <li *ngIf="isRen" (click)='clickRen()' class="renxuan">常规玩法</li>
+    </ul>
+  <!-- 玩法选择区域 -->
+  <ul class="detail-content play-select-content clearfix">
+      <li class="current">
+        <dl class="sxbox" *ngFor="let item of itemData">
+          <dt class="sxlabel">{{item.title}}：</dt>
+            <dd class='d-b-hover' [class.current]="list.active" *ngFor="let list of item.child; let i = index" (click)="onClickPlay(list)">{{list.title}}</dd>
+
+        </dl>
+      </li>
+  </ul>
+</div>
+

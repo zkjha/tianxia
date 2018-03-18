@@ -1,8 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+  ViewChild
+} from "@angular/core";
 import {LoginAfterComponent} from '../login-after/login-after.component';
 import { ActivatedRoute } from "@angular/router";
 import {HttpService} from '../service/http-service.service';
 import { StorageService } from "../service/storage.service";
+import {SscDetailComponent} from "./ssc-detail/ssc-detail.component";
+import {SscSelectComponent} from "./ssc-select/ssc-select.component";
 
 @Component({
   selector: 'app-ssc',
@@ -10,12 +18,17 @@ import { StorageService } from "../service/storage.service";
   styleUrls: ['./ssc.component.css']
 })
 export class SscComponent implements OnInit {
-
+  playData: Object = {};
+  isDetail = true;
   constructor(
     private routerInfo: ActivatedRoute,
     private http: HttpService,
     private storage: StorageService,
   ) { }
+
+  // 头部
+  @ViewChild(SscDetailComponent) private SscDetail: SscDetailComponent;
+  @ViewChild(SscSelectComponent) private SscSelect: SscSelectComponent;
 
   ngOnInit() {
     // 抓取传递过来的id
@@ -33,11 +46,11 @@ export class SscComponent implements OnInit {
           // this._isSpinning = false;
           //
           // this.playSelect.removeData();
-          // this.playSelect.onClickBetType("default");
-          // this.playDetail.getPlayData();
+          this.SscSelect.onClickBetType("default");
+          this.SscDetail.getPlayData();
           // this.playTime.init();
           // this.playInfo.onClickBetlist();
-          console.log(data)
+          console.log(data);
         });
     });
   }
@@ -106,6 +119,23 @@ export class SscComponent implements OnInit {
       });
     });
     return arr;
+  }
+  getGameData(item) {
+    let params = {
+      id: item.id
+    };
+    this.http.postRx("/api/Games/getPlayDetail", params).subscribe(data => {
+      this.playData = data;
+      console.log(this.playData)
+    });
+  }
+  isHideDetail(type) {
+    // console.log(type)
+    if (type == "default") {
+      this.isDetail = true;
+    } else if (type == "chase") {
+      this.isDetail = false;
+    }
   }
 
 }

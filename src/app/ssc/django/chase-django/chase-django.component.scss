@@ -1,0 +1,94 @@
+.title {
+    height: 35px;
+    background: #105fbe;
+    text-align: right;
+    box-sizing: border-box;
+    border-radius: 10px 10px 0 0;
+    span {
+        margin: 2px 5px 0 0;
+        font-size: 18px;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.cont {
+    height: 55px;
+    background: #105fbe;
+    font-size: 17px;
+    color: #fff;
+    line-height: 55px;
+    padding: 0 60px;
+}
+
+.top-header {
+    background: #105fbe;
+    height: 30px;
+    position: relative;
+    .detail-top {
+        height: 10px;
+        width: 564px;
+        margin: 0 auto;
+        background: url(../image/line_bg.png);
+    }
+    .content {
+        min-height: 130px;
+        max-height: 130px;
+        overflow: hidden;
+        padding: 0px;
+        width: 544px;
+        background: #fff;
+        position: relative;
+        left: 10px;
+        top: 10px;
+        overflow: auto;
+    }
+    .bottom-img {
+        height: 10px;
+        width: 544px;
+        margin: 0 auto;
+        background: url(../image/jag_bg.png);
+        position: relative;
+        left: 0;
+        top: 10px;
+    }
+}
+
+.top-content {
+    box-sizing: border-box;
+    padding-top: 135px;
+    background: #f0f0f0;
+    height: 264px;
+    border-radius: 0 0 10px 10px;
+}
+
+.flex {
+    color: #000;
+    display: flex;
+    margin: 5px 0 5px 40px;
+    .b-right {
+        color: rgb(255, 0, 0)
+    }
+}
+
+.sum {
+    text-align: center;
+    font-size: 16px;
+    margin: 5px;
+    span {
+        color: #105fbe;
+    }
+}
+
+.bottom {
+    background: #fff;
+    height: 48px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+    line-height: 48px;
+}
+
+.li {
+    display: flex;
+    margin: 8px 10px 0 10px;
+}

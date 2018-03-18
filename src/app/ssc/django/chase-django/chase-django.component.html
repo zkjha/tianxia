@@ -1,0 +1,60 @@
+<div class="title d-bc">
+    <span (click)="handleCancel()">X</span>
+</div>
+<div class="cont d-bc">
+    <span>{{title}}</span>
+    <span>{{allTimes}}</span>
+</div>
+<div class="top-header d-bc">
+    <div class='detail-top'>
+        <div class="content">
+            <ul>
+                <li class="li" *ngFor="let item of betData; let i = index">
+                    <div style="width:200px">
+                        <span>[{{item.htmlData.playTitle}}_{{item.htmlData.playName}}]</span>
+                        <span>{{item.htmlData.codeSplit}}</span>
+                        <!--<nz-popover [nzTitle]="item.htmlData.quantityTitle" [nzTrigger]="'hover'" [nzPlacement]="'rightTop'">-->
+                            <!--<span nz-popover>[详情]</span>-->
+                            <!--<ng-template #nzTemplate>-->
+                                <!--<div>-->
+                                    <!--<p>{{item.code}}</p>-->
+                                <!--</div>-->
+                            <!--</ng-template>-->
+                        <!--</nz-popover>-->
+                    </div>
+                    <div style="width:250px">
+                        <span>[{{item.htmlData.currencyName}}]</span>
+                        <span> 模式：{{item.bonus | number:'1.2-2'}} - {{item.returnPer}}%</span>
+                    </div>
+                    <div style="width:200px">
+                        <span class="ofynum-li-m">{{item.count}}注</span>
+                        <span class="ofynum-li-m">{{item.times}}倍</span>
+                        <span class="ofynum-li-m">￥{{item.htmlData.amount | number:'1.2-2'}}</span>
+                    </div>
+                    <div>
+                        <i class="anticon anticon-delete" (click)=onDelete(i)></i>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="bottom-img"></div>
+    </div>
+</div>
+<div class='top-content'>
+    <div class="flex">
+        <div class="b-left">温馨提示：</div>
+        <div class="b-right">本平台每单最高奖金20万，单期最高奖金60万，请会员谨慎投注！</div>
+    </div>
+    <div class="flex">
+        <div class="b-left">特别提醒：</div>
+        <div class="b-right">本平台任何彩种单挑最高奖金2万</div>
+    </div>
+    <div class='sum'>
+        <p>总单数：{{betData.length}} 付款总金额：<span>{{allAmount | number:'1.2-2'}}</span> 元</p>
+    </div>
+    <div class="bottom">
+        <span class='django-buttton django-button-success d-bc' (click)="emitDataOutside()">确定</span>
+        <span class="django-buttton" (click)="handleCancel()">取消</span>
+    </div>
+</div>

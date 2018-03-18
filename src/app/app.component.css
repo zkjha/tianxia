@@ -476,7 +476,7 @@ a:hover {
 /*banner*/
 .banner {
   width: 100%!important;
-  height: 440px;
+  height:  606px !important;
   padding-top: 167px;
   position: relative;
   overflow: hidden;
@@ -1063,6 +1063,12 @@ a:hover {
   height: 28px;
   float: left;
   margin-right: 10px;
+  /*background: black;*/
+  /*text-align: center;*/
+  /*color: white;*/
+  /*line-height: 27px;*/
+  /*border-radius: 5px;*/
+
 }
 .lotteryMain .hd .a1 {
   background-image: url(/assets/lottery/lotteryTxt1.png);

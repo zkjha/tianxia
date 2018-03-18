@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
         username: this.username,
       };
       console.log("111")
-      this.http.postRx(`http://www.lurck.net/captcha/getCaptchaCode`, params).subscribe(data => {
+      this.http.postRx(`/api/captcha/getCaptchaCode`, params).subscribe(data => {
         $(".codeeR").html(data.vcode);
       });
     }

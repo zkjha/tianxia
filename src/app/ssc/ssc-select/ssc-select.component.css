@@ -1541,7 +1541,16 @@ body>p{
   padding: 10px;
   border-bottom: 1px solid #d5d5d5
 }
+.panel-section .bet-btn input,.panel-section .bet-btn input:hover{
 
+  display: block;
+  width: 184px;
+  height: 53px;cursor: pointer;
+  outline: none;border-radius: 0;
+  margin-left: 5px;
+  margin-top: 14px;
+  background: url(/assets/Images/game/entertz.png) no-repeat;
+}
 
 .panel-section .bet-btn {
   padding:1px 5px;
@@ -1640,7 +1649,7 @@ body>p{
 .panel-select {
 
   padding: 4px 5px;
-  width: 780px;
+  width: 770px;
   background-color: #17171D;
   color: #7b7b7b;
   float: left;
@@ -1765,14 +1774,14 @@ body>p{
   padding: 0 5px
 }
 
-.panel-select .result .close a {
+.close a {
   display: inline-block;
   *zoom: 1;
   *display: inline;
   width: 12px;
   height: 0;
   padding-top: 12px;
-  background: url("/assets/Images/game/close.png") 0 0 no-repeat;
+  background: url("/assets/Images/game/close.png") no-repeat;
   vertical-align: middle;
   overflow: hidden
 }
@@ -1780,9 +1789,10 @@ body>p{
 .panel-btn {
   float: right;
   position: absolute;
-  right: 10px;
-  top: 26px;
-  width: 180px;}
+  right: 4px;
+  top: 15px;
+  width: 180px;
+}
 
 .panel-btn a {
   display: inline-block;
@@ -2730,6 +2740,18 @@ div.play-select .prompt{
   color: #333;
 }
 
+.ball-title strong{
+  width: 74px;
+  height: 27px;
+  display: block;
+  line-height: 27px;
+  text-align: center;
+  font-size: 15px;
+  color: #000;
+  font-weight: normal;
+  background: url(/assets/Images/game/icon/weibg.png) no-repeat;
+
+}
 .ball-title span{
   color: #000;
 }
@@ -2840,8 +2862,16 @@ div.play-select .prompt{
   border-radius: 15px;
   border: 0;
 }
-
-
+.touzhu{
+  margin-top: 80px;
+}
+.bei>input{
+  width: 80px;
+  border: 1px solid #ccc;
+}
+.ofynum-li{
+  display: flex;
+}
 
 
 
