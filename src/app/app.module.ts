@@ -33,6 +33,54 @@ import { BettingDjangoComponent } from './ssc/django/betting-django/betting-djan
 import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
 
 
+
+import { TransactionRecordComponent } from "./center/transaction-record/transaction-record.component";
+import { FinanceComponent } from "./center/finance/finance.component";
+import { ReportComponent } from "./center/report/report.component";
+import { AccountComponent } from "./center/account/account.component";
+import { ProxyComponent } from "./center/proxy/proxy.component";
+import { MyInfoComponent } from "./center/account/my-info/my-info.component";
+import { SecurityCenterComponent } from "./center/account/security-center/security-center.component";
+import { UpdatePasswordComponent } from "./center/account/update-password/update-password.component";
+import { DepositComponent } from "./center/finance/deposit/deposit.component";
+import { AliPayComponent } from "./center/finance/deposit/ali-pay/ali-pay.component";
+import { WithdrawalsComponent } from "./center/finance/withdrawals/withdrawals.component";
+import { QcCodeComponent } from "./center/finance/deposit/qc-code/qc-code.component";
+import { AccountCenterComponent } from "./center/proxy/account-center/account-center.component";
+import { MemberListComponent } from "./center/proxy/member-list/member-list.component";
+import { TeamStatisticsComponent } from "./center/proxy/team-statistics/team-statistics.component";
+import { StatisticsTableComponent } from "./center/proxy/statistics-table/statistics-table.component";
+import { LowerWaterComponent } from "./center/proxy/lower-water/lower-water.component";
+import { PointsRecordComponent } from "./center/proxy/points-record/points-record.component";
+import { RechargeRecordComponent } from "./center/proxy/recharge-record/recharge-record.component";
+import { WithdrawRecordComponent } from "./center/proxy/withdraw-record/withdraw-record.component";
+import { BettingComponent } from "./center/transaction-record/betting/betting.component";
+import { ChaseNumberComponent } from "./center/transaction-record/chase-number/chase-number.component";
+import { TurnoverComponent } from "./center/transaction-record/turnover/turnover.component";
+import { RechargeComponent } from "./center/transaction-record/recharge/recharge.component";
+import { IntegralComponent } from "./center/transaction-record/integral/integral.component";
+import { WithdrawalsRepComponent } from "./center/transaction-record/withdrawals-rep/withdrawals-rep.component";
+import { TrackZuihaoDjangoComponent } from "./center/transaction-record/chase-number/track-zuihao-django/track-zuihao-django.component";
+import { LogInComponent } from "./center/proxy/log-in/log-in.component";
+import { SystemInfoComponent } from "./center/account/my-news/system-info/system-info.component";
+import { SystemPlacardComponent } from "./center/account/my-news/system-placard/system-placard.component";
+import { UserTabComponent } from "./center/report/user-tab/user-tab.component";
+import { BonusDetailsComponent } from "./center/account/bonus-details/bonus-details.component";
+import { MonChangeComponent } from "./center/finance/mon-change/mon-change.component";
+import { LightChargeComponent } from "./center/finance/light-charge/light-charge.component";
+import { WeiChatComponent } from "./center/finance/wei-chat/wei-chat.component";
+import { PeakChargeComponent } from "./center/finance/peak-charge/peak-charge.component";
+import { QqPlayComponent } from "./center/finance/qq-play/qq-play.component";
+import { ZfbPlayComponent } from "./center/finance/zfb-play/zfb-play.component";
+import { MyNewsComponent } from "./center/account/my-news/my-news.component";
+import { MyLoginInfoComponent } from "./center/account/my-login-info/my-login-info.component";
+import { XiajiguanliComponent } from "./center/proxy/xiajiguanli/xiajiguanli.component";
+import { UserChargeComponent } from "./center/finance/user-charge/user-charge.component";
+import { ChartComponent } from "./center/chart/chart.component";
+import { XiajitouzhuComponent } from './center/proxy/xiajitouzhu/xiajitouzhu.component';
+import { FirstWithdrawComponent} from "./center/proxy/first-withdraw/first-withdraw.component";
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +100,51 @@ import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.com
     SscSelectComponent,
     BettingDjangoComponent,
     ChaseDjangoComponent,
+    TransactionRecordComponent,
+    FinanceComponent,
+    ReportComponent,
+    AccountComponent,
+    ProxyComponent,
+    MyInfoComponent,
+    SecurityCenterComponent,
+    UpdatePasswordComponent,
+    DepositComponent,
+    AliPayComponent,
+    WithdrawalsComponent,
+    QcCodeComponent,
+    AccountCenterComponent,
+    MemberListComponent,
+    TeamStatisticsComponent,
+    StatisticsTableComponent,
+    LowerWaterComponent,
+    PointsRecordComponent,
+    RechargeRecordComponent,
+    WithdrawRecordComponent,
+    BettingComponent,
+    ChaseNumberComponent,
+    TurnoverComponent,
+    RechargeComponent,
+    IntegralComponent,
+    WithdrawalsRepComponent,
+    TrackZuihaoDjangoComponent,
+    LogInComponent,
+    SystemInfoComponent,
+    SystemPlacardComponent,
+    UserTabComponent,
+    BonusDetailsComponent,
+    MonChangeComponent,
+    LightChargeComponent,
+    WeiChatComponent,
+    PeakChargeComponent,
+    QqPlayComponent,
+    ZfbPlayComponent,
+    MyNewsComponent,
+    MyLoginInfoComponent,
+    XiajiguanliComponent,
+    UserChargeComponent,
+    ChartComponent,
+    XiajitouzhuComponent,
+    FirstWithdrawComponent,
   ],
   imports: [
     FormsModule,

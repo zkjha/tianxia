@@ -1,0 +1,200 @@
+
+<div class='main'>
+  <div class='content'>
+    <app-time (Time)='timeChange($event)'></app-time>
+    <div style='width:60px'>
+      统计时间：
+    </div>
+    <div style='width:150px'>
+      <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'" ></nz-datepicker>
+    </div>
+    <div style='width:30px'>
+      至:
+    </div>
+    <div style='width:200px'>
+      <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'" ></nz-datepicker>
+    </div>
+    <div>
+      <span class="gm-button gm-button-success d-bc" (click)="click()">查询</span>
+    </div>
+  </div>
+  <div class='top'>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe65d;</i>
+        团队人数
+      </div>
+      <div class='bottom-row'>
+        <span>{{data.userCount}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe68e;</i>
+        在线人数
+      </div>
+      <div class='bottom-row'>
+        <span>{{data.onlineCount}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe604;</i>
+        今日注册
+      </div>
+      <div class='bottom-row'>
+        <span>{{data.newCount}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        首冲人数
+      </div>
+      <div class='bottom-row'>
+        <span>{{data.firstDepositCount | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe627;</i>
+        团队余额
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.usable | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+  </div>
+  <div class='top'>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe627;</i>
+        返点总额
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.betReturnSelf | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe605;</i>
+        充值总额
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.recharge | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        取款总额
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.cashSuc | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        彩票投注
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.bet | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        彩票中奖
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.winBet | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        彩票盈亏
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.proAndLoss | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+  </div>
+  <div class="top">
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        真人转入
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.agDepositFund | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        真人转出
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.agWithdrawFund | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        真人投注量
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.liveBet | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        真人中奖
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.liveWinBet | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        真人盈亏
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.liveYingkui | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+    <div>
+      <div class='top-row'>
+        <i class="iconfont">&#xe640;</i>
+        总盈亏
+      </div>
+      <div class='bottom-row'>
+        <span>￥{{data.allYingkui | number:'1.2-2'}}</span>
+        <i class="iconfont">&#xe68e;</i>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--折线图-->
+<!--<app-chart></app-chart>-->

@@ -1,0 +1,101 @@
+<!-- <app-time></app-time> -->
+<app-time (Time)='timeChange($event)'></app-time>
+<div class="my-table-top-new">
+  <div style='width:60px'>时间范围</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'" ></nz-datepicker>
+  </div>
+  <div style='width:30px'>至</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+  </div>
+  <div class='m-left'>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+  </div>
+
+</div>
+<nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" (nzSelectChange)='onType($event)'>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      彩票
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      AG娱乐
+    </ng-template>
+  </nz-tab>
+</nz-tabset>
+
+
+<div class="my-table-content" *ngIf='getType == "cp"'>
+  <nz-table #nzTable [nzDataSource]="betList" [nzIsPagination]="false" [nzBordered]="true">
+    <thead nz-thead>
+      <tr>
+        <th>记录时间</th>
+        <th>用户名</th>
+        <th>期号</th>
+        <th>游戏名称</th>
+        <th>投注金额</th>
+        <th>状态</th>
+        <th>奖金</th>
+        <th>详情</th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+        <td>{{item.addTime*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.issue}}</td>
+        <td>{{item.gameTitle}}</td>
+        <td>{{item.betAmount}}</td>
+        <td>
+          <span *ngIf="item.status==-1">撤单</span>
+          <span *ngIf="item.status==0">未开奖 <a (click)='revoked(item.id)'>撤单</a></span>
+          <span *ngIf="item.status==1">已封单</span>
+          <span *ngIf="item.status==2">未中奖</span>
+          <span *ngIf="item.status==3">已中奖</span>
+        </td>
+        <td>{{item.winAmount}}</td>
+        <td>
+          <a (click)="clickList(item)">查看详情</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+<div class="my-pagination-right" *ngIf='getType == "cp"'>
+    <nz-pagination (click)='getList()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+  </div>
+
+<div class="my-table-content" *ngIf='getType == "ag"'>
+    <nz-table #nzTable [nzDataSource]="betDetailsList" [nzIsPagination]="false" [nzBordered]="true">
+      <thead nz-thead>
+        <tr>
+            <th>记录时间</th>
+            <th>用户名</th>
+            <th>订单号</th>
+            <th>游戏分类</th>
+            <th>游戏编码</th>
+            <th>投注金额</th>
+            <th>奖金</th>
+            <th>盈亏</th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+            <td>{{item.betTime}}</td>
+            <td>{{item.username}}</td>
+            <td>{{item.betOrderNo}}</td>
+            <td>{{item.gameCategory}}</td>
+            <td>{{item.gameCode}}</td>
+            <td>{{item.betAmount}}</td>
+            <td>{{item.winAmount}}</td>
+            <td>{{item.netPnl}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+<div class="my-pagination-right" *ngIf="getType == 'ag'">
+  <nz-pagination (click)='getList()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+</div>

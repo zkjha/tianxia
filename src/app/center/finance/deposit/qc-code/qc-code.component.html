@@ -1,0 +1,40 @@
+<div class="sec-con">
+  <div class="payway">
+    <p style="margin:15px 0;">如遇扫码不成功或被拦截提示该商户不支持时，请间隔1分钟重新生成二维码多次扫描，或者降低支付金额即可。请不要支付整数扫描！</p>
+    <span class="fl-left">充值方式</span>
+    <div class="payicon">
+      <div class="selectpayway " [class.selected]="rechargeType == 21">
+        <img (click)="getRechargeType(21)"  src="assets/image/personal-center/financial-center/zfbpay.png">
+      </div>
+      <div class="selectpayway" [class.selected]="rechargeType == 11">
+        <img (click)="getRechargeType(11)"  src="assets/image/personal-center/financial-center/wxpay.png">
+      </div>
+      <div class="selectpayway" [class.selected]="rechargeType == 71">
+        <img (click)="getRechargeType(71)"  src="assets/image/personal-center/financial-center/qqpay.png">
+      </div>
+    </div>
+  </div>
+  <div class="payway-t">
+    <div>
+        <nz-input [(ngModel)]="amount" [nzType]="'number'" [nzPlaceHolder]="'请输入充值金额(元)'" ></nz-input>  
+    </div>
+    <div>
+        <span class="gm-button gm-button-success d-bc" (click)="getQrCodeStr()">充值</span>
+    </div>
+  </div>
+
+  <nz-modal [nzVisible]="isShowModal" [nzWidth]="320" [nzTitle]="'高通扫码'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
+    (nzOnOk)="handleOk($event)" [nzFooter]="false">
+    <ng-template #modalContent>
+      <div class="recharge-result">
+        <div class="modal-body" style="text-align: center;">
+          <qrcode *ngIf="isShowModal" [qrdata]="qrCodeStr" [size]="256" [level]="'M'"></qrcode>
+        </div>
+        <div class="footer">
+          <span class="django-buttton django-button-success" (click)="close()">关闭</span>
+        </div>
+      </div>
+
+    </ng-template>
+  </nz-modal>
+</div>

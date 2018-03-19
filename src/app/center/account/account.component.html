@@ -1,0 +1,26 @@
+<div class="my-content-django">
+  <div class="left">
+    <ul>
+      <li (click)="show='my-info'" [class.activeLeft]="show=='my-info'">我的信息</li>
+      <li (click)="show='security-center'" [class.activeLeft]="show=='security-center'">安全中心</li>
+      <li (click)="show='update-password'" [class.activeLeft]="show=='update-password'">修改密码</li>
+      <li (click)="show='my-news'" [class.activeLeft]="show=='my-news'">我的消息</li>
+      <li (click)="show='bouns-details'" [class.activeLeft]="show=='bouns-details'">奖金详情</li>
+      <li (click)="show='my-login-info'" [class.activeLeft]="show=='my-login-info'">登陆记录</li>
+    </ul>
+  </div>
+  <div class="right">
+    <!-- 我的信息 -->
+    <app-my-info *ngIf="show=='my-info'"></app-my-info>
+    <!-- 安全中心 -->
+    <app-security-center *ngIf="show=='security-center'" (changepw)="changepw($event)"></app-security-center>
+    <!-- 修改密码 -->
+    <app-update-password *ngIf="show=='update-password'"></app-update-password>
+    <!-- 我的消息 -->
+    <app-my-news *ngIf="show=='my-news'"></app-my-news>
+    <!-- 资金详情 -->
+    <app-bonus-details *ngIf="show=='bouns-details'"></app-bonus-details>
+    <!-- 登陆记录 -->
+    <app-my-login-info *ngIf="show=='my-login-info'"></app-my-login-info>
+  </div>
+</div>

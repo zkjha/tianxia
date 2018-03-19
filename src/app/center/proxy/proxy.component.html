@@ -1,0 +1,21 @@
+<div class="my-content-django">
+  <div class="left">
+    <ul>
+      <li (click)="show='team-statistics'" [class.activeLeft]="show=='team-statistics'">团队统计</li>
+      <li (click)="show='account-center'" [class.activeLeft]="show=='account-center'">开户中心</li>
+      <li (click)="show='statistics-table'" [class.activeLeft]="show=='statistics-table'">团队报表</li>
+      <li (click)="show='xiajiguanli'" [class.activeLeft]="show=='xiajiguanli'">下级管理</li>
+    </ul>
+  </div>
+  <div class="right">
+    <!-- 开户 -->
+    <app-account-center *ngIf="show=='account-center'"></app-account-center>
+    
+    <!-- 团队统计 -->
+    <app-team-statistics *ngIf="show=='team-statistics'"></app-team-statistics>
+    <!-- 统计报表 -->
+    <app-statistics-table *ngIf="show=='statistics-table'"></app-statistics-table>
+
+    <app-xiajiguanli *ngIf="show=='xiajiguanli'"></app-xiajiguanli>
+  </div>
+</div>

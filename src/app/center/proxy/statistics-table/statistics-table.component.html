@@ -1,0 +1,88 @@
+<app-time (Time)='timeChange($event)'></app-time>
+<div class="my-table-top-new">
+  <div style='width:150px'>
+    <nz-input [(ngModel)]="user_name" [nzPlaceHolder]="'请输入用户名'"></nz-input>
+  </div>
+  <div style='width:60px'>时间范围</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+  </div>
+  <div style='width:30px'>至</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+  </div>
+  <div class='m-left'>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查   询</span>
+    <span class="gm-button gm-button-success d-bc" (click)="backUp()">返回上级</span>
+    <span class="gm-button gm-button-success d-bc" (click)="backMaxUp()">返回最上级</span>
+  </div>
+
+</div>
+  <nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" (nzSelectChange)='onType($event)'>
+      <nz-tab >
+        <ng-template #nzTabHeading>
+          彩票
+        </ng-template>
+      </nz-tab>
+      <nz-tab >
+          <ng-template #nzTabHeading>
+            AG娱乐
+          </ng-template>
+        </nz-tab>
+    </nz-tabset>
+
+  <div class="my-table-content">
+    <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+      <thead nz-thead>
+        <tr>
+          <th nz-th>
+            <span>用户名</span>
+          </th>
+          <!--<th nz-th>-->
+            <!--<span>上级</span>-->
+          <!--</th>-->
+          <!--<th nz-th>-->
+            <!--<span>用户层级</span>-->
+          <!--</th>-->
+          <th nz-th>
+            <span>充值金额</span>
+          </th>
+          <th nz-th>
+            <span>取款金额</span>
+          </th>
+          <th nz-th>
+            <span>投注金额</span>
+          </th>
+          <th nz-th>
+            <span>中奖金额</span>
+          </th>
+          <th nz-th>
+              <span>返点金额</span>
+            </th>
+            <th nz-th>
+                <span>盈亏</span>
+              </th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let item of nzTable.data;let i = index;">
+          <td nz-td>
+              {{item.user_name}}
+              <span class="lower" *ngIf=" i!=0 && item.lowersCount!=0" (click)="getLower(item.user_name,item.pid)">下级</span>
+          </td>
+          <!--<td nz-td>{{item.pid}}</td>-->
+          <!--<td nz-td>{{item.tier}}</td>-->
+          <td nz-td>{{item.recharge | number:'1.2-2'}}</td>
+          <td nz-td>{{item.cash | number:'1.2-2'}}</td>
+          <td nz-td>{{item.singleBet | number:'1.2-2'}}</td>
+          <td nz-td>{{item.winBet | number:'1.2-2'}}</td>
+          <!--<td>{{item.manualTrans}}</td>-->
+          <td nz-td>{{item.betReturnSelf | number:'1.2-2'}}</td>
+          <td nz-td>{{item.yingkui | number:'1.2-2'}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="my-pagination-right">
+      <nz-pagination (click)='clickPagination()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+  </div>

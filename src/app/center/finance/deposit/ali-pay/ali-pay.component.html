@@ -1,0 +1,56 @@
+<div class="sec-con">
+  <div class="payway">
+    <div class="payicon">
+      <span class="zfbzwy">
+        <i></i>充值步骤：第一步：提交申请->第二步：登录【手机支付宝】-> 第三步：点击【转账】-> 第四步：点击【转账到银行卡】-> 第五步：根据以上信息显示的金额按步骤完成充值。 转账时间：一般1分钟内到账，如无到账的请联系客服查询。</span>
+      <span class="zfbzwy">
+        <i></i>特别说明：晚上23:00至01:00，支付宝与银行结算时间，无法正常到账，有延迟。此期间请勿充值。</span>
+      <span class="zfbzwy">
+        <i></i>特别注意：每次充值必须重新到这页面重新生成订单，按生成的金额付款，否则无法自动到账。</span>
+      <span class="zfbzwy">
+        <i></i>客服建议不要充值整数金额，方便后台为您核实入账！转账显示到账成功后联系客服即可到账！使用网银转账和支付宝转账都可充值！</span>
+      <span class="zfbzwy">
+        <i></i>平台银行卡不定时更新维护，每一次充值之前都必须点击充值渠道获取最新卡号，若因为没有点击充值渠道生成充值记录直接进行转账造成的资金丢失，平台无法为您追回需自行承担！</span>
+      <span class="zfbzwy">
+        <i></i>非常感谢您的配合 !</span>
+    </div>
+  </div>
+  <!-- <div class="payway">
+    <span class="payicon fl-left">充值金额
+      <input name="recharge" type="text" placeholder="请输入充值金额">
+      <span class="gm-button gm-button-success d-bc" (click)="goRecharge()">充值</span>
+    </span>
+  </div> -->
+  <div class="payway-t">
+      <div>
+          <nz-input [(ngModel)]="amount" [nzType]="'number'" [nzPlaceHolder]="'请输入充值金额(元)'" ></nz-input>  
+      </div>
+      <div>
+          <span class="gm-button gm-button-success d-bc" (click)="goRecharge()">充值</span>
+      </div>
+    </div>
+
+  <nz-modal [nzVisible]="isShowModal" [nzTitle]="'支付宝转网银 以下是确保您充值到账的重要信息'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
+    (nzOnOk)="handleOk($event)" [nzFooter]="false">
+    <ng-template #modalContent>
+      <div class="recharge-result">
+        <p>收款银行： {{rechargeResult?.bank}}</p>
+        <p>收款人账户：{{rechargeResult?.name}}</p>
+        <p>收款人账号: {{rechargeResult?.card}}</p>
+        <p>开户银行名称：{{rechargeResult?.bank}}</p>
+        <p>金额：
+          <span class="text-red">{{rechargeResult?.order_amount}}</span>
+        </p>
+        <p class="text-tips">*必须按显示的金额付款否则无法自动到账</p>
+        <div class="timer-down">
+          <p *ngIf="isShowTimer">请在
+            <span>{{timer}}</span>内完成付款</p>
+          <p *ngIf="!isShowTimer">本订单已失效,请重新提交</p>
+        </div>
+        <div class="footer" >
+          <span class="django-buttton django-buttton-success" (click)="close()">关闭</span>
+        </div>
+      </div>
+    </ng-template>
+  </nz-modal>
+</div>

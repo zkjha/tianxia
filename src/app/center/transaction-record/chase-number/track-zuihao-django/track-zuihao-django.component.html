@@ -1,0 +1,82 @@
+<div>
+    <div class="main">
+        <div class="main-padding django-list">
+            <div class="list-left">彩种</div>
+            <div>{{zuihaoData.gameTitle}}</div>
+        </div>
+        <div class="main-padding django-list">
+            <div class="list-left">状态</div>
+            <div *ngIf="data.status == 0">未开始</div>
+            <div *ngIf="data.status == 1">进行中</div>
+            <div *ngIf="data.status == 2">已停止</div>
+            <div *ngIf="data.status == 3">已结束</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-padding django-list">
+            <div class="list-left">开始时间</div>
+            <div>{{data.startTime * 1000 | date:'yyyy-MM-dd HH:mm' }}</div>
+        </div>
+        <div class="main-padding django-list">
+            <div class="list-left">结束时间</div>
+            <div>{{data.endTime * 1000 | date:'yyyy-MM-dd HH:mm' }}</div>
+        </div>
+    </div>
+
+    <div class="ofynum ">
+        <ul>
+            <li class="ofynum-li" *ngFor="let item of data.detail; let i = index">
+                <div style="width:350px">
+                    <span>第{{item.issue}}期</span>
+                </div>
+                <div style="width:100px">
+
+                    <span>金额:{{item.betAmount | number:'1.2-2'}}</span>
+                </div>
+                <div style="width:100px">
+                    <span class="ofynum-li-m">{{item.betCont}}注</span>
+                    <span class="ofynum-li-m">{{item.betTimes}}倍</span>
+                </div>
+                <div>
+                    <span *ngIf="item.status == -1">撤单</span>
+                    <span *ngIf="item.status == 0">未开奖
+                        <span class='lanse' (click)='revoked(item.id)'>[撤单]</span>
+                    </span>
+                    <span *ngIf="item.status == 1">已封单</span>
+                    <span *ngIf="item.status == 2">未中奖</span>
+                    <span *ngIf="item.status == 3">已中奖</span>
+                    
+                </div>
+
+            </li>
+
+        </ul>
+    </div>
+    <div class="main">
+        <div class="main-padding django-list">
+            <div class="list-left">投注金额</div>
+            <div>{{data.betAmount | number:'1.2-2'}}</div>
+        </div>
+        <div class="main-padding django-list">
+            <div class="list-left">中奖金额</div>
+            <div>{{data.winAmount | number:'1.2-2'}}</div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-padding django-list">
+            <div class="list-left">撤单金额</div>
+            <div>{{data.cancelAmount | number:'1.2-2'}}</div>
+        </div>
+        <div class="main-padding django-list">
+            <div class="list-left">中奖后停止</div>
+            <div>{{data.winStop == 0 ? '否' : '是'}}</div>
+        </div>
+    </div>
+
+    <div class="django-footer">
+        <button nz-button [nzType]="'default'" [nzSize]="'large'" (click)="handleCancel()">
+            关闭
+        </button>
+
+    </div>
+</div>

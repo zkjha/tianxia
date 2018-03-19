@@ -1,0 +1,88 @@
+<div class="withdrawBox" *ngIf="isMain">
+  <div class="withdraw-title">
+    <div class="title">早上10点-凌晨2点</div>
+    <div class="explain">通常您的提款申请只需3-10分钟即可到帐, 高峰期可能需要15分钟左右. 若超过30分钟未到帐, 请及时联系在线客服.</div>
+  </div>
+  <div class="withdraw-info">
+    <span class="grid">账户总额<br><span content="balance-account">{{usableAmount}}</span></span>
+    <span class="grid">今日可提现次数<br><span id="max_withdraw_times">3次免费，2次收取手续费</span></span>
+    <span class="grid">提现次数周期<br><span id="withdraw-period">早上10:00 - 次日凌晨02:00</span></span>
+  </div>
+  <div class="row">
+    <div class="th">取款金额:</div>
+    <nz-input-number  class="inp" (ngModelChange)='changeModel()' [(ngModel)]="timon"  [nzMin]="0" name="trans" [nzStep]="1"></nz-input-number>
+    <div class="tip"><span>{{AMOUNT}}</span></div>
+  </div>
+  <div class="row">
+    <div class="th">&nbsp;</div>
+    <div class="td td1">1、单笔取款限额:最低<span >100</span>,最高<span>1000000</span><br>2、通常您的提款申请只需3分钟-10分钟即可到账，高峰期可能需要15分钟左右。如超过30分钟未到账，请及时联系在线客服。
+      <br>3、取款以整数为准，如若出现取款如100元2角3分6厘，为了加快到账，直接回收3分6厘。
+    </div>
+  </div>
+  <div class="row auto clear_fix">
+    <div class="th">收款银行卡:</div>
+    <div class="td auto">
+      <div class="item" (click)="tobankBox()" *ngIf="bankLen == 0"><i class="fa fa-plus-circle"></i>绑定新的银行卡</div>
+      <div class="item" *ngIf="bankLen > 0">{{userInfor.bankInfo[0].bankName}} {{userInfor.bankInfo[0].cardNum}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="th">资金密码:</div>
+    <label class="td">
+      <nz-input [(ngModel)]="pw" [nzSize]="'large'" type="password"></nz-input>
+    </label>
+    <div class="tip" for="tip-money_password"><i class="fa fa-exclamation-circle"></i>请输入资金密码(该密码为平台资金密码)</div>
+  </div>
+  <div class="row">
+    <div class="th">&nbsp;</div>
+    <div class="td td2"><a class="gm-button gm-button-success d-bc rig" (click)="getWithdraw()">立即取款</a>7x24小时急速取款服务</div>
+  </div>
+</div>
+
+<!--绑定银行卡-->
+<div class="phoneBox" *ngIf="bankBox">
+  <form class="account-edit-form" #formBank="ngForm">
+    <div class="row">
+      <div class="th">开户银行:</div>
+      <label class="td">
+        <select name="bank_name" placeholder="">
+          <option value="工商银行">工商银行</option><option value="农业银行">农业银行</option>
+          <option value="建设银行">建设银行</option><option value="中国银行">中国银行</option>
+          <option value="招商银行">招商银行</option><option value="交通银行">交通银行</option>
+          <option value="民生银行">民生银行</option><option value="光大银行">光大银行</option>
+          <option value="浦发银行">浦发银行</option><option value="兴业银行">兴业银行</option>
+          <option value="中信银行">中信银行</option><option value="邮政储蓄">邮政储蓄</option>
+          <option value="平安银行">平安银行</option><option value="广发银行">广发银行</option>
+          <option value="上海银行">上海银行</option><option value="北京银行">北京银行</option>
+          <option value="华夏银行">华夏银行</option><option value="上海农商">上海农商</option>
+          <option value="北京农商">北京农商</option><option value="渤海银行">渤海银行</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <div class="th">开户银行地址:</div>
+      <label class="td"><input name="bank_address" placeholder="" ngModel></label>
+      <div class="tip" for="tip-bank_address"><i class="fa fa-info-circle"></i>请输入开户银行地址</div>
+    </div>
+    <div class="row">
+      <div class="th">开户名:</div>
+      <label class="td"><input name="card_user" placeholder="" ngModel></label>
+      <div class="tip" for="tip-card_user"><i class="fa fa-info-circle"></i>请输入开户名</div>
+    </div>
+    <div class="row">
+      <div class="th">银行卡号:</div>
+      <label class="td"><input name="cardCode" placeholder="" value="" ngModel/></label>
+      <div class="tip"><i class="fa fa-info-circle"></i>请输入银行卡号</div>
+    </div>
+    <div class="row">
+      <div class="th">资金密码:</div>
+      <label class="td"><input name="moneyPassword" type="password" placeholder="" ngModel/></label>
+      <div class="tip"><i class="fa fa-info-circle"></i>请输入资金密码(该密码为平台资金密码)</div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <input type="hidden" name="uid" value="" placeholder="">
+      <a class="gm-button gm-button-success d-bc" (click)="sendBank(formBank.value)">提交</a>
+      <a class="gm-button" (click)="closePhone()">返回上一页</a>
+    </div>
+  </form>.
+</div>

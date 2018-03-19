@@ -1,0 +1,330 @@
+//.trade-con .time-picker {
+//  font-size: 16px;
+//  padding: 20px
+//}
+//
+//.trade-con .time-picker input {
+//  vertical-align: top;
+//  background: none;
+//  cursor: pointer;
+//  margin: 0 10px;
+//  width: 100px;
+//  border: none;
+//  border-bottom: solid 1px #ccc;
+//  box-shadow: none;
+//  border-radius: 0;
+//}
+//
+//.trade-con .time-picker span {
+//  display: inline-block;
+//  border-radius: 5px;
+//  background-color: #ff9f15;
+//  color: #fff;
+//  cursor: pointer;
+//}
+//
+//.trade-con .time-picker input {
+//  vertical-align: top;
+//  background: none;
+//  cursor: pointer;
+//  margin: 0 10px;
+//  width: 100px;
+//  border: none;
+//  border-bottom: solid 1px #ccc;
+//  box-shadow: none;
+//  border-radius: 0
+//}
+//
+//.table-qk th {
+//  background-color: #eee;
+//  text-align: center;
+//  padding: 10px;
+//  font-size: 14px;
+//  border: 1px solid #ccc;
+//}
+//
+//.table-qk td {
+//  background-color: #fff;
+//  text-align: center;
+//  padding: 10px;
+//  font-size: 14px;
+//  border: 1px solid #ccc;
+//}
+//
+//.table-qk td span.view {
+//  cursor: pointer;
+//  color: #2d97dd;
+//}
+//
+//.tablepage {
+//  width: 96%;
+//  margin: auto;
+//  text-align: right;
+//  font-size: 14px;
+//  color: #777
+//}
+//
+//.tablepage a {
+//  display: inline-block;
+//  border-radius: 5px;
+//  background-color: #eee;
+//  padding: 0 10px;
+//  vertical-align: top;
+//  font-size: 16px;
+//  color: #666;
+//}
+//
+//.tablepage input {
+//  width: 40px;
+//  height: 20px;
+//  line-height: 20px;
+//}
+//
+//.tablepage select {
+//  width: 60px
+//}
+//
+//.track-code {
+//  font-size: 16px;
+//  padding: 20px 20px 0;
+//  overflow: hidden
+//}
+//
+//.track-code .fl-left {
+//  margin-right: 20px;
+//  margin-bottom: 20px;
+//}
+//
+//.track-code .fl-left input {
+//  width: 136px;
+//  background-color: #fff;
+//  border: 1px solid #ccc;
+//  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+//  transition: border linear .2s, box-shadow linear .2s;
+//  display: inline-block;
+//  padding: 5px 6px;
+//  font-size: 14px;
+//  color: #555;
+//  vertical-align: middle;
+//  -webkit-border-radius: 4px;
+//  -moz-border-radius: 4px;
+//  border-radius: 4px;
+//}
+//
+//.track-code .fl-left select {
+//  width: 150px;
+//  padding: 4px 6px;
+//  border: solid 1px #ddd;
+//  border-radius: 4px;
+//}
+//
+//.track-code span {
+//  display: inline-block;
+//  height: 26px;
+//  line-height: 26px;
+//  width: 100px;
+//  text-align: center;
+//  cursor: pointer;
+//}
+//
+///*弹窗table*/
+//.model-table {
+//  width: 100%;
+//  table-layout: fixed;
+//}
+//
+//.model-table th {
+//  width: 20%;
+//  text-align: left;
+//  background-color: #ffffff;
+//  border-top: 0px;
+//  border-left: 0px;
+//  border-right: 0px;
+//  border-bottom: 1px #EEEEEE solid;
+//  word-wrap: break-word;
+//  word-break: break-all;
+//}
+//
+//.model-table td {
+//  width: 30%;
+//  text-align: center;
+//  background-color: #ffffff;
+//  border-top: 0px;
+//  border-left: 0px;
+//  border-right: 0px;
+//  border-bottom: 1px #EEEEEE solid;
+//  word-wrap: break-word;
+//  word-break: break-all;
+//}
+//
+//.top {
+//  padding-left: 20px;
+//  button {
+//    margin: 10px;
+//  }
+//}
+//.trade-con .time-picker {
+//  font-size: 16px;
+//  padding: 20px
+//}
+//
+//.trade-con .time-picker input {
+//  vertical-align: top;
+//  background: none;
+//  cursor: pointer;
+//  margin: 0 10px;
+//  width: 100px;
+//  border: none;
+//  border-bottom: solid 1px #ccc;
+//  box-shadow: none;
+//  border-radius: 0;
+//}
+//
+//.trade-con .time-picker span {
+//  display: inline-block;
+//  border-radius: 5px;
+//  background-color: #ff9f15;
+//  color: #fff;
+//  cursor: pointer;
+//}
+//
+//.trade-con .time-picker input {
+//  vertical-align: top;
+//  background: none;
+//  cursor: pointer;
+//  margin: 0 10px;
+//  width: 100px;
+//  border: none;
+//  border-bottom: solid 1px #ccc;
+//  box-shadow: none;
+//  border-radius: 0
+//}
+//
+//.table-qk th {
+//  background-color: #eee;
+//  text-align: center;
+//  padding: 10px;
+//  font-size: 14px;
+//  border: 1px solid #ccc;
+//}
+//
+//.table-qk td {
+//  background-color: #fff;
+//  text-align: center;
+//  padding: 10px;
+//  font-size: 14px;
+//  border: 1px solid #ccc;
+//}
+//
+//.table-qk td span.view {
+//  cursor: pointer;
+//  color: #2d97dd;
+//}
+//
+//.tablepage {
+//  width: 96%;
+//  margin: auto;
+//  text-align: right;
+//  font-size: 14px;
+//  color: #777
+//}
+//
+//.tablepage a {
+//  display: inline-block;
+//  border-radius: 5px;
+//  background-color: #eee;
+//  padding: 0 10px;
+//  vertical-align: top;
+//  font-size: 16px;
+//  color: #666;
+//}
+//
+//.tablepage input {
+//  width: 40px;
+//  height: 20px;
+//  line-height: 20px;
+//}
+//
+//.tablepage select {
+//  width: 60px
+//}
+//
+//.track-code {
+//  font-size: 16px;
+//  padding: 20px 20px 0;
+//  overflow: hidden
+//}
+//
+//.track-code .fl-left {
+//  margin-right: 20px;
+//  margin-bottom: 20px;
+//}
+//
+//.track-code .fl-left input {
+//  width: 136px;
+//  background-color: #fff;
+//  border: 1px solid #ccc;
+//  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+//  transition: border linear .2s, box-shadow linear .2s;
+//  display: inline-block;
+//  padding: 5px 6px;
+//  font-size: 14px;
+//  color: #555;
+//  vertical-align: middle;
+//  -webkit-border-radius: 4px;
+//  -moz-border-radius: 4px;
+//  border-radius: 4px;
+//}
+//
+//.track-code .fl-left select {
+//  width: 150px;
+//  padding: 4px 6px;
+//  border: solid 1px #ddd;
+//  border-radius: 4px;
+//}
+//
+//.track-code span {
+//  display: inline-block;
+//  height: 26px;
+//  line-height: 26px;
+//  width: 100px;
+//  text-align: center;
+//  cursor: pointer;
+//}
+//
+///*弹窗table*/
+//.model-table {
+//  width: 100%;
+//  table-layout: fixed;
+//}
+//
+//.model-table th {
+//  width: 20%;
+//  text-align: left;
+//  background-color: #ffffff;
+//  border-top: 0px;
+//  border-left: 0px;
+//  border-right: 0px;
+//  border-bottom: 1px #EEEEEE solid;
+//  word-wrap: break-word;
+//  word-break: break-all;
+//}
+//
+//.model-table td {
+//  width: 30%;
+//  text-align: center;
+//  background-color: #ffffff;
+//  border-top: 0px;
+//  border-left: 0px;
+//  border-right: 0px;
+//  border-bottom: 1px #EEEEEE solid;
+//  word-wrap: break-word;
+//  word-break: break-all;
+//}
+//
+//.top {
+//  padding-left: 20px;
+//  button {
+//    margin: 10px;
+//  }
+//}

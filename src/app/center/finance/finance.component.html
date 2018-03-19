@@ -1,0 +1,31 @@
+<div class="my-content-django">
+  <div class="left">
+    <ul>
+      <li (click)="show='lightCharge'" [class.activeLeft]="show=='lightCharge'">光速充值</li>
+      <li (click)="show='peakCharge'" [class.activeLeft]="show=='peakCharge'">支付宝快捷充值</li>
+      <li (click)="show='weichat'" [class.activeLeft]="show=='weichat'">微信支付</li>
+      <li (click)="show='qq'" [class.activeLeft]="show=='qq'">QQ支付</li>
+      <!-- <li (click)="show='zfb'" [class.activeLeft]="show=='zfb'">支付宝支付</li> -->
+      <!-- <li (click)="show='deposit'" [class.activeLeft]="show=='deposit'">账户存款</li> -->
+      <li (click)="show='withdrawals'" [class.activeLeft]="show=='withdrawals'">账户提现</li>
+      <li (click)="show='monChange'" [class.activeLeft]="show=='monChange'">额度转换</li>
+      <li (click)="show='userChange'" [class.activeLeft]="show=='userChange'">用户转账</li>
+    </ul>
+  </div>
+  <div class="right">
+    <!-- 光速 -->
+    <app-light-charge *ngIf="show=='lightCharge'"></app-light-charge>
+    <!-- 巅峰 -->
+    <app-peak-charge *ngIf="show=='peakCharge'"></app-peak-charge>
+    <!-- 微信 -->
+    <app-wei-chat *ngIf="show=='weichat'"></app-wei-chat>
+    <!-- qq -->
+    <app-qq-play *ngIf="show=='qq'"></app-qq-play>
+    <!-- 支付宝 -->
+    <!-- <app-zfb-play *ngIf="show=='zfb'"></app-zfb-play> -->
+    <!-- <app-deposit *ngIf="show=='deposit'"></app-deposit> -->
+    <app-withdrawals *ngIf="show=='withdrawals'"></app-withdrawals>
+    <app-mon-change  *ngIf="show=='monChange'"></app-mon-change>
+    <app-user-charge *ngIf="show=='userChange'"></app-user-charge>
+  </div>
+</div>

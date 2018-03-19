@@ -1,0 +1,48 @@
+<div class="monChaBox">
+  <ul class="chaList">
+    <li (click)="agAcct(1)">
+      <div class="chanImg ci2">主账户</div>
+      <div class="ahmon">{{userBalance}}</div>
+    </li>
+    <li (click)="agAcct(2)">
+      <div class="chanImg ci1">AG</div>
+      <div class="ahmon">{{amountAG}}</div>
+    </li>
+  </ul>
+  <form action="">
+    <div class="row" style="margin-top: 10px;">
+      <div class="th">转出账户</div>
+      <!--转出账户-->
+      <div class="game-item" *ngIf="monOut == 0"></div>
+      <!--主账户-->
+      <div class="game-item"  *ngIf="monOut == 1"><div class="chanImg ci2 ci3">{{userBalance}}</div></div>
+      <!--ag-->
+      <div class="game-item" *ngIf="monOut == 2"><div class="chanImg ci1">{{amountAG}}</div></div>
+      <!---->
+      <div class="changeRig">
+        <div class="border border-top"></div>
+        <div class="exc" (click)="changeACT()"></div>
+        <div class="border border-bottom"></div>
+      </div>
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="th">转入账户</div>
+      <!--转入账户-->
+      <div class="game-item"  *ngIf="monIn == 0"></div>
+      <!--主账户-->
+      <div class="game-item"  *ngIf="monIn == 1"><div class="chanImg ci2 ci3">{{userBalance}}</div></div>
+      <!--ag-->
+      <div class="game-item" *ngIf="monIn == 2"><div class="chanImg ci1">{{amountAG}}</div></div>
+      <!---->
+    </div>
+    <div class="row" style="margin-top: 10px;">
+      <div class="th">转出金额</div>
+      <nz-input-number class="inp" [nzMin]="1" [(ngModel)]="transferValue" name="trans"  [nzStep]="1"  [nzPlaceHolder]="'请输入提现金额'"></nz-input-number>
+      <div class="tip">请输入转出金额</div>
+    </div>
+  </form>
+  <div class="quebtn">
+    <span class="gm-button gm-button-success d-bc" (click)="transMon()">转入</span>
+    <span class="gm-button gm-button-success d-bc" (click)="transMonAll()">全额转入</span>
+  </div>
+</div>

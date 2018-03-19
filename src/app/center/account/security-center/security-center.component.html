@@ -1,0 +1,171 @@
+<div class="safeBox" *ngIf="safeBox ">
+  <div class="safetop">
+    <div class="sfTopLe">
+      <div class="prev">
+        <i></i>上次登录IP：
+        <span>{{recent.ip}}</span>
+      </div>
+      <div class="prev">
+        <i></i>上次登录时间：
+        <span>{{recent.addTime | date:'yyyy-MM-dd'}}</span>
+      </div>
+    </div>
+    <div class="sfTopRig">
+      <div class="sfTopTit">
+        <div class="dt dt1">登录时间</div>
+        <div class="dt dt2">登录IP</div>
+        <div class="dt dt3">登录结果</div>
+      </div>
+      <ul class="satime">
+        <li *ngFor="let i of userTime">
+          <span class="dt1">{{i.addTime | date:'yyyy-MM-dd'}}</span>
+          <span class="dt2">{{i.ip}}</span>
+          <span class="dt3" *ngIf="i.status" style="color:green">成功</span>
+          <span class="dt3" *ngIf="!i.status" style="color:red">失败</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sfcentent">
+    <div class="safeCon">
+      <h3>登录密码</h3>
+      <span class="btn gm-button gm-button-success d-bc" (click)="showpw()">修改登录密码</span>
+    </div>
+    <div class="safeCon" *ngIf="bankLen == 0">
+      <h3>绑定银行卡<span class="success">未绑定</span></h3>
+      <a class="btn gm-button gm-button-success d-bc" (click)="bangBank()">绑定银行卡</a>
+    </div>
+    <div class="safeCon" *ngIf="bankLen > 0">
+      <h3>绑定银行卡:<span class="success">{{userInfor.bankInfo[0].cardNum}}</span></h3>
+    </div>
+    <div class="safeCon" *ngIf="!userInfor.mobile">
+      <h3>绑定手机<span class="success">未绑定</span></h3>
+      <a class="btn gm-button gm-button-success d-bc" (click)="bangPhone()">立即绑定手机</a>
+    </div>
+    <div class="safeCon" *ngIf="userInfor.mobile">
+      <h3>绑定手机:<span class="success">{{userInfor.mobile}}</span></h3>
+    </div>
+  </div>
+  <div class="centRig">
+    <div class="safeCon">
+      <h3>资金密码</h3>
+      <a class="btn gm-button gm-button-success d-bc" (click)="showpw()">修改资金密码</a>
+    </div>
+    <div class="safeCon" *ngIf="!userInfor.qq">
+      <h3>绑定安全QQ<span class="success">未绑定</span></h3>
+      <a class="btn gm-button gm-button-success d-bc" (click)="bangQQ()">立即绑定QQ</a>
+    </div>
+    <div class="safeCon" *ngIf="userInfor.qq">
+      <h3>绑定安全QQ:<span class="success">{{userInfor.qq}}</span></h3>
+    </div>
+    <div class="safeCon" *ngIf="!userInfor.email">
+     <h3>安全邮箱认证<span class="success">未绑定</span></h3>
+     <a class="btn gm-button gm-button-success d-bc" (click)="bangEmail()">立即认证邮箱</a>
+    </div>
+    <div class="safeCon" *ngIf="userInfor.email">
+      <h3>安全邮箱认证:<span class="success">{{userInfor.email}}</span></h3>
+    </div>
+  </div>
+</div>
+
+<!--绑定手机号-->
+<div class="phoneBox" *ngIf="phoneBox">
+  <form class="account-edit-form" #formPh="ngForm">
+    <div class="row">
+      <div class="th">用户名:</div>
+      <label class="td" content="user-name">{{userInfor.username}}</label>
+    </div>
+    <div class="row">
+      <div class="th">绑定安全电话:</div>
+      <label class="td"><input name="tel" ngModel></label>
+      <div class="tip" for="tip-tel"><i class="fa fa-info-circle"></i>请输入安全电话</div>
+    </div>
+    <div class="row">
+      <a class="gm-button gm-button-success d-bc" (click)="sendPhone(formPh.value)">提交</a>
+      <a class="gm-button" (click)="closePhone()">取消</a>
+    </div>
+  </form>
+</div>
+<!--绑定邮箱-->
+<div class="phoneBox" *ngIf="emailBox" >
+  <form class="account-edit-form" #formEm="ngForm">
+    <div class="row">
+      <div class="th">用户名:</div>
+      <label class="td" content="user-name">{{userInfor.username}}</label>
+    </div>
+    <div class="row">
+      <div class="th">安全邮箱认证:</div>
+      <label class="td"><input name="email" ngModel></label>
+      <div class="tip" for="tip-tel"><i class="fa fa-info-circle"></i>请输入安全邮箱</div>
+    </div>
+    <div class="row">
+      <a class="gm-button gm-button-success d-bc" (click)="sendEmail(formEm.value)">提交</a>
+      <a class="gm-button" (click)="closePhone()">取消</a>
+    </div>
+  </form>
+</div>
+<!--绑定QQ-->
+<div class="phoneBox" *ngIf="qqBox">
+  <form class="account-edit-form" #formQQ="ngForm">
+    <div class="row">
+      <div class="th">用户名:</div>
+      <label class="td" content="user-name">{{userInfor.username}}</label>
+    </div>
+    <div class="row">
+      <div class="th">安全邮箱认证:</div>
+      <label class="td"><input name="qq" ngModel></label>
+      <div class="tip" for="tip-tel"><i class="fa fa-info-circle"></i>请输入安全邮箱</div>
+    </div>
+    <div class="row">
+      <a class="gm-button gm-button-success d-bc" (click)="sendqq(formQQ.value)">提交</a>
+      <a class="gm-button" (click)="closePhone()">取消</a>
+    </div>
+  </form>
+</div>
+<!--绑定银行卡-->
+<div class="phoneBox" *ngIf="bankBox">
+  <form class="account-edit-form" #formBank="ngForm">
+    <div class="row">
+      <div class="th">开户银行:</div>
+      <label class="td">
+        <select name="bank_name" placeholder="">
+          <option value="工商银行">工商银行</option><option value="农业银行">农业银行</option>
+          <option value="建设银行">建设银行</option><option value="中国银行">中国银行</option>
+          <option value="招商银行">招商银行</option><option value="交通银行">交通银行</option>
+          <option value="民生银行">民生银行</option><option value="光大银行">光大银行</option>
+          <option value="浦发银行">浦发银行</option><option value="兴业银行">兴业银行</option>
+          <option value="中信银行">中信银行</option><option value="邮政储蓄">邮政储蓄</option>
+          <option value="平安银行">平安银行</option><option value="广发银行">广发银行</option>
+          <option value="上海银行">上海银行</option><option value="北京银行">北京银行</option>
+          <option value="华夏银行">华夏银行</option><option value="上海农商">上海农商</option>
+          <option value="北京农商">北京农商</option><option value="渤海银行">渤海银行</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <div class="th">开户银行地址:</div>
+      <label class="td"><input name="bank_address" placeholder="" ngModel></label>
+      <div class="tip" for="tip-bank_address"><i class="fa fa-info-circle"></i>请输入开户银行地址</div>
+    </div>
+    <div class="row">
+      <div class="th">开户名:</div>
+      <label class="td"><input name="card_user" placeholder="" ngModel></label>
+      <div class="tip" for="tip-card_user"><i class="fa fa-info-circle"></i>请输入开户名</div>
+    </div>
+    <div class="row">
+      <div class="th">银行卡号:</div>
+      <label class="td"><input name="cardCode" placeholder="" value="" ngModel/></label>
+      <div class="tip"><i class="fa fa-info-circle"></i>请输入银行卡号</div>
+    </div>
+    <div class="row">
+      <div class="th">资金密码:</div>
+      <label class="td"><input name="moneyPassword" type="password" placeholder="" ngModel/></label>
+      <div class="tip"><i class="fa fa-info-circle"></i>请输入资金密码(该密码为平台资金密码)</div>
+    </div>
+    <div class="row" style="margin-top:10px">
+      <input type="hidden" name="uid" value="" placeholder="">
+      <a class="gm-button gm-button-success d-bc" (click)="sendBank(formBank.value)">提交</a>
+      <a class="gm-button" (click)="closePhone()">返回上一页</a>
+    </div>
+  </form>.
+</div>

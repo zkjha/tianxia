@@ -1,0 +1,53 @@
+<app-time (Time)='timeChange($event)'></app-time>
+<div class="my-table-top-new">
+  <div style='width:60px'>时间范围</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'" ></nz-datepicker>
+  </div>
+  <div style='width:30px'>至</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'" ></nz-datepicker>
+  </div>
+  <div class='m-left'>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+  </div>
+
+</div>
+  
+  <div class="my-table-content">
+    <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+      <thead nz-thead>
+        <tr>
+          <th nz-th>
+            <span>公告时间</span>
+          </th>
+          <th nz-th>
+            <span>类型</span>
+          </th>
+          <th nz-th>
+            <span>公告标题</span>
+          </th>
+          <th nz-th>
+            <span>公告内容</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody nz-tbody>
+        <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+            <td nz-td>{{item.addTime*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+            <td nz-td>
+                <span *ngIf="item.menus_id==76">新手帮助</span>
+                <span *ngIf="item.menus_id==81">活动优惠</span>
+                <span *ngIf="item.menus_id==88">系统公告</span>
+                <span *ngIf="item.menus_id==89">游戏公告</span>
+            </td>
+            <td nz-td>{{item.title}}</td>
+            <td nz-td [innerHTML]="item.content"></td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+  <div class="my-pagination-right">
+    <nz-pagination (click)='clickPagination()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+  </div>
+  

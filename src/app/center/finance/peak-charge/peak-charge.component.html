@@ -1,0 +1,71 @@
+<div class="lightCharge">
+  <div class="lcmain">
+    <div class="lcTit">
+      <div class="item frist" [class.on]='isShow == 0'>1、选择银行并填写金额
+        <span class="zx zx_top"></span>
+        <span class="zx zx_bottom"></span>
+      </div>
+      <div class="frist item " [class.on]='isShow == 1'>2、确认充值信息
+        <span class="zx zx_top"></span>
+        <span class="zx zx_bottom"></span>
+      </div>
+      <div class="third item">3、前往充值</div>
+    </div>
+    <div action="" *ngIf="isShow == 0">
+      <div class="row mar-b-5">
+        <div class="th">存款人姓名:</div>
+        <div class="td">
+          <nz-input [(ngModel)]="userName" [nzPlaceHolder]="'请输入存款人姓名'" [nzSize]="'large'"></nz-input>
+        </div>
+        <div class="tip">
+          <span>正确填写存款人真是姓名（必填项）</span>
+        </div>
+      </div>
+      <div class="row mar-b-5">
+        <div class="th">充值金额:</div>
+        <label class="td">
+          <nz-input-number (ngModelChange)='changeModel()' [(ngModel)]='amount' class="inp" [nzMin]="0" name="trans" [nzStep]="1"></nz-input-number>
+        </label>
+        <div class="tip">
+          <span id="deposit-money-dx-fast">{{AMOUNT}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="th">&nbsp;</div>
+        <label class="auto warning">1、单笔充值限额:最低50,最高50000<br>
+          2、通常您到账时间为1秒到30秒，若出现超过30分钟未到帐情况。请联系我们24小时在线客服。<br>
+          3、每日限额：无限制，每次夜间23:00:00-00:30:00分支付宝转账到账较慢，请谅解！<br>
+          4、转账卡号随时更换，每次充值必须点击支付宝转网银获取最新卡号，如果不点击支付宝转网<br>
+          银获取最新卡号直接充值或者充值进已经下架的卡号与不点击支付宝转网银创建单号的一旦<br>
+          充值金额丢失会员自行承担，并且金额作废不给予补偿解释！
+        </label>
+      </div>
+      <div class="row">
+        <div class="th">&nbsp;</div>
+        <div class="auto">
+          <a class="gm-button gm-button-success d-bc" style="margin-right: 10px;" (click)="goRecharge()">立即充值</a>7x24小时急速充值服务
+          <a target="_blank" href="http://kefu.qycn.com/vclient/chat/?websiteid=132757">联系客服人员</a>
+        </div>
+      </div>
+    </div>
+    <!--temp2-->
+    <div class="fast-form" *ngIf="isShow == 1">
+        <div class="recharge-result">
+          <p>收款银行： {{rechargeResult?.bank}}</p>
+          <p>收款人账户：{{rechargeResult?.name}}</p>
+          <p>收款人账号: {{rechargeResult?.card}}</p>
+          <p>开户银行名称：{{rechargeResult?.bank}}</p>
+          <p>金额：
+            <span class="text-red">{{rechargeResult?.order_amount}}</span>
+          </p>
+          <p class="text-tips">*必须按显示的金额付款否则无法自动到账</p>
+          <div class="timer-down">
+            <p *ngIf="isShowTimer">请在
+              <span>{{timer}}</span>内完成付款</p>
+            <p *ngIf="!isShowTimer">本订单已失效,请重新提交</p>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
+

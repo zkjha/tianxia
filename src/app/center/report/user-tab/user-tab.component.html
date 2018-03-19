@@ -1,0 +1,50 @@
+<app-time (Time)='timeChange($event)'></app-time>
+<div class="my-table-top-new">
+    <div style='width:60px'>时间范围</div>
+    <div style='width:145px'>
+        <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+    </div>
+    <div style='width:30px'>至</div>
+    <div style='width:145px'>
+        <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'" ></nz-datepicker>
+    </div>
+    <div class='m-left'>
+        <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+    </div>
+
+</div>
+  
+  <div class="my-table-content">
+      <div class="betlog-table">
+          <table width="96%" class="table-qk">
+              <tbody>
+              <tr>
+                  <td>投注金额(包括追号)</td>
+                  <td>￥ {{data.bet}}</td>
+                  <td>中奖金额</td>
+                  <td>￥ {{data.winBet}}</td>
+              </tr>
+              <tr>
+                  <td>返点金额</td>
+                  <td>￥ {{data.betReturn}}</td>
+                  <td>可用金额</td>
+                  <td>￥ {{data.usable}}</td>
+              </tr>
+              <tr>
+                  <td>充值总额</td>
+                  <td>￥ {{data.recharge}}</td>
+                  <td>提现总额</td>
+                  <td>￥ {{data.cashSuc}}</td>
+              </tr>
+              <tr>
+                  <td>撤单总额</td>
+                  <td>￥ {{data.cancelBet}}</td>
+                  <td>盈亏总额</td>
+                  <td>￥ {{data.proAndLoss}}</td>
+              </tr>
+              </tbody>
+          </table>
+      </div>
+  </div>
+
+  

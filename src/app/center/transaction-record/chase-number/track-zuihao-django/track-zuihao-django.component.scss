@@ -1,0 +1,62 @@
+.ofynum {
+    width: 670px;
+    height: 180px;
+    overflow-y: scroll;
+    margin: 15px 20px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    color:rgb(149,149,149)
+}
+.ofynum-li{
+    display: flex;
+    padding:10px;
+    border: 1px dotted #EAEAEA;
+}
+.ofynum-li-m{
+    margin: 0 5px;
+}
+
+.main{
+    display: flex;
+    &>div{
+        width: 50%
+    }
+}
+
+.main-padding{
+    margin: 0 30px;
+}
+
+
+.django-list{
+    display: flex;
+    div{
+        margin: 5px 0;
+        font-size: 15px;
+        color: #111
+    }
+    .list-left{
+        width: 120px;
+    }
+    
+    .major{
+        color: #e7356c;
+    }
+
+}
+
+
+.django-footer{
+    padding: 15px 0 0 0;
+    border-top: 1px solid #EFEFEF;
+    text-align: center;
+    margin-top: 10px
+}
+.django-footer button{
+    width: 80px;
+}
+
+.lanse{
+    color:#108ee9;
+    cursor: pointer;
+}

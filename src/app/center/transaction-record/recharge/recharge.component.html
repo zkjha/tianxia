@@ -1,0 +1,46 @@
+<app-time (Time)='timeChange($event)'></app-time>
+<div class="my-table-top-new">
+  <div style='width:60px'>时间范围</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'"></nz-datepicker>
+  </div>
+  <div style='width:30px'>至</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'" ></nz-datepicker>
+  </div>
+  <div class='m-left'>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+  </div>
+
+</div>
+
+<div class="my-table-content">
+  <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+    <thead nz-thead>
+      <tr>
+        <th>流水号</th>
+        <th>用户名</th>
+        <th>充值金额</th>
+        <th>状态</th>
+        <th>操作时间</th>
+
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+        <td>{{item.id}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.amount | number:'1.2-2'}}</td>
+        <td>
+          <span *ngIf="item.status == 'fail'" >失败</span>
+          <span *ngIf="item.status == 'success'" >成功</span>
+          <span *ngIf="item.status == 'wait'" >充值中</span>
+        </td>
+        <td>{{item.addTime*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+<div class="my-pagination-right">
+  <nz-pagination (click)='clickPagination()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+</div>

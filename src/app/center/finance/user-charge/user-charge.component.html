@@ -1,0 +1,52 @@
+<div class="main">
+  <div class="main-left">
+    <div class='item'>
+      <div>转入账号:</div>
+      <div>
+        <nz-select style='width:240px' [nzSize]="'large'"   [nzPlaceHolder]="'请选择转入账号'" [(ngModel)]="option" [nzShowSearch]="true">
+          <nz-option *ngFor="let option of listData" [nzLabel]="option.username" [nzValue]="option" [nzDisabled]="option.disabled">
+          </nz-option>
+        </nz-select>
+      </div>
+    </div>
+    <div class='item'>
+      <div>转入账号余额:</div>
+      <div>
+        <nz-input [nzSize]="'large'" [(ngModel)]="option.usableAmount" [nzDisabled]="true"></nz-input>
+      </div>
+    </div>
+    <div class='item'>
+      <div>我的余额:</div>
+      <div>
+        <nz-input [nzSize]="'large'" [(ngModel)]="myAmount" [nzDisabled]="true" ></nz-input>
+      </div>
+    </div>
+    <div class='item'>
+      <div>转账金额:</div>
+      <div>
+        <nz-input [nzSize]="'large'" [(ngModel)]="amount" [nzPlaceHolder]="'请输入转账金额'" ></nz-input>
+      </div>
+    </div>
+    <div class='item'>
+      <div>资金密码:</div>
+      <div>
+        <nz-input [nzType]="'password'" [nzSize]="'large'" [(ngModel)]="bankPassword" [nzPlaceHolder]="'请输入资金密码'" ></nz-input>
+      </div>
+    </div>
+    <div class='item'>
+      <div></div>
+      <div>
+        <span class="gm-button gm-button-success d-bc" (click)='manualRebate()'>转入</span>
+      </div>
+    </div>
+    
+  </div>
+  <div class='mian-right'>
+    <div>
+      <p>1 上级对下级拨款以后，下级在接下来的8小时内不能发起提现操作。</p>
+      <p>2 任何代理当他自己处于不能发起提现操作的状态的时候， 他也不能往自己下级拨款。</p>
+      <p>3 代理可以在账变记录中查看自己的历史转账记录。</p>
+      <p>4 如果代理因失误拨款给错误对象，请立即联系平台客服尽最大可能挽回损失。</p>
+    </div>
+  </div>
+</div>

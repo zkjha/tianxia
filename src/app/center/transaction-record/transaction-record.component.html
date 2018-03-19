@@ -1,0 +1,20 @@
+<div class="my-content-django">
+  <div class="left">
+    <ul>
+      <li (click)="show='betting'" [class.activeLeft]="show=='betting'">投注记录</li>
+      <li (click)="show='chase-number'" [class.activeLeft]="show=='chase-number'">追号记录</li>
+      <li (click)="show='turnover'" [class.activeLeft]="show=='turnover'">流水记录</li>
+      <li (click)="show='recharge'" [class.activeLeft]="show=='recharge'">充值记录</li>
+      <li (click)="show='withdrawals-rep'" [class.activeLeft]="show=='withdrawals-rep'">提现记录</li>
+      <li (click)="show='integral'" [class.activeLeft]="show=='integral'">积分记录</li>
+    </ul>
+  </div>
+  <div class="right">
+    <app-betting *ngIf="show=='betting'"></app-betting>
+    <app-chase-number *ngIf="show=='chase-number'"></app-chase-number>
+    <app-turnover *ngIf="show=='turnover'"></app-turnover>
+    <app-recharge *ngIf="show=='recharge'"></app-recharge>
+    <app-withdrawals-rep *ngIf="show=='withdrawals-rep'"></app-withdrawals-rep>
+    <app-integral *ngIf="show=='integral'"></app-integral>
+  </div>
+</div>

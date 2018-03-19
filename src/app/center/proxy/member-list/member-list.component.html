@@ -1,0 +1,134 @@
+<!--<app-time (Time)='timeChange($event)'></app-time>-->
+<div class="my-table-top-new">
+  <div style='width:150px'>
+    <nz-input [(ngModel)]="user_name" [nzPlaceHolder]="'请输入用户名'"></nz-input>
+  </div>
+  <!--<div style='width:60px'>时间范围</div>-->
+  <!--<div style='width:145px'>-->
+    <!--<nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'"></nz-datepicker>-->
+  <!--</div>-->
+  <!--<div style='width:30px'>至</div>-->
+  <!--<div style='width:145px'>-->
+    <!--<nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'"></nz-datepicker>-->
+  <!--</div>-->
+  <div class='m-left'>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+  </div>
+
+</div>
+
+<div class="my-table-content">
+  <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+    <thead nz-thead>
+      <tr>
+        <th nz-th>
+          <span>账号</span>
+        </th>
+        <th nz-th>
+          <span>添加时间</span>
+        </th>
+        <th nz-th>
+          <span>余额</span>
+        </th>
+        <th nz-th>
+          <span>类型</span>
+        </th>
+        <th nz-th>
+          <span>高/低频返点</span>
+        </th>
+        <th nz-th>
+          <span>操作</span>
+        </th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+        <td nz-td>{{item.username}}</td>
+        <td nz-td>{{item.addTime *1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td nz-td>{{item.usableAmount}}</td>
+        <td nz-td>
+          {{item.type=='0'?'代理':'会员'}}
+        </td>
+        <td nz-td>
+          {{item.maxRebate}} /{{item.minRebate}}
+        </td>
+        <td nz-td>
+          <a (click)="showModal(item.id)">设置返点</a>/
+          <a (click)="showModal2(item.id)">手动转点</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+<div class="my-pagination-right">
+  <nz-pagination (click)='clickPagination()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+</div>
+<div>
+    <nz-modal [nzVisible]="isVisible" [nzTitle]="'设置返点'" [nzFooter]="false" [nzContent]="modalContent1"  (nzOnCancel)="handleCancel()">
+        <ng-template #modalContent1>
+          <div class="recharge-result">
+
+            <div class="content">
+              <div>
+                <div>
+                  高频返点:
+                </div>
+                <div>
+                  <nz-input [(ngModel)]="maxRebate" [nzPlaceHolder]="'请输入高频返点'"></nz-input>
+                </div>
+
+              </div>
+              <div>
+                <div>
+                  高频返点:
+                </div>
+                <div>
+                  <nz-input [(ngModel)]="minRebate" [nzPlaceHolder]="'请输入高频返点'"></nz-input>
+                </div>
+              </div>
+
+            </div>
+            <div class="footer">
+              <span class="django-buttton django-button-success" (click)="setRebate()">设置</span>
+              <span class="django-buttton" (click)="handleCancel()">关闭</span>
+            </div>
+          </div>
+        </ng-template>
+      </nz-modal>
+</div>
+
+<!-- 第二个弹框 -->
+<div>
+    <nz-modal [nzVisible]="isVisible2" [nzTitle]="'手动转点'" [nzFooter]="false" [nzContent]="modalContent2" (nzOnCancel)="handleCancel()">
+        <ng-template #modalContent2>
+          <div class="recharge-result">
+            <div class="content">
+              <div>可以转余额: {{usableAmount | number:'1.2-2'}}</div>
+              <div>
+                <div>
+                  转点金额:
+                </div>
+                <div>
+                  <nz-input [(ngModel)]="amount" [nzPlaceHolder]="'请输入转点金额'"></nz-input>
+                </div>
+
+              </div>
+              <div>
+                <div>
+                  资金密码:
+                </div>
+                <div>
+                  <nz-input [(ngModel)]="bankPassword" [nzType]="'password'" [nzPlaceHolder]="'请输入安全密码'"></nz-input>
+                </div>
+              </div>
+
+            </div>
+            <div class="footer">
+              <span class="django-buttton django-button-success" (click)="manualRebate()" >确定</span>
+              <span class="django-buttton" (click)="handleCancel()">关闭</span>
+            </div>
+          </div>
+        </ng-template>
+      </nz-modal>
+</div>
+

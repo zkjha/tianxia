@@ -1,0 +1,72 @@
+
+
+<div class="my-table-top">
+
+  <div class="m-width-150 m-right">
+    <nz-input [(ngModel)]="log_id" [nzPlaceHolder]="'请输入方案编号'"></nz-input>
+  </div>
+  <div class="m-right">
+    游戏
+    <nz-select style="width: 120px;" [(ngModel)]="game_id" [nzPlaceHolder]="'请输入方案编号'" nzAllowClear>
+      <nz-option *ngFor="let option of selectedPlay" [nzLabel]="option.title" [nzValue]="option.id">
+      </nz-option>
+    </nz-select>
+  </div>
+  <div class="m-right">
+    状态
+    <nz-select style="width: 120px;" [(ngModel)]="status" nzAllowClear>
+      <nz-option *ngFor="let option of selectedStatus" [nzLabel]="option.title" [nzValue]="option.id" >
+      </nz-option>
+    </nz-select>
+  </div>
+  <div class="m-right">
+    是否中奖停止
+    <nz-select style="width: 120px;" [(ngModel)]="winStop" nzAllowClear>
+      <nz-option *ngFor="let option of selectedStop" [nzLabel]="option.title" [nzValue]="option.id" >
+      </nz-option>
+    </nz-select>
+  </div>
+  <div>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+  </div>
+
+</div>
+
+<div class="my-table-content">
+  <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+    <thead nz-thead>
+      <tr>
+        <th>记录时间</th>
+        <th>用户名</th>
+        <th>期号</th>
+        <th>游戏名称</th>
+        <th>投注金额</th>
+        <th>状态</th>
+        <th>奖金</th>
+        <th>详情</th>
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+        <td>{{item.addTime * 1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.issueCount}}</td>
+        <td>{{item.gameTitle}}</td>
+        <td>{{item.betAmount}}</td>
+        <td>
+          <span *ngIf="item.status==0">未开始</span>
+          <span *ngIf="item.status==1">已开始</span>
+          <span *ngIf="item.status==2">已停止</span>
+          <span *ngIf="item.status==3">已结束</span>
+        </td>
+        <td>{{item.winAmount}}</td>
+        <td>
+          <a (click)="openChase(item)">追号详细</a>
+        </td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+<div class="my-pagination-right">
+  <nz-pagination (click)='clickPagination()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+</div>

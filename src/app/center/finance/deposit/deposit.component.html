@@ -1,0 +1,18 @@
+<nz-tabset  [nzType]="'card'">
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      高通扫码
+    </ng-template>
+    <div>
+      <app-qc-code></app-qc-code>
+    </div>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      支付宝转网银
+    </ng-template>
+    <div>
+      <app-ali-pay></app-ali-pay>
+    </div>
+  </nz-tab>
+</nz-tabset>`

@@ -1,0 +1,73 @@
+<div class="myInfor">
+  <div class="mybox">
+    <div class="my1">
+      <!--<div class="base"><i><img src="assets/image/home/avatar.jpg" alt=""/></i></div>-->
+      <div class="maii">
+        <div class="matop">
+          <span>{{userInfo.username}}</span>
+          <span class="aglin">代理</span>
+          <span>余额：</span>
+          <span class="ee">{{userInfo.usableAmount | number:'1.2-2'}}</span>
+          <span>高频彩返点：</span>
+          <span class="num">{{ userInfo.maxRebate}} </span>
+          <span>低频彩返点：</span>
+          <span class="num">{{ userInfo.minRebate}} </span>
+        </div>
+        <ul class="even">
+          <li>
+            <i></i>最近登录时间：
+            <span>{{userInfo.currentLoginTime | date:'yyyy-MM-dd'}}</span>
+          </li>
+          <li>
+            <i></i>最近登录IP：
+            <span>{{userInfo.currentLoginIp}}</span>
+          </li>
+          <li>
+            <i></i>上次登录时间：
+            <span>{{userInfo.lastLoginTime | date:'yyyy-MM-dd'}}</span>
+          </li>
+          <li>
+            <i></i>上次登录IP：
+            <span>{{userInfo.lastLoginIp}}</span>
+          </li>
+          <li>
+            <i></i>注册时间：
+            <span>{{userInfo.addTime | date:'yyyy-MM-dd'}}</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="my2">
+      <h3>余额信息</h3>
+      <tbody>
+        <tr>
+          <th>主账户</th>
+          <td>
+            <span>{{userInfo.usableAmount | number:'1.2-2'}}</span>
+            <i></i>
+          </td>
+          <th>真人视讯余额</th>
+          <td>
+            <span>{{amountAG}}</span>
+            <i></i>
+          </td>
+          <th></th>
+          <td>
+            <span></span>
+            <i></i>
+          </td>
+          <th></th>
+          <td>
+            <span></span>
+            <i></i>
+          </td>
+          <th></th>
+          <td>
+            <span></span>
+            <i></i>
+          </td>
+        </tr>
+      </tbody>
+    </div>
+  </div>
+</div>

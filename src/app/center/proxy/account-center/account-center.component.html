@@ -1,0 +1,180 @@
+<nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" (nzSelectChange)='selectChange($event)'>
+  <!--==============添加下级==============-->
+  <nz-tab>
+    <ng-template #nzTabHeading>一键开户</ng-template>
+    <span>
+      <div class="titile">
+        <div>用户类型</div>
+        <div>
+          <nz-radio-group [(ngModel)]="type">
+            <label nz-radio-button [nzValue]="'0'">
+              <span>代理</span>
+            </label>
+            <label nz-radio-button [nzValue]="'1'">
+              <span>会员</span>
+            </label>
+          </nz-radio-group>
+        </div>
+      </div>
+      <div>
+        <div class="row">
+          <div class="th">用户名：</div>
+          <div class="td">
+            <nz-input [(ngModel)]="username" [nzPlaceHolder]="'请输入用户名'"></nz-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="th">密码：</div>
+          <div class="td">
+            <nz-input [(ngModel)]="password" [nzPlaceHolder]="'请输入密码'"></nz-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="th">高频返点：</div>
+          <div class="td">
+            <nz-input [(ngModel)]="maxRebate" [nzPlaceHolder]="maxInfo"></nz-input>
+          </div>
+        </div>
+        <div class="row">
+          <div class="th">低频返点：</div>
+          <div class="td">
+            <nz-input [(ngModel)]="minRebate" [nzPlaceHolder]="minInfo"></nz-input>
+          </div>
+        </div>
+        <div class="row" style="margin:20px 0 0 100px;">
+          <span class="gm-button gm-button-success d-bc" (click)='goRegister()' id="proxyRegistry">提交</span>
+          <span class="gm-button gm-button-success d-bc"  ngxClipboard [cbContent]="'用户名:'+username+',密码:'+password" (cbOnSuccess)="successFun()" >复制</span>
+        </div>
+      </div>
+      <div class="font-show">
+
+        1&nbsp;&nbsp;默认资金密码为：123456
+        <br> 2&nbsp;&nbsp;为提高服务器效率，系统将自动清理注册一个月没有充值，或两个月未登陆，并且金额低于10元的账户。
+      </div>
+      <div class='fandian'>
+        <span>高频返点:{{max}}</span>
+        <span>低频返点:{{min}}</span>
+      </div>
+    </span>
+  </nz-tab>
+  <!--============链接开户==============-->
+  <nz-tab>
+    <ng-template #nzTabHeading>推广开户</ng-template>
+    <div class="titile">
+      <div>用户类型</div>
+      <div>
+        <nz-radio-group [(ngModel)]="type">
+          <label nz-radio-button [nzValue]="'0'">
+            <span>代理</span>
+          </label>
+          <label nz-radio-button [nzValue]="'1'">
+            <span>会员</span>
+          </label>
+        </nz-radio-group>
+      </div>
+    </div>
+    <div>
+      <div class="row">
+        <div class="th">高频返点：</div>
+        <div class="td">
+          <nz-input [(ngModel)]="maxRebate" [nzPlaceHolder]="'请输入高频返点'"></nz-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="th">低频返点：</div>
+        <div class="td">
+          <nz-input [(ngModel)]="minRebate" [nzPlaceHolder]="'请输入低频返点'"></nz-input>
+        </div>
+      </div>
+      <div class="row">
+        <div class="th">低频返点：</div>
+        <div class="td">
+          <nz-select  style="width:230px" [(ngModel)]="selectedOption" nzAllowClear>
+            <nz-option *ngFor="let option of options" [nzLabel]="option.label" [nzValue]="option" [nzDisabled]="option.disabled">
+            </nz-option>
+          </nz-select>
+        </div>
+      </div>
+
+      <div class="row" style="margin:20px 0 0 100px;">
+        <span class="gm-button gm-button-success d-bc" (click)='getRegCode()'>提交</span>
+      </div>
+      </div>
+  </nz-tab>
+  <!--==============链接管理============-->
+  <nz-tab>
+    <ng-template #nzTabHeading>链接管理</ng-template>
+      <!-- <form class="clear-fix">
+        <span>
+          <span style="color: #fd797e;">注意:</span>
+          如果链接返点配额不足或者已删除, 新用户默认返点为
+          <span style="color: #fd797e;">0</span>
+        </span>
+        <a class="gm-button gm-button-success d-bc">提交</a>
+      </form> -->
+      <div class="my-table-content">
+        <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+          <thead nz-thead>
+            <tr>
+              <th nz-th>
+                <span>注册链接</span>
+              </th>
+              <th nz-th>
+                <span>高频返点</span>
+              </th>
+              <th nz-th>
+                <span>低频返点</span>
+              </th>
+              <th nz-th>
+                <span>可以使用(次数)</span>
+              </th>
+              <th nz-th>
+                <span>已使用(次数)</span>
+              </th>
+              <th nz-th>
+                <span>有效期</span>
+              </th>
+              <th nz-th>
+                <span>操作</span>
+              </th>
+            </tr>
+          </thead>
+          <tbody nz-tbody>
+            <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+              <td nz-td> <input style="width:280px;" [(ngModel)]="item.regUrl"></td>
+              <td nz-td>{{item.maxRebate}}</td>
+              <td nz-td>{{item.minRebate}}</td>
+              <td nz-td>{{item.maxRegCount}}</td>
+              <td nz-td>{{item.regCount}}</td>
+              <td nz-td>{{item.addTime *1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+              <td nz-td>
+                <button nz-button  [nzType]="'default'" ngxClipboard [cbContent]="item.regUrl" (cbOnSuccess)="successFun()" >
+                  <span>复制</span>
+                </button>
+                <!-- <span [ngxClipboard]="'ddddd'">ddd</span> -->
+                <button nz-button (click)='delUrl(item.id)' [nzType]="'danger'">
+                  <span>删除</span>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </nz-table>
+      </div>
+  </nz-tab>
+
+</nz-tabset>
+<script>
+  var clipboard = new Clipboard('#copy', {
+    text: function() {
+      return 'to be or not to be';
+    }
+  });
+
+  clipboard.on('success', function(e) {
+    console.log(e);
+  });
+
+  clipboard.on('error', function(e) {
+    console.log(e);
+  });
+</script>

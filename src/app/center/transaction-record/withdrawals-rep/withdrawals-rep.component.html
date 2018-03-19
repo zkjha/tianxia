@@ -1,0 +1,69 @@
+<app-time (Time)='timeChange($event)'></app-time>
+<div class="my-table-top-new">
+  <div style='width:60px'>时间范围</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="startTime" [nzPlaceHolder]="'开始日期'" ></nz-datepicker>
+  </div>
+  <div style='width:30px'>至</div>
+  <div style='width:145px'>
+    <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
+  </div>
+  <div class='m-left'>
+    <span class="gm-button gm-button-success d-bc" (click)="getList()">查询</span>
+  </div>
+
+</div>
+
+<div class="my-table-content">
+  <nz-table #nzTable [nzDataSource]="listData" [nzIsPagination]="false" [nzBordered]="true">
+    <thead nz-thead>
+      <tr>
+        <th nz-th>
+          <span>流水号</span>
+        </th>
+        <th nz-th>
+          <span>用户名</span>
+        </th>
+        <th nz-th>
+          <span>取款金额</span>
+        </th>
+        <th nz-th>
+          <span>手续费</span>
+        </th>
+        <th nz-th>
+          <span>次数</span>
+        </th>
+        <th nz-th>
+          <span>状态</span>
+        </th>
+        <th nz-th>
+          <span>申请时间</span>
+        </th>
+        <th nz-th>
+          <span>处理时间</span>
+        </th>
+        
+      </tr>
+    </thead>
+    <tbody nz-tbody>
+      <tr nz-tbody-tr *ngFor="let item of nzTable.data">
+        <td>{{item.acc_log_id}}</td>
+        <td>{{item.user_name}}</td>
+        <td>{{item.account }}</td>
+        <td>{{item.counter_fee}}</td>
+        <td>{{item.dailyTimes}}</td>
+        <td>
+          <span *ngIf='item.status == 0'>待处理</span>
+          <span *ngIf='item.status == 2'>审批成功</span>
+          <span *ngIf='item.status == 3'>审批失败</span>
+        </td>
+        <td>{{item.addTime*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
+        <td>
+          <span *ngIf="item.handleTime" >{{item.handleTime*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</span></td>
+      </tr>
+    </tbody>
+  </nz-table>
+</div>
+<div class="my-pagination-right">
+  <nz-pagination (click)='clickPagination()' [(nzPageIndex)]="page" [nzTotal]="total"></nz-pagination>
+</div>

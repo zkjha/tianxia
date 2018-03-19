@@ -1,0 +1,68 @@
+<div class="lightCharge">
+  <div class="lcmain">
+    <div class="lcTit">
+      <div class="item frist" [class.on]='isShow == 0'>1、选择银行并填写金额<span class="zx zx_top"></span><span class="zx zx_bottom"></span></div>
+      <div class="frist item " [class.on]='isShow == 1'>2、确认充值信息<span class="zx zx_top"></span><span class="zx zx_bottom"></span></div>
+      <div class="third item">3、前往充值</div>
+    </div>
+    <form action="" *ngIf="isShow == 0">
+      <div class="row auto clear_fix">
+        <div class="th">选择银行:</div>
+        <div class="payicon">
+          <div class="selectpayway">
+            <img src="assets/image/home/1.gif">
+          </div>
+        </div>
+        <div class="m-right">
+          <nz-select style="width: 120px;" [(ngModel)]="pay_type" [nzPlaceHolder]="'选择银行'" name="payType" nzAllowClear>
+            <nz-option *ngFor="let option of bankList" [nzLabel]="option.title" [nzValue]="option.id">
+            </nz-option>
+          </nz-select>
+        </div>
+      </div>
+      <div class="row mar-b-5">
+        <div class="th">充值金额:</div>
+        <label class="td">
+          <nz-input-number (ngModelChange)='changeModel()'  [(ngModel)]='amount' class="inp" [nzMin]="0"  name="trans"  [nzStep]="1"></nz-input-number>
+        </label>
+        <div class="tip">
+          <span id="deposit-money-dx-fast">{{AMOUNT}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="th">&nbsp;</div>
+        <label class="auto warning">1、单笔充值限额:最低100,最高5000<br>
+          2、通常您到账时间为1秒到30秒，若出现超过30分钟未到帐情况。请联系我们24小时在线客服。
+        </label>
+      </div>
+      <div class="row">
+        <div class="th">&nbsp;</div>
+        <div class="auto">
+          <a class="gm-button gm-button-success d-bc" style="margin-right: 10px;" (click)="toSecond()">立即充值</a>7x24小时急速充值服务
+        <a target="_blank" href="http://kefu.qycn.com/vclient/chat/?websiteid=132757">联系客服人员</a>
+        </div>
+      </div>
+    </form>
+    <div class="fast-form" *ngIf="isShow == 1">
+      <form class="form1">
+        <div class="tit">充值确认</div>
+        <div class="row clear_fix auto">
+          <div class="th">充值方式:</div>
+          <label class="td"><span>网银充值-{{rechargeType}}号</span></label>
+        </div>
+        <div class="row clear_fix auto">
+          <div class="th">充值金额:</div>
+          <label class="td"><span style="color: #FF0A63;">{{amount | number:'1.2-2'}}</span>&nbsp;元
+          </label>
+        </div>
+        <div class="row">
+          <div class="th">&nbsp;</div>
+          <div class="auto">
+            <a class="gm-button gm-button-success d-bc" style="margin-right: 10px;" (click)="onSubmit()">立即充值</a>7x24小时急速充值服务
+            <a target="_blank" href="http://kefu.qycn.com/vclient/chat/?websiteid=132757">联系客服人员</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

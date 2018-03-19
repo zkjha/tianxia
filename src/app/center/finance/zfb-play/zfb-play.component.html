@@ -1,0 +1,93 @@
+<div class="lightCharge">
+  <div class="lcmain">
+    <div class="lcTit">
+      <div class="item frist" [class.on]='isShow == 0'>1、选择QQ并填写金额
+        <span class="zx zx_top"></span>
+        <span class="zx zx_bottom"></span>
+      </div>
+      <div class="frist item " [class.on]='isShow == 1'>2、确认充值信息
+        <span class="zx zx_top"></span>
+        <span class="zx zx_bottom"></span>
+      </div>
+      <div class="third item">3、前往充值</div>
+    </div>
+    <form action="" *ngIf="isShow == 0">
+      <div class="row auto clear_fix">
+        <div class="th">选择支付宝:</div>
+        <div class="payicon">
+          <div class="selectpayway " [class.selected]="rechargeType == 1">
+            <img (click)="getRechargeType(1)" src="assets/image/personal-center/financial-center/zfbpay.png">
+          </div>
+          <span></span>
+        </div>
+        <div class="payicon">
+          <div class="selectpayway " [class.selected]="rechargeType == 2">
+            <img (click)="getRechargeType(2)" src="assets/image/personal-center/financial-center/zfbpay.png">
+          </div>
+          <span></span>
+        </div>
+      </div>
+      <div class="row mar-b-5">
+        <div class="th">充值金额:</div>
+        <label class="td">
+          <nz-input-number (ngModelChange)='changeModel()' [(ngModel)]='amount' class="inp" [nzMin]="0" name="trans" [nzStep]="1"></nz-input-number>
+        </label>
+        <div class="tip">
+          <span id="deposit-money-dx-fast">{{AMOUNT}}</span>
+        </div>
+      </div>
+      <div class="row">
+        <div class="th">&nbsp;</div>
+        <label class="auto warning">1、单笔充值限额:最低50,最高50000
+          <br> 2、通常您到账时间为1秒到30秒，若出现超过30分钟未到帐情况。请联系我们24小时在线客服。
+        </label>
+      </div>
+      <div class="row">
+        <div class="th">&nbsp;</div>
+        <div class="auto">
+          <a class="gm-button gm-button-success d-bc" style="margin-right: 10px;" (click)="toSecond()">立即充值</a>7x24小时急速充值服务
+          <a target="_blank" href="http://kefu.qycn.com/vclient/chat/?websiteid=132757">联系客服人员</a>
+        </div>
+      </div>
+    </form>
+    <div class="fast-form" *ngIf="isShow == 1">
+      <form class="form1">
+        <div class="tit">充值确认</div>
+        <div class="row clear_fix auto">
+          <div class="th">充值方式:</div>
+          <label class="td">
+            <span>支付宝-{{rechargeType}}号</span>
+          </label>
+        </div>
+        <div class="row clear_fix auto">
+          <div class="th">充值金额:</div>
+          <label class="td">
+            <span style="color: #FF0A63;">{{amount | number:'1.2-2'}}</span>&nbsp;元
+          </label>
+        </div>
+        <div class="row">
+          <div class="th">&nbsp;</div>
+          <div class="auto">
+            <a class="gm-button gm-button-success d-bc" style="margin-right: 10px;" (click)="onSubmit()">立即充值</a>7x24小时急速充值服务
+            <a target="_blank" href="http://kefu.qycn.com/vclient/chat/?websiteid=132757">联系客服人员</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<nz-modal [nzVisible]="isShowModal" [nzWidth]="320" [nzTitle]="'支付宝扫码'" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
+  (nzOnOk)="handleOk($event)" [nzFooter]="false">
+  <ng-template #modalContent>
+    <div class="recharge-result">
+      <div class="modal-body" style="text-align: center;">
+        <qrcode *ngIf="isShowModal" [qrdata]="qrCodeStr" [size]="256" [level]="'M'"></qrcode>
+      </div>
+      <div class="footer">
+        <span class="django-buttton django-button-success" (click)="close()">关闭</span>
+      </div>
+    </div>
+
+  </ng-template>
+</nz-modal>

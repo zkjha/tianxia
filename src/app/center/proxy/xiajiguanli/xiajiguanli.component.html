@@ -1,0 +1,58 @@
+<nz-tabset [nzTabPosition]="'top'" [nzType]="'card'" [nzSelectedIndex]="index" (nzSelectChange)="selectedIndex($event)">
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      下级管理
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      下级流水
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      下级充值
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      下级取款
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      下级积分
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      登陆日志
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      下级投注
+    </ng-template>
+  </nz-tab>
+  <nz-tab>
+    <ng-template #nzTabHeading>
+      首冲人数
+    </ng-template>
+  </nz-tab>
+</nz-tabset>
+<!-- 会员列表 -->
+<app-member-list *ngIf="index==0"></app-member-list>
+<!-- 下级流水 -->
+<app-lower-water *ngIf="index==1"></app-lower-water>
+<!-- 积分记录 -->
+<app-points-record *ngIf="index==4"></app-points-record>
+<!-- 充值记录 -->
+<app-recharge-record *ngIf="index==2"></app-recharge-record>
+<!-- 提现记录 -->
+<app-withdraw-record *ngIf="index==3"></app-withdraw-record>
+<!-- 登陆日志 -->
+<app-log-in *ngIf="index==5"></app-log-in>
+
+<app-xiajitouzhu *ngIf="index==6"></app-xiajitouzhu>
+
+<app-first-withdraw *ngIf="index==7"></app-first-withdraw>

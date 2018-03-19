@@ -1,0 +1,10 @@
+<div class="my-content-django">
+  <div class="left">
+    <ul>
+        <li (click)="show='user-tab'" [class.activeLeft]="show=='user-tab'">个人报表</li>
+    </ul>
+  </div>
+  <div class="right">
+      <app-user-tab *ngIf="show=='user-tab'"></app-user-tab>
+  </div>
+</div>
