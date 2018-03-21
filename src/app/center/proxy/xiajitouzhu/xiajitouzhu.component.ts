@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HistoryDjangoComponent } from '../../../play/django/history-django/history-django.component';
+import { HistoryDjangoComponent } from '../../../ssc/django/history-django/history-django.component';
 import { HttpService } from '../../../service/http-service.service';
 import { NzModalService, NzMessageService } from 'ng-zorro-antd';
 import { StorageService } from '../../../service/storage.service';

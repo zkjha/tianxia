@@ -1,0 +1,233 @@
+.sideNav {
+    width: 60px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2000;
+    transform: translate(0, -50%);
+    .oul1,
+    .oul2 {
+        width: 100%;
+        li {
+            width: 60px;
+            height: 60px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(44, 31, 66, 0.9);
+            margin-bottom: 3px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            .sclan {
+                display: none;
+                position: absolute;
+                top: -32px;
+                right: 60px;
+                width: 165px;
+                height: 163px;
+                background: rgba(44, 31, 66, 0.9);
+                ul {
+                    overflow: hidden;
+                    display: flex;
+                    flex-flow: wrap;
+                    li {
+                        width: 50px;
+                        height: 50px;
+                        margin: 2px 2px 2px 2px;
+                        text-align: center;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+        li:nth-child(1) {
+            background: #105fbe;
+        }
+        .changeColor:hover .sclan {
+            display: block;
+            transition-delay: 0.5s;
+        }
+        .gapp {
+            font-size: 16px;
+        }
+    }
+    .oul2 {
+        display: none;
+        li {
+            font-size: 40px;
+            .iconfont {
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+//弹窗
+.layou {
+    background: #fff;
+    border-radius: 10px;
+    &>ul {
+        display: flex;
+        height: 56px;
+        border-radius: 10px 10px 0 0;
+        background: #105fbe;
+        li {
+            height: 56px;
+            min-width: 110px;
+            line-height: 52px;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+            color: #fff;
+            // border-bottom: 4px solid #105fbe;
+            i {
+                margin-right: 3px;
+                font-size: 16px;
+            }
+            &:hover {
+                background: #126cd8;
+                border-radius: 10px 10px 0 0;
+                // border-bottom: 4px solid #126cd8;
+            }
+        }
+        .active {
+            background: #126cd8;
+            border-radius: 10px 10px 0 0;
+            border-bottom: 4px solid #126cd8;
+        }
+    }
+    .mod {
+        min-height: 400px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 20px;
+    }
+    .phone {
+        background: url("../../../assets/image/side-nav/mobile-bg.jpg") no-repeat center;
+        .logo {
+            margin: 10px;
+            margin-top: 20px;
+            height: 60px;
+            background: url("../../../assets/image/side-nav/mobile-logo.png") no-repeat left;
+        }
+        .nav {
+            min-height: 240px;
+            float: left;
+            .btn1 {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+                background: yellow;
+                border: yellow;
+            }
+            .btn2 {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+                background: #333333;
+                border: #333333;
+            }
+            .btn3 {
+                border-top-left-radius: 30px;
+                border-bottom-left-radius: 30px;
+                background: #333333;
+                border: #333333;
+            }
+            .btn4 {
+                border-top-right-radius: 30px;
+                border-bottom-right-radius: 30px;
+                background: yellow;
+                border: yellow;
+            }
+            .list {
+                margin: 10px auto;
+                color: #ffffff;
+                font-weight: 600;
+                li {
+                    margin: 20px auto;
+                    button {
+                        margin-right: 20px;
+                        height: 20px;
+                        width: 20px;
+                    }
+                }
+            }
+        }
+        .txt {
+            width: 40%;
+        }
+        .qr {
+            text-align: center;
+            width: 25%;
+            margin-left: 10px;
+            img {
+                width: 100%;
+            }
+            .txt {
+                width: 200px;
+                margin: 8px auto;
+                color: #ffffff;
+                text-align: center;
+            }
+        }
+        ;
+    }
+    .pc {
+        padding: 30px;
+        background: url("../../../assets/image/side-nav/pc-bg.jpg") no-repeat center;
+        .top {
+            .left {
+                height: 300px;
+                width: 50%;
+                float: left;
+                background: url("../../../assets/image/side-nav/pc.png") no-repeat center bottom;
+                ;
+            }
+            .right {
+                height: 300px;
+                width: 50%;
+                float: left;
+                .logo {
+                    margin: 10px;
+                    margin-top: 20px;
+                    height: 60px;
+                    background: url("../../../assets/image/side-nav/pc-logo.png") no-repeat left;
+                }
+                .txt {
+                    color: #ffffff;
+                    p {
+                        font-size: 2em;
+                    }
+                    li {
+                        margin: 15px auto;
+                        button {
+                            margin-right: 20px;
+                            height: 20px;
+                            width: 20px;
+                        }
+                    }
+                }
+            }
+        }
+        .dowen {
+            color: #ffffff;
+            text-align: center;
+            margin-top: 8px;
+            button {
+                width: 160px;
+                height: 40px;
+                font-size: 1.4em;
+                margin: 8px;
+                border-radius: 30px;
+                background-color: #333333;
+                border: 2px cornflowerblue solid;
+            }
+        }
+    }
+}
+
+.my-title{
+    font-size: 22px;
+    color: #fff;
+    margin: 0 0 10px 0;
+}

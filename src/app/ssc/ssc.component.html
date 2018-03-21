@@ -1,6 +1,12 @@
 <div class="gamePage">
+  <div class="toolbar">
 
- <app-play-left></app-play-left>
+    <div class="game-menu" id="J-top-game-menu" (click)="clickLeftMenu()">
+      <span class="game-menu-text dropdown-menu-btn">游<br>戏<br>选<br>择</span>
+      <app-play-left [class.hideDom]="leftNotShow" (meun)='showMeun()'></app-play-left>
+    </div>
+
+  </div>
 
 
   <!--header-->

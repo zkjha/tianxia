@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {NzModalService} from "ng-zorro-antd";
 import {StorageService} from "../../../service/storage.service";
 import {TrackZuihaoDjangoComponent} from "./track-zuihao-django/track-zuihao-django.component";
-import { ChaseHistoryDjangoComponent } from '../../../../ssc/django/chase-history-django/chase-history-django.component';
+import { ChaseHistoryDjangoComponent } from '../../../ssc/django/chase-history-django/chase-history-django.component';
 
 /**
  * 追号记录

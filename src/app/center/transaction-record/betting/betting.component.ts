@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpService} from "../../../service/http-service.service";
 import {NzMessageService, NzModalService} from "ng-zorro-antd";
 import {StorageService} from "../../../service/storage.service";
-import { HistoryDjangoComponent } from '../../../play/django/history-django/history-django.component';
+import { HistoryDjangoComponent } from '../../../ssc/django/history-django/history-django.component';
 
 
 /**

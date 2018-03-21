@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import {NgZorroAntdModule} from 'ng-zorro-antd';
+import {QRCodeModule} from 'angularx-qrcode';
+import {ClipboardModule} from 'ngx-clipboard';
 
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpService} from './service/http-service.service';
@@ -31,6 +33,8 @@ import { SscDetailComponent } from './ssc/ssc-detail/ssc-detail.component';
 import { SscSelectComponent } from './ssc/ssc-select/ssc-select.component';
 import { BettingDjangoComponent } from './ssc/django/betting-django/betting-django.component';
 import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
+import { HistoryDjangoComponent } from './ssc/django/history-django/history-django.component';
+import { ChaseHistoryDjangoComponent } from './ssc/django/chase-history-django/chase-history-django.component';
 
 
 
@@ -81,6 +85,13 @@ import { XiajitouzhuComponent } from './center/proxy/xiajitouzhu/xiajitouzhu.com
 import { FirstWithdrawComponent} from "./center/proxy/first-withdraw/first-withdraw.component";
 
 
+
+import { TimeComponent} from "./shared/time/time.component";
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,6 +111,8 @@ import { FirstWithdrawComponent} from "./center/proxy/first-withdraw/first-withd
     SscSelectComponent,
     BettingDjangoComponent,
     ChaseDjangoComponent,
+    HistoryDjangoComponent,
+    ChaseHistoryDjangoComponent,
     TransactionRecordComponent,
     FinanceComponent,
     ReportComponent,
@@ -145,11 +158,14 @@ import { FirstWithdrawComponent} from "./center/proxy/first-withdraw/first-withd
     ChartComponent,
     XiajitouzhuComponent,
     FirstWithdrawComponent,
+    TimeComponent,
   ],
   imports: [
     FormsModule,
     HttpClientModule,
     BrowserModule,
+    QRCodeModule,
+    ClipboardModule,
     NgZorroAntdModule.forRoot(),
     RouterModule.forRoot([
       {

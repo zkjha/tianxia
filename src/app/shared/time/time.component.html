@@ -1,0 +1,23 @@
+<div>
+  <nz-radio-group [(ngModel)]="radioValue" (ngModelChange)='change()'>
+    <label nz-radio-button [nzValue]="'今天'">
+      <span>今天</span>
+    </label>
+    <label nz-radio-button [nzValue]="'昨天'">
+      <span>昨天</span>
+    </label>
+    <label nz-radio-button [nzValue]="'本周'">
+      <span>本周</span>
+    </label>
+    <label nz-radio-button [nzValue]="'上周'">
+      <span>上周</span>
+    </label>
+    <label nz-radio-button [nzValue]="'本月'">
+      <span>本月</span>
+    </label>
+    <!--<label nz-radio-button [nzValue]="'上月'">-->
+      <!--<span>上月</span>-->
+    <!--</label>-->
+
+  </nz-radio-group>
+</div>

@@ -1,0 +1,183 @@
+<div class="sideNav">
+  <ul class="oul1 changeColor">
+    <li class="d-bc"  (click)='open()'><i class="icon iconfont icon-kefu "></i>自助客服</li>
+    <li class="gapp changeColor" (click)="openMOdel()"><span>官方</span>APP
+      <!-- <div class="sclan">
+        <img width="100%" height="100%" src="assets/image/side-nav/qr.png">
+      </div> -->
+    </li>
+    <li class="changeColor">
+      <i class="icon iconfont icon-pifu"></i>换肤
+      <div class="sclan">
+        <ul>
+          <li style="background:#169ada" (click)='onClick("tianlan")'>天蓝</li>
+          <li style="background: #446ec2" (click)='onClick("xueqing")'>雪青</li>
+          <li style="background: #105fbe" (click)='onClick("zhongnan")'>中蓝</li>
+          <li style="background: #6b51bf" (click)='onClick("jianzhi")'>靓紫</li>
+          <li style="background: #8758a0" (click)='onClick("cunzhi")'>纯紫</li>
+          <li style="background: #50b0ac" (click)='onClick("cuilv")'>翠绿</li>
+          <li style="background: #2ea68a" (click)='onClick("caolv")'>草绿</li>
+          <li style="background: #e1607e" (click)='onClick("fenhong")'>粉红</li>
+          <li style="background: #df4a50" (click)='onClick("dahong")'>大红</li>
+        </ul>
+      </div>
+    </li>
+    <li (click)="lineSelect()"><i class="iconfont anticon anticon-environment"></i>线路选择</li>
+    <li (click)="tohelp()"><i class="icon iconfont icon-wenti2"></i>常见问题</li>
+    <li (click)="hide()"><i class="icon iconfont icon-yincang1"></i>隐藏列表</li>
+  </ul>
+  <ul class="oul2">
+    <li class="icon iconfont icon-zhangdan3" (click)="show()"></li>
+  </ul>
+</div>
+
+
+<!--弹窗-->
+<div class="center">
+  <nz-modal [nzVisible]="isVisible"
+            [nzContent]="modalContent"
+            [nzFooter]="null"
+            [nzWidth]="850"
+            (nzOnCancel)="handleCancel($event)">
+    <ng-template #modalContent>
+      <div class="layou">
+        <!--横向导航-->
+        <ul class="horizontal-menu d-bc d-active2">
+          <li (click)="type='phone'"><i class="anticon anticon-cloud-download-o"></i> 手机客户端</li>
+          <!--<li (click)="type='pc'"><i class="anticon anticon-cloud-download"></i> PC客户端</li>-->
+        </ul>
+        <!--内容切换-->
+        <div *ngIf="type=='phone'" class="mod phone">
+          <!-- <div class="logo"></div> -->
+          <div class='my-title'>
+            LUR娱乐客户端
+          </div>
+          <div>
+            <div class="nav txt">
+              <div *ngIf="showType=='iphone'">
+                <button nz-button [nzType]="'danger'" class="btn1" (click)="showType='iphone'">
+                  <span>iPhone手机扫码安装</span>
+                </button>
+                <button nz-button [nzType]="'danger'" class="btn2" (click)="showType='android'">
+                  <span>Android手机扫码安装</span>
+                </button>
+              </div>
+              <div *ngIf="showType=='android'">
+                <button nz-button [nzType]="'danger'" class="btn3" (click)="showType='iphone'">
+                  <span>iPhone手机扫码安装</span>
+                </button>
+                <button nz-button [nzType]="'danger'" class="btn4" (click)="showType='android'">
+                  <span>Android手机扫码安装</span>
+                </button>
+              </div>
+              <div class="list" *ngIf="showType=='iphone'">
+                <ul>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >1</button>
+                    推荐使用 QR Code 扫描右侧二维码
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >2</button>
+                    在打开的页面内点击直接下载安装
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >3</button>
+                    按Home键查看安装过程
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >4</button>
+                    完成安装并信任套件，操作如下:
+                    设定 > 通用 > 设备管理 > 信任
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >5</button>
+                    立即开启应用程序
+                  </li>
+                </ul>
+              </div>
+
+              <div class="list" *ngIf="showType=='android'">
+                <ul>
+                  <li>支持Android4.4以上版本</li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >1</button>
+                    推荐使用 QR Code 扫描右侧二维码
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >2</button>
+                    在打开的页面内点击直接安装
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >3</button>
+                    系统将自动下载应用程序
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >4</button>
+                    下载安装完成后点击安装
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >5</button>
+                    立即开启应用程序
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="nav qr">
+              <img src="assets/image/side-nav/qr1.jpg">
+              <div class="txt">安卓客户端</div>
+            </div>
+            <div class="nav qr">
+              <img src="assets/image/side-nav/qr2.jpg">
+              <div class="txt">ios客户端</div>
+            </div>
+          </div>
+
+        </div>
+        <div *ngIf="type=='pc'" class="mod pc">
+          <div class="top">
+            <div class="left"></div>
+            <div class="right">
+
+              <!-- <div class="logo"></div> -->
+            <div class='my-title'>
+              LUR娱乐客户端
+            </div>
+
+              <div class="txt">
+                <p>快速登陆的利器</p>
+                <ul>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >1</button>
+                    推荐使用 QR Code 扫描右侧二维码
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >2</button>
+                    按Home键查看安装过程
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >3</button>
+                    完成安装并信任套件，操作如下:
+                    设定 > 通用 > 设备管理 > 信任
+                  </li>
+                  <li>
+                    <button nz-button [nzType]="'primary'" [nzShape]="'circle'" >4</button>
+                    立即开启应用程序
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="dowen">
+            <button nz-button [nzType]="'primary'">
+              <span>下载</span>
+            </button>
+            <div>支持win10/win8/win7下载</div>
+            <div>文件大小27M</div>
+          </div>
+
+        </div>
+      </div>
+    </ng-template>
+  </nz-modal>
+</div>
+

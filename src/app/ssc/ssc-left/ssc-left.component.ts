@@ -444,12 +444,19 @@ export class SscLeftComponent implements OnInit, OnDestroy {
     }, 1000);
   }
 
+  changeView(){
+    if(this.leftShow){
+      this.leftShow =false
+    }else{
+      this.leftShow = true;
+    }
+  }
   // 数据处理
   sortData(data) {
     this.isHot = [];
     let gameData = [];
     // 第一层
-    Tool.forEach(data.data, (item, index) => {
+    data.data.forEach((item, index) => {
       if (item.ishot == 1) {
         this.isHot.push(item);
       }
@@ -460,8 +467,8 @@ export class SscLeftComponent implements OnInit, OnDestroy {
         gameData.push(item);
       }
     });
-    Tool.forEach(gameData, (item, index) => {
-      Tool.forEach(data.data, (item2, index2) => {
+    gameData.forEach((item, index) => {
+      data.data.forEach((item2, index2) => {
         if (item2.pid == item.id && item.enabled == 1) {
           item.child.push(item2);
         }
@@ -480,7 +487,7 @@ export class SscLeftComponent implements OnInit, OnDestroy {
       kai = false;
     }
     try {
-      Tool.forEach(this.gameList, item => {
+      this.gameList.forEach(item => {
         item.styleHeigth = 31;
         item.icon = "&#xe620;";
       });

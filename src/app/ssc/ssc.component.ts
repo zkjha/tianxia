@@ -21,6 +21,7 @@ import {SscLeftComponent} from "./ssc-left/ssc-left.component";
 export class SscComponent implements OnInit {
   playData: Object = {};
   isDetail = true;
+  leftNotShow =true;
   constructor(
     private routerInfo: ActivatedRoute,
     private http: HttpService,
@@ -31,7 +32,7 @@ export class SscComponent implements OnInit {
   @ViewChild(SscDetailComponent) private SscDetail: SscDetailComponent;
   @ViewChild(SscSelectComponent) private SscSelect: SscSelectComponent;
   // 左侧悬浮游戏菜单列表
-  @ViewChild(SscLeftComponent) private Sscleft: SscLeftComponent;
+  @ViewChild(SscLeftComponent) private playLeft: SscLeftComponent;
 
   ngOnInit() {
     // 抓取传递过来的id
@@ -140,5 +141,21 @@ export class SscComponent implements OnInit {
       this.isDetail = false;
     }
   }
+  clickLeftMenu() {
+    if(this.leftNotShow){
+      this.leftNotShow = false;
+    }else{
+      this.leftNotShow =true;
+    }
+  }
+  //   this.leftMenu = true;
+  //   setTimeout(() => {
+  //     this.playLeft.leftShoe();
+  //   }, 500);
+  // }
+
+  // showMeun() {
+  //   this.leftMenu = false;
+  // }
 
 }

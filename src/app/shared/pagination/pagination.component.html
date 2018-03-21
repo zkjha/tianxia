@@ -1,0 +1,11 @@
+<div class="table-page">
+    页<span class="prev" (click)="prevPage(currentPage-1)">&lt;</span><em>{{currentPage}}</em>
+    <span class="next" (click)=nextPage(currentPage+1)>&gt;</span>共{{pageCount}}页 | 每页
+    <select [(ngModel)]="changePage" (change)="changeOption($event)" >
+        <option selected>10</option>
+        <option>20</option>
+        <option>50</option>
+        <option>100</option>
+        <option>500</option>
+    </select>条数据 | 共查询到 {{totalCount}} 条数据
+</div>

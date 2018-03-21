@@ -1,0 +1,110 @@
+<div class="title d-bc">
+  <span (click)="emitDataOutside()">X</span>
+</div>
+
+<div class="top-header d-bc">
+  <div class='detail-top'>
+    <div class="content">
+      <p>
+        <span>订单号:{{data.log_id}}</span>
+        <span>开奖号码:{{data.bingoCode}}</span>
+      </p>
+      <p>
+        <span>投注金额:{{data.betAmount | number:'1.2-2'}}</span>
+        <span>中奖金额:{{data.winCount}}注 -
+          <span>{{data.winAmount | number:'1.2-2'}}</span>
+        </span>
+        <span>盈亏金额:{{data.winAmount + data.betReturnSelf - data.betAmount | number:'1.2-2'}}</span>
+      </p>
+      <div *ngIf="data.status == 2" ></div>
+      <div class='wkj' *ngIf="data.status == 0" ></div>
+      <div class='jxz' *ngIf="data.status == 1" ></div>
+      <div class='zj' *ngIf="data.status == 3" ></div>
+      <div class='cx' *ngIf="data.status == -1" ></div>
+
+    </div>
+    <div class="bottom-img"></div>
+  </div>
+</div>
+<div class='top-content d-bc'>
+
+
+</div>
+<div class="info">
+  <div>
+    <div class="info-item">
+      <div>彩票名称</div>
+      <div>{{data.gameTitle}}</div>
+    </div>
+    <div class="info-item">
+      <div>投注期号</div>
+      <div>{{data.issue}}</div>
+    </div>
+    <div class="info-item">
+      <div>投注数量</div>
+      <div>{{data.betCount}} 注</div>
+    </div>
+    <div class="info-item">
+      <div>投注倍数</div>
+      <div>{{data.betTimes}}倍</div>
+    </div>
+    <div class="info-item">
+      <div>元角模式</div>
+      <div *ngIf='data.currency == 1'>元</div>
+      <div *ngIf='data.currency == 0.1'>角</div>
+      <div *ngIf='data.currency == 0.01'>分</div>
+
+    </div>
+    <div class="info-item">
+      <div>是否追号</div>
+      <div>{{data.chase_id > 0 ? '是': '否'}}</div>
+    </div>
+
+  </div>
+
+  <div>
+    <div class="info-item">
+      <div>玩法名称</div>
+      <div>{{data.gameFullName}}</div>
+    </div>
+    <div class="info-item">
+      <div>下单时间</div>
+      <div>{{data.addTime *1000 | date:"yyyy-MM-dd HH:mm:ss"}}</div>
+    </div>
+    <div class="info-item">
+      <div>游戏状态</div>
+      <div *ngIf='data.status == 0'>未开奖</div>
+      <div *ngIf='data.status == 1'>已封单</div>
+      <div *ngIf='data.status == 2'>未中奖</div>
+      <div *ngIf='data.status == 3'>已中奖</div>
+      <div *ngIf='data.status == -1'>撤单</div>
+    </div>
+
+
+    <div class="info-item">
+      <div>奖金模式</div>
+      <div>{{data.returnPer}}% -{{data.bonusMode}}</div>
+    </div>
+
+    <div class="info-item" *ngIf='data.status == 2'>
+      <div>开奖时间</div>
+      <div>{{data.bingoTime *1000 | date:"yyyy-MM-dd HH:mm:ss"}}</div>
+    </div>
+    <div class="info-item" *ngIf='data.chase_id > 0'>
+      <div>中奖撤单</div>
+      <div>{{data.winStop == 1 ? '是':'否'}}</div>
+    </div>
+
+
+  </div>
+</div>
+
+
+<div class="tz">
+  <div>投注号码</div>
+  <div>{{data.code}}</div>
+</div>
+
+<div class="bottom">
+  <span class='ok d-bc' (click)="emitDataOutside()">确定</span>
+</div>
