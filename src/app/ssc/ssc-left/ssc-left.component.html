@@ -1,3 +1,19 @@
-<p>
-  ssc-left works!
-</p>
+
+<div class="toolbar">
+
+  <div class="game-menu" id="J-top-game-menu">
+    <span class="game-menu-text dropdown-menu-btn">游<br>戏<br>选<br>择</span>
+    <div class="game-menu-panel">
+      <span class="triangle game-menu-triangle"><span></span></span>
+      <div class="game-menu-inner">
+        <div class="game-menu-box" *ngFor='let list of gameList; let i = index'>
+          <div class="game-menu-title">{{list.title}}</div>
+          <div class="game-menu-list">
+            <a href="javascript:void (0)" routerLinkActive="active" [routerLink]="['/GameBet/GameBetPage/Ssc/',item.id]" *ngFor='let item of list.child,let j = index'>{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

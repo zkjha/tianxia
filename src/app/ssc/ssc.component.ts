@@ -11,6 +11,7 @@ import {HttpService} from '../service/http-service.service';
 import { StorageService } from "../service/storage.service";
 import {SscDetailComponent} from "./ssc-detail/ssc-detail.component";
 import {SscSelectComponent} from "./ssc-select/ssc-select.component";
+import {SscLeftComponent} from "./ssc-left/ssc-left.component";
 
 @Component({
   selector: 'app-ssc',
@@ -29,6 +30,8 @@ export class SscComponent implements OnInit {
   // 头部
   @ViewChild(SscDetailComponent) private SscDetail: SscDetailComponent;
   @ViewChild(SscSelectComponent) private SscSelect: SscSelectComponent;
+  // 左侧悬浮游戏菜单列表
+  @ViewChild(SscLeftComponent) private Sscleft: SscLeftComponent;
 
   ngOnInit() {
     // 抓取传递过来的id
