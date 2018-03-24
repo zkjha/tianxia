@@ -12,6 +12,7 @@ import { StorageService } from "../service/storage.service";
 import {SscDetailComponent} from "./ssc-detail/ssc-detail.component";
 import {SscSelectComponent} from "./ssc-select/ssc-select.component";
 import {SscLeftComponent} from "./ssc-left/ssc-left.component";
+import {PlayTimeComponent} from "./play-time/play-time.component";
 
 @Component({
   selector: 'app-ssc',
@@ -31,12 +32,18 @@ export class SscComponent implements OnInit {
   // 头部
   @ViewChild(SscDetailComponent) private SscDetail: SscDetailComponent;
   @ViewChild(SscSelectComponent) private SscSelect: SscSelectComponent;
+  @ViewChild(PlayTimeComponent) private playTime: PlayTimeComponent;
   // 左侧悬浮游戏菜单列表
   @ViewChild(SscLeftComponent) private playLeft: SscLeftComponent;
 
   ngOnInit() {
+
+
+
+
     // 抓取传递过来的id
     this.routerInfo.params.subscribe(info => {
+      // console.log(1111222);
       const id = parseInt(info.id);
       console.log(info);
 
@@ -52,7 +59,7 @@ export class SscComponent implements OnInit {
           // this.playSelect.removeData();
           this.SscSelect.onClickBetType("default");
           this.SscDetail.getPlayData();
-          // this.playTime.init();
+          this.playTime.init();
           // this.playInfo.onClickBetlist();
           console.log(data);
         });

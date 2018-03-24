@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {QRCodeModule} from 'angularx-qrcode';
@@ -18,6 +19,7 @@ import {PublicMethodService} from './ssc/play-service/public-method.service';
 
 import { AppComponent } from './app.component';
 import { CaipiaoComponent } from './caipiao/caipiao.component';
+import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ZhenrenComponent } from './zhenren/zhenren.component';
@@ -28,10 +30,12 @@ import { YouhuiComponent } from './youhui/youhui.component';
 import { SscComponent } from './ssc/ssc.component';
 import { LoginAfterComponent } from './login-after/login-after.component';
 import { SscHeaderComponent } from './ssc/ssc-header/ssc-header.component';
-import { SscLeftComponent } from './ssc/ssc-left/ssc-left.component';
+import {  SscLeftComponent } from './ssc/ssc-left/ssc-left.component';
+import { PlayTimeComponent } from './ssc/play-time/play-time.component';
 import { SscDetailComponent } from './ssc/ssc-detail/ssc-detail.component';
 import { SscSelectComponent } from './ssc/ssc-select/ssc-select.component';
 import { BettingDjangoComponent } from './ssc/django/betting-django/betting-django.component';
+import { LotteryHistoryDjangoComponent } from './ssc/django/lottery-history-django/lottery-history-django.component';
 import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
 import { HistoryDjangoComponent } from './ssc/django/history-django/history-django.component';
 import { ChaseHistoryDjangoComponent } from './ssc/django/chase-history-django/chase-history-django.component';
@@ -83,10 +87,13 @@ import { UserChargeComponent } from "./center/finance/user-charge/user-charge.co
 import { ChartComponent } from "./center/chart/chart.component";
 import { XiajitouzhuComponent } from './center/proxy/xiajitouzhu/xiajitouzhu.component';
 import { FirstWithdrawComponent} from "./center/proxy/first-withdraw/first-withdraw.component";
+import { LoadingComponent} from "./loading/loading.component";
 
 
 
 import { TimeComponent} from "./shared/time/time.component";
+
+import {LoginGuard} from "./guard/login.guard";
 
 
 
@@ -94,7 +101,9 @@ import { TimeComponent} from "./shared/time/time.component";
 
 @NgModule({
   declarations: [
+    LotteryHistoryDjangoComponent,
     AppComponent,
+    LoginComponent,
     CaipiaoComponent,
     HomeComponent,
     RegisterComponent,
@@ -106,6 +115,7 @@ import { TimeComponent} from "./shared/time/time.component";
     SscComponent,
     LoginAfterComponent,
     SscHeaderComponent,
+    PlayTimeComponent,
     SscLeftComponent,
     SscDetailComponent,
     SscSelectComponent,
@@ -159,9 +169,11 @@ import { TimeComponent} from "./shared/time/time.component";
     XiajitouzhuComponent,
     FirstWithdrawComponent,
     TimeComponent,
+    LoadingComponent,
   ],
   imports: [
     FormsModule,
+    BrowserAnimationsModule,
     HttpClientModule,
     BrowserModule,
     QRCodeModule,
@@ -205,7 +217,8 @@ import { TimeComponent} from "./shared/time/time.component";
             path: 'GameBetPage/Ssc/:id',
             component: SscComponent
           }
-        ]
+        ],
+        canActivate: [LoginGuard]
       }, {
         path: 'Youhui',
         component: YouhuiComponent
@@ -236,7 +249,11 @@ import { TimeComponent} from "./shared/time/time.component";
     CookieService,
     StorageService,
     PlayService,
-    PublicMethodService
+    PublicMethodService,
+    LoginGuard
+  ],
+  entryComponents: [
+    BettingDjangoComponent
   ],
   bootstrap: [AppComponent]
 })

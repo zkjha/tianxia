@@ -73,7 +73,7 @@ export class BettingDjangoComponent implements OnInit {
   sumAllData() {
     let allCount = 0;
     let allAmount = 0;
-    Tool.forEach(this.playDjangoData, item => {
+    this.playDjangoData.forEach(item => {
       allCount += item.count;
       allAmount += item.htmlData.amount;
 

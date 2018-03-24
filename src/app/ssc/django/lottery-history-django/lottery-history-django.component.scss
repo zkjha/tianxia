@@ -1,0 +1,30 @@
+.main-wrap{
+    // width:800px;
+    margin:0 auto;
+    background: #fff;
+    border-radius: 10px;
+    color: #111;
+    .time{
+        height: 50px;
+        display: flex;
+        line-height: 50px;
+        text-align: center;
+        &>div:nth-child(1){
+            width: 232px;
+        }
+        &>div:nth-child(2){
+            flex: 1;
+            text-align: left;
+            font-size: 16px;
+        }
+    }
+    .tab{
+        td, th{
+            text-align: center;
+            font-size: 14px;
+            color:#111;
+            padding: 5px 0;
+        }
+    }
+    
+}   

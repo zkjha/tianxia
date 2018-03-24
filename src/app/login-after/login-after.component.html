@@ -15,7 +15,7 @@
     </a>
   </div>
   <div class="user-menu-bar2">
-    <a href="/Home/Logout" class="loginOut fr">
+    <a (click)="loginOut()" class="loginOut fr">
       退出
     </a>
 
@@ -23,7 +23,7 @@
     <div class="yue fr">
       <a href="javascript:;" class="a">
         <i class="iconfont">&#xe600;</i>
-        余额  0.1440
+        余额  {{usableAmount}}
         <i class="iconfont refreshBall">&#xe602;</i>
       </a>
       <ul class="myaccount_list">

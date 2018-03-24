@@ -484,7 +484,8 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
         };
         this.http.postRxNormal(`/api/Games/bet`, params).subscribe(data => {
           if (data["errormsg"] == null) {
-            this.message.success("投注成功！");
+            // this.message.success("投注成功！");
+            alert("投注成功！");
             this.betData = [];
             // 下注成功
             this.sumAllData();

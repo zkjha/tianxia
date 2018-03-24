@@ -3,7 +3,7 @@
 
     <div class="game-menu" id="J-top-game-menu" (click)="clickLeftMenu()">
       <span class="game-menu-text dropdown-menu-btn">游<br>戏<br>选<br>择</span>
-      <app-play-left [class.hideDom]="leftNotShow" (meun)='showMeun()'></app-play-left>
+      <app-play-left [class.hideDom]="leftNotShow" ></app-play-left>
     </div>
 
   </div>
@@ -56,113 +56,114 @@
   <div class="game-main">
 
 
-    <div class="g_33 lot">
-      <div class="logos">
-        <h1 class="logo" style="background: url() center no-repeat;    margin-top: 25px;">
-          <a title="时时彩" id="J-lottery-logo"
-             style="background: url(/assets/Images/game/ssc_logo/logo-ssc.png) 0px 0px no-repeat scroll rgba(0, 0, 0, 0);"></a>
-        </h1>
+    <!--<div class="g_33 lot">-->
+      <!--<div class="logos">-->
+        <!--<h1 class="logo" style="background: url() center no-repeat;    margin-top: 25px;">-->
+          <!--<a title="时时彩" id="J-lottery-logo"-->
+             <!--style="background: url(/assets/Images/game/ssc_logo/logo-ssc.png) 0px 0px no-repeat scroll rgba(0, 0, 0, 0);"></a>-->
+        <!--</h1>-->
 
-        <div class="deadline">
-          <div class="deadline-text">
+        <!--<div class="deadline">-->
+          <!--<div class="deadline-text">-->
 
-            <a class="sound" id="bg_music_btn" state="1" style="float: left;margin-right: 5px;"></a>
+            <!--<a class="sound" id="bg_music_btn" state="1" style="float: left;margin-right: 5px;"></a>-->
 
-            <input id="J-lottery-info-currentIssue" type="hidden" autocomplete="off" value="20180311004">
-            第<strong id="J-lottery-info-number">20180311004</strong>期投注截止还有
-          </div>
-          <div class="deadline-number">
-            <em class="min-left" style="display: inline;">0</em>
-            <em class="min-right" style="display: inline;">3</em>
-            <span style="display: inline;">:</span>
-            <em class="sec-left" style="display: inline;">5</em>
-            <em class="sec-right" style="display: inline;">5</em>
-            <strong style="display:none">预售中</strong>
-
-
-          </div>
-        </div>
-      </div>
-      <div class="lottery">
-        <div class="lottery-text">
-          重庆时时彩
-          第<strong id="J-lottery-info-lastnumber">20180103065</strong>期
-          <a href="/Trend/index?LotteryCode=10001" target="_blank">开奖号码&gt;</a>
+            <!--<input id="J-lottery-info-currentIssue" type="hidden" autocomplete="off" value="20180311004">-->
+            <!--第<strong id="J-lottery-info-number">20180311004</strong>期投注截止还有-->
+          <!--</div>-->
+          <!--<div class="deadline-number">-->
+            <!--<em class="min-left" style="display: inline;">0</em>-->
+            <!--<em class="min-right" style="display: inline;">3</em>-->
+            <!--<span style="display: inline;">:</span>-->
+            <!--<em class="sec-left" style="display: inline;">5</em>-->
+            <!--<em class="sec-right" style="display: inline;">5</em>-->
+            <!--<strong style="display:none">预售中</strong>-->
 
 
-        </div>
-        <div class="lottery-number" id="J-lottery-info-balls">
-          <em>0</em> <em>3</em> <em>6</em> <em>5</em> <em>8</em>
-
-        </div>
-
-
-      </div>
-
-      <div class="program-chaseadd">
-        <ul class="program-chaseadd-title">
-          <li class="current">历史开奖号</li>
-        </ul>
-        <ul class="program-chaseadd-content">
-          <li class="current">
-            <table class="program-chaseadd-table" id="program-history-open">
-
-              <tbody>
-              <tr>
-                <td>20180103065</td>
-                <td><b class="price">0,3,6,5,8</b></td>
-              </tr>
-              <tr>
-                <td>20171216023</td>
-                <td><b class="price">7,0,8,4,1</b></td>
-              </tr>
-              <tr>
-                <td>20171216022</td>
-                <td><b class="price">9,7,6,1,5</b></td>
-              </tr>
-              <tr>
-                <td>20171216021</td>
-                <td><b class="price">9,6,2,4,3</b></td>
-              </tr>
-              <tr>
-                <td>20171216020</td>
-                <td><b class="price">0,4,9,6,1</b></td>
-              </tr>
-              <tr>
-                <td>20171216019</td>
-                <td><b class="price">5,9,1,9,9</b></td>
-              </tr>
-              <tr>
-                <td>20171216018</td>
-                <td><b class="price">0,5,0,6,3</b></td>
-              </tr>
-              <tr>
-                <td>20171216017</td>
-                <td><b class="price">8,8,7,5,5</b></td>
-              </tr>
-              <tr>
-                <td>20171216016</td>
-                <td><b class="price">9,0,6,3,0</b></td>
-              </tr>
-              <tr>
-                <td>20171216015</td>
-                <td><b class="price">1,0,8,0,8</b></td>
-              </tr>
-              </tbody>
-            </table>
-          </li>
-        </ul>
-      </div>
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="lottery">-->
+        <!--<div class="lottery-text">-->
+          <!--重庆时时彩-->
+          <!--第<strong id="J-lottery-info-lastnumber">20180103065</strong>期-->
+          <!--<a href="/Trend/index?LotteryCode=10001" target="_blank">开奖号码&gt;</a>-->
 
 
-      <div class="lottery-link" style="left: 60px;">
-        <a href="/Trend/index?LotteryCode=10001" target="_blank" class="chart">号码走势</a>
+        <!--</div>-->
+        <!--<div class="lottery-number" id="J-lottery-info-balls">-->
+          <!--<em>0</em> <em>3</em> <em>6</em> <em>5</em> <em>8</em>-->
+
+        <!--</div>-->
 
 
-        <a target="_blank" class="info">游戏说明</a>
-      </div>
+      <!--</div>-->
 
-    </div>
+      <!--<div class="program-chaseadd">-->
+        <!--<ul class="program-chaseadd-title">-->
+          <!--<li class="current">历史开奖号</li>-->
+        <!--</ul>-->
+        <!--<ul class="program-chaseadd-content">-->
+          <!--<li class="current">-->
+            <!--<table class="program-chaseadd-table" id="program-history-open">-->
+
+              <!--<tbody>-->
+              <!--<tr>-->
+                <!--<td>20180103065</td>-->
+                <!--<td><b class="price">0,3,6,5,8</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216023</td>-->
+                <!--<td><b class="price">7,0,8,4,1</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216022</td>-->
+                <!--<td><b class="price">9,7,6,1,5</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216021</td>-->
+                <!--<td><b class="price">9,6,2,4,3</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216020</td>-->
+                <!--<td><b class="price">0,4,9,6,1</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216019</td>-->
+                <!--<td><b class="price">5,9,1,9,9</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216018</td>-->
+                <!--<td><b class="price">0,5,0,6,3</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216017</td>-->
+                <!--<td><b class="price">8,8,7,5,5</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216016</td>-->
+                <!--<td><b class="price">9,0,6,3,0</b></td>-->
+              <!--</tr>-->
+              <!--<tr>-->
+                <!--<td>20171216015</td>-->
+                <!--<td><b class="price">1,0,8,0,8</b></td>-->
+              <!--</tr>-->
+              <!--</tbody>-->
+            <!--</table>-->
+          <!--</li>-->
+        <!--</ul>-->
+      <!--</div>-->
+
+
+      <!--<div class="lottery-link" style="left: 60px;">-->
+        <!--<a href="/Trend/index?LotteryCode=10001" target="_blank" class="chart">号码走势</a>-->
+
+
+        <!--<a target="_blank" class="info">游戏说明</a>-->
+      <!--</div>-->
+
+    <!--</div>-->
+    <app-play-time></app-play-time>
 
 
     <!-- header end -->

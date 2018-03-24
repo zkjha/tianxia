@@ -1,0 +1,168 @@
+<div class="g_33 lot">
+  <div class="logos">
+    <h1 class="logo" style="background: url() center no-repeat;    margin-top: 25px;">
+      <a title="时时彩" id="J-lottery-logo"
+         style="background: url(/assets/Images/game/ssc_logo/logo-ssc.png) 0px 0px no-repeat scroll rgba(0, 0, 0, 0);"></a>
+    </h1>
+
+    <div class="deadline">
+      <div class="deadline-text">
+
+        <a class="sound" id="bg_music_btn" state="1" style="float: left;margin-right: 5px;"></a>
+
+        <input id="J-lottery-info-currentIssue" type="hidden" autocomplete="off" value="{{curTime.issue}}">
+        第<strong id="J-lottery-info-number">{{curTime.issue}}</strong>期投注截止还有
+      </div>
+      <div class="deadline-number">
+        <em class="min-left" style="display: inline;">{{timeData[2]}}</em>
+        <em class="min-right" style="display: inline;">{{timeData[3]}}</em>
+        <span style="display: inline;">:</span>
+        <em class="sec-left" style="display: inline;">{{timeData[4]}}</em>
+        <em class="sec-right" style="display: inline;">{{timeData[5]}}</em>
+        <strong style="display:none">预售中</strong>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="lottery">
+    <div class="lottery-text">
+      {{gameName}}
+      第<strong id="J-lottery-info-lastnumber">{{lastIssueData.issue}}</strong>期
+      <a href="/Trend/index?LotteryCode=10001" target="_blank">开奖号码&gt;</a>
+
+
+    </div>
+    <div class="lottery-number" id="J-lottery-info-balls">
+      <!--<em>0</em> <em>3</em> <em>6</em> <em>5</em> <em>8</em>-->
+      <em *ngFor='let item of codeData'>{{item}}</em>
+
+    </div>
+
+
+  </div>
+
+  <div class="program-chaseadd">
+    <ul class="program-chaseadd-title">
+      <li class="current">历史开奖号</li>
+    </ul>
+    <ul class="program-chaseadd-content">
+      <li class="current">
+        <table class="program-chaseadd-table" id="program-history-open">
+
+          <tbody>
+          <tr>
+            <td>20180103065</td>
+            <td><b class="price">0,3,6,5,8</b></td>
+          </tr>
+          <tr>
+            <td>20171216023</td>
+            <td><b class="price">7,0,8,4,1</b></td>
+          </tr>
+          <tr>
+            <td>20171216022</td>
+            <td><b class="price">9,7,6,1,5</b></td>
+          </tr>
+          <tr>
+            <td>20171216021</td>
+            <td><b class="price">9,6,2,4,3</b></td>
+          </tr>
+          <tr>
+            <td>20171216020</td>
+            <td><b class="price">0,4,9,6,1</b></td>
+          </tr>
+          <tr>
+            <td>20171216019</td>
+            <td><b class="price">5,9,1,9,9</b></td>
+          </tr>
+          <tr>
+            <td>20171216018</td>
+            <td><b class="price">0,5,0,6,3</b></td>
+          </tr>
+          <tr>
+            <td>20171216017</td>
+            <td><b class="price">8,8,7,5,5</b></td>
+          </tr>
+          <tr>
+            <td>20171216016</td>
+            <td><b class="price">9,0,6,3,0</b></td>
+          </tr>
+          <tr>
+            <td>20171216015</td>
+            <td><b class="price">1,0,8,0,8</b></td>
+          </tr>
+          </tbody>
+        </table>
+      </li>
+    </ul>
+  </div>
+
+
+  <div class="lottery-link" style="left: 60px;">
+    <a href="/Trend/index?LotteryCode=10001" target="_blank" class="chart">号码走势</a>
+
+
+    <a target="_blank" class="info">游戏说明</a>
+  </div>
+
+</div>
+
+
+
+
+
+
+<!--<div class="time">-->
+  <!--<div class="left">-->
+    <!--<h4>{{gameName}}</h4>-->
+    <!--<p  *ngIf='isCur'>第{{curTime.issue}}期</p>-->
+    <!--<p  *ngIf='!isCur'>{{isCurText}}期已封单</p>-->
+    <!--<p class='shijian'>投注时间-->
+      <!--<i class="iconfont" *ngIf="shengying" (click)='kjshengyingOn()' >&#xe62e;</i>-->
+      <!--<i class="iconfont" *ngIf="!shengying" (click)='kjshengyingOn()' >&#xe633;</i>-->
+    <!--</p>-->
+  <!--</div>-->
+  <!--<div class="content-time">-->
+    <!--<nz-progress [ngModel]="T" [nzType]="'circle'" [nzFormat]="_formatT" [nzWidth]="80" [nzStatus]="'exception'"></nz-progress>-->
+    <!--<span>:</span>-->
+    <!--<nz-progress [ngModel]="M" [nzType]="'circle'" [nzFormat]="_formatM" [nzWidth]="80" [nzStatus]="'exception'"></nz-progress>-->
+    <!--<span>:</span>-->
+    <!--<nz-progress [ngModel]="S" [nzType]="'circle'" [nzFormat]="_formatS" [nzWidth]="80" [nzStatus]="'exception'"></nz-progress>-->
+  <!--</div>-->
+  <!--<div class="content-text">-->
+    <!--<p>第{{lastIssueData.issue}}期</p>-->
+    <!--&lt;!&ndash; <p>前往官方网站</p> &ndash;&gt;-->
+  <!--</div>-->
+  <!--&lt;!&ndash; 其他 &ndash;&gt;-->
+  <!--<div *ngIf="gameType != 'bjpk10'" class="hm " [class.xm]="codeData.length > 5">-->
+
+    <!--<div class='d-bc d-border' *ngFor='let item of codeData'>{{item}}</div>-->
+  <!--</div>-->
+  <!--&lt;!&ndash; pk10 &ndash;&gt;-->
+  <!--<div *ngIf="gameType == 'bjpk10'" class="pk10">-->
+
+    <!--<div *ngFor='let item of codeData'>-->
+      <!--<img src='assets/pk10/car{{item}}.png' alt="">-->
+      <!--&lt;!&ndash; {{item}} &ndash;&gt;-->
+    <!--</div>-->
+  <!--</div>-->
+  <!--<div class="right">-->
+    <!--<a href='http://buy.cqcp.net/trend/ssc/scchart_11.aspx' target="_blank"><i class="anticon anticon-area-chart"></i>号码趋势</a>-->
+    <!--<p (click)='openHistory()'><i class="anticon anticon-calendar"></i>历史开奖</p>-->
+    <!--<p (click)='openinfo()'><i class="anticon anticon-calendar"></i>奖金详情</p>-->
+  <!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; 右下角浮动窗口 &ndash;&gt;-->
+<!--<div class="footer-right" *ngIf="isFooter" >-->
+  <!--<div class="title d-bc">-->
+    <!--消息-->
+    <!--<i>X</i>-->
+  <!--</div>-->
+  <!--<div class="main">-->
+    <!--<p>第{{curIssueFooterText}}期已截止</p>-->
+    <!--<p>当前为{{nextIssueFooterTest}}期投注时请注意期号</p>-->
+  <!--</div>-->
+  <!--<div class='footer'>-->
+    <!--<span class='django-buttton django-button-success d-bc' >确定</span>-->
+  <!--</div>-->
+<!--</div>-->

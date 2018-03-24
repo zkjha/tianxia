@@ -1,0 +1,2870 @@
+/** 提示组件样式 **/
+
+.j-ui-tip {
+  background: #FFFFE1;
+  border: 1px solid #CCC;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px
+}
+
+.toolbar .menu-nav {
+  display: none
+}
+
+.toolbar .panel-current {
+  display: block
+}
+
+.icon-question {
+  display: inline-block;
+  position: relative;
+  top: -2px;
+  width: 17px;
+  height: 17px;
+  overflow: hidden;
+  vertical-align: middle;
+  background: url("/assets/Images/game/icon-question.png") 0 0 no-repeat;
+  cursor: pointer
+}
+
+.pop .ico-success,
+.pop .ico-error,
+.pop .ico-waring {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px
+}
+
+.pop .ico-success {
+  background-position: 0 -80px
+}
+
+.pop .ico-vertical-top {
+  vertical-align: top
+}
+
+.pop .ico-error {
+  background-position: -40px -80px
+}
+
+.pop .ico-waring {
+  background-position: -80px -80px
+}
+
+.pop .text-title {
+  padding: 0 10px 10px;
+  font-size: 14px
+}
+
+.pop .radio-list {
+  font-size: 14px
+}
+
+.pop .radio-list .label {
+  padding: 0 10px
+}
+
+.pop .text-note {
+  padding-top: 5px;
+  color: #000;
+  text-align: center
+}
+
+.pop .text-note a {
+  color: #000
+}
+
+.pop .lottery-list {
+  border-top: 1px solid #EFEFEF
+}
+
+.pop .lottery-list dt {
+  padding: 10px;
+  text-align: left
+}
+
+.pop .lottery-list dd {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 128px;
+  padding: 0 20px;
+  vertical-align: middle
+}
+
+.pop .lottery-list dd .pic {
+  display: inline-block;
+  width: 128px;
+  height: 80px;
+  background-position: center center;
+  background-repeat: no-repeat
+}
+
+.pop .lottery-numbers {
+  padding: 0 30px 20px;
+  font-size: 14px
+}
+
+.pop .lottery-numbers .content {
+  overflow: hidden;
+  padding-top: 20px;
+  text-align: right
+}
+
+.pop .lottery-numbers .content em {
+  float: left;
+  width: 35px;
+  height: 35px;
+  line-height: 34px;
+  text-align: center;
+  margin-right: 10px;
+  background-color: #03A284;
+  font-size: 18px;
+  color: #585858;
+  border-radius: 50%
+}
+
+.pop .lottery-numbers .content a {
+  line-height: 34px
+}
+
+.pop-text {
+  max-width: 300px;
+  _width: 300px;
+  color: #000;
+  font-weight: 100
+}
+
+.pop-text strong {
+  font-weight: 700
+}
+
+.pop .ui-form {
+  font-size: 14px
+}
+
+.pop .ui-form li {
+  margin-top: 10px;
+  position: relative;
+  margin-bottom: 10px
+}
+
+.pop .ui-form .textarea {
+  width: 320px;
+  color: #666;
+  height: 84px;
+  overflow-y: auto
+}
+
+.pop .ui-label {
+  width: auto
+}
+
+
+/* S header */
+
+.lot {
+  height: 180px;
+
+  position: relative;
+  background: url(/assets/Images/game/bg-lottery.png) no-repeat;
+}
+
+.lot .logos {
+  width: 254px;
+  height: 180px;
+  float: left;
+  background: url(/assets/Images/game/lot-logobg.png) no-repeat;
+  border-right:1px solid #E83E41;
+}
+
+.lot .logo {
+  position: absolute;
+  width: 235px;
+  height: 90px;
+  padding-top: 1px;
+  padding-left: 0;
+  left: 8px;
+  top: 0
+}
+
+.lot .logo a {
+  display: block;
+  overflow: hidden;
+
+  height:120px;
+  margin-top: -14px;	background: url("/assets/Images/game/ssc_logo/logo-jxssc.png") no-repeat center;
+  _background-image: none;
+  background-position: center!important;
+  _filter: progid: DXImageTransform.Microsoft.AlphaImageLoader(src="/assets/Images/game/ssc_logo/logo-jxssc.png")
+}
+
+
+/*= S deadline */
+
+.deadline {
+  /* width: 410px; */
+  height: 40px;
+  position: absolute;
+  left: 335px;
+  bottom: 20px;
+  text-align: center;
+  color: #fff;
+  z-index: 10;
+}
+
+.deadline-text {
+  font-size: 14px;
+  float: left;padding-top: 15px;margin-right: 5px;
+}
+
+.deadline-text strong {
+  color: #fff
+}
+
+.deadline-number {
+
+  height: 48px;float: left;
+  color: #fff;
+  word-spacing: -8px;
+  line-height: 48px;
+  vertical-align: middle;
+  font-size: 30px
+}
+
+.deadline-number em {
+  width: 23px
+}
+
+.deadline-number span {
+  line-height: 48px;
+  color: #fff
+}
+
+.deadline-number strong {
+  font-family: "微软雅黑";
+  font-size: 30px;
+  font-weight: 100;
+  color: #FFF100;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5)
+}
+
+
+/*= E deadline */
+
+
+/*= S lottery */
+
+.lottery {
+  position: absolute;
+  width:364px;
+  height: 190px;
+
+  top: 5px;
+  left:324px;
+  text-align: center;
+  color: #fff
+}
+
+.lottery-text {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 10px 0 21px;
+}
+
+.lottery-text strong {
+  color: #fff;
+  font-weight: normal;
+}
+
+.lottery-text a {
+  color: #fff
+}
+
+.lottery-text a:hover {
+  color: #fff
+}
+
+.lottery-number {
+  padding: 0;
+  height: 78px;
+  line-height: 73px;
+  text-align: center;
+  vertical-align: middle
+}
+
+.lottery-number em {
+  display: inline-block;
+  width:60px;
+  height:60px;
+  padding-bottom: 18px;
+  margin-left: 2px;
+  margin-top: -5px;
+  line-height: 63px;
+  text-align: center;
+  background: url("/assets/Images/game/un-lottery-number.png") no-repeat top center;
+  color: #FFF;
+  font-size: 32px
+}
+
+.lottery-link {
+  width:190px;
+  height: 30px;
+  position: absolute;
+  bottom: 14px;
+  left: 20px;
+}
+.lottery-link a {
+  display: block;
+  float: left;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  font-family: '微软雅黑';
+
+  line-height: 30px;
+  color: #fff;margin-right: 5px;
+  border: 1px solid #454545;
+  text-align: center;
+  color: #A3A3A3;
+}
+
+.history-list {
+  width: 302px;
+  position: absolute;
+  right: 0;
+  top: 5px
+}
+
+.history-list .more {
+  height: 33px;
+  line-height: 33px;
+  text-align: right
+}
+
+.history-list .more a {
+  color: #fff
+}
+
+.history-list .more a:hover {
+  text-decoration: underline
+}
+
+.history-list .list {
+  width: 100%;
+  color: #fff
+}
+
+.history-list .list th,
+.history-list .list td {
+  padding: 5px 4px;
+  text-align: center
+}
+
+.history-list .list th {
+  background-image: linear-gradient(to bottom, #553365, #351744);
+  background-image: -moz-linear-gradient(to bottom, #553365, #351744);
+  background-image: -webkit-linear-gradient(to bottom, #553365, #351744);
+  background-color: #200d2b;
+  color: #fff;
+  border-top: 1px solid #9961b1;
+  border-bottom: 1px solid #9961b1
+}
+
+.history-list .list th:first-child {
+  border-radius: 2px 0 0 2px;
+  border-left: 1px solid #9961b1
+}
+
+.history-list .list th:last-child {
+  border-radius: 0 2px 2px 0;
+  border-right: 1px solid #9961b1
+}
+
+.history-list .list td a {
+  color: #fff
+}
+
+.history-list .list .price {
+  color: #ff9000
+}
+
+.userInfo-mini{
+  width: 208px;padding-top: 30px;
+  padding-left: 30px;
+}
+.userInfo-mini li{
+  padding-left:24px ;
+  background: url() 0 center no-repeat;line-height: 24px;
+  color: #CAD0DE;
+}
+.userInfo-mini li strong{
+  color: #FFEA00;
+}
+.userInfo-mini .li1{background-image: url(/assets/Images/game/icon-User.png);}
+.userInfo-mini .li2{background-image: url(/assets/Images/game/icon-hg.png);}
+.userInfo-mini .li3{background-image: url(/assets/Images/game/icon-money.png);}
+.userInfo-mini .li4{background-image: url(/assets/Images/game/icon-money.png);}
+
+
+/*= E lottery */
+
+
+/* E header */
+
+.main {
+  position: relative;
+  padding-bottom: 20px;
+  font-size: 14px;
+  border-top: 0 none;
+  font-family: '微软雅黑'
+}
+
+.chart-switch {
+  position: absolute;
+  left: -32px;
+  width: 12px;
+  padding: 10px;
+  padding-top: 26px;
+  background: url('/assets/Images/game/trendicon.png') #F6B403 10px 10px no-repeat;
+  font-weight: bold;
+  color: #FFF;
+  cursor: pointer;
+  border-radius: 5px 0px 0px 5px
+}
+
+.countdown {
+  display: none;
+  position: fixed;
+  top: 0px;
+  _position: absolute;
+  z-index: 111;
+  right: -20px;
+  padding-right: 20px;
+  width: 0px;
+  background-color: #00A0EA;
+  height: 50px;
+  color: #FFF;
+  border-radius: 0px 5px 5px 0px;
+  overflow: hidden
+}
+
+.countdown-current {
+  width: auto;
+  padding: 0 12px 0 12px;text-align: center;
+  border-radius: 5px
+}
+
+.countdown span {
+
+  color: #fff;
+}
+
+.countdown strong {
+  display: block;
+  font-weight: 100;
+  font-size: 26px;
+  line-height: 30px;
+  color: #fff;
+}
+
+.countdown a {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 20px;
+  height: 100%;display: none;
+  background: url('/assets/Images/game/un-countdown.png') #F6B403 5px -92px no-repeat;
+  border-radius: 0 5px 5px 0
+}
+
+.countdown-current a {
+  background-position: 5px -42px
+}
+
+
+/* S play-section */
+
+.play-section {
+  margin-top: 6px;
+  background:rgba(23,23,23);
+  background-color:rgba(23,23,23,.7);
+  overflow: hidden;
+  *zoom: 1;
+  border: 1px solid #332D1F;
+}
+
+.program-chase-content li {
+  max-height: 135px;
+  overflow-y: scroll;
+  display: none
+}
+
+.program-chase-content li.current {
+  display: block
+}
+
+.program-chase-none {
+  height: 132px;
+  line-height: 132px;
+  text-align: center;
+  border-top: 1px solid #946aa6;
+  color: #999
+}
+
+
+/*= S play-select */
+
+ul.play-select-title {
+  background: url(/assets/Images/game/play-select-titlebg.jpg) repeat-x;
+  border: 1px solid #544D29;
+}
+
+.play-select-title .superior,
+.play-select-title li {
+  float: left;
+  padding: 6px 15px;
+  height: 23px;
+  line-height: 23px;
+
+  font-size: 14px;
+  color: #FFE39F;
+  cursor: pointer;
+
+}
+
+.play-select-title li.current,
+.play-select-title li.current:hover {
+  color: #401F12;
+  cursor: default;
+  padding-left: 33px;
+  background: url(/assets/Images/game/play-select-title-current.jpg) 0 center no-repeat ;
+}
+
+.play-select-content li {
+  display: none;
+  *zoom: 1;
+  padding: 8px 0
+}
+
+.play-select-content li.current {
+  display: block
+}
+
+.play-select-content dl {
+  padding: 1px 0 1px 75px;
+  overflow: hidden;
+  zoom: 1
+}
+
+.play-select-content dt,
+.play-select-content dd {
+  float: left;
+  margin: 2px 0;
+  padding: 0px 13px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 13px;
+  color: #A1A1A1
+}
+
+.play-select-content dt {
+  margin-left: -75px;
+  font-weight: 700;
+  _display: inline;font-weight: normal;
+
+}
+div.play-select .prompt{
+  color: #888;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 1px solid #332D1F;
+}
+.play-select-content dd {
+  display: inline-block;
+  margin-right: 5px;
+  *margin-right: 4px;
+  /*width: 106px;*/
+  height: 26px;line-height: 26px;
+  text-align: center;cursor: pointer;
+  border: 1px solid #443826;
+  color: #A1A1A1;
+  white-space: nowrap
+}
+
+.play-select-content dd:hover,
+.play-select-content dd.current,
+.play-select-content dd.current:hover {
+  color: #FFF000;
+  border-color: #E3E39D
+}
+
+.play-select .prompt {
+  border: 0 none;padding-left: 8px;
+  background-color: transparent;
+  /*color: #e7e7e7*/
+}
+
+.play-select .prompt .example-tip {
+  display: none;
+  position: absolute;
+  z-index: 10
+}
+
+.play-select .prompt a {
+  color: #696969;
+  font-size: 13px;
+  text-decoration: underline
+}
+
+.example-tip .ball {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  width: 10px;
+  height: 10px;
+  margin: 0 0 0 5px;
+  border-radius: 10px;
+  overflow: hidden
+}
+
+.example-tip .red {
+  background: red
+}
+
+.example-tip .blue {
+  background: blue
+}
+
+.example-tip .table-border {
+  color: #333
+}
+
+
+/*= E play-select */
+
+
+/*= S program-chaset */
+
+.program-chase {
+
+  padding: 2px 0px 2px 0px;
+  height: 170px;
+  /* width: 268px;position: absolute; background: url(/assets/Images/game/bg-program-chase.png) no-repeat; */
+
+  right: 7px;
+  top: 5px;
+  color: #BBC3D5;
+}
+
+.program-chase .more {
+  position: absolute;
+  right: 10px;
+  color: #BBC3D5;
+  line-height: 35px
+}
+
+.program-chase-title {
+  border-radius: 5px 5px 0 0;
+  height: 25px;
+  color: #BBC3D5;
+
+}
+
+.program-chase-title li {
+  display: block;
+  float: left;
+  margin-right: 4px;
+  padding: 0 10px;
+  height: 25px;
+  line-height: 25px;
+
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+
+}
+
+.program-chase-title li:hover {
+  color: #BBC3D5;
+}
+.program-chase-content{
+  clear: both;
+}
+.program-chase-title li.current,
+.program-chase-title li.current:hover {
+  color: #BBC3D5;
+  cursor: default;
+  border-bottom: 2px solid #50B985;
+}
+
+.program-chase-title li:first-child {
+
+}
+
+.program-chase-none {
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+  color: #FFF
+}
+
+.program-chase-table {
+  width: 100%;
+  color: #BBC3D5
+}
+
+.program-chase-table th,
+.program-chase-table td {
+  padding: 3px 4px;
+  text-align: center
+}
+
+.program-chase-table th {
+  color: #BBC3D5
+}
+
+.program-chase-table td a {
+  color: #BBC3D5
+}
+
+.program-chase-table .price {
+  color: #BBC3D5
+}
+
+.program-chase-table .more {
+  color: #BBC3D5
+}
+
+.balls-example-danshi-tip {
+  color: #BBC3D5
+}
+
+.danshiTextareaAlert {
+  width: 100%;
+  height: 160px;
+  background: transparent;
+  overflow: auto;
+  color: #000
+}
+
+program-chase{float:right;padding:6px 20px 0;width:270px;_display:inline}
+.program-chase-title li{display:inline-block;*display:inline;*zoom:1;margin-right:4px;padding:4px 14px;height:24px;line-height:24px;color:#707070;cursor:pointer}
+.program-chase-title li.current,.program-chase-title li.current:hover{border-bottom:2px solid #C72533;font-weight:700;color:#C72533;cursor:default}
+
+.program-chase-title li:hover{color:#C72533}
+.program-chase-none{height:70px;line-height:70px;text-align:center;color:#9a9a9a}
+.program-chase-table{width:100%;color:#9a9a9a}
+.program-chase-table th,.program-chase-table td{padding:3px 4px;text-align:center}
+.program-chase-table th{}
+.program-chase-table td a{color:#9a9a9a}
+.program-chase-table .price{color:#ff9000}
+.program-chase-table .more{color:#9a9a9a}
+/*= E program-chaset */
+.panel-clearfix .program-chase{float:none;padding:6px 0 20px;width:auto}
+.panel-clearfix .program-chase-title{margin:14px}
+.panel-clearfix .program-chase-table th{background-color:#9b9b9b;line-height:27px;color:#FFF}
+.panel-clearfix .program-chase-table td{line-height:21px;background-color:#EFEFEF}
+.panel-clearfix .program-chase-table tr:nth-child(2n) td{background-color:#FFF}
+.panel-clearfix .program-chase-content li.current{display:block;max-height:none;overflow-y:visible;height: 168px;  overflow: hidden;}
+
+
+.program-chaseadd-content li{display:none}
+.program-chaseadd-content li.current{display:block;max-height:150px;overflow-y:scroll}
+.program-chaseadd-none{height:132px;line-height:132px;text-align:center;border-top:1px solid #D9E0E8;color:#999}
+
+
+.program-chaseadd{float:right;
+  _display:inline;
+  width: 308px;
+}
+.program-chaseadd-title li{display:inline-block;*display:inline;*zoom:1;margin-right:4px;padding:0 14px;height:24px;line-height:24px;color:#eee;cursor:pointer}
+.program-chaseadd-title li.current,.program-chaseadd-title li.current:hover{
+  cursor:default}
+
+.program-chaseadd-title li:hover{color:#C72533}
+.program-chaseadd-none{height:70px;line-height:70px;text-align:center;color:#9a9a9a}
+.program-chaseadd-table{width:100%;color:#9a9a9a}
+.program-chaseadd-table th,.program-chaseadd-table td{padding:3px 4px;text-align:center}
+.program-chaseadd-table th{}
+.program-chaseadd-table td a{color:#9a9a9a}
+.program-chaseadd-table .price{color:#ff9000}
+.program-chaseadd-table .more{color:#9a9a9a}
+/*= E program-chaset */
+.panel-clearfix .program-chaseadd{float:none;padding:6px 0 20px;width:auto}
+.panel-clearfix .program-chaseadd-title{margin:14px}
+.panel-clearfix .program-chaseadd-table th{background-color:#9b9b9b;line-height:27px;color:#FFF}
+.panel-clearfix .program-chaseadd-table td{line-height:21px;background-color:#EFEFEF}
+.panel-clearfix .program-chaseadd-table tr:nth-child(2n) td{background-color:#FFF}
+.panel-clearfix .program-chaseadd-content li.current{display:block;max-height:none;overflow-y:visible;height: 168px;  overflow: hidden;}
+
+
+
+
+
+
+/*= E program-chaset */
+
+
+/* E play-section */
+
+.example-tip {
+  padding: 2px 5px;
+  background: #525252;
+  border: 1px solid #C72533;
+  color: #FFF;
+  border-radius: 3px
+}
+
+
+/* S chart-section */
+
+.chart-section {
+  height: 334px;
+  overflow: auto;
+  border-bottom: 1px solid #E7E7E7;
+  *padding-right: 16px
+}
+
+.chart-table {
+  width: 100%
+}
+
+.chart-table .title-text th {
+  font-weight: 700;
+  white-space: nowrap;
+  word-wrap: break-word
+}
+
+.chart-table .title-number th {
+  padding-top: 0
+}
+
+.chart-table .tbody {
+  color: #888
+}
+
+.chart-table th {
+  padding: 5px 0;
+  background-color: #F7F7F7;
+  text-align: center
+}
+
+.chart-table td {
+  padding: 5px 0;
+  background-color: #FFF;
+  text-align: center
+}
+
+.chart-table .issue-numbers,
+.chart-table .lottery-numbers {
+  width: auto
+}
+
+.chart-table tr:nth-child(2n) td {
+  background-color: #F9F9F9
+}
+
+.chart-table .lottery-numbers,
+.chart-table .size-numbers,
+.chart-table .parity-numbers {
+  color: #0A94E3
+}
+
+.chart-table .border-right {
+  border-right: 1px solid #E7E7E7
+}
+
+.chart-table .border-bottom {
+  border-bottom: 1px solid #E7E7E7
+}
+
+.chart-table .ball-none,
+.chart-table .title-number .ball-none {
+  width: 4px
+}
+
+.chart-table .ball-noraml {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  line-height: 14px;
+  text-align: center;
+  font-style: normal
+}
+
+.chart-table .ball-red,
+.chart-table .ball-orange,
+.chart-table .ball-blue,
+.chart-table .ball-green,
+.chart-table .ball-purple,
+.chart-table .group-current {
+  /*background-image: url("un-chart.png");*/
+  /*background-repeat: no-repeat;*/
+  color: #FFF
+}
+
+.chart-table .ball-red {
+  background-position: 0 0
+}
+
+.chart-table .ball-orange {
+  background-position: -20px 0
+}
+
+.chart-table .ball-blue {
+  background-position: -40px 0
+}
+
+.chart-table .ball-green {
+  background-position: -60px 0
+}
+
+.chart-table .ball-purple {
+  background-position: -80px 0
+}
+
+.chart-table .group-current {
+  display: inline-block;
+  width: 18px;
+  height: 12px;
+  line-height: 12px;
+  text-align: center;
+  font-style: normal;
+  background-position: -100px 0
+}
+
+.chart-table .tbody .sum {
+  background-color: #F53F00;
+  color: #FFF
+}
+
+.chart-table .tbody .span {
+  background-color: #06A4FF;
+  color: #FFF
+}
+
+
+/* E chart-section */
+
+
+/* S number-section */
+
+.number-section {
+  background: rgba(23,23,23);
+  background-color: rgba(23,23,23,.7);
+  padding-top: 15px;
+}
+#J-balls-main-panel{
+  margin:0 15px;
+  background-color: #17171D;
+  border-radius: 15px;
+}
+
+/*= S number-select-title */
+
+.number-select-title {
+  overflow: hidden;
+  padding: 10px;
+  width: 411px
+}
+
+.function-select-title {
+  float: left
+}
+
+.function-select-title li {
+  display: inline-block;
+  margin-right: 5px;
+  background-color: #393E44;
+  padding: 0 10px;
+  height: 26px;color: #fff;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+
+  white-space: nowrap;
+}
+.function-select-title li:nth-of-type(1){
+  border-radius: 20px 0 0 20px;
+}
+.function-select-title li:nth-of-type(2){
+  border-radius:0 20px 20px 0;
+}
+.function-select-title li.current {
+  background-color: #C3AC5F;
+  color: #fff;
+
+
+}
+
+.function-select-content {
+  float: left;
+  padding-left: 20px
+}
+
+.function-select-content li {
+  float: left
+}
+
+.function-select-content a {
+  display: inline-block;
+  margin-right: 5px;
+
+  width:84px;
+  height: 26px;color: #fff;
+  line-height: 26px;
+  text-align: center;
+  cursor: pointer;
+
+  white-space: nowrap;
+  border-radius: 20px;background-color: #393E44;
+}
+
+.function-select-content a.current,
+.function-select-content a.current:hover {
+  background-color: #C3AC5F;
+  color: #fff;
+
+
+}
+
+.function-select-content a:hover {
+  text-decoration: none
+}
+
+
+/*= E number-select-title */
+
+
+/*= S number-select-content */
+
+
+/*== S ball-section */
+
+.ball-section {
+  border-radius: 4px
+}
+
+.ball-section li {
+  margin-bottom: 1px;
+  padding: 8px 14px 4px 7px;
+  *zoom: 1;
+
+}
+
+.ball-section li li {
+  border-bottom: 0
+}
+
+.ball-section li:first-child {
+  border-radius: 4px 4px 0 0
+}
+
+.ball-section li:last-child {
+  border-radius: 0 0 4px 4px
+}
+
+.ball-title {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 88px;
+  height: 45px;
+  padding: 7px 0;
+  margin-right: 10px;
+  color: #fff;
+  border-radius: 5px;
+  background-color:#3A3937;
+  text-align: center;
+  vertical-align: middle
+}
+
+.ball-title strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  color: #FFF
+}
+
+.ball-title span {
+  display: block;
+  font-size: 12px;
+  padding: 0 4px;
+  color: #FFF
+}
+
+.ball-content {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  margin-left: 12px
+}
+
+.ball-content li {
+  float: left;
+  padding: 0 1px;
+  margin-right: 0px;
+  margin-bottom: 0;
+  text-align: center;
+  vertical-align: middle
+}
+
+.ball-number {
+  display: block;
+  width: 41px;
+  height: 41px;
+  line-height: 41px;
+  text-align: center;
+  background: url("/assets/Images/game/un-ball-number.png") 0 0 no-repeat;
+  color: #F7F6F6;
+  font-size: 17px;
+
+}
+
+.ball-number:hover,
+.ball-number-current {
+  background-position: right 0;
+  text-decoration: none;
+  color: #151414;
+}
+
+.ball-aid {
+  color: #969696;
+  font-size: 14px
+}
+
+.ball-aid-hot {
+  color: #fff
+}
+
+.ball-aid-cold {
+  color: #fff
+}
+
+.ball-control {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+  margin-left: 40px;
+  position: relative;
+
+}
+.ball-title~.ball-control{
+  top: -10px
+}
+
+
+
+/*.ball-control a {
+	float: left;
+	display: block;
+	width: 35px;
+	height: 35px;margin-right: 2px;
+	line-height: 35px;
+	text-align: center;
+
+	color: #FFF;
+	background-color: #080808;
+	border: 1px solid #E3E3E3;
+	font-size: 17px;
+}
+
+.ball-control a.current,
+.ball-control a:hover {
+	background-position: right 0;
+	text-decoration: none;
+	color: #fff;
+	background-color: #C5AE62;
+	border-color: #C5AE62;
+}*/
+
+.balls-import {
+  padding: 25px 10px;
+  position: relative
+}
+
+.balls-import .panel-select {
+  margin-bottom: 50px;
+  background:#17171D
+
+}
+body>p{
+  padding:0 10px;
+}
+.balls-import .panel-btn {
+  padding-top: 19px;
+  top: 226px;
+  width: 370px;
+}
+
+.balls-import .panel-btn a {
+  font-weight: 100;
+  color: #fff;
+}
+
+.balls-import .panel-btn i {
+  width: 14px;
+  height: 14px;
+  background-position: 0 -60px
+}
+
+.balls-import .panel-btn a:hover i,
+.balls-import .panel-btn a.current i {
+  background-position: -20px -60px
+}
+
+
+/*== E ball-section */
+
+
+/*== S bet-statistics */
+
+#J-balls-statistics-panel {
+  position: relative;
+  zoom: 1
+}
+
+#J-balls-statistics-panel:after {
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+
+.bet-statistics {
+  padding: 10px;
+  text-align: left;
+  font-size: 12px;
+  color: #fff;
+}
+
+.bet-statistics li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle
+}
+
+.bet-statistics em {
+
+  color: #fff
+}
+
+.bet-statistics .label {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #888
+}
+
+.bet-statistics .price {
+  color: #fff
+}
+
+.bet-statistics .bet-tips {
+  display: inline-block;
+  padding: 0 4px;
+  margin-left: 10px;
+  /*background-color:#0c69a8;*/
+  border-radius: 2px;
+  color: #888;
+  vertical-align: middle
+}
+
+
+/*.bet-statistics .bet-tips i{position:absolute;width:0;height:0;margin-left:-9px;margin-top:5px;border-width:5px;overflow:hidden;border-color:transparent #0c69a8 transparent transparent;border-style:dotted solid dotted none}*/
+
+.multiple-limit {
+  margin-right: 60px
+}
+
+.choose-multiple,
+.choose-model {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  z-index: 10
+}
+
+.choose-multiple .input {
+  position: relative;
+  width: 46px;
+  padding: 3px;
+  font-weight: 700;
+  text-align: center;
+  color: #C72533
+}
+
+.choose-model .info {
+  display: inline-block;
+  width: 49px;
+  height: 18px;
+  line-height: 18px;
+  padding: 6px 5px;
+  background-color: #FFF;
+  color: #7b7b7b;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 13px
+}
+
+.choose-model .choose-input {
+  border: 0;
+  text-indent: 8px;
+  width: 100%;
+  color: #7b7b7b;
+  background: #FFF
+}
+
+.choose-multiple i,
+.choose-model i {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+
+  vertical-align: middle;
+  background: #FFF url("/assets/Images/game/ico-arrow-down.png") center center no-repeat;
+  cursor: pointer
+}
+
+.choose-multiple .text,
+.choose-model .text {
+  display: inline-block;
+  padding-left: 6px;
+  vertical-align: middle
+}
+
+.choose-model2 {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  top: 12px
+}
+
+.choose-model2 a {
+  display: block;
+  float: left;
+  height: 34px;
+  line-height: 34px;
+  overflow: hidden;
+  font-size: 13px;
+  width: 34px;
+  margin-right: 6px;
+  text-align: center;
+  text-decoration: none;
+  color: #6C758C;
+  background: url(/assets/Images/game/yjf.png) no-repeat;
+  vertical-align: middle;
+  cursor: pointer;
+  white-space: nowrap
+}
+
+.choose-model2 a.current {
+  background-position: 0 bottom;
+  color: #FFF;
+  background-color: #ffb22b
+}
+
+.chase-trace-startNumber-select .choose-list {
+  height: 260px;
+  overflow-y: auto
+}
+
+.choose-model .slide-checkbox {
+  position: relative;
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  top: 0;
+  left: 0;
+  width: 53px;
+  height: 28px;
+  background: none repeat scroll 0 0 #79A5B7;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) inset;
+  border-radius: 3px;
+  vertical-align: middle
+}
+
+.choose-model .slide-checkbox .checklist {
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  margin: 0;
+  padding: 0;
+  height: 24px;
+  z-index: 2
+}
+
+.choose-model .slide-checkbox .checklist a {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  color: #FFF;
+  text-decoration: none;
+  vertical-align: middle;
+  -moz-transition: color 0s ease 0.2s;
+  -webkit-transition: color 0s ease 0.2s;
+  -o-transition: color 0s ease 0.2s;
+  transition: color 0s ease 0.2s
+}
+
+.choose-model .slide-checkbox .checklist a.current {
+  color: #666;
+  font-weight: 700
+}
+
+.choose-model .slide-checkbox .current-check-background {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 22px;
+  border-bottom: 2px solid #DEDEDE;
+  background-color: #FFF;
+  border-radius: 2px;
+  -moz-transition: left 0.2s ease;
+  -webkit-transition: left 0.2s ease;
+  -o-transition: left 0.2s ease;
+  transition: left 0.2s ease
+}
+
+.fandianSel-btn {
+  padding-left: 10px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  position: relative;
+  top: 2px;
+  color: #6C758C
+}
+
+.fandianSel-btn a {
+  display: block;
+  background: url(/assets/Images/game/return-btn.png) no-repeat 0 0;
+  width: 65px;
+  height: 32px;
+  padding-left: 30px;
+  line-height: 32px;
+  font-size: 13px;
+  color: #333;
+
+}
+
+.fandianSel-btn a:hover,
+.fandianSel-btn .take-one-current,
+.fandianSel-btn .take-five-current,
+.fandianSel-btn .empty-number-current {
+  color: #333;
+  text-decoration: none
+}
+
+.choose-list {
+  position: absolute;
+  top: 29px;
+  left: -1px;
+  border: 1px solid #C72533;
+  padding: 5px 0;
+  background-color: #FFF;
+  font-size: 12px
+}
+
+.choose-list a {
+  display: block;
+  margin: 3px 0;
+  color: #7b7b7b;
+  font-size: 13px;
+  padding: 0 14px;
+  height: 20px;
+  line-height: 20px;
+  text-align: left
+}
+
+.choose-list a:hover {
+  background-color: #C72533;
+  color: #FFF;
+  text-decoration: none
+}
+
+.choose-multiple .choose-list {
+  width: 78px
+}
+
+.choose-model .choose-list {
+  width: 89px
+}
+
+.choose-bet em {
+  padding: 0 6px
+}
+
+.total-money {
+  margin-left: 60px
+}
+
+.total-fandian {
+  margin-left: 10px
+}
+
+.total-fandian strong {
+  color: #FFf
+}
+
+
+/*== E bet-statistics */
+
+.choose-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px
+}
+
+.bet-btn {
+  padding: 15px;float: right;
+}
+
+.bet-btn {
+
+  padding-bottom: 30px
+}
+
+.chase-btn {
+  padding: 10px;
+  border-bottom: 1px solid #d5d5d5
+}
+
+
+.panel-section .bet-btn {
+  padding:1px 5px;
+  margin-right: -6px;
+}
+.choose-btn input,
+.bet-btn input,
+.chase-btn input,
+.balls-import-input {
+  display: block;
+  margin: 0 auto;
+  border: 0 none;
+  background:#00A0EA;
+  cursor: pointer;
+  color: #fff;
+}
+
+.bet-btn input {
+  width: 139px;
+  height: 41px;
+  background-position: 0 0
+}
+
+.bet-btn input:hover {
+  background-position: -140px 0
+}
+
+.bet-btn input.disable {
+  background-position: -290px 0;
+  cursor: default
+}
+
+.choose-btn input {
+  width: 139px;
+  float: right;
+  height: 41px;
+  background-position: 100% -42px
+}
+
+.choose-btn input:hover {
+  background-position: 100% -42px
+}
+
+.choose-btn input.disable {
+  background-position: 100% -42px;
+  cursor: default
+}
+
+.choose-btn input.important {
+  background-position: 100% -42px
+}
+
+.chase-btn input {
+  width: 107px;
+  height: 31px;
+  background-position: 0 -120px
+}
+
+.chase-btn input:hover {
+  background-position: -110px -120px
+}
+
+.balls-import-input {
+  display: inline-block;
+  width: 107px;
+  height: 31px;
+  margin: 0;
+  margin-right: 20px;
+  background-position: 0 -160px
+}
+
+
+/*= E number-select-content */
+
+
+/* E number-section */
+
+
+/* S panel-section */
+
+.panel-section {
+  background: rgba(23,23,23);
+  background-color: rgba(23,23,23,.7);
+  position: relative;
+  padding: 26px 10px 15px;
+
+}
+
+.panel-section .bet-statistics {
+  padding-top: 15px
+}
+
+.gamebodybg{
+
+}
+.panel-select {
+
+  padding: 4px 5px;
+  width: 780px;
+  background-color: #17171D;
+  color: #7b7b7b;
+  float: left;
+}
+
+.panel-select ul {
+  height: 95px;
+  padding: 10px 5px 10px 10px;
+  overflow-y: scroll
+}
+
+.panel-select li {
+  padding: 7px;
+  color: #fff;
+  border-bottom: 1px dotted #666;
+  _zoom: 1
+}
+
+.panel-select li:hover {
+  background-color: #4A4F57;
+  color: #FFF;
+  cursor: default
+}
+
+.panel-select li.game-order-current,.panel-select li.game-order-current:hover {
+  background-color: #FFFFE1;
+  border-bottom-color: #CCC;color: #666;
+}
+
+.panel-select .result {
+  float: right
+}
+
+.panel-select .bet {
+  display: inline-block;
+  width: 70px;
+  text-align: center
+}
+
+.panel-select .multiple {
+  display: inline-block;
+  text-align: center
+}
+
+.panel-select .graduation {
+  display: inline-block;
+  text-align: center;
+  margin-left: 20px
+}
+
+.panel-select .lottery-details {
+  cursor: pointer
+}
+
+.panel-select .lottery-details:hover {
+  color: #C72533
+}
+
+.panel-select .lottery-details-area {
+  display: none;
+  position: absolute;
+  width: 150px;
+  top: 5px;
+  left: 160px;
+  overflow: hidden;
+  border: 1px solid #076A5B;
+  z-index: 100;
+  zoom: 1
+}
+
+.panel-select .lottery-details-area .num {
+  height: 25px;
+  line-height: 23px;
+  background: #076A5B;
+  color: #fff;
+  padding-left: 10px;
+  overflow: hidden
+}
+
+.panel-select .lottery-details-area .num .multiple {
+  float: left;
+  width: auto
+}
+
+.panel-select .lottery-details-area .num .close {
+  float: right;
+  margin-right: 5px;
+  cursor: pointer;
+  font-size: 18px
+}
+
+.panel-select .lottery-details-area .list {
+  margin: 0px;
+  padding: 10px;
+  max-height: 70px;
+  _height: 70px;
+  border: none;
+  *zoom: 1;
+  word-wrap: break-word;
+  overflow: auto;
+  background: #fff;
+  color: #333
+}
+
+.panel-select .result .price {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  width: 80px;
+  padding-left: 15px
+}
+
+.panel-select .result .close {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  width: 35px;
+  text-align: center
+}
+
+.panel-select .result .moneyUnitText {
+  padding: 0 5px
+}
+
+.panel-select .result .close a {
+  display: inline-block;
+  *zoom: 1;
+  *display: inline;
+  width: 12px;
+  height: 0;
+  padding-top: 12px;
+  background: url("/assets/Images/game/close.png") 0 0 no-repeat;
+  vertical-align: middle;
+  overflow: hidden
+}
+
+.panel-btn {
+  float: right;
+  position: absolute;
+  right: 10px;
+  top: 26px;
+  width: 180px;}
+
+.panel-btn a {
+  display: inline-block;
+  margin-right: 3px;
+
+  padding: 0 14px 0 14px;
+  height: 29px;
+  line-height: 29px;
+  float: left;
+  background:#C72533;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #666;
+  white-space: nowrap
+}
+.panel-section .panel-btn  a{
+  margin-bottom: 2px;
+
+  border: 0;
+  text-indent: -9999px;
+  width: 87px;
+  height: 33px;
+  padding: 0;
+}
+.panel-section .panel-btn  a:hover{
+  background:#C72533;color: #fff;
+  border-color: #C72533;
+}
+
+.panel-section .panel-btn  a.select-ok-btn{
+  background-color: #47C650;color: #fff;
+  border-color: #47C650;
+}
+.panel-btn a:hover,
+.panel-btn .take-one-current,
+.panel-btn .take-five-current,
+.panel-btn .empty-number-current {
+  background:#C72533;color: #fff;
+}
+
+
+
+.panel-section .panel-btn a.select-ok-btn{
+  background: url(/assets/Images/game/select-ok-btn.png) no-repeat;
+
+}
+
+.panel-section .panel-btn a.empty-number{
+  background: url(/assets/Images/game/empty-number.png) no-repeat;
+}
+.panel-section .panel-btn a.take-one{
+  background: url(/assets/Images/game/take-one.png) no-repeat;
+}
+.panel-section .panel-btn a.take-five{
+  background: url(/assets/Images/game/take-five.png) no-repeat;
+}
+
+.panel-btn i {
+  float: left;display: none;
+  width: 19px;
+  height: 16px;
+  margin-left: -25px;
+  margin-top: 7px;
+  background-image: url("/assets/Images/game/un-btn-panel.png");
+  background-repeat: no-repeat
+}
+
+.panel-btn .take-one i {
+  background-position: 0 0
+}
+
+.panel-btn .take-one:hover i,
+.panel-btn .take-one-current i {
+  background-position: -20px 0
+}
+
+.panel-btn .take-five i {
+  background-position: 0 -20px
+}
+
+.panel-btn .take-five:hover i,
+.panel-btn .take-five-current i {
+  background-position: -20px -20px
+}
+
+.panel-btn .empty-number i {
+  width: 15px;
+  height: 16px;
+  margin-left: -23px;
+  margin-top: 8px;
+  background-position: 0 -39px
+}
+
+.panel-btn .empty-number:hover i,
+.panel-btn .empty-number-current i {
+  background-position: -20px -39px
+}
+
+
+/* E panel-section */
+
+
+/* S chase-tab */
+
+.chase-tab {
+  border: 1px solid #C72533
+}
+
+.chase-tab-title {
+  height: 36px;
+  line-height: 36px;
+  border-bottom: 1px solid #C72533;
+  color: #FFF;
+  background:#C72533
+}
+
+.chase-tab-title h3 {
+  float: left;
+  padding-left: 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #FFF
+}
+
+.chase-tab-title ul {
+  position: absolute;
+  margin-left: 100px
+}
+
+.chase-tab-title li {
+  float: left;
+  height: 37px;
+  line-height: 36px;
+  color: #FFF;
+  padding: 0 20px;
+  cursor: pointer
+}
+
+.chase-tab-title li.current {
+  padding: 0 18px;
+  border-left: 1px solid #C72533;
+  border-right: 1px solid #C72533;
+  background:#fff;
+  color: #333;
+  cursor: default
+}
+
+.chase-tab-title .chase-stop {
+  float: right;
+  padding-right: 24px;
+  position: relative
+}
+
+.chase-tab-title .icon-question {
+  position: relative;
+  overflow: visible
+}
+
+.chase-tab-title .chase-stop .chase-stop-tip {
+  display: none;
+  position: absolute;
+  background: #FFFFE1;
+  font-style: normal;
+  top: -86px;
+  left: -260px;
+  width: 240px;
+  padding: 10px;
+  line-height: 180%;
+  color: #666;
+  border: 1px solid #CCC;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px
+}
+
+.chase-tab-title .chase-stop .chase-stop-tip-current {
+  display: block
+}
+
+.chase-tab-title .input {
+  width: 51px;
+  padding: 3px;
+  margin: 0 6px;
+  font-weight: 700;
+  color: #C72533;
+  text-align: center
+}
+
+.chase-tab-content {
+  /*color: #FFF;*/
+  display: none
+}
+
+.chase-tab-content-current {
+  display: block
+}
+
+.chase-tab-content .input {
+  width: 46px;
+  padding: 3px;
+  color: #526832;
+  font-weight: 700;
+  text-align: center
+}
+
+.chase-select-normal {
+  padding: 15px 30px;
+  border-bottom: 1px solid #C72533
+}
+
+.chase-select-normal li {
+  float: left;
+  color: #696969;
+  margin-right: 30px
+}
+
+.chase-select-normal .function-select-title {
+  float: none;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  vertical-align: middle;
+
+}
+
+.chase-select-normal .function-select-title li {
+  margin: 1px;
+  color: #fff
+}
+
+.chase-select-normal .function-select-title li.current {
+  border-color: #D7D7D7;
+  color: #FFF
+}
+
+.chase-select-high {
+  height: 118px;
+  border-bottom: 1px solid #C72533
+}
+
+.chase-select-high .title {
+  float: left;
+  width: 12px;
+  height: 72px;
+  padding: 23px 10px;
+  border-right: 1px solid #C72533
+}
+
+.base-parameter {
+  float: left;
+  height: 108px;
+  width: 300px;
+  padding: 5px 20px;
+  border-right: 1px solid #C72533
+}
+
+.base-parameter li {
+  padding: 5px 0;
+  *margin-bottom: -2px;
+  white-space:nowrap;
+}
+
+.base-parameter .info {
+  width: 100px
+}
+
+.high-parameter {
+  float: left;
+  width: 571px;
+  overflow: hidden
+}
+
+.high-parameter .tab-title {
+  height: 29px;
+  margin-left: -1px;
+  border-bottom: 1px solid #C72533;
+  *overflow: hidden
+}
+
+.high-parameter .tab-title li {
+  float: left;
+  height: 29px;
+  line-height: 28px;
+  padding: 0 16px;
+  cursor: pointer
+}
+
+.high-parameter .tab-title li.current {
+  *position: relative;
+  height: 30px;
+  padding: 0 15px;
+  border-left: 1px solid #C72533;
+  border-right: 1px solid #C72533;
+  cursor: default
+}
+
+.high-parameter .tab-content {
+  padding: 10px 20px 0
+}
+
+.high-parameter .tab-content li {
+  display: none
+}
+
+.high-parameter .tab-content .panel-current {
+  display: block
+}
+
+.high-parameter .tab-content p {
+  padding: 5px 0
+}
+
+.chase-table-container {
+  height: 400px;
+  overflow-y: auto
+}
+
+.chase-table {
+  width: 100%
+}
+
+.chase-table th {
+  padding: 8px 12px;
+  color: #FFF;
+  background:#C72533;
+  border-bottom: 1px solid #C72533
+}
+
+.chase-table td {
+  padding: 8px 12px;
+  color: #696969;
+  border-bottom: 1px dashed #E5E5E5
+}
+
+.chase-table .input {
+  color: #888;
+  width: 46px;
+  padding: 3px;
+  color: #C72533;
+  font-weight: 700;
+  text-align: center
+}
+
+.chase-trace-startNumber-select {}
+
+.chase-trace-startNumber-select .info {
+  width: 150px
+}
+
+.chase-trace-startNumber-select .choose-list {
+  width: 190px
+}
+
+.icon-chase-mark {
+  display: inline-block;
+  width: 110px;
+  height: 19px;
+  padding-left: 14px;
+  margin-left: -15px;
+  background: url("/assets/Images/game/icon-chase-mark.png") 0 0 no-repeat;
+  color: #FFF
+}
+
+.icon-period-current {
+  display: inline-block;
+  width: 38px;
+  height: 14px;
+  margin-left: 5px;
+  background: url("/assets/Images/game/ico-period-current.png") 0 0 no-repeat;
+  color: #FFF;
+  vertical-align: middle
+}
+
+.bet-common-loading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: #FFF url(/assets/Images/game/ico-loading.gif) no-repeat center center;
+  width: 100px;
+  height: 40px;
+  border: 5px solid #666;
+  z-index: 650;
+  display: none;
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+  zoom: 1;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px
+}
+
+.foot {
+  width: 100%;
+  margin-top: 30px;
+  padding: 30px 0 35px;
+  text-align: center;
+  line-height: 23px;
+  font-size: 13px;
+  font-family: '微软雅黑';
+  color: #7b7b7b
+}
+
+
+/*用于IE6模拟FIXED消除抖动效果*/
+
+
+/*如果影响了正常样式可删除*/
+
+
+/** html,* html body{background-image:url(about:blank);background-attachment:fixed
+}
+* html .ie6fixedBR{position:absolute;left:expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0) - 30);top:expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)) - 20)
+}*/
+
+
+/** 游戏封锁变价弹窗 **/
+
+.panel-game-msg-blockade {}
+
+.panel-game-msg-blockade a {
+  text-decoration: underline
+}
+
+.panel-game-msg-blockade .game-msg-blockade-text {
+  background: #FFFFE1;
+  border: 1px solid #CCC;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+  color: #F60
+}
+
+.panel-game-msg-blockade .game-msg-blockade-balls li {
+  position: relative;
+  height: 24px;
+  line-height: 24px
+}
+
+.panel-game-msg-blockade .game-msg-blockade-balls li:hover {
+  background: #FFFFE1
+}
+
+.panel-game-msg-blockade .game-msg-blockade-balls li .delete {
+  position: absolute;
+  right: 5px;
+  top: 0px
+}
+
+.panel-game-msg-blockade .game-msg-blockade-title {
+  padding: 5px 0
+}
+
+.panel-game-msg-blockade .game-msg-blockade-cont {
+  height: 72px;
+  overflow-y: scroll;
+  border: 1px solid #CCC;
+  padding: 5px
+}
+
+.panel-game-msg-blockade .game-msg-blockade-line-title {
+  height: 30px;
+  line-height: 30px;
+  font-weight: bold
+}
+
+.panel-game-msg-blockade .game-msg-blockade-panel-money {
+  padding: 10px 0;
+  line-height: 20px
+}
+
+
+/** 撤单扣费UI **/
+
+.cancel-bets {
+  overflow: auto;
+  max-height: 60px;
+  _height: 60px
+}
+
+.cancel-bets li {
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden
+}
+
+.cancel-bets li span {
+  display: block;
+  float: left;
+  width: 50%;
+  text-align: center
+}
+
+.fandianSilderLeftDiv {
+  display: block;
+  width: 62px;
+  height: 100%;
+  float: left;
+  position: relative
+}
+
+.fandianSilderRightDiv {
+  display: block;
+  width: 50px;
+  height: 100%;
+  float: right;
+  position: relative
+}
+
+.fandianSilderDiv {
+  display: block;
+  height: 100%;
+  float: left;
+  width: 70%;
+  position: relative;
+  text-align: center;
+  vertical-align: middle
+}
+
+.fandianSilderDivParent {
+  width: 100%;
+  height: 50px
+}
+
+.fandianSilderLeftBtn {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background: url(/assets/Images/common/ScrollBallBtn.png) no-repeat -200px 0px
+}
+
+.fandianSilderLeftBtn:hover {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background: url(/assets/Images/common/ScrollBallBtn.png) no-repeat -250px 0px
+}
+
+.fandianSilderLeftBtn:active {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background: url(/assets/Images/common/ScrollBallBtn.png) no-repeat -150px 0px
+}
+
+.fandianSilderRightBtn {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background: url(/assets/Images/common/ScrollBallBtn.png) no-repeat -50px 0px
+}
+
+.fandianSilderRightBtn:hover {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background: url(/assets/Images/common/ScrollBallBtn.png) no-repeat -100px 0px
+}
+
+.fandianSilderRightBtn:active {
+  cursor: pointer;
+  display: block;
+  height: 100%;
+  width: 50px;
+  background: url(/assets/Images/common/ScrollBallBtn.png) no-repeat 0px 0px
+}
+
+.user-body {
+  background: url(/assets/Images/game/game-body.jpg) no-repeat center #0c1323
+}
+
+
+
+.st-notice,
+.st-notice {
+  height: 32px;
+  line-height: 32px;width: 100%;
+  position: absolute;left: 0;top: 0;
+  background: #F1F1F1;
+  font-size: 13px;
+  color: #000;
+}
+.st-notice .con,
+.st-notice .con{
+  display: inline-block;padding-left: 25px;float: left;
+  background: url(/assets/Images/common/voice.png) 0 center no-repeat;
+}
+/**
+.bg-content {background:#FFF;}
+**/
+
+
+/** Tabç»„ä»¶ **/
+.ui-tab-content {display:none;overflow-x: auto;}
+.ui-tab-content-current {display:block;}
+
+
+/** æç¤ºç»„ä»¶(z-index:500) **/
+.j-ui-tip {background:#FFF;padding:5px 10px;color:#F00;font-size:14px;font-family:Microsoft Yahei;z-index:500;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius:3px;
+}
+.j-ui-tip-info {color:#007361}
+.j-ui-tip .sj {position:absolute;margin-top:-8px;width:8px;height:15px;display:none;}
+.j-ui-tip .sj-t {top:50%;left:-8px;width:15px;height:8px;top:0;left:50%;margin-left:-8px;background-position:0 0;}
+.j-ui-tip .sj-b {width:15px;left:-8px;height:8px;bottom:-8px;left:50%;margin-left:-8px;background-position:0 -23px;}
+.j-ui-tip .sj-l {left:-8px;top:50%;}
+.j-ui-tip .sj-r {right:-8px;top:50%;background-position:0 -8px;}
+.j-ui-tip-t .sj-t,.j-ui-tip-r .sj-r,.j-ui-tip-b .sj-b,.j-ui-tip-l .sj-l {display:block;}
+.j-ui-tip .error{display:inline-block;width:14px;height:14px;margin-right:4px;background-position:-60px -100px;overflow:hidden;vertical-align:-2px;*vertical-align:2px;}
+
+.j-ui-tip-yellow{border:1px solid #CCC;background-color:#FFFFE1;}
+.j-ui-tip-yellow .sj{}
+.j-ui-tip-yellow .ui-tip-text{color:#333;font-size:12px;}
+
+/** é®ç½©ç»„ä»¶(z-index:600) **/
+.j-ui-mask {z-index:600;}
+
+
+/** å¼¹å‡ºå±‚ç»„ä»¶(z-index:700) **/
+.j-ui-miniwindow {width:488px;padding:10px;border:1px solid #4fccff;background-color:#0b467f;position:absolute;left:0;top:0;display:none;z-index:700}
+.j-ui-miniwindow .hd{height:28px;line-height:18px;border-bottom:1px solid #4fccff;font-size:14px;font-weight:700;}
+.j-ui-miniwindow .close{float:right;width:15px;height:14px;background:url(/assets/game/ui-alert.png) -240px -20px no-repeat;cursor:pointer;}
+.j-ui-miniwindow .close:hover {background-position:-240px 0;}
+.j-ui-miniwindow .bd{padding:10px;}
+
+
+
+/** æ—¥æœŸæŽ§ä»¶(z-index:600) **/
+.j-ui-datepicker {position:absolute;left:150px;top:200px;z-index:590;background:#FFF;border-top:2px solid #009B7D;color:#555;
+  -moz-box-shadow:1px 2px 3px rgba(0,0,0,.5);
+  -webkit-box-shadow:1px 2px 3px rgba(0,0,0,.5);
+  box-shadow:1px 2px 3px rgba(0,0,0,.5);
+  -moz-user-select:none;
+}
+.j-ui-datepicker .control {border-left:1px solid #E3E3E3;border-right:1px solid #E3E3E3;text-align:center;}
+.j-ui-datepicker .control span {padding:10px 5px;display:inline-block;}
+.j-ui-datepicker .control .pre,.j-ui-datepicker .control .next {position:absolute;display:block;top:14px;width:8px;height:15px;overflow:hidden;font-size:0;text-indent:-10000px;cursor:pointer;padding:0;}
+.j-ui-datepicker .control .pre {left:10px;}
+.j-ui-datepicker .control .next {right:10px;}
+
+.j-ui-datepicker .tb {border-right:1px solid #E3E3E3;border-bottom:1px solid #E3E3E3;}
+.j-ui-datepicker .tb th {font-weight:bold;color:#999;}
+.j-ui-datepicker .tb td,.j-ui-datepicker .tb th {padding:5px 10px;border:1px solid #E3E3E3;text-align:center;border-right:0;border-bottom:0;width:18px;height:20px;}
+.j-ui-datepicker .tb td {cursor:pointer;}
+.j-ui-datepicker .tb td:hover {background:#EEE;}
+.j-ui-datepicker .tb td:active {background:#EEE;border-color:#DBDBDB;}
+.j-ui-datepicker .day-preMonth,.j-ui-datepicker .day-nextMonth {color:#CCC;}
+.j-ui-datepicker .day-today {font-weight:bold;color:#009B7D;}
+.j-ui-datepicker .day-curr {background:#FFFC00;font-weight:bold;}
+
+.j-ui-datepicker td.day-disabled {cursor:default;color:#FFF;background:#FFF;}
+.j-ui-datepicker td.day-disabled:hover {background:#FFF;}
+.j-ui-datepicker td.day-disabled:active {background:none;border-color:#E3E3E3;}
+
+.j-ui-datepicker .content-time {padding:10px;color:#999; text-align:center;border-left: 1px solid #e3e3e3;border-right: 1px solid #e3e3e3;}
+.j-ui-datepicker .content-time input {border:1px solid #CCC;width:44px;height:22px;text-align:center;color:#999;}
+.j-ui-datepicker .content-time .button-confirm {height:24px;background:#FFF;color:#009B7D;border-color:#009B7D;cursor:pointer;line-height:24px;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+/** æ ‘å½¢èœå• **/
+.ui-tree-minusbottom,.ui-tree-plusbottom,.ui-tree-plus,.ui-tree-minus {cursor:pointer}
+.ui-tree-node {color: #666;line-height:11px;}
+.ui-tree-node:hover {background:#FFFFE1;}
+.ui-tree-node img {border:0px;vertical-align: middle;}
+
+/**
+æ¨¡æ‹Ÿalertæç¤º
+**/
+.ui-alert-custom {padding-bottom:0;}
+.ui-alert-custom .control {padding:10px 0 0 0;text-align:center;}
+.ui-alert-custom .control .btn {width:37%}
+
+
+
+
+
+/** æ¸¸æˆä¸‹æ‹‰èœå• **/
+
+.toolbar .game-menu {
+  width: auto;
+  _width: 64px;
+  float: left;
+  margin-left: 20px;
+  position: relative;
+  color: #666;
+  background: #9B0000;
+  position: fixed;
+  z-index: 1000;
+  left: 50%;
+  margin-left: -550px;
+  top: 164px;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.toolbar .game-menu-text {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: auto;
+
+  line-height: 15px;
+  font-size: 12px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.toolbar .game-menu-current .game-menu-text {}
+
+.toolbar .game-menu-panel {
+  display: none;
+  position: absolute;
+  top: 74px;
+  left: 0;
+  background: #F5F5F5;
+  border: 1px solid #D8D8D8;
+  padding: 4px;
+  -moz-box-shadow: 0px 0px 12px rgba(153, 153, 153, 0.6);
+  -webkit-box-shadow: 0px 0px 12px rgba(153, 153, 153, 0.6);
+  box-shadow: 0px 0px 12px rgba(153, 153, 153, 0.6);
+}
+
+.hideDom{
+  display: none;
+}
+
+.toolbar .panel-current {
+  display: block;
+}
+
+.toolbar .game-menu-triangle {
+  left: 16px;
+  margin-left: 0;
+  _display: none;
+}
+
+.toolbar .game-menu-inner {
+  border: 1px solid #DFDFDF;
+
+}
+
+.toolbar .game-menu-box {
+  position: relative;
+  border-top: 1px solid #e7e7e7;
+  margin-top: -1px;
+}
+
+.toolbar .game-menu-title {
+  line-height: 26px;
+  font-size: 14px;
+  color: #9B0000;
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  font-family: "Helvetica Neue", "Hiragino Sans GB", "Microsoft Yahei", sans-serif, arial;
+}
+
+.toolbar .game-menu-list {
+  width: 200px;
+  padding: 8px 0 4px 105px;
+  *padding-bottom: 8px;
+  overflow: hidden;
+  *zoom: 1;
+}
+
+.toolbar .game-menu-list a {
+  position: relative;
+  display: block;
+  width: 90px;
+  float: left;
+  font-size: 12px;
+  text-indent: 8px;
+  line-height: 24px;
+  border: 1px solid #9B0000;
+  border-radius: 3px;
+  margin: 0 8px 4px 0;
+  color: #9B0000;
+}
+
+.toolbar .game-menu-list a:hover {
+  color: #fff;
+  background-color: #9B0000;
+  text-decoration: none;
+}
+
+.toolbar .game-menu-list a i {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(/assets/home/game-menu-game-status.png);
+  _background-image: url(/assets/home/game-menu-game-status-ie6.png);
+  background-repeat: no-repeat;
+  right: 0;
+  top: 50%;
+  margin-top: -8px;
+}
+
+.toolbar .game-menu-list .new-game i {
+  background-position: 0 0;
+}
+
+.toolbar .game-menu-list .hot-game i {
+  background-position: 0 -16px;
+}
+
+
+
+.game-main{
+  background: 0;
+}
+.lot{
+  background: 0;
+  height: 180px;
+  border: 1px solid #E83E41;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  position: relative;overflow: hidden;
+  background: #fff;
+}
+
+.lottery-text{
+  color: #000;
+}
+.lottery-text strong{
+  color: #000;
+}
+.deadline-number{
+  color: #000;
+}
+.deadline-text{
+  color: #000;
+}
+.deadline-text strong{
+  color: #000;
+}
+.deadline-number span{
+  color: #888;
+}
+.program-chaseadd-title li{
+  color: #000;
+}
+.program-chaseadd{
+  border-left: 1px solid #E83E41;
+  height: 180px;
+}
+.lottery{
+  height: 175px;
+}
+.play-section{
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.lottery-text a{
+  color: red;
+}
+.play-section{
+  background: 0;
+  border: 0;
+}
+
+.gamebodybg{
+  background: #fff;
+  border: 1px solid #AFAFAF;
+  border-radius: 5px;
+}
+ul.play-select-title{
+  background: 0;
+  border: 0;
+}
+
+.play-select-title .superior, .play-select-title li{
+  float: left;
+  padding: 0px;
+  width: 88px;
+  height: 29px;
+  line-height: 29px;text-align: center;
+
+  color: #4E4E4E;;
+}
+ul.play-select-title{
+  padding: 6px;
+  border-bottom: 1px solid #C72533;
+}
+.play-select-title li.current, .play-select-title li.current:hover{
+  background: #C72533;
+  padding: 0;color: #fff;
+  border-radius: 25px;
+}
+.play-select-content dd{
+  display: inline-block;
+  float: left;
+  padding: 0 12px;
+  height: 21px;
+  line-height: 21px;
+  border: 1px solid #AFAFAF;
+  font-size: 13px;
+  color: #7E7E7E;
+  border-radius: 10px;
+}
+.play-select-content dd:hover, .play-select-content dd.current, .play-select-content dd.current:hover{
+  background: #C72533;
+  border-color: #C72533;
+  color: #fff;
+}
+div.play-select .prompt{
+  border: 0;
+  background: #E8E8E8;
+  border-radius: 8px;
+  margin: 0 10px;
+}
+.example-tip{
+  background: #C72533;
+  border-color: #C72533;
+  color: #fff;
+}
+.number-section{
+  background: 0;
+  padding-top: 0;
+}
+#J-balls-main-panel{
+  padding: 0 10px;
+  background: 0;
+  margin: 0;
+}
+.function-select-content a.current, .function-select-content a:hover,.function-select-content a.current:hover{
+  background: #C72533;
+  color: #fff;
+}
+.function-select-title li.current{
+  background: #C72533;
+
+  color: #fff;
+}
+.bet-statistics{
+  color: #000;
+}
+
+
+.ball-title{
+  background: 0;
+  color: #333;
+}
+
+.ball-title span{
+  color: #000;
+}
+.ball-number {
+  display: block;
+  width: 38px;
+  height: 38px;
+  line-height: 38px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 22px;
+  color: #707070;
+  background: url(/assets/Images/game/ball.png) center no-repeat;
+}
+.ball-number:hover, .ball-number-current{
+  background-image: url(/assets/Images/game/ball2.png);
+  color: #fff;
+}
+.ball-aid-hot{
+  color: #C72533;
+}
+
+.ball-control a{
+  display: block;
+  width: 38px;
+  height: 38px;float: left;
+  line-height: 35px;
+  cursor: pointer;
+  text-align: center;
+  font-size:16px;
+  color: #707070;
+  background: url(/assets/Images/game/ball.png) center no-repeat;
+}
+
+.ball-control a:hover,.ball-control a.current{
+  background-image: url(/assets/Images/game/ball2.png);
+  color: #fff;
+}
+.bet-statistics em{
+  color: #C72533;
+}
+.total-fandian strong{
+  color: #C72533!important;
+}
+.select-counter-action{
+  border-radius: 50%;
+  display: inline-block;text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 22px;
+  border: 1px solid #ccc;width: 22px;
+  position: relative;
+  top: 2px;cursor: pointer;
+}
+.choose-model .info{
+  border: 1px solid #ccc;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.panel-btn{
+  color: #fff;
+}
+.panel-btn a{
+  float: left;
+}
+
+.J-trace-switch{
+  float: left;
+  color: #000;
+  padding: 8px 0 0 0;
+}
+.panel-section{
+  background: #fff;
+  color: #333;padding: 15px 10px;
+}
+
+.panel-select{
+  background: #A83D6B;
+
+  padding: 1px;
+}
+.panel-select ul{
+  background: #fff;
+}
+.number-section{
+  border-bottom: 1px solid #CCCCCC;
+}
+.bet-statistics .price{
+  color: #C72533;
+}
+.panel-select li{
+  background: #ccc;
+  color: #333;
+}
+
+.program-chase-table th {
+  background-color: #ddd;
+  color: #333;
+}
+.chase-tab-content .input{
+  border: 1px solid #CCCCCC;
+}
+
+.lottery-link a{
+  background: #C72533;
+  color: #fff;
+  border-radius: 15px;
+  border: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
