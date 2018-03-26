@@ -2874,7 +2874,48 @@ div.play-select .prompt{
 }
 
 
+/* pop */
+.pop{width:488px;padding:10px;border:1px solid #A92833;background-color:#fff;text-align:center;word-wrap: break-word;color: #333;}
+.pop .hd{height:28px;line-height:18px;border-bottom:1px solid #A92833;font-size:14px;font-weight:700;text-align:left}
+.pop .hd-info{margin-left:10px;font-size:12px;font-weight:100}
+.pop .close{float:right;width:15px;height:14px;background-position:-240px -20px;cursor:pointer}
+.pop .close:hover{height:15px;background-position:-240px 0}.pop .bd{padding:10px;text-align:left}
+.pop-title{padding:5px;text-align:center;font-size:14px}
+.pop-btn{padding-top:20px;text-align:center}
+.pop-btn .btn{margin:0 10px}
+.pop .input{width:160px}
+.pop .ui-select{width:170px}
+.pop-error,.pop-success{text-align:center}
+.pop .ico-success,.pop .ico-error{display:inline-block;*display:inline;*zoom:1;width:24px;height:24px;margin-right:5px;vertical-align:middle}
+.pop .ico-success{background-position:-120px -80px}
+.pop .ico-error{background-position:-150px -80px}
+.pop-text{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;text-align:left;line-height:24px;font-size:14px;overflow:hidden;color:#333;}
+.pop .bd .ico-success,.pop .bd .ico-error,.pop .bd .ico-waring{display:inline-block;*display:inline;*zoom:1;vertical-align:middle;width:30px;height:30px;margin-right:10px}
+.pop .bd .ico-success{background-position:0 -80px}
+.pop .bd .ico-error{background-position:-40px -80px}
+.pop .bd .ico-waring{background-position:-80px -80px}
 
+.pop .btn{
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #A92833;
+  color: #fff;margin: 0 5px;
+}
+.pop .btn.closeTip{
+  background: darkgrey;
+  color: #fff;
+}
+.title{
+  display: flex;
+}
+
+.d-bc{background: #C72533;
+  color: white;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 8px;}
 
 
 

@@ -2,12 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {QRCodeModule} from 'angularx-qrcode';
 import {ClipboardModule} from 'ngx-clipboard';
+import {AuthInterceptor} from './auto-intercepter';
 
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpService} from './service/http-service.service';
 import {LoadingService} from './service/loading.service';
 import { CookieService } from './service/cookie.service';
@@ -35,10 +36,11 @@ import { PlayTimeComponent } from './ssc/play-time/play-time.component';
 import { SscDetailComponent } from './ssc/ssc-detail/ssc-detail.component';
 import { SscSelectComponent } from './ssc/ssc-select/ssc-select.component';
 import { BettingDjangoComponent } from './ssc/django/betting-django/betting-django.component';
-import { LotteryHistoryDjangoComponent } from './ssc/django/lottery-history-django/lottery-history-django.component';
 import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
+import { LotteryHistoryDjangoComponent } from './ssc/django/lottery-history-django/lottery-history-django.component';
 import { HistoryDjangoComponent } from './ssc/django/history-django/history-django.component';
 import { ChaseHistoryDjangoComponent } from './ssc/django/chase-history-django/chase-history-django.component';
+import { PlayInfoComponent } from './ssc/play-info/play-info.component';
 
 
 
@@ -119,6 +121,7 @@ import {LoginGuard} from "./guard/login.guard";
     SscLeftComponent,
     SscDetailComponent,
     SscSelectComponent,
+    PlayInfoComponent,
     BettingDjangoComponent,
     ChaseDjangoComponent,
     HistoryDjangoComponent,
@@ -250,10 +253,16 @@ import {LoginGuard} from "./guard/login.guard";
     StorageService,
     PlayService,
     PublicMethodService,
-    LoginGuard
+    LoginGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true,
+    }
   ],
   entryComponents: [
-    BettingDjangoComponent
+    BettingDjangoComponent,
+    ChaseDjangoComponent
   ],
   bootstrap: [AppComponent]
 })

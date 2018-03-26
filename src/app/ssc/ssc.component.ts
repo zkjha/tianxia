@@ -132,11 +132,12 @@ export class SscComponent implements OnInit {
     return arr;
   }
   getGameData(item) {
+    console.log(item,"item");
     let params = {
       id: item.id
     };
     this.http.postRx("/api/Games/getPlayDetail", params).subscribe(data => {
-      this.playData = data;
+      this.playData = data||{};
       console.log(this.playData)
     });
   }

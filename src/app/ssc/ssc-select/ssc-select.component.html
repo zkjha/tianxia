@@ -1,7 +1,7 @@
 <!--提示-->
-<div class="cptishi prompt" *ngIf="BetType == 'default'">
+<div class="cptishi prompt">
   <i class="icon-question"></i>
-  <span class="method-tip">{{playData.explain}}</span>
+  <span class="method-tip" *ngIf="BetType == 'default'">{{playData.explain}}</span>
 </div>
 <!-- 注数选择区域 -->
 <div class="haomawrap " *ngIf="BetType == 'default'">
@@ -13,12 +13,13 @@
 
         <ul class="selectnum d-active4 ball-content">
           <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
-            <a href="javascript:void(0);" class="ball-number" [class.ball-number-current]= "list.status"  (click)="onChangeCheckbox(j,i)" >{{list.data}}</a>
+            <a href="javascript:void(0);" class="ball-number" [class.ball-number-current]="list.status"
+               (click)="onChangeCheckbox(j,i)">{{list.data}}</a>
           </li>
         </ul>
         <div class="selectrowNumber ball-control" *ngIf="playData.bingoType != 'compareToCode'">
-          <a href="javascript:void(0);"  (click)="changeChoose('全',i)">全</a>
-          <a  href="javascript:void(0);" (click)="changeChoose('大',i)">大</a>
+          <a href="javascript:void(0);" (click)="changeChoose('全',i)">全</a>
+          <a href="javascript:void(0);" (click)="changeChoose('大',i)">大</a>
           <a href="javascript:void(0);" (click)="changeChoose('小',i)">小</a>
           <a href="javascript:void(0);" (click)="changeChoose('单',i)">单</a>
           <a href="javascript:void(0);" (click)="changeChoose('双',i)">双</a>
@@ -29,7 +30,7 @@
   </div>
 
   <!-- 带多选2 -->
-  <div  class="number-select-content" *ngIf='playData.isShowType == 2'>
+  <div class="number-select-content" *ngIf='playData.isShowType == 2'>
     <ul class="ball-section">
       <li class="selectnumlist" *ngFor="let item of playData.playData; let i = index">
         <div class="ball-title"><strong>{{item.titel}}</strong></div>
@@ -37,7 +38,7 @@
         <ul class="selectnum d-active4 ball-content">
           <li *ngFor="let list of item.row" [class.active]="list.status">
             <a href="javascript:void(0);"
-               (click)="onChangeCheckbox()"  class=" ball-number ">{{list.data}}</a>
+               (click)="onChangeCheckbox()" class=" ball-number ">{{list.data}}</a>
           </li>
         </ul>
         <div class="selectrowNumber ball-control" *ngIf='i != 0'>
@@ -61,15 +62,15 @@
         <ul class="selectnum d-active4 ball-content">
           <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
             <a href="javascript:void(0);" class="ball-number"
-               (click)="onChangeCheckbox(j)" >{{list.data}}</a>
+               (click)="onChangeCheckbox(j)">{{list.data}}</a>
           </li>
         </ul>
         <div class="textarea">
           <div>
-            <textarea [(ngModel)]="textareaValue"   (ngModelChange)="onChangePlay()"></textarea>
+            <textarea [(ngModel)]="textareaValue" (ngModelChange)="onChangePlay()"></textarea>
           </div>
           <div>
-            <button  (click)='clearCode()'>
+            <button (click)='clearCode()'>
               <span>清空</span>
             </button>
           </div>
@@ -82,10 +83,10 @@
   <div *ngIf='playData.isShowType == 4'>
     <div class="textarea">
       <div>
-        <textarea [(ngModel)]="textareaValue"  (ngModelChange)="onChangePlay()"></textarea>
+        <textarea [(ngModel)]="textareaValue" (ngModelChange)="onChangePlay()"></textarea>
       </div>
       <div>
-        <button  (click)='clearCode()'>
+        <button (click)='clearCode()'>
           <span>清空</span>
         </button>
       </div>
@@ -100,12 +101,12 @@
         <ul class="selectnum d-active4 ball-content">
           <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
             <a href="javascript:void(0);" class="ball-number"
-               (click)="onChangeCheckbox(j)" >{{list.data}}</a>
+               (click)="onChangeCheckbox(j)">{{list.data}}</a>
           </li>
         </ul>
         <div class="selectrowNumber ball-control" *ngIf="playData.bingoType != 'compareToCode'">
           <a href="javascript:void(0);" (click)="changeChoose('全',i)">全</a>
-          <a  href="javascript:void(0);" (click)="changeChoose('大',i)">大</a>
+          <a href="javascript:void(0);" (click)="changeChoose('大',i)">大</a>
           <a href="javascript:void(0);" (click)="changeChoose('小',i)">小</a>
           <a href="javascript:void(0);" (click)="changeChoose('单',i)">单</a>
           <a href="javascript:void(0);" (click)="changeChoose('双',i)">双</a>
@@ -114,6 +115,7 @@
       </li>
     </ul>
   </div>
+
 
 </div>
 
@@ -124,90 +126,130 @@
     <div class='title'>
       <div>
         <span>连续追</span>
-        <select style="width: 60px;" (nzOpenChange)='clickRadio()' [(ngModel)]="selectedPeriods" >
-          <option *ngFor="let option of periods"  value="{{option}}">
+        <select style="width: 60px;" (ngModelChange)='clickRadio()' [(ngModel)]="selectedPeriods">
+          <option *ngFor="let option of periods" value="{{option.value}}">
             {{option.label}}
           </option>
         </select>
       </div>
-      <div>
+      <div style="margin-left: 34px;">
         期数:
-        <input style="width: 60px;" [(ngModel)]="periodsValue" maxlength="100000" type="number"  (ngModelChange)="onPeriods()"
-          >
+        <input style="width: 60px;" [(ngModel)]="periodsValue" maxlength="100000" type="number"
+               (ngModelChange)="onPeriods()"
+        >
       </div>
       <div>
         倍数:
-        <input style="width: 60px;" [(ngModel)]="timesValue" maxlength="100000" type="number" (ngModelChange)="onTimes()"
-          >
+        <input style="width: 60px;" [(ngModel)]="timesValue" maxlength="100000" type="number"
+               (ngModelChange)="onTimes()"
+        >
       </div>
       <div class='title-center'>
         <p>共 {{sumData.period}} 期 , 总投注金额:¥{{sumData.amount | number:'1.2-2'}}</p>
       </div>
-      <div class='title-right'>
-        <!--<nz-switch [nzSize]="'small'" [(ngModel)]="switchValue"></nz-switch> 中奖后停止追号-->
+      <div class='title-right' style="margin-left: 341px;">
+        <input type="checkbox" [(ngModel)]="switchValue"> 中奖后停止追号
       </div>
     </div>
-    <!--<nz-spin [nzSpinning]="chaseSpinning">-->
-      <!--<div class="tab">-->
-        <!--<nz-table #nzTable [nzDataSource]="data" [nzIsPagination]="false">-->
-          <!--<tbody nz-tbody>-->
-            <!--<tr nz-tbody-tr *ngFor="let data of nzTable.data; let i = index">-->
-              <!--<td nz-td>-->
-                <!--<label nz-checkbox [(ngModel)]="data.select" (ngModelChange)="onSelect(i)">-->
-                <!--</label>-->
-              <!--</td>-->
-              <!--<td nz-td>-->
-                <!--<nz-input-number [nzSize]="'small'" [(ngModel)]="data.times" [nzMin]="1" [nzMax]="100000" [nzStep]="1" (ngModelChange)="oneTimes()"></nz-input-number>-->
-                <!--倍-->
-              <!--</td>-->
-              <!--<td nz-td>￥ {{data.times * data.amount| number:'1.2-2'}}</td>-->
-              <!--<td nz-td>{{data.endTime * 1000 | date:'yyyy-MM-dd HH:mm'}}</td>-->
-            <!--</tr>-->
-          <!--</tbody>-->
-        <!--</nz-table>-->
-      <!--</div>-->
-    <!--</nz-spin>-->
+    <nz-spin [nzSpinning]="chaseSpinning">
+    <div class="tab">
+    <nz-table #nzTable [nzDataSource]="data" [nzIsPagination]="false">
+    <tbody nz-tbody>
+    <tr nz-tbody-tr *ngFor="let data of nzTable.data; let i = index">
+    <td nz-td>
+    <label nz-checkbox [(ngModel)]="data.select" (ngModelChange)="onSelect(i)">
+    </label>
+    </td>
+    <td nz-td>
+    <nz-input-number [nzSize]="'small'" [(ngModel)]="data.times" [nzMin]="1" [nzMax]="100000" [nzStep]="1" (ngModelChange)="oneTimes()"></nz-input-number>
+    倍
+    </td>
+    <td nz-td>￥ {{data.times * data.amount| number:'1.2-2'}}</td>
+    <td nz-td>{{data.endTime * 1000 | date:'yyyy-MM-dd HH:mm'}}</td>
+    </tr>
+    </tbody>
+    </nz-table>
+    </div>
+    </nz-spin>
   </div>
 
 </div>
 
 
 <!-- 下面输入框区域 -->
-<div  class="numinfo" style="border-bottom: 1px solid #a9a6a6;">
+<div class="numinfo" style="border-bottom: 1px solid #a9a6a6;">
   <ul class="bet-statistics">
-    <li  class="quantity choose-bet">
+    <li class="quantity choose-bet">
       您选择了
       <em id="J-balls-statistics-lotteryNum">{{quantity}}</em>注,
     </li>
     <span class="bei">
       <i class="anticon anticon-minus-circle" (click)="multipleEdit('cut')"></i>
-      <input  style='width:80px' maxlength="1000" [(ngModel)]="multiple"  (ngModelChange)="changeMultiple()">
+      <input style='width:80px' maxlength="1000" [(ngModel)]="multiple" (ngModelChange)="changeMultiple()">
       <i class="anticon anticon-plus-circle" (click)="multipleEdit('add')"></i>
       倍
     </span>
     <span class="selectedOption">
-      <select class="spinner-margin" style="width: 60px;" [(ngModel)]="selectedOption" (nzOpenChange)="OpenChange()" >
-        <option *ngFor="let option of options" value="{{option}}">
+      <select class="spinner-margin" style="width: 60px;" [(ngModel)]="selectedOption" (ngModelChange)="OpenChange()">
+        <option *ngFor="let option of options" value="{{option.value}}">
           {{option.label}}
         </option>
       </select>
 
+    </span>
+    <span class="fandianSel-btn" (click)="showRebetSetting()">
+          <a href="javascript:void(0);" style="width: 93px" id="J-change-fanDian" class="sel"><i></i>返点设置</a>
+    </span>
+    <div  *ngIf="rebetSetting" class="j-ui-miniwindow pop w-9" style="z-index: 700; position: fixed; display: block; left: 430.5px; top: 215px;">
+      <div class="hd">
+        <i class="close closeBtn"></i>
+        <span class="title">温馨提示</span>
+      </div>
+      <div class="bd">
+        <div class="bd  text-center">
+          <div class="pop-waring"><i class="ico-success"></i><h4 class="pop-text">设置游戏返点！<br></h4>
+            <div>
+              <div class="fandianSilderDivParent">
+                <div class="fandianSilderLeftDiv"><a class="fandianSilderLeftBtn" id="fandianSilderLeftBtn"></a></div>
+                <div class="fandianSilderDiv">
+                  <div style="top:50%;margin-top:-7px;" id="J-balls-messages-fandianSilder"
+                       class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span
+                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span>
+                  </div>
+                </div>
+                <div class="fandianSilderRightDiv"><a class="fandianSilderRightBtn" id="fandianSilderRightBtn"></a>
+                </div>
+              </div>
+            </div>
+            <h4 class="pop-text">当前奖金模式: <span id="J-balls-messages-fandianSilderText">0.0000/2000</span> <br></h4>
+          </div>
+        </div>
+      </div>
+      <a style="display: inline-block;" href="javascript:void(0);" class="btn confirm">确定<b class="btn-inner"></b></a><a
+      style="display:none" href="javascript:void(0);" class="btn cancel">取 消<b class="btn-inner"></b></a><a
+      href="javascript:void(0);" style="display: inline-block;" class="btn closeTip">关 闭<b class="btn-inner"></b></a>
+    </div>
+    <span class="amount">
+      <span class="color-danger">模式：{{amount | number:'1.2-2'}} 元</span>
+    </span>
+    <span class="amount">
+      <span class="color-danger">奖金：{{amount | number:'1.2-2'}} 元</span>
     </span>
     <span class="amount">
       <span class="color-danger">金额：{{amount | number:'1.2-2'}} 元</span>
     </span>
     <span class="delete">
       <!--<tooltip [nzTitle]="'清空购物车'" [nzPlacement]="'top'">-->
-        <!--<i nz-tooltip class="anticon anticon-delete" (click)="removeNumber()"></i>-->
+      <!--<i nz-tooltip class="anticon anticon-delete" (click)="removeNumber()"></i>-->
       <!--</tooltip>-->
 
     </span>
     <!--<span class="right" style="position: relative;">-->
-      <!--<div class="button" style="display: inline-block">-->
-        <!--<span>添加</span>-->
-        <!--<span (click)='addbei()'>加倍</span>-->
-      <!--</div>-->
-      <!--<div style="position: absolute;right: 0px;top: 0px" class="button-bc d-bc d-border" (click)="addNumber()">添加</div>-->
+    <!--<div class="button" style="display: inline-block">-->
+    <!--<span>添加</span>-->
+    <!--<span (click)='addbei()'>加倍</span>-->
+    <!--</div>-->
+    <!--<div style="position: absolute;right: 0px;top: 0px" class="button-bc d-bc d-border" (click)="addNumber()">添加</div>-->
     <!--</span>-->
   </ul>
 
@@ -218,7 +260,7 @@
   <div class="ofynum panel-select">
     <ul id="J-balls-order-container">
       <p *ngIf="betData.length == 0">暂无投注项！</p>
-      <li  class="ofynum-li" *ngFor="let item of betData; let i = index">
+      <li class="ofynum-li" *ngFor="let item of betData; let i = index">
         <div style="width:250px">
           <span>[{{item.htmlData.playTitle}}_{{item.htmlData.playName}}]</span>
           <span>{{item.htmlData.codeSplit}}</span>
@@ -233,7 +275,8 @@
           <span class="ofynum-li-m">￥{{item.htmlData.amount | number:'1.2-2'}}</span>
         </div>
         <div class="delete">
-        <span class="close"><a data-param="action=del&amp;id=3" href="javascript:void(0);" title="删除" (click)=onDelete(i)>删除</a></span>
+          <span class="close"><a data-param="action=del&amp;id=3" href="javascript:void(0);" title="删除"
+                                 (click)=onDelete(i)>删除</a></span>
           <!--<nz-tooltip [nzTitle]="'删除'" [nzPlacement]="'top'">-->
           <!--<span class='del'>-->
           <!--<i nz-tooltip class="anticon anticon-delete " (click)=onDelete(i)></i>-->
@@ -263,26 +306,32 @@
 </div>
 
 <ul class="touzhu bet-statistics">
-    <li class="top-text" [class.active]='allData.allCount != 0'>
-      方案注数 <em id="J-gameOrder-lotterys-num">{{allData.allCount | number:'1.2-2'}}</em> 注，
-    </li>
-    <li>
-      金额<strong class="price">
-      <dfn>¥</dfn> <span id="J-gameOrder-amount">{{allData.allAmount | number:'1.2-2'}}</span>
-    </strong>元
-    </li>
-    <li class="shade_div" id='shade_div'>
-      <div class="now_bet_div" (click)="addBetting()"></div>
-      <div class="confirm_bet_div" (click)="betting()"></div>
-    </li>
+  <li class="top-text" [class.active]='allData.allCount != 0'>
+    方案注数 <em id="J-gameOrder-lotterys-num">{{allData.allCount | number:'1.2-2'}}</em> 注，
+  </li>
+  <li>
+    金额<strong class="price">
+    <dfn>¥</dfn> <span id="J-gameOrder-amount">{{allData.allAmount | number:'1.2-2'}}</span>
+  </strong>元
+  </li>
+  <li>
+    <label class="label" for="J-trace-switch">
+      <input id="J-trace-switch" type="checkbox" [(ngModel)]="isChased" (ngModelChange)="isChase()" class="checkbox">我要追号
+    </label>
+  </li>
+  <li><span class="bet-tips"><i></i>追号能提高中奖率</span></li>
+  <!--<li class="shade_div" id='shade_div'>-->
+    <!--<div class="now_bet_div" (click)="addBetting()"></div>-->
+    <!--<div class="confirm_bet_div" (click)="betting()"></div>-->
+  <!--</li>-->
   <!--<div class="bottom">-->
-    <!--<div class="content">-->
-      <!--<div [class.active]='BetType == "default"' (click)='onClickBetType("default")'>自购</div>-->
-      <!--<div [class.active]='BetType == "chase"' (click)='onClickBetType("chase")'>追号</div>-->
-      <!--&lt;!&ndash; <div>走势</div> &ndash;&gt;-->
-    <!--</div>-->
+  <!--<div class="content">-->
+  <!--<div [class.active]='BetType == "default"' (click)='onClickBetType("default")'>自购</div>-->
+  <!--<div [class.active]='BetType == "chase"' (click)='onClickBetType("chase")'>追号</div>-->
+  <!--&lt;!&ndash; <div>走势</div> &ndash;&gt;-->
+  <!--</div>-->
   <!--</div>-->
   <!--<div class='jiangjin'>-->
-    <!--{{bonus | number:'1.2-2'}}-->
+  <!--{{bonus | number:'1.2-2'}}-->
   <!--</div>-->
 </ul>

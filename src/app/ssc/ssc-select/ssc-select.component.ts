@@ -36,8 +36,12 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   // 默认返点
   dfRebate: any = 0;
   oneRebate: any = 0;
-  // 货币类型
-  currency = 1;
+  // 设置返点弹出窗
+  rebetSetting = false;
+
+  // 是否追号
+  isChased: false;
+
   // 注数
   quantity = 0;
   // 初始奖金
@@ -61,8 +65,9 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     {value: "角", label: "角"},
     {value: "分", label: "分"}
   ];
-  selectedOption = this.options[0];
-
+  selectedOption = this.options[0].value;
+// 货币类型
+  currency = 1;
   // 下注类型
   BetType = "default";
   // 追号
@@ -83,7 +88,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     {value: "15", label: "15期"},
     {value: "20", label: "20期"}
   ];
-  selectedPeriods = this.periods[1];
+  selectedPeriods = this.periods[1].value;
 
   // 追号
   chaseSpinning = false;
@@ -102,6 +107,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnInit() {
+    this.playData = this.playData || {};
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -162,15 +168,17 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
       this.dfRebate = this.storage.getStorage("maxRebate");
     }
     this.oneRebate = this.dfRebate / this.playData["returnStep"] * this.playData["returnAmount"];
+    this.rebate = this.storage.setStorage('7.0', "scope");
+    this.rebate = this.storage.getStorage("scope");
+    this.storage.setStorage(this.rebate, "rebate");
     this.calcuationBonus();
+
     // this.draw.init(this.rebate, this.dfRebate);
-    this.time = setInterval(() => {
-      if (this.storage.getStorage("isDown")) {
-        this.rebate = this.storage.getStorage("scope");
-        this.storage.setStorage(this.rebate, "rebate");
-        this.calcuationBonus();
-      }
-    }, 200)
+    // this.time = setInterval(() => {
+    //   if (this.storage.getStorage("isDown")) {
+    //
+    //   }
+    // }, 200)
 
 
   }
@@ -185,6 +193,21 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     this.betData = [];
     this.removeSum();
   }
+
+  showRebetSetting() {
+    this.rebetSetting = false;
+  }
+
+  // shifou zhuihao
+  isChase() {
+    // console.log(this.isChased);
+    if (this.isChased) {
+      this.onClickBetType("chase");
+    } else {
+      this.onClickBetType("default");
+    }
+  }
+
 
   removeSum() {
     this.allData = {
@@ -218,46 +241,45 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
 
   onChangeCheckbox(index?, lastIndex?) {
 
-      if (this.playData.codeSelect == "dantuo") {
-        this.playData = this.playService.dantuo(
-          this.playData,
-          lastIndex,
-          index
-        );
-      }
-      if (this.playData.bingoType == "compareToCode") {
-        this.playData.playData[0].row.forEach((item, nowIndex) => {
-          //console.log(item);
-          if (nowIndex == index) {
-            this.playData.playData[0].row[nowIndex].status = true;
-          } else {
-            this.playData.playData[0].row[nowIndex].status = false;
-          }
-        });
-      }
+    if (this.playData.codeSelect == "dantuo") {
+      this.playData = this.playService.dantuo(
+        this.playData,
+        lastIndex,
+        index
+      );
+    }
+    if (this.playData.bingoType == "compareToCode") {
+      this.playData.playData[0].row.forEach((item, nowIndex) => {
+        //console.log(item);
+        if (nowIndex == index) {
+          this.playData.playData[0].row[nowIndex].status = true;
+        } else {
+          this.playData.playData[0].row[nowIndex].status = false;
+        }
+      });
+    }
 
-      if(this.playData.bingoType == "normal"){
-        this.playData.playData[lastIndex].row.forEach((item, nowIndex) => {
-          //console.log(item);
-          if (nowIndex == index) {
-            if(this.playData.playData[lastIndex].row[nowIndex].status){
-              this.playData.playData[lastIndex].row[nowIndex].status = false;
-            }else{
-              this.playData.playData[lastIndex].row[nowIndex].status = true;
-            }
+    if (this.playData.bingoType == "normal" || this.playData.bingoType == "regToCode") {
+      this.playData.playData[lastIndex].row.forEach((item, nowIndex) => {
+        //console.log(item);
+        if (nowIndex == index) {
+          if (this.playData.playData[lastIndex].row[nowIndex].status) {
+            this.playData.playData[lastIndex].row[nowIndex].status = false;
+          } else {
             this.playData.playData[lastIndex].row[nowIndex].status = true;
           }
-        });
-      }
+          this.playData.playData[lastIndex].row[nowIndex].status = true;
+        }
+      });
+    }
 
 
-
-      this.quantity = this.playService.recalcBetCode(
-        this.playData,
-        this.textareaValue
-      );
-      console.log(this.playData,222);
-      this.calculationAmount();
+    this.quantity = this.playService.recalcBetCode(
+      this.playData,
+      this.textareaValue
+    );
+    console.log(this.playData, 222);
+    this.calculationAmount();
 
   }
 
@@ -293,14 +315,18 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   OpenChange() {
-    switch (this.selectedOption.value) {
+    console.log("1123");
+    switch (this.selectedOption) {
       case "元":
+        console.log("1123", "元");
         this.currency = 1;
         break;
       case "角":
+        console.log("1123", "jiao");
         this.currency = 0.1;
         break;
       case "分":
+        console.log("1123", "fen");
         this.currency = 0.01;
         break;
     }
@@ -311,6 +337,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   calculationAmount() {
     this.amount =
       this.quantity * this.multiple * this.currency * this.oneAmount;
+    console.log(this.amount);
   }
 
   calcuationBonus() {
@@ -383,7 +410,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
         // 货币
         currency: this.currency,
         // 返点
-        returnPer: this.rebate,
+        returnPer: this.rebate || "7.0",
         // 奖金
         returnBonus: this.quantity,
         // 单注下单金额
@@ -397,7 +424,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
           quantityTitle: `共${this.quantity}注`,
           codeSplit: `${code.substring(0, 8)}..`,
           // // 货币名称
-          currencyName: this.selectedOption.value,
+          currencyName: this.selectedOption,
           // // 标题
           playTitle: currentPlayData["title"],
 
@@ -545,7 +572,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
 
   initChase() {
     this.switchValue = true;
-    this.selectedPeriods = this.periods[0];
+    this.selectedPeriods = this.periods[0].value;
     this.periodsValue = 10;
     this.timesValue = 1;
     this.data = [];
@@ -558,7 +585,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
 
   clickRadio() {
     // console.log(this.selectedPeriods['value'])
-    this.getChaseData(parseInt(this.selectedPeriods["value"]));
+    this.getChaseData(parseInt(this.selectedPeriods));
     this.getSumData();
   }
 
@@ -582,7 +609,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     let period = 0;
     let amount = 0;
     let Data = data || this.data;
-    Data.forEach( item => {
+    Data.forEach(item => {
       if (item.select == true) {
         period += 1;
         amount += item.amount * item.times;
