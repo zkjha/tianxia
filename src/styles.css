@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+/*@import './assets/style/reset.css';*/
+@import './assets/style/slider.css';
+/*@import './assets/style/header-popover.css';*/
+@import './assets/style/content-django.css';
+@import './assets/style/tab.css';
+@import './assets/style/button.css';
+
+
+/* You can add global styles to this file, and also import other style files */
 body{
   margin: 0px !important;
   font-size: 13px;
 }
 @charset "utf-8";
-
-
-
-
 
 
 @font-face {font-family: "iconfont";

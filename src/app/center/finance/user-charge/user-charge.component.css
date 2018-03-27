@@ -1,0 +1,36 @@
+.main {
+  display: flex;
+  padding: 20px 30px;
+  box-sizing: border-box;
+}
+.main .main-left {
+  width: 400px;
+  font-size: 15px;
+  color: #111;
+  margin-right: 50px;
+}
+.main .mian-right {
+  height: 160px;
+  border: 1px solid #FFC7C4;
+  color: #FF6975;
+  background: #FFF4F3;
+  line-height: 24px;
+  padding: 10px 10px 10px 16px;
+  margin-top: 30px;
+  text-align: left;
+  font-size: 14px;
+}
+.item {
+  margin: 30px 0;
+  display: flex;
+  height: 32px;
+  line-height: 32px;
+}
+.item > div:nth-child(1) {
+  width: 110px;
+  text-align: right;
+  margin-right: 10px;
+}
+.item > div:nth-child(2) {
+  width: 240px;
+}

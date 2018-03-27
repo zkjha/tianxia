@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import {NgZorroAntdModule} from 'ng-zorro-antd';
 import {QRCodeModule} from 'angularx-qrcode';
 import {ClipboardModule} from 'ngx-clipboard';
-import {AuthInterceptor} from './auto-intercepter';
 
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {HttpService} from './service/http-service.service';
 import {LoadingService} from './service/loading.service';
 import { CookieService } from './service/cookie.service';
@@ -16,7 +16,8 @@ import { FormsModule } from '@angular/forms';
 import {StorageService} from './service/storage.service';
 import {PlayService} from './ssc/play-service/play.service';
 import {PublicMethodService} from './ssc/play-service/public-method.service';
-
+import {StoreDataService} from './service/store-data.service';
+import {AuthInterceptor} from './auto-intercepter';
 
 import { AppComponent } from './app.component';
 import { CaipiaoComponent } from './caipiao/caipiao.component';
@@ -36,8 +37,8 @@ import { PlayTimeComponent } from './ssc/play-time/play-time.component';
 import { SscDetailComponent } from './ssc/ssc-detail/ssc-detail.component';
 import { SscSelectComponent } from './ssc/ssc-select/ssc-select.component';
 import { BettingDjangoComponent } from './ssc/django/betting-django/betting-django.component';
-import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
 import { LotteryHistoryDjangoComponent } from './ssc/django/lottery-history-django/lottery-history-django.component';
+import { ChaseDjangoComponent } from './ssc/django/chase-django/chase-django.component';
 import { HistoryDjangoComponent } from './ssc/django/history-django/history-django.component';
 import { ChaseHistoryDjangoComponent } from './ssc/django/chase-history-django/chase-history-django.component';
 import { PlayInfoComponent } from './ssc/play-info/play-info.component';
@@ -97,6 +98,7 @@ import { LoadingComponent} from "./loading/loading.component";
 import { TimeComponent} from "./shared/time/time.component";
 
 import {LoginGuard} from "./guard/login.guard";
+import { HeaderComponent } from './header/header.component';
 
 
 
@@ -175,15 +177,17 @@ import {LoginGuard} from "./guard/login.guard";
     FirstWithdrawComponent,
     TimeComponent,
     LoadingComponent,
+    HeaderComponent,
   ],
   imports: [
-    FormsModule,
-    BrowserAnimationsModule,
-    HttpClientModule,
     BrowserModule,
-    QRCodeModule,
+    FormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    CommonModule,
     ClipboardModule,
     NgZorroAntdModule.forRoot(),
+    QRCodeModule,
     RouterModule.forRoot([
       {
         path: 'home' ,
@@ -256,15 +260,16 @@ import {LoginGuard} from "./guard/login.guard";
     PlayService,
     PublicMethodService,
     LoginGuard,
+    StoreDataService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true,
-    }
+    },
   ],
   entryComponents: [
-    BettingDjangoComponent,
-    ChaseDjangoComponent
+    LoadingComponent,
+    BettingDjangoComponent
   ],
   bootstrap: [AppComponent]
 })

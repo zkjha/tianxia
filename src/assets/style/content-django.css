@@ -1,0 +1,32 @@
+.my-content-django {
+  display: flex;
+  min-height: 550px;
+  border-radius: 0 0 10px 10px; }
+  .my-content-django .left {
+    width: 110px;
+    border-radius: 0 0 0 10px;
+    background: url("../../assets/model/model-left-bg.png") -195px 236px no-repeat;
+    border-right: 1px solid #c2c3c9; }
+    .my-content-django .left li {
+      text-align: center;
+      color: #111;
+      height: 38px;
+      line-height: 38px;
+      width: 110px;
+      border-right: 1px solid transparent;
+      cursor: pointer;
+      font-size: 14px; }
+      .my-content-django .left li:hover {
+        color: #fff !important;
+        background: url("../../assets/head/navhover.png") 10px 6px no-repeat; }
+  .my-content-django .activeLeft {
+    background: url("../../assets/head/navhover.png") 10px 6px no-repeat;
+    color: #fff !important; }
+  .my-content-django .right {
+    flex: 1;
+    border-radius: 0 0 10px 0;
+    box-sizing: border-box;
+    padding: 10px 15px;
+    background: url("../../assets/model/model-right-bg.png") 0 0 no-repeat; }
+
+/*# sourceMappingURL=content-django.css.map */

@@ -1,183 +1,183 @@
-//.safeBox{
-//  width:100%;
-//  height:100%;
-//  padding: 15px;
-//  padding-top: 5px;
-//  font-size: 14px;
-//  color: #333;
-//  box-sizing: border-box;
-//  .safetop{
-//    width:100%;
-//    height: 160px;
-//    padding: 10px 0 10px 200px;
-//    background: url(../../../../../assets/image/home/safe_login.png) no-repeat 44px 15px;
-//    .sfTopLe{
-//      width: 265px;
-//      float: left;
-//      .prev{
-//        height: 15px;
-//        line-height: 15px;
-//        margin-top: 20px;
-//        font-size: 14px;
-//        i{
-//          display: inline-block;
-//          float: left;
-//          border-radius: 50%;
-//          background: #43a8fb;
-//          margin: 0 10px;
-//          margin-top: 4px;
-//          width:8px;
-//          height:8px;
-//        }
-//      }
-//    }
-//    .sfTopRig{
-//      width: 462px;
-//      float: right;
-//      height: 100%;
-//      text-align: left;
-//      background: #FAFAFA;
-//      color: #333;
-//      border: 1px solid #EBEBEB;
-//      border-bottom: none;
-//      .sfTopTit{
-//        width: 100%;
-//        .dt{
-//          height: 25px;
-//          line-height: 25px;
-//          float: left;
-//          padding-left: 5px;
-//          background: #EBEBEB;
-//        }
-//      }
-//      .dt1{
-//        width: 145px;
-//      }
-//      .dt2{
-//        width: 200px;
-//      }
-//      .dt3{
-//        width: 115px;
-//      }
-//      .satime{
-//        width: 100%;
-//        height: 130px;
-//        overflow: hidden;
-//        li{
-//          background: #fff;
-//          overflow: hidden;
-//          span{
-//            height: 25px;
-//            line-height: 25px;
-//            float: left;
-//            padding-left: 5px;
-//            display: block;
-//            border-bottom: 1px solid #EBEBEB;
-//          }
-//        }
-//      }
-//    }
-//  }
-//  .sfcentent{
-//    width: 440px;
-//    padding: 0 20px;
-//    float: left;
-//
-//  }
-//  .safeCon{
-//    width: 100%;
-//    line-height: 24px;
-//    padding: 20px 0;
-//    position: relative;
-//    h3{
-//      height: 24px;
-//      line-height: 24px;
-//      padding-left: 30px;
-//      font-size: 16px;
-//      color: #333;
-//      .success{
-//        color: rgb(249,82,89);
-//        margin-left: 10px;
-//      }
-//    }
-//    .btn{
-//      position: absolute;
-//      right: 5px;
-//      top: 50%;
-//      margin-top: -16px;
-//      padding: 0px;
-//    }
-//  }
-//  .centRig{
-//    width: 440px;
-//    padding: 0 20px;
-//    float: right;
-//  }
-//}
-//.phoneBox{
-//  width:100%;
-//  height:100%;
-//  font-size: 14px;
-//  form{
-//    color: #333;
-//    .row{
-//      width: 100%;
-//      height: 50px;
-//      line-height: 50px;
-//      text-align: center;
-//      margin-bottom: 10px;
-//      .th{
-//        float: left;
-//        height: 100%;
-//        width: 270px;
-//        text-align: right;
-//      }
-//      .td{
-//        float: left;
-//        height: 100%;
-//        width: 250px;
-//        text-align: left;
-//        display: inline-block;
-//        padding-left: 16px;
-//        input{
-//          height: 32px;
-//          border-color: #BABABA;
-//          background: #fff;
-//          width: 220px;
-//          padding: 0 10px;
-//          margin-left: 0;
-//          border: 1px solid #CECECE;
-//        }
-//        select{
-//          width: 220px;
-//          height:32px;
-//          margin-left: 0;
-//          border: 1px solid #CECECE;
-//          overflow: visible !important;
-//          option{
-//            padding: 5px 5px;
-//            cursor: pointer;
-//            min-height: 30px;
-//            box-sizing: border-box;
-//            transition: all 1s ease 0s;
-//          }
-//        }
-//        label{
-//          cursor: default;
-//          .radio{
-//            width: 20px;
-//            margin-left: 10px;
-//            margin-right: 5px;
-//            vertical-align: middle;
-//          }
-//        }
-//      }
-//      .tip{
-//        float: left;
-//        height: 100%;
-//        text-align: left;
-//        margin-left: 16px;
-//      }
-//    }
-//  }
-//}
+.safeBox{
+  width:100%;
+  height:100%;
+  padding: 15px;
+  padding-top: 5px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box;
+  .safetop{
+    width:100%;
+    height: 160px;
+    padding: 10px 0 10px 200px;
+    background: url(../../../../assets/image/home/safe_login.png) no-repeat 44px 15px;
+    .sfTopLe{
+      width: 265px;
+      float: left;
+      .prev{
+        height: 15px;
+        line-height: 15px;
+        margin-top: 20px;
+        font-size: 14px;
+        i{
+          display: inline-block;
+          float: left;
+          border-radius: 50%;
+          background: #43a8fb;
+          margin: 0 10px;
+          margin-top: 4px;
+          width:8px;
+          height:8px;
+        }
+      }
+    }
+    .sfTopRig{
+      width: 462px;
+      float: right;
+      height: 100%;
+      text-align: left;
+      background: #FAFAFA;
+      color: #333;
+      border: 1px solid #EBEBEB;
+      border-bottom: none;
+      .sfTopTit{
+        width: 100%;
+        .dt{
+          height: 25px;
+          line-height: 25px;
+          float: left;
+          padding-left: 5px;
+          background: #EBEBEB;
+        }
+      }
+      .dt1{
+        width: 145px;
+      }
+      .dt2{
+        width: 200px;
+      }
+      .dt3{
+        width: 115px;
+      }
+      .satime{
+        width: 100%;
+        height: 130px;
+        overflow: hidden;
+        li{
+          background: #fff;
+          overflow: hidden;
+          span{
+            height: 25px;
+            line-height: 25px;
+            float: left;
+            padding-left: 5px;
+            display: block;
+            border-bottom: 1px solid #EBEBEB;
+          }
+        }
+      }
+    }
+  }
+  .sfcentent{
+    width: 440px;
+    padding: 0 20px;
+    float: left;
+
+  }
+  .safeCon{
+    width: 100%;
+    line-height: 24px;
+    padding: 20px 0;
+    position: relative;
+    h3{
+      height: 24px;
+      line-height: 24px;
+      padding-left: 30px;
+      font-size: 16px;
+      color: #333;
+      .success{
+        color: rgb(249,82,89);
+        margin-left: 10px;
+      }
+    }
+    .btn{
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      margin-top: -16px;
+      padding: 0px;
+    }
+  }
+  .centRig{
+    width: 440px;
+    padding: 0 20px;
+    float: right;
+  }
+}
+.phoneBox{
+  width:100%;
+  height:100%;
+  font-size: 14px;
+  form{
+    color: #333;
+    .row{
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin-bottom: 10px;
+      .th{
+        float: left;
+        height: 100%;
+        width: 270px;
+        text-align: right;
+      }
+      .td{
+        float: left;
+        height: 100%;
+        width: 250px;
+        text-align: left;
+        display: inline-block;
+        padding-left: 16px;
+        input{
+          height: 32px;
+          border-color: #BABABA;
+          background: #fff;
+          width: 220px;
+          padding: 0 10px;
+          margin-left: 0;
+          border: 1px solid #CECECE;
+        }
+        select{
+          width: 220px;
+          height:32px;
+          margin-left: 0;
+          border: 1px solid #CECECE;
+          overflow: visible !important;
+          option{
+            padding: 5px 5px;
+            cursor: pointer;
+            min-height: 30px;
+            box-sizing: border-box;
+            transition: all 1s ease 0s;
+          }
+        }
+        label{
+          cursor: default;
+          .radio{
+            width: 20px;
+            margin-left: 10px;
+            margin-right: 5px;
+            vertical-align: middle;
+          }
+        }
+      }
+      .tip{
+        float: left;
+        height: 100%;
+        text-align: left;
+        margin-left: 16px;
+      }
+    }
+  }
+}

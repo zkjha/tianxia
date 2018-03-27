@@ -16,7 +16,7 @@ export class LoadingService {
     this.storeDataService.obj = message;
     this.nzModalSubject = this.confirmServ.open({
       title: null,
-      zIndex:9999,
+      zIndex: 9999,
       content: LoadingComponent,
       width: 280,
       closable: false,

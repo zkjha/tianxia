@@ -1,53 +1,55 @@
-//
-//.main {
-//    // border: 1px solid #111;
-//    .top {
-//        display: flex;
-//        &>div {
-//            width: 145px;
-//            height: 100px;
-//            line-height: 40px;
-//            background: #E1E3EE;
-//            margin: 5px; // text-align: center;
-//            border: 1px solid #333;
-//            border-radius: 6px;
-//            .top-row {
-//                height: 30px;
-//                line-height: 30px;
-//                text-align: left;
-//                font-size: 14px;
-//                color: #111;
-//                &>i {
-//                    text-align: right;
-//                    font-size: 20px;
-//                    height: 30px;
-//                    width: 30px;
-//                    display: inline-block;
-//                    padding-left: 4px;
-//                    margin-top: 6px;
-//                    margin-left: 18px;
-//                }
-//            }
-//            .bottom-row {
-//                text-align: center;
-//                font-size: 13px;
-//                &>i {
-//                    margin-left: 3px;
-//                    color: #3f9be9;
-//                }
-//            }
-//        }
-//    }
-//}
-//
-//.content{
-//    margin: 20px 0 15px 0;
-//    display: flex;
-//    height: 60px;
-//    padding: 15px;
-//    background: #EEF0F8;
-//    &>div{
-//        height: 30px;
-//        line-height: 30px;
-//    }
-//}
+
+.main {
+  .top {
+    display: flex;
+    & > div {
+      width: 145px;
+      height: 100px;
+      line-height: 40px;
+      background: #E1E3EE;
+      margin: 5px;
+      background: url("../../../../assets/model/model-border.png");
+      //border: 1px solid #333;
+      //border-radius: 6px;
+      .top-row {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        position: relative;
+        top: 10px;
+        font-size: 14px;
+        color: #111;
+        & > i {
+          text-align: right;
+          font-size: 20px;
+          height: 30px;
+          width: 30px;
+          display: inline-block;
+          padding-left: 4px;
+          margin-top: 6px;
+          margin-left: 18px;
+        }
+      }
+      .bottom-row {
+        text-align: center;
+        font-size: 13px;
+        & > i {
+          margin-left: 3px;
+          color: #3f9be9;
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin: 20px 0 15px 0;
+  display: flex;
+  height: 60px;
+  padding: 15px;
+  background: #EEF0F8;
+  & > div {
+    height: 30px;
+    line-height: 30px;
+  }
+}

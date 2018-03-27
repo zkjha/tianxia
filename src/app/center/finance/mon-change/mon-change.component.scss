@@ -1,149 +1,148 @@
-//.monChaBox {
-//    width: 100%;
-//    overflow: hidden;
-//    color: #333;
-//    font-size: 14px;
-//    .chaList {
-//        width: 748px;
-//        margin: 0 auto;
-//        overflow: hidden;
-//        li {
-//            border: 3px solid #e2e5ee;
-//            border-radius: 6px;
-//            -webkit-border-radius: 6px;
-//            -moz-border-radius: 6px;
-//            height: 80px;
-//            width: 203px;
-//            margin: 5px 10px;
-//            padding: 2px;
-//            float: left;
-//            box-sizing: border-box;
-//            .ahmon {
-//                width: 100%;
-//                height: 30px;
-//                line-height: 30px;
-//                text-align: center;
-//                color: #707172;
-//                cursor: pointer;
-//            }
-//        }
-//        li:hover {
-//            border: 3px solid #105fbe;
-//        }
-//    }
-//    /* 转换类型*/
-//    .chanImg {
-//        text-align: right;
-//        height: 46px;
-//        line-height: 46px;
-//        padding-right: 10px;
-//        color: #75809a; // background: url(../../../../../assets/image/home/account_icon.png) no-repeat;
-//        background: url(../../../../../assets/image/home/finance_icon.png) no-repeat;
-//        background-position: 0 -237px;
-//    }
-//    .ci1 {
-//        background-position: 0 -418px;
-//    }
-//    .ci2 {
-//        background: url(../../../../../assets/image/home/account_icon.png) no-repeat;
-//        background-position: 8px;
-//        background-size: 62%;
-//    }
-//    .ci3{
-//      background-size: 50%;
-//    }
-//    form {
-//        width: 100%;
-//        overflow: hidden;
-//        margin-top: 50px;
-//        .row {
-//            width: 100%;
-//            height: 50px;
-//            line-height: 50px;
-//            text-align: center;
-//            margin-bottom: 10px;
-//            position: relative;
-//            .th {
-//                float: left;
-//                height: 100%;
-//                width: 270px;
-//                text-align: right;
-//            }
-//            .game-item {
-//                text-align: right;
-//                height: 46px;
-//                float: left;
-//                line-height: 46px;
-//                padding-right: 10px;
-//                color: #75809a;
-//                width: 228px;
-//                border: 2px solid #dbdcdd;
-//                border-radius: 5px;
-//                -moz-border-radius: 5px;
-//                -webkit-border-radius: 5px;
-//                margin-left: 16px;
-//            }
-//            .changeRig {
-//                position: absolute;
-//                top: 15px;
-//                right: 415px;
-//                width: 20px;
-//                height: 80px;
-//                .border-top {
-//                    border-top: 2px solid #94adcf;
-//                    top: 0;
-//                    height: 25px;
-//                    width: 18px;
-//                    position: absolute;
-//                    right: 0;
-//                    border-right: 2px solid #94adcf;
-//                }
-//                .exc {
-//                    cursor: pointer;
-//                    height: 24px;
-//                    width: 24px;
-//                    position: absolute;
-//                    right: -12px;
-//                    top: 50%;
-//                    margin-top: -12px;
-//                    background: url(../../../../../assets/image/home/finance_icon.png) no-repeat;
-//                    background-position: 0 -145px;
-//                }
-//                .border-bottom {
-//                    border-bottom: 2px solid #94adcf;
-//                    bottom: 0;
-//                    height: 25px;
-//                    width: 18px;
-//                    position: absolute;
-//                    right: 0;
-//                    border-right: 2px solid #94adcf;
-//                }
-//            }
-//            .inp {
-//                height: 32px; //background: #fff;
-//                width: 230px;
-//                padding: 0 10px;
-//                float: left;
-//                border: 1px solid #CECECE;
-//                margin-left: 16px;
-//                margin-top: 7px;
-//            }
-//            .tip {
-//                float: left;
-//                height: 100%;
-//                text-align: left;
-//                margin-left: 16px;
-//            }
-//        }
-//    }
-//    .quebtn {
-//        margin-top: 20px;
-//        width: 100%;
-//        overflow: hidden;
-//        text-align: center;
-//        span {
-//            display: inline-block;
-//            margin-right: 13px;
-//        }
-//    }
-//}
+.monChaBox {
+    width: 100%;
+    overflow: hidden;
+    color: #333;
+    font-size: 14px;
+    .chaList {
+        width: 748px;
+        margin: 0 auto;
+        overflow: hidden;
+        li {
+            border: 3px solid #e2e5ee;
+            border-radius: 6px;
+            -webkit-border-radius: 6px;
+            -moz-border-radius: 6px;
+            height: 80px;
+            width: 203px;
+            margin: 5px 10px;
+            padding: 2px;
+            float: left;
+            box-sizing: border-box;
+            .ahmon {
+                width: 100%;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                color: #707172;
+                cursor: pointer;
+            }
+        }
+        li:hover {
+            border: 3px solid #105fbe;
+        }
+    }
+    .chanImg {
+        text-align: right;
+        height: 46px;
+        line-height: 46px;
+        padding-right: 10px;
+        color: #75809a; // background: url(../../../../../assets/image/home/account_icon.png) no-repeat;
+        background: url(../../../../assets/image/home/finance_icon.png) no-repeat;
+        background-position: 0 -237px;
+    }
+    .ci1 {
+        background-position: 0 -418px;
+    }
+    .ci2 {
+        background: url(../../../../assets/image/home/account_icon.png) no-repeat;
+        background-position: 8px;
+        background-size: 62%;
+    }
+    .ci3{
+      background-size: 50%;
+    }
+    form {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 50px;
+        .row {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            margin-bottom: 10px;
+            position: relative;
+            .th {
+                float: left;
+                height: 100%;
+                width: 270px;
+                text-align: right;
+            }
+            .game-item {
+                text-align: right;
+                height: 46px;
+                float: left;
+                line-height: 46px;
+                padding-right: 10px;
+                color: #75809a;
+                width: 228px;
+                border: 2px solid #dbdcdd;
+                border-radius: 5px;
+                -moz-border-radius: 5px;
+                -webkit-border-radius: 5px;
+                margin-left: 16px;
+            }
+            .changeRig {
+                position: absolute;
+                top: 15px;
+                right: 415px;
+                width: 20px;
+                height: 80px;
+                .border-top {
+                    border-top: 2px solid #94adcf;
+                    top: 0;
+                    height: 25px;
+                    width: 18px;
+                    position: absolute;
+                    right: 0;
+                    border-right: 2px solid #94adcf;
+                }
+                .exc {
+                    cursor: pointer;
+                    height: 24px;
+                    width: 24px;
+                    position: absolute;
+                    right: -12px;
+                    top: 50%;
+                    margin-top: -12px;
+                    background: url(../../../../assets/image/home/finance_icon.png) no-repeat;
+                    background-position: 0 -145px;
+                }
+                .border-bottom {
+                    border-bottom: 2px solid #94adcf;
+                    bottom: 0;
+                    height: 25px;
+                    width: 18px;
+                    position: absolute;
+                    right: 0;
+                    border-right: 2px solid #94adcf;
+                }
+            }
+            .inp {
+                height: 32px; //background: #fff;
+                width: 230px;
+                padding: 0 10px;
+                float: left;
+                border: 1px solid #CECECE;
+                margin-left: 16px;
+                margin-top: 7px;
+            }
+            .tip {
+                float: left;
+                height: 100%;
+                text-align: left;
+                margin-left: 16px;
+            }
+        }
+    }
+    .quebtn {
+        margin-top: 20px;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        span {
+            display: inline-block;
+            margin-right: 13px;
+        }
+    }
+}

@@ -1,0 +1,123 @@
+.myInfor {
+  width: 100%;
+  height: 100%;
+  padding: 5px 15px;
+  font-size: 14px;
+  box-sizing: border-box; }
+  .myInfor .mybox {
+    width: 100%;
+    height: 100%; }
+    .myInfor .mybox .my1 {
+      width: 100%;
+      overflow: hidden; }
+      .myInfor .mybox .my1 .base {
+        width: 70px;
+        height: 70px;
+        text-align: center;
+        font-size: 34px;
+        float: left; }
+        .myInfor .mybox .my1 .base i {
+          display: inline-block;
+          margin-top: 22px;
+          height: 42px;
+          width: 42px;
+          overflow: hidden;
+          border-radius: 50%; }
+          .myInfor .mybox .my1 .base i img {
+            width: 100%;
+            height: 100%; }
+      .myInfor .mybox .my1 .maii .matop {
+        color: #333;
+        margin: 2px 0;
+        width: 800px;
+        float: left;
+        margin-left: 14px; }
+        .myInfor .mybox .my1 .maii .matop span {
+          height: 20px;
+          line-height: 20px;
+          display: inline-block;
+          font-size: 16px;
+          margin-left: 5px;
+          padding: 0 3px 0 10px; }
+        .myInfor .mybox .my1 .maii .matop .aglin {
+          color: #fff;
+          background: #105fbe;
+          padding: 5px;
+          margin-left: 0;
+          height: 27px;
+          line-height: 16px;
+          border-radius: 3px;
+          -moz-border-radius: 3px;
+          -webkit-border-radius: 3px; }
+        .myInfor .mybox .my1 .maii .matop .ee {
+          padding-left: 0; }
+        .myInfor .mybox .my1 .maii .matop .num {
+          font-weight: bold;
+          margin-left: 0;
+          line-height: 24px; }
+          .myInfor .mybox .my1 .maii .matop .num span {
+            font-size: 12px;
+            margin-left: 0;
+            padding: 0;
+            font-weight: bold; }
+      .myInfor .mybox .my1 .maii .even {
+        margin: 2px 0;
+        width: 800px;
+        float: left;
+        color: #9D9D9D;
+        margin-left: 14px; }
+        .myInfor .mybox .my1 .maii .even li {
+          width: 240px;
+          min-width: 240px;
+          height: 25px;
+          line-height: 25px;
+          float: left;
+          font-size: 12px; }
+          .myInfor .mybox .my1 .maii .even li i {
+            display: inline-block;
+            background: #f95259;
+            margin: 0 10px;
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%; }
+    .myInfor .mybox .my2 {
+      padding: 6px 5px 10px; }
+      .myInfor .mybox .my2 h3 {
+        height: 26px;
+        line-height: 20px;
+        padding-left: 10px;
+        padding-bottom: 6px;
+        font-size: 16px;
+        font-weight: normal;
+        color: #333;
+        border-bottom: 2px solid #f95259; }
+      .myInfor .mybox .my2 tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit; }
+        .myInfor .mybox .my2 tbody tr {
+          background: #F4F8FB; }
+          .myInfor .mybox .my2 tbody tr th {
+            width: 95px;
+            line-height: 30px;
+            font-size: 12px;
+            text-align: right;
+            font-weight: bold; }
+          .myInfor .mybox .my2 tbody tr td {
+            overflow: hidden;
+            position: relative;
+            text-overflow: ellipsis;
+            width: 100px;
+            line-height: 30px;
+            font-size: 12px;
+            text-align: right;
+            padding: 0 3px;
+            border-right: 1px #eaeaea solid; }
+            .myInfor .mybox .my2 tbody tr td i {
+              color: #999;
+              cursor: pointer; }
+            .myInfor .mybox .my2 tbody tr td span {
+              color: #333; }
+
+/*# sourceMappingURL=my-info.component.css.map */

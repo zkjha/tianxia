@@ -1,105 +1,34 @@
 <!--登录后-->
 <div class="loginAfter">
-  <div class="user-menu-bar">
-    <a href="">
-      dy001 <i class="iconfont">&#xe644;</i>
-    </a>
-    <a href="/ChargeWithdrawal/ChargeIndex">
-      <i class="iconfont">&#xe696;</i>充值
-    </a>
-    <a href="/ChargeWithdrawal/WithdrawalIndex">
-      <i class="iconfont">&#xe698;</i>提现
-    </a>
-    <a href="/ChargeWithdrawal/ExchangeIntegralIndex">
-      <i class="iconfont" style="font-size: 13px;vertical-align: text-bottom;">&#xe6e6;</i>资金转换
-    </a>
-  </div>
-  <div class="user-menu-bar2">
-    <a (click)="loginOut()" class="loginOut fr">
-      退出
-    </a>
+  <app-header (childEvent)="openModel($event)"></app-header>
+</div>
+<!--个人中心弹窗-->
+<div class="center">
+  <nz-modal [nzVisible]="isVisible"
+            [nzContent]="modalContent"
+            [nzFooter]="null"
+            [nzMaskClosable]="false"
+            [nzWidth]="1100"
+            [nzStyle]="style"
+            (nzOnCancel)="handleCancel($event)">
+    <ng-template #modalContent>
+      <div class="layou">
+        <!--横向导航-->
+        <ul class="horizontal-menu d-bc d-active2 d-border" >
+          <li class="d-border"  (click)="isShowInfo('account')" [class.active]="showInfo=='account'">我的信息</li>
+          <li class="d-border"  (click)="isShowInfo('finance')" [class.active]="showInfo=='finance'">充值系统</li>
+          <!--<li class="d-border" (click)="isShowInfo('report')" [class.active]="showInfo=='report'">报表查询</li>-->
+          <li class="d-border" (click)="isShowInfo('transaction-record')" [class.active]="showInfo=='transaction-record'">记录查询</li>
+          <li class="d-border"  (click)="isShowInfo('proxy')" [class.active]="showInfo=='proxy'">团队管理</li>
+        </ul>
+        <!--内容切换-->
+        <app-account *ngIf="showInfo=='account'" [show]="subModel"></app-account>
+        <app-finance *ngIf="showInfo=='finance'" [show]="finance"></app-finance>
+        <app-transaction-record *ngIf="showInfo=='transaction-record'" [show]="transactionRecord"></app-transaction-record>
+        <app-report *ngIf="showInfo=='report'" [show]="report"></app-report>
+        <app-proxy *ngIf="showInfo=='proxy'" [show]="proxy"></app-proxy>
+      </div>
 
-    <!--余额-->
-    <div class="yue fr">
-      <a href="javascript:;" class="a">
-        <i class="iconfont">&#xe600;</i>
-        余额  {{usableAmount}}
-        <i class="iconfont refreshBall">&#xe602;</i>
-      </a>
-      <ul class="myaccount_list">
-        <li>
-          <a href="javascript:;">
-            <b class="fl">
-              积分
-            </b> <span>200</span>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;">
-            <b class="fl">
-              BBIN
-            </b> <span>0.00</span>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;">
-            <b class="fl">
-              BBIN
-            </b> <span>0.00</span>
-          </a>
-        </li>
-        <li>
-          <a href="javascript:;">
-            <b class="fl">
-              BBIN
-            </b> <span>0.00</span>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <b class="fl">
-              BBIN
-            </b> <span>0.00</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <div class="userCount fr">
-      <a href="" class="a">
-        <i class="iconfont">&#xe600;</i>
-        我的账户
-      </a>
-
-      <ul class="myaccount_list">
-        <li>
-          <a href="/gameUserCenter/queryOrders">
-            投注记录
-          </a>
-        </li>
-        <li>
-          <a href="/UserAccountDetails/fuddetail">
-            账户明细
-          </a>
-        </li>
-        <li>
-          <a href="/UserInformation/QueryUserBasicInfo">
-            账户中心
-          </a>
-        </li>
-        <li>
-          <a href="/UserAccountDetails/QueryUserReport">
-            个人报表
-          </a>
-        </li>
-        <li>
-          <a href="/TeamInformation/TeamInfo">
-            代理中心
-          </a>
-        </li>
-      </ul>
-    </div>
-
-
-  </div>
+    </ng-template>
+  </nz-modal>
 </div>

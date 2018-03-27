@@ -1,0 +1,18 @@
+
+
+.slider{
+    .ant-slider-rail{
+        background-color:#9c9ea6 !important;
+    }
+    
+    
+    .ant-slider-track{
+        background-color:#105fbe !important;
+    }
+    .ant-slider-handle{
+        border-color: #105fbe !important;
+        &:active{
+            box-shadow: 0 0 0 2px rgba(198, 66, 71,.2) !important;
+        }
+    }
+}

@@ -73,7 +73,7 @@ export class LoginComponent implements OnInit {
         this.loginAfter =false;
         this.loginShow =true;
 
-        alert("登录成功");
+        // alert("登录成功");
       }else{
         console.log(data);
         alert("用户名或密码错误");

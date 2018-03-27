@@ -1,0 +1,116 @@
+<div class="header-content">
+  <div class="left">
+    <ul>
+      <li class="userInfoTitle">
+        <nz-popover [nzOverlayClassName]="'header-popover userinfo'" [(nzVisible)]="userinfo" [nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">
+            <span nz-popover (click)="open('account','my-info')">
+              <!--<img src="http://newfiretop8.com/static/bh3/images/portrait.png?v=1.0" alt="">-->
+              <!--<span>{{userInfoData?.username}}</span>-->
+              <span class="bg-img">个人信息</span>
+            </span>
+          <ng-template #nzTemplate>
+            <div class='games-lobby'>
+              <div class="right">
+                <div class="item" *ngFor='let item of userInofList'>
+                  <p *ngFor='let list of item' (click)="open('account',list.open)">{{list.title}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </nz-popover>
+      </li>
+      <li class="financeTitle">
+        <nz-popover [nzOverlayClassName]="'header-popover finance'" [(nzVisible)]="finance" [nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">
+            <span nz-popover (click)="open('finance','deposit')">
+              余额: <span class="amount">¥ {{refreshInfo.usableAmount | number:'1.2-2'}}</span>
+            </span>
+          <ng-template #nzTemplate>
+            <div class='games-lobby'>
+              <div class="right">
+                <div class='imgitem' (click)="open('finance','monChange')">
+                  <div class='topimg'>
+                  </div>
+                  <div class='text'>
+                    {{amountAG | number:'1.2-2'}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </nz-popover>
+      </li>
+    </ul>
+  </div>
+  <div class="right">
+    <ul>
+      <li class="youhuiTitle">
+        <nz-popover [nzOverlayClassName]="'header-popover youhui'" [(nzVisible)]="youhui" [nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">
+            <span nz-popover >
+              <span class="bg-img">优惠活动</span>
+            </span>
+          <ng-template #nzTemplate>
+            <div class='games-lobby'>
+              <div class="right">
+                <div class="smimg" (click)="showCont(3)"><i></i><img src="assets/image/home/rotate_preview.png" alt=""/></div>
+                <div class="smimg" (click)="showCont(1)"><i></i><img src="assets/image/home/preview_register.jpg" alt=""/></div>
+              </div>
+            </div>
+          </ng-template>
+        </nz-popover>
+      </li>
+      <li (click)="open('finance','weichat')">
+        <span class="bg-img">充值</span>
+      </li>
+      <li (click)="open('finance','withdrawals')">
+        <span class="bg-img">取款</span>
+      </li>
+
+      <!--<li class="userReportTitle" (click)="open('report','user-tab')">
+          <span>
+            <span class="bg-img">报表查询</span>
+          </span>
+      </li>-->
+      <li class="proxyTitle">
+        <nz-popover [nzOverlayClassName]="'header-popover proxy'" [(nzVisible)]="proxy" [nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">
+            <span nz-popover (click)="open('proxy','account-center')">
+              <span class="bg-img">团队管理</span>
+            </span>
+          <ng-template #nzTemplate>
+            <div class='games-lobby'>
+              <div class="right">
+                <div class="item" *ngFor='let item of proxyList'>
+                  <p *ngFor='let list of item' (click)="open('proxy',list.open)">{{list.title}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </nz-popover>
+
+      </li>
+      <li class="transactionTitle">
+        <nz-popover [nzOverlayClassName]="'header-popover transaction'" [(nzVisible)]="transaction" [nzPlacement]="'bottomLeft'"
+                    [nzTrigger]="'focus'">
+            <span nz-popover (click)="open('transaction-record','betting')">
+              <span class="bg-img">账变记录</span>
+            </span>
+          <ng-template #nzTemplate>
+            <div class='games-lobby'>
+              <div class="right">
+                <div class="item" *ngFor='let item of transactioneRcordList'>
+                  <p *ngFor='let list of item' (click)="open('transaction-record',list.open)">{{list.title}}</p>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </nz-popover>
+      </li>
+      <li style='color:#ff5c5c'>
+        <nz-popconfirm [nzTitle]="'确定退出？'" (nzOnConfirm)="loginOut()" [nzPlacement]="'bottomRight'">
+            <span nz-popconfirm>
+              <span class="bg-img">安全退出</span>
+            </span>
+        </nz-popconfirm>
+      </li>
+    </ul>
+  </div>
+</div>

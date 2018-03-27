@@ -1,0 +1,42 @@
+:host ::ng-deep .ant-modal-body {
+  background: url(../../assets/model/model-bg.png) 0 0; }
+
+:host ::ng-deep .ant-modal-close-x {
+  background: url(../../assets/model/model-close.png) 0 0;
+  position: relative;
+  top: 5px;
+  right: 5px; }
+
+:host ::ng-deep .ant-modal-close-x:before {
+  content: ""; }
+
+.layou {
+  background: #fff;
+  border-radius: 10px; }
+  .layou > ul {
+    display: flex;
+    height: 65px;
+    border-radius: 10px 10px 0 0;
+    background: url("../../assets/model/model-header.jpg"); }
+    .layou > ul li {
+      height: 65px;
+      min-width: 156px;
+      line-height: 65px;
+      cursor: pointer;
+      text-align: center;
+      font-size: 14px;
+      color: #fff;
+      background: url(../../assets/model/model-nav.jpg) 0 0; }
+      .layou > ul li i {
+        margin-right: 3px;
+        font-size: 16px; }
+      .layou > ul li:hover {
+        font-size: 16px;
+        color: #ce9b48;
+        background-position: 0 -64px; }
+    .layou > ul .active {
+      font-size: 16px;
+      color: #ce9b48;
+      background-position: 0 -64px; }
+
+/*# sourceMappingURL=login-after.component.css.map */

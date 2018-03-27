@@ -71,7 +71,6 @@ export class WeiChatComponent implements OnInit, OnDestroy {
   }
   onSubmit() {
     // 第一种方式
-    //if (this.rechargeType == 1) {
       this.loading.loading("拼命加载中...");
       this.http
         .getRxNormal(`/api/jf/pay/generCode/${this.playData["paymentInfo"]}`)
@@ -83,9 +82,6 @@ export class WeiChatComponent implements OnInit, OnDestroy {
             this.qrCodeStr = data["result"]["pay_url"];
           }
         });
-    //} else if (this.rechargeType == 2) {
-    //  this.getQrCodeStr();
-    //}
   }
 
   getQrCodeStr() {

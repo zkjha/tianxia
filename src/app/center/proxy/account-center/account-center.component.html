@@ -42,8 +42,8 @@
           </div>
         </div>
         <div class="row" style="margin:20px 0 0 100px;">
-          <span class="gm-button gm-button-success d-bc" (click)='goRegister()' id="proxyRegistry">提交</span>
-          <span class="gm-button gm-button-success d-bc"  ngxClipboard [cbContent]="'用户名:'+username+',密码:'+password" (cbOnSuccess)="successFun()" >复制</span>
+          <span class="gm-button gm-button-success d-bc" style="margin-right: 10px" (click)='goRegister()' id="proxyRegistry">提交</span>
+          <span class="gm-button gm-button-cancel d-bc"  ngxClipboard [cbContent]="'用户名:'+username+',密码:'+password" (cbOnSuccess)="successFun()" >复制</span>
         </div>
       </div>
       <div class="font-show">

@@ -1,7 +1,7 @@
-import { HttpService } from '../../../service/http-service.service';
-import { Component, OnInit } from '@angular/core';
+import {HttpService} from '../../../service/http-service.service';
+import {Component, OnInit} from '@angular/core';
 import Tool from 'lodash';
-import { StorageService } from '../../../service/storage.service';
+import {StorageService} from '../../../service/storage.service';
 
 
 @Component({
@@ -30,12 +30,13 @@ export class BonusDetailsComponent implements OnInit {
   dfRebate = null;
 
   constructor(private http: HttpService,
-    private storage: StorageService
-  ) {}
+              private storage: StorageService) {
+  }
 
   ngOnInit() {
     this.getList();
   }
+
   getRebate(type) {
     if (type == "low") {
       // 低
@@ -60,7 +61,7 @@ export class BonusDetailsComponent implements OnInit {
   }
 
   getGameData(id) {
-    const params = { game_id: id };
+    const params = {game_id: id};
     this.http
       .postRx("/api/Games/getData", params)
       .map(data => this.arrangeData(data))
@@ -71,21 +72,23 @@ export class BonusDetailsComponent implements OnInit {
         this.sortLabelData(data[0]);
       });
   }
+
   onClickLabel(data) {
     this.sortLabelData(data);
   }
+
   sortLabelData(data) {
     let arr = [];
-    Tool.forEach(data["child"], item => {
-      Tool.forEach(item["child"], item2 => {
+    data["child"].forEach(item => {
+      item["child"].forEach(item2 => {
         item2.info = `${data["title"]}-${item["title"]}-${item2["title"]}`;
         item2.leftTitle = data["title"];
         arr.push(item2);
       });
     });
-    Tool.forEach(arr, item=>{
+    arr.forEach(item => {
       item.ss = this.dfRebate / item["returnStep"] * item["returnAmount"] + item["bonus"];
-    })
+    });
     this.listData = arr;
   }
 
@@ -93,15 +96,15 @@ export class BonusDetailsComponent implements OnInit {
   sortData(data) {
     let gameData = [];
     // 第一层
-    Tool.forEach(data.data, item => {
+    data.data.forEach(item => {
       if (item.pid == 0 && item.enabled == 1) {
         item.child = [];
         item.styleHeigth = 31;
         gameData.push(item);
       }
     });
-    Tool.forEach(gameData, (item, index) => {
-      Tool.forEach(data.data, (item2, index2) => {
+    gameData.forEach( (item, index) => {
+      data.data.forEach( (item2, index2) => {
         if (item2.pid == item.id && item.enabled == 1) {
           item.child.push(item2);
         }
@@ -116,28 +119,28 @@ export class BonusDetailsComponent implements OnInit {
     let arr = [];
     this.getRebate(data["game"]["frequency"]);
     // 解析第一层
-    Tool.forEach(data.type, (item, index) => {
+    data.type.forEach((item, index) => {
       item.child = [];
       if (item.level === 0) {
         arr.push(item);
       }
     });
     // 第一层排序
-    arr.sort(function(a: any, b: any) {
+    arr.sort(function (a: any, b: any) {
       return a.sort - b.sort;
     });
     // 解析第二层
-    Tool.forEach(arr, (item, index) => {
-      Tool.forEach(data.type, item2 => {
+    arr.forEach( (item, index) => {
+      data.type.forEach(item2 => {
         if (item2.pid === item.id) {
           item.child.push(item2);
         }
       });
     });
     // 解析第三层数据
-    Tool.forEach(arr, item => {
-      Tool.forEach(item.child, item2 => {
-        Tool.forEach(data.play, item3 => {
+    arr.forEach(item => {
+      item.child.forEach( item2 => {
+        data.play.forEach(item3 => {
           if (item3.pid === item2.id) {
             item2.child.push(item3);
           }

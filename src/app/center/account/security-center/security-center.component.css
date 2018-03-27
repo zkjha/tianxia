@@ -1,0 +1,154 @@
+.safeBox {
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  padding-top: 5px;
+  font-size: 14px;
+  color: #333;
+  box-sizing: border-box; }
+  .safeBox .safetop {
+    width: 100%;
+    height: 160px;
+    padding: 10px 0 10px 200px;
+    background: url(../../../../assets/image/home/safe_login.png) no-repeat 44px 15px; }
+    .safeBox .safetop .sfTopLe {
+      width: 265px;
+      float: left; }
+      .safeBox .safetop .sfTopLe .prev {
+        height: 15px;
+        line-height: 15px;
+        margin-top: 20px;
+        font-size: 14px; }
+        .safeBox .safetop .sfTopLe .prev i {
+          display: inline-block;
+          float: left;
+          border-radius: 50%;
+          background: #43a8fb;
+          margin: 0 10px;
+          margin-top: 4px;
+          width: 8px;
+          height: 8px; }
+    .safeBox .safetop .sfTopRig {
+      width: 462px;
+      float: right;
+      height: 100%;
+      text-align: left;
+      background: #FAFAFA;
+      color: #333;
+      border: 1px solid #EBEBEB;
+      border-bottom: none; }
+      .safeBox .safetop .sfTopRig .sfTopTit {
+        width: 100%; }
+        .safeBox .safetop .sfTopRig .sfTopTit .dt {
+          height: 25px;
+          line-height: 25px;
+          float: left;
+          padding-left: 5px;
+          background: #EBEBEB; }
+      .safeBox .safetop .sfTopRig .dt1 {
+        width: 145px; }
+      .safeBox .safetop .sfTopRig .dt2 {
+        width: 200px; }
+      .safeBox .safetop .sfTopRig .dt3 {
+        width: 115px; }
+      .safeBox .safetop .sfTopRig .satime {
+        width: 100%;
+        height: 130px;
+        overflow: hidden; }
+        .safeBox .safetop .sfTopRig .satime li {
+          background: #fff;
+          overflow: hidden; }
+          .safeBox .safetop .sfTopRig .satime li span {
+            height: 25px;
+            line-height: 25px;
+            float: left;
+            padding-left: 5px;
+            display: block;
+            border-bottom: 1px solid #EBEBEB; }
+  .safeBox .sfcentent {
+    width: 440px;
+    padding: 0 20px;
+    float: left; }
+  .safeBox .safeCon {
+    width: 100%;
+    line-height: 24px;
+    padding: 20px 0;
+    position: relative; }
+    .safeBox .safeCon h3 {
+      height: 24px;
+      line-height: 24px;
+      padding-left: 30px;
+      font-size: 16px;
+      color: #333; }
+      .safeBox .safeCon h3 .success {
+        color: #f95259;
+        margin-left: 10px; }
+    .safeBox .safeCon .btn {
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      margin-top: -16px;
+      padding: 0px; }
+  .safeBox .centRig {
+    width: 440px;
+    padding: 0 20px;
+    float: right; }
+
+.phoneBox {
+  width: 100%;
+  height: 100%;
+  font-size: 14px; }
+  .phoneBox form {
+    color: #333; }
+    .phoneBox form .row {
+      width: 100%;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      margin-bottom: 10px; }
+      .phoneBox form .row .th {
+        float: left;
+        height: 100%;
+        width: 270px;
+        text-align: right; }
+      .phoneBox form .row .td {
+        float: left;
+        height: 100%;
+        width: 250px;
+        text-align: left;
+        display: inline-block;
+        padding-left: 16px; }
+        .phoneBox form .row .td input {
+          height: 32px;
+          border-color: #BABABA;
+          background: #fff;
+          width: 220px;
+          padding: 0 10px;
+          margin-left: 0;
+          border: 1px solid #CECECE; }
+        .phoneBox form .row .td select {
+          width: 220px;
+          height: 32px;
+          margin-left: 0;
+          border: 1px solid #CECECE;
+          overflow: visible !important; }
+          .phoneBox form .row .td select option {
+            padding: 5px 5px;
+            cursor: pointer;
+            min-height: 30px;
+            box-sizing: border-box;
+            transition: all 1s ease 0s; }
+        .phoneBox form .row .td label {
+          cursor: default; }
+          .phoneBox form .row .td label .radio {
+            width: 20px;
+            margin-left: 10px;
+            margin-right: 5px;
+            vertical-align: middle; }
+      .phoneBox form .row .tip {
+        float: left;
+        height: 100%;
+        text-align: left;
+        margin-left: 16px; }
+
+/*# sourceMappingURL=security-center.component.css.map */

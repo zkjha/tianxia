@@ -1,0 +1,181 @@
+.withdrawBox {
+  width: 100%;
+  overflow: hidden;
+  font-size: 14px;
+  padding: 15px 50px 0;
+  box-sizing: border-box;
+}
+.withdrawBox .withdraw-title {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+.withdrawBox .withdraw-title .title {
+  background: none;
+  font-size: 20px;
+  height: 25px;
+  line-height: 25px;
+  color: #000000;
+}
+.withdrawBox .withdraw-title .explain {
+  height: 20px;
+  line-height: 20px;
+  color: #999;
+}
+.withdrawBox .withdraw-info {
+  padding-left: 80px;
+  height: 60px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.withdrawBox .withdraw-info .grid {
+  width: 200px;
+  height: 58px;
+  line-height: 29px;
+  text-align: center;
+  display: inline-block;
+  background: #E1E3EE;
+  border: 1px solid #cdcecf;
+  margin: 0 5px;
+  color: #555;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  float: left;
+}
+.withdrawBox .withdraw-info .grid span {
+  font-weight: bold;
+  color: #333;
+}
+.withdrawBox .row {
+  width: 100%;
+  overflow: hidden;
+  line-height: 50px;
+  text-align: center;
+  color: #333;
+}
+.withdrawBox .row .th {
+  width: 80px;
+  text-align: left;
+  float: left;
+}
+.withdrawBox .row .inp {
+  float: left;
+  margin-top: 7px;
+  width: 220px;
+  height: 32px;
+  border-color: #BABABA;
+  margin-left: 14px;
+}
+.withdrawBox .row .tip {
+  float: left;
+  height: 100%;
+  text-align: left;
+  margin-left: 16px;
+}
+.withdrawBox .row .td {
+  float: left;
+  height: 100%;
+  width: 250px;
+  text-align: left;
+  display: inline-block;
+  padding-left: 16px;
+}
+.withdrawBox .row .td .item {
+  width: 398px;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+  font-size: 15px;
+  border: 1px solid #cdcecf;
+  background: #f8f9fa;
+  color: #666;
+  margin: 3px 0;
+  position: relative;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.withdrawBox .row .td1 {
+  border: 1px solid #FFC7C4;
+  color: #FF6975;
+  background: #FFF4F3;
+  line-height: 22px;
+  padding: 10px 10px 10px 16px;
+  width: 600px;
+  margin-bottom: 16px;
+  margin-left: 14px;
+}
+.withdrawBox .row .td2 {
+  width: 600px;
+}
+.withdrawBox .row .rig {
+  margin-right: 10px;
+}
+.phoneBox {
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+}
+.phoneBox form {
+  color: #333;
+}
+.phoneBox form .row {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.phoneBox form .row .th {
+  float: left;
+  height: 100%;
+  width: 270px;
+  text-align: right;
+}
+.phoneBox form .row .td {
+  float: left;
+  height: 100%;
+  width: 250px;
+  text-align: left;
+  display: inline-block;
+  padding-left: 16px;
+}
+.phoneBox form .row .td input {
+  height: 32px;
+  border-color: #BABABA;
+  background: #fff;
+  width: 220px;
+  padding: 0 10px;
+  margin-left: 0;
+  border: 1px solid #CECECE;
+}
+.phoneBox form .row .td select {
+  width: 220px;
+  height: 32px;
+  margin-left: 0;
+  border: 1px solid #CECECE;
+  overflow: visible !important;
+}
+.phoneBox form .row .td select option {
+  padding: 5px 5px;
+  cursor: pointer;
+  min-height: 30px;
+  box-sizing: border-box;
+  transition: all 1s ease 0s;
+}
+.phoneBox form .row .td label {
+  cursor: default;
+}
+.phoneBox form .row .td label .radio {
+  width: 20px;
+  margin-left: 10px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
+.phoneBox form .row .tip {
+  float: left;
+  height: 100%;
+  text-align: left;
+  margin-left: 16px;
+}

@@ -1,0 +1,60 @@
+.header-popover{
+    margin-top: 10px !important;
+    .ant-popover-inner{
+        background: #353e4e !important;
+    }
+    .ant-popover-arrow{
+        border-bottom-color:#353e4e !important;
+    }
+    .ant-popover-arrow:after{
+        border-bottom-color:#353e4e !important;
+    }
+    .ant-popover-inner-content{
+        padding: 10px 20px !important;
+    }
+    .cdk-overlay-pane{
+        transition: all 1s !important;
+    }
+    .ant-popover{
+        transition: all 1s !important;
+    }
+}
+.cdk-overlay-pane{
+    transition: all .5s !important;
+}
+.ant-popover{
+    transition: all .5s !important;
+}
+
+// 弹框
+.ant-modal-body{
+    padding: 0 !important;
+}
+.ant-modal-content{
+    border-radius:0 !important;
+}
+.ant-modal-close{
+    // color:#fff !important;
+}
+
+.ant-modal-content{
+    background: rgba(0,0,0,0) !important;
+}
+
+.content-time{
+    .ant-progress-text{
+        color: rgb(126,138,185) !important;
+        font-weight: 900 !important;
+    }
+    .anticon{
+        display: none !important;
+    }
+    
+}
+
+
+.ant-message{
+    top: 45% !important;
+    color: #111 !important;
+    font-size: 14px !important;
+}

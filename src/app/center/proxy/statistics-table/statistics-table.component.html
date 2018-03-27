@@ -11,10 +11,10 @@
   <div style='width:145px'>
     <nz-datepicker [(ngModel)]="endTime" [nzPlaceHolder]="'结束日期'"></nz-datepicker>
   </div>
-  <div class='m-left'>
+  <div>
     <span class="gm-button gm-button-success d-bc" (click)="getList()">查   询</span>
-    <span class="gm-button gm-button-success d-bc" (click)="backUp()">返回上级</span>
-    <span class="gm-button gm-button-success d-bc" (click)="backMaxUp()">返回最上级</span>
+    <span class="gm-button gm-button-cancel d-bc" (click)="backUp()">返回上级</span>
+    <span class="gm-button gm-button-cancel d-bc" (click)="backMaxUp()">返回最上级</span>
   </div>
 
 </div>

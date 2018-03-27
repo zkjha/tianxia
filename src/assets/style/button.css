@@ -1,0 +1,41 @@
+.django-buttton {
+  box-sizing: border-box;
+  margin-left: 15px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  line-height: 18px;
+  letter-spacing: 2px;
+  width: auto;
+  min-width: 100px;
+  min-height: 32px;
+  overflow: visible;
+  color: #fff;
+  border-radius: 15px;
+  background: #9a9a9a;
+  font-size: 13px;
+}
+.django-button-success {
+  background: #105fbe;
+}
+.gm-button {
+  width: 120px;
+  height: 28px;
+  line-height: 28px !important;
+  display: inline-block;
+  box-sizing: border-box;
+  text-align: center;
+  background: #9a9a9a;
+  border-radius: 5px;
+  color: #fff !important;
+  cursor: pointer;
+}
+.gm-button-success {
+  background: url("../../assets/model/model-button.png");
+  /*background: #105fbe;*/
+}
+.gm-button-cancel {
+  background: url("../../assets/model/model-button-cancel.png");
+  /*background: #105fbe;*/
+}

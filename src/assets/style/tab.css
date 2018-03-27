@@ -1,0 +1,37 @@
+.my-table-top {
+  display: flex;
+  color: #111;
+  margin: 10px 0;
+}
+.my-table-top .m-right {
+  margin-right: 30px;
+  font-size: 14px;
+}
+.my-table-top .m-width-150 {
+  width: 150px;
+}
+.my-table-content th,
+.my-table-content td {
+  font-size: 13px;
+  color: #111;
+  padding: 7px 0 7px 10px !important;
+}
+.my-pagination-right {
+  text-align: right;
+  margin: 15px 0 15px 0;
+}
+.my-table-top-new {
+  display: flex;
+  color: #111;
+  margin: 10px 0;
+}
+.my-table-top-new > div {
+  height: 28px;
+  line-height: 28px;
+  text-align: right;
+  padding: 0 3px;
+  box-sizing: border-box;
+}
+.my-table-top-new .m-left {
+  margin-left: 30px;
+}
