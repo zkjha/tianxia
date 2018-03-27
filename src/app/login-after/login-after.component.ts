@@ -22,11 +22,22 @@ export class LoginAfterComponent implements OnInit {
     setInterval(() => {
       this.getrefreshInfo();
     }, 5000);
+    this.getUserInfo();
   }
   loginOut() {
     this.http.postRx(`api/Users/loginOut`).subscribe(data => {
       location.href = "/home";
       this.storage.clear();
+    });
+  }
+  getUserInfo() {
+    this.http.postRx("/api/Users/getUserInfo").subscribe(data => {
+      if (data) {
+        // console.log(data)
+        this.storage.setStorage(data["maxRebate"], "maxRebate");
+        this.storage.setStorage(data["minRebate"], "minRebate");
+        this.storage.setStorage(data["username"], "user_name");
+      }
     });
   }
   // 余额信息

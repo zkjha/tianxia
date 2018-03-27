@@ -1,0 +1,21 @@
+<div class="program-chaseadd">
+  <ul class="program-chaseadd-title">
+    <li class="current">历史开奖号</li>
+  </ul>
+  <ul class="program-chaseadd-content">
+    <li class="current">
+      <table class="program-chaseadd-table" id="program-history-open">
+
+        <tbody>
+        <tr *ngFor="let item of lotteryData">
+          <td>{{item.issue}}</td>
+          <td><b class="price">{{item.code}}</b></td>
+        </tr>
+
+        </tbody>
+      </table>
+    </li>
+  </ul>
+</div>
+
+

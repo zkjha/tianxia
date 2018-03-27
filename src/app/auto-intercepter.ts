@@ -73,15 +73,15 @@ export class AuthInterceptor implements HttpInterceptor {
             case "1004":
             case "1005":
               msg
-                ? this.message.warning(msg)
-                : this.message.warning("参数异常");
+                ? alert(msg)
+                : alert("参数异常");
               break;
             // case  '1004':
             // break;
             // 业务错误
             // BUSINESS_ERROR = "2000";
             case "2000":
-              msg ? this.message.error(msg) : this.message.error("业务错误");
+              msg ? alert(msg) : alert("业务错误");
               break;
             // 余额不足
             // USABLE_AMOUNT_NOT_ENOUGH = "2001";
@@ -91,8 +91,8 @@ export class AuthInterceptor implements HttpInterceptor {
             case "2004":
             case "2005":
               msg
-                ? this.message.warning(msg)
-                : this.message.warning("余额不足");
+                ? alert(msg)
+                : alert("余额不足");
               break;
             // 已封单
             // BET_SINGLED = "2006";

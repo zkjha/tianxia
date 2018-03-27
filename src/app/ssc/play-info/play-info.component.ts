@@ -18,6 +18,12 @@ export class PlayInfoComponent implements OnInit, OnDestroy {
     kaijiang: false
   };
 
+  winSatus = [
+    "未开奖",
+    "已中奖",
+    "未中奖"
+  ] ;
+
   // 我的方案
   date = null;
 
@@ -49,12 +55,15 @@ export class PlayInfoComponent implements OnInit, OnDestroy {
       this.getList();
     }, 5000);
   }
+  getStatus(num) {
+    return this.winSatus[Number(num)];
+  }
 
   // 删除激活
   removeActive() {
-    Tool.forEach(this.titleActive, (item, index) => {
+    for (var index in this.titleActive ){
       this.titleActive[index] = false;
-    });
+    }
   }
 
   // 我的方案

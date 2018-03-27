@@ -49,6 +49,9 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   // 奖金
   bonus = 0;
 
+  // 滚动条值
+  scrollBar: 0 ;
+
   // 添加号码数据
   betData = [];
   // 统计数据
@@ -116,7 +119,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
       this.playData = this.playService.sortPlayData(
         changes.playData.currentValue
       );
-      //console.log(this.playData);
+      console.log(this.playData);
       this.init();
       this.oneAmount = this.playData.oneAmount;
       this.oneBonus = this.playData.bonus;
@@ -172,6 +175,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     this.rebate = this.storage.getStorage("scope");
     this.storage.setStorage(this.rebate, "rebate");
     this.calcuationBonus();
+    console.log(this.dfRebate,222);
 
     // this.draw.init(this.rebate, this.dfRebate);
     // this.time = setInterval(() => {
@@ -188,6 +192,13 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     this.calcuationBonus();
   }
 
+  getScrollBar(value){
+    console.log(value)
+  }
+
+  closeWindow(){
+    this.rebetSetting =false;
+  }
   // 清除数据
   removeData() {
     this.betData = [];
@@ -195,7 +206,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   showRebetSetting() {
-    this.rebetSetting = false;
+    this.rebetSetting = true;
   }
 
   // shifou zhuihao

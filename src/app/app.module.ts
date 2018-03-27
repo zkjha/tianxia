@@ -41,6 +41,7 @@ import { LotteryHistoryDjangoComponent } from './ssc/django/lottery-history-djan
 import { HistoryDjangoComponent } from './ssc/django/history-django/history-django.component';
 import { ChaseHistoryDjangoComponent } from './ssc/django/chase-history-django/chase-history-django.component';
 import { PlayInfoComponent } from './ssc/play-info/play-info.component';
+import { PlayHistoryComponent } from './ssc/play-history/play-history.component';
 
 
 
@@ -122,6 +123,7 @@ import {LoginGuard} from "./guard/login.guard";
     SscDetailComponent,
     SscSelectComponent,
     PlayInfoComponent,
+    PlayHistoryComponent,
     BettingDjangoComponent,
     ChaseDjangoComponent,
     HistoryDjangoComponent,

@@ -60,7 +60,7 @@ export class ChaseDjangoComponent implements OnInit {
     let gameData = this.storage.getStorage('gameData');
 
     let issueData = [];
-    Tool.forEach(this.chaseData, item => {
+    this.chaseData.forEach(item => {
       if (item.select == true) {
         issueData.push(item);
       }
@@ -118,12 +118,12 @@ export class ChaseDjangoComponent implements OnInit {
 
     let sum = 0;
     let all = 0
-    Tool.forEach(this.betData, item => {
+    this.betData.forEach( item => {
       console.log(item);
       sum += item.amount * item.times * item.currency;
     })
 
-    Tool.forEach(this.chaseData, item => {
+    this.chaseData.forEach( item => {
       all += sum * item.times
     })
     this.allAmount = all;
@@ -132,7 +132,7 @@ export class ChaseDjangoComponent implements OnInit {
   // 统计期号
   sumTimes() {
     let allSum = []
-    Tool.forEach(this.chaseData, item => {
+    this.chaseData.forEach(item => {
       if (item.select == true) {
         allSum.push(item);
       }

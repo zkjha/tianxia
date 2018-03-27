@@ -210,30 +210,35 @@
           <div class="pop-waring"><i class="ico-success"></i><h4 class="pop-text">设置游戏返点！<br></h4>
             <div>
               <div class="fandianSilderDivParent">
-                <div class="fandianSilderLeftDiv"><a class="fandianSilderLeftBtn" id="fandianSilderLeftBtn"></a></div>
+                <!--<div class="fandianSilderLeftDiv"><a class="fandianSilderLeftBtn" id="fandianSilderLeftBtn"></a></div>-->
                 <div class="fandianSilderDiv">
-                  <div style="top:50%;margin-top:-7px;" id="J-balls-messages-fandianSilder"
-                       class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><span
-                    class="ui-slider-handle ui-state-default ui-corner-all" tabindex="0" style="left: 100%;"></span>
+                  <!-- <div class="top d-active">
+    <div class="top-text" [class.active]='allData.allCount != 0'>
+      奖金:{{bonus | number:'1.2-2'}} 元， 返点:{{rebate}} %
+    </div>
+  </div> -->
+                  <div class="slider">
+                    <nz-slider [nzMin]="0" [nzMax]="dfRebate" [nzStep]='playData.returnStep' [(ngModel)]="rebate" (nzOnAfterChange)="changeRebate()"></nz-slider>
                   </div>
+
                 </div>
-                <div class="fandianSilderRightDiv"><a class="fandianSilderRightBtn" id="fandianSilderRightBtn"></a>
+                <!--<div class="fandianSilderRightDiv"><a class="fandianSilderRightBtn" id="fandianSilderRightBtn"></a>-->
                 </div>
               </div>
             </div>
-            <h4 class="pop-text">当前奖金模式: <span id="J-balls-messages-fandianSilderText">0.0000/2000</span> <br></h4>
+            <h4 class="pop-text">当前奖金模式: <span id="J-balls-messages-fandianSilderText">{{num+"%"}}/{{bonus}}</span> <br></h4>
           </div>
         </div>
       </div>
-      <a style="display: inline-block;" href="javascript:void(0);" class="btn confirm">确定<b class="btn-inner"></b></a><a
-      style="display:none" href="javascript:void(0);" class="btn cancel">取 消<b class="btn-inner"></b></a><a
-      href="javascript:void(0);" style="display: inline-block;" class="btn closeTip">关 闭<b class="btn-inner"></b></a>
+      <a style="display: inline-block;" href="javascript:void(0);" (click)="closeWindow()" class="btn confirm">确定<b class="btn-inner"></b></a><a
+      style="display:none" href="javascript:void(0);" (click)="closeWindow()" class="btn cancel">取 消<b class="btn-inner"></b></a><a
+      href="javascript:void(0);" style="display: inline-block;" (click)="closeWindow()" class="btn closeTip">关 闭<b class="btn-inner"></b></a>
     </div>
     <span class="amount">
-      <span class="color-danger">模式：{{amount | number:'1.2-2'}} 元</span>
+      <span class="color-danger">模式：{{num+"%"/bonus}} 元</span>
     </span>
     <span class="amount">
-      <span class="color-danger">奖金：{{amount | number:'1.2-2'}} 元</span>
+      <span class="color-danger">奖金：{{bonus}} 元</span>
     </span>
     <span class="amount">
       <span class="color-danger">金额：{{amount | number:'1.2-2'}} 元</span>
