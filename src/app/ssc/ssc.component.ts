@@ -8,6 +8,7 @@ import {
 import {LoginAfterComponent} from '../login-after/login-after.component';
 import { ActivatedRoute } from "@angular/router";
 import {HttpService} from '../service/http-service.service';
+import { StoreDataService } from "../service/store-data.service";
 import { StorageService } from "../service/storage.service";
 import {SscDetailComponent} from "./ssc-detail/ssc-detail.component";
 import {SscSelectComponent} from "./ssc-select/ssc-select.component";
@@ -27,6 +28,7 @@ export class SscComponent implements OnInit {
     private routerInfo: ActivatedRoute,
     private http: HttpService,
     private storage: StorageService,
+    private storeDataService: StoreDataService,
   ) { }
 
   // 头部
@@ -155,6 +157,18 @@ export class SscComponent implements OnInit {
     }else{
       this.leftNotShow =true;
     }
+  }
+  opengengduo() {
+    this.storeDataService.change.emit({
+      model1: "transaction-record",
+      model2: "betting"
+    });
+  }
+  openzuihao() {
+    this.storeDataService.change.emit({
+      model1: "transaction-record",
+      model2: "chase-number"
+    });
   }
   //   this.leftMenu = true;
   //   setTimeout(() => {

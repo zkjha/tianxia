@@ -13,7 +13,9 @@
   <div class="header">
     <div class="w">
       <a href="" class="logo1"></a>
-      <a href="" class="logo"></a>
+      <div href="" class="logo">
+        <img src="/assets/head/logo.png">
+      </div>
       <!--登录后-->
       <app-login-after></app-login-after>
 
@@ -88,7 +90,7 @@
           </div>
         </div>
         <!-- 选球统计结束 -->
-        <app-play-info></app-play-info>
+        <app-play-info (openzuihaoD)="openzuihao()" (openinfoDjango)='opengengduo()'></app-play-info>
 
       </div>
 

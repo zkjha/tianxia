@@ -54,9 +54,16 @@ body{
 
 
 
+.ant-modal-body{
+  border:1px solid #9b0000 !important;
+}
+.ant-checkbox-checked .ant-checkbox-inner:after{
 
-
-
+}
+.ant-checkbox-checked .ant-checkbox-inner, .ant-checkbox-indeterminate .ant-checkbox-inner{
+  background-color: #989898 !important;
+  border-color:#989898 !important;
+}
 
 
 
@@ -299,15 +306,18 @@ a:hover {
   background: url(/assets/head/logo1.png) no-repeat;
 }
 .logo {
-  background: url(/assets/head/logo.png) center no-repeat;
+  padding-left: 42px;
   width: 178px;
   height: 82px;
   display: block;
-  text-indent: -9999px;
   position: absolute;
   left: 399px;
   top: 61px;
   z-index: 10;
+}
+.logo>img{
+  opacity: 0.9;
+  height: 85px;
 }
 .loginBefore {
   width: 376px;

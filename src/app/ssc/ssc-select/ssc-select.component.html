@@ -229,19 +229,20 @@
               </div>
             </div>
           </div>
-          <h4 class="pop-text">当前奖金模式: <span id="J-balls-messages-fandianSilderText">{{num+"%"}}/{{bonus}}</span> <br>
+          <h4 class="pop-text">当前奖金模式: <span id="J-balls-messages-fandianSilderText">{{rebate+"%"}}/{{bonus}}</span> <br>
           </h4>
+          <a style="display: inline-block;" href="javascript:void(0);" (click)="closeWindow()" class="btn confirm">确定<b
+            class="btn-inner"></b></a><a
+          style="display:none" href="javascript:void(0);" (click)="closeWindow()" class="btn cancel">取 消<b
+          class="btn-inner"></b></a><a
+          href="javascript:void(0);" style="display: inline-block;" (click)="closeWindow()" class="btn closeTip">关 闭<b
+          class="btn-inner"></b></a>
         </div>
       </div>
     </div>
-    <a style="display: inline-block;" href="javascript:void(0);" (click)="closeWindow()" class="btn confirm">确定<b
-      class="btn-inner"></b></a><a
-    style="display:none" href="javascript:void(0);" (click)="closeWindow()" class="btn cancel">取 消<b
-    class="btn-inner"></b></a><a
-    href="javascript:void(0);" style="display: inline-block;" (click)="closeWindow()" class="btn closeTip">关 闭<b
-    class="btn-inner"></b></a>
+
     <span class="amount">
-      <span class="color-danger">模式：{{num+"%"/bonus}} 元</span>
+      <span class="color-danger">模式：{{bonus | number:'1.2-2'}} - {{rebate}}%</span>
     </span>
     <span class="amount">
       <span class="color-danger">奖金：{{bonus}} 元</span>
