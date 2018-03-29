@@ -1,21 +1,191 @@
-<div class="program-chaseadd">
-  <ul class="program-chaseadd-title">
-    <li class="current">历史开奖号</li>
+<div>
+  <ul class="tab-hd program-chaseadd-title">
+    <li [class.active]="titleActive.fangan" (click)='onClickBetlist()'>我的方案</li>
+    <li [class.active]="titleActive.zuihao" (click)='onClickChase()'>我的追号</li>
+    <li [class.active]="titleActive.kaijiang" (click)='onClickKaiJiang()'>开奖号码</li>
   </ul>
-  <ul class="program-chaseadd-content">
-    <li class="current">
-      <table class="program-chaseadd-table" id="program-history-open">
+  <!-- 我到方案 -->
+  <div class='item' [class.item-bc]='programData.length == 0' *ngIf='titleActive.fangan'>
+    <div>
+      <span>期号</span>
+      <span>状态</span>
+    </div>
+    <ul class='ul'>
+      <li class='item-list' *ngFor='let list of programData'>
+        <div  (click)="clickList(list)">
+          <nz-popover [nzTitle]="list.issue" [nzTrigger]="'hover'" [nzPlacement]="'leftTop'">
+            <span class='lanse' nz-popover>[{{list.issue}}]</span>
+            <ng-template #nzTemplate>
+              <div>
+                <p>投注金额:{{list.betAmount}}</p>
+                <p>投注号码:{{list.code}}</p>
+                <p>投注注数:{{list.betCount}}</p>
+                <p>是否追号:{{list.chase_id > 0 ? '是': '否'}}</p>
+              </div>
+            </ng-template>
+          </nz-popover>
+        </div>
+        <div>
+          <p *ngIf='list.status == 0'>未开奖
+            <span class='lanse' (click)='revoked(list.id)'>[撤单]</span>
+          </p>
+          <p *ngIf='list.status == 1'>已封单</p>
+          <p *ngIf='list.status == 2'>未中奖</p>
+          <p *ngIf='list.status == 3'>已中奖</p>
+          <p *ngIf='list.status == -1'>撤单</p>
+        </div>
+      </li>
+    </ul>
+    <div class="ul-top">
+      <span (click)="onClickBetlists()"><i class="iconfont">&#xe626;</i>刷新</span>
+      <span (click)='gengduo()'>更多..</span>
+    </div>
 
-        <tbody>
-        <tr *ngFor="let item of lotteryData">
-          <td>{{item.issue}}</td>
-          <td><b class="price">{{item.code}}</b></td>
-        </tr>
-
-        </tbody>
-      </table>
-    </li>
-  </ul>
+  </div>
+  <!-- 追号 -->
+  <div class='item' [class.item-bc]='chaseData.length == 0' *ngIf='titleActive.zuihao'>
+    <div class="xs">
+      <span>进度</span>
+      <span>投注金额</span>
+      <span>状态</span>
+    </div>
+    <ul class='ul'>
+      <li class='item-list xs' *ngFor='let list of chaseData'>
+        <div>
+          <span class='lanse' (click)="clickJindu(list)">{{list.doneCount}}/{{list.issueCount}}</span>
+        </div>
+        <div>
+          <p>{{list.betAmount}}</p>
+        </div>
+        <div>
+          <p *ngIf="list.status == 0" >未开始</p>
+          <p *ngIf="list.status == 1" >进行中</p>
+          <p *ngIf="list.status == 2" >已停止</p>
+          <p *ngIf="list.status == 3" >已结束</p>
+        </div>
+      </li>
+    </ul>
+    <div class="ul-top">
+      <span (click)="shuaxin()"><i class="iconfont">&#xe626;</i>刷新</span>
+      <span (click)='openzuihao()'>更多...</span>
+    </div>
+  </div>
+  <div class='item' [class.item-bc]='lotteryData.length == 0' *ngIf='titleActive.kaijiang'>
+    <div>
+      <span>期号</span>
+      <span>号码</span>
+    </div>
+    <ul class='ul'>
+      <li class='item-list' *ngFor='let list of lotteryData'>
+        <div>
+          <span>[{{list.issue}}]</span>
+        </div>
+        <div>
+          <p>{{list.code}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>
+
+
+<!--<div class="program-chaseadd">-->
+  <!--<ul class="program-chaseadd-title">-->
+    <!--<li class="current">历史开奖号</li>-->
+  <!--</ul>-->
+  <!--<ul class="program-chaseadd-content">-->
+    <!--&lt;!&ndash; 我到方案 &ndash;&gt;-->
+    <!--<li class='item' [class.item-bc]='programData.length == 0' *ngIf='titleActive.fangan'>-->
+      <!--<table>-->
+        <!--<tr>-->
+          <!--<td>期号</td>-->
+          <!--<td>状态</td>-->
+        <!--</tr>-->
+        <!--<tbody>-->
+          <!--<tr  *ngFor='let list of programData'>-->
+
+          <!--</tr>-->
+
+        <!--</tbody>-->
+
+      <!--</table>-->
+      <!--<div>-->
+        <!--<span>期号</span>-->
+        <!--<span>状态</span>-->
+      <!--</div>-->
+      <!--<ul class='ul'>-->
+        <!--<li class='item-list' *ngFor='let list of programData'>-->
+          <!--<div  (click)="clickList(list)">-->
+            <!--<nz-popover [nzTitle]="list.issue" [nzTrigger]="'hover'" [nzPlacement]="'leftTop'">-->
+              <!--<span class='lanse' nz-popover>[{{list.issue}}]</span>-->
+              <!--<ng-template #nzTemplate>-->
+                <!--<div>-->
+                  <!--<p>投注金额:{{list.betAmount}}</p>-->
+                  <!--<p>投注号码:{{list.code}}</p>-->
+                  <!--<p>投注注数:{{list.betCount}}</p>-->
+                  <!--<p>是否追号:{{list.chase_id > 0 ? '是': '否'}}</p>-->
+                <!--</div>-->
+              <!--</ng-template>-->
+            <!--</nz-popover>-->
+          <!--</div>-->
+          <!--<div>-->
+            <!--<p *ngIf='list.status == 0'>未开奖-->
+              <!--<span class='lanse' (click)='revoked(list.id)'>[撤单]</span>-->
+            <!--</p>-->
+            <!--<p *ngIf='list.status == 1'>已封单</p>-->
+            <!--<p *ngIf='list.status == 2'>未中奖</p>-->
+            <!--<p *ngIf='list.status == 3'>已中奖</p>-->
+            <!--<p *ngIf='list.status == -1'>撤单</p>-->
+          <!--</div>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<div class="ul-top">-->
+        <!--<span (click)="onClickBetlists()"><i class="iconfont">&#xe626;</i>刷新</span>-->
+        <!--<span (click)='gengduo()'>更多..</span>-->
+      <!--</div>-->
+
+    <!--</li>-->
+    <!--&lt;!&ndash; 追号 &ndash;&gt;-->
+    <!--<div class='item' [class.item-bc]='chaseData.length == 0' *ngIf='titleActive.zuihao'>-->
+      <!--<div class="xs">-->
+        <!--<span>进度</span>-->
+        <!--<span>投注金额</span>-->
+        <!--<span>状态</span>-->
+      <!--</div>-->
+      <!--<ul class='ul'>-->
+        <!--<li class='item-list xs' *ngFor='let list of chaseData'>-->
+          <!--<div>-->
+            <!--<span class='lanse' (click)="clickJindu(list)">{{list.doneCount}}/{{list.issueCount}}</span>-->
+          <!--</div>-->
+          <!--<div>-->
+            <!--<p>{{list.betAmount}}</p>-->
+          <!--</div>-->
+          <!--<div>-->
+            <!--<p *ngIf="list.status == 0" >未开始</p>-->
+            <!--<p *ngIf="list.status == 1" >进行中</p>-->
+            <!--<p *ngIf="list.status == 2" >已停止</p>-->
+            <!--<p *ngIf="list.status == 3" >已结束</p>-->
+          <!--</div>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<div class="ul-top">-->
+        <!--<span (click)="shuaxin()"><i class="iconfont">&#xe626;</i>刷新</span>-->
+        <!--<span (click)='openzuihao()'>更多...</span>-->
+      <!--</div>-->
+    <!--</div>-->
+    <!--<li class="current">-->
+      <!--<table class="program-chaseadd-table" id="program-history-open">-->
+
+        <!--<tbody>-->
+        <!--<tr *ngFor="let item of lotteryData">-->
+          <!--<td>{{item.issue}}</td>-->
+          <!--<td><b class="price">{{item.code}}</b></td>-->
+        <!--</tr>-->
+
+        <!--</tbody>-->
+      <!--</table>-->
+    <!--</li>-->
+  <!--</ul>-->
+<!--</div>-->
 
 

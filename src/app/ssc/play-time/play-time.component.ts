@@ -1,6 +1,7 @@
 import { LotteryHistoryDjangoComponent } from "../django/lottery-history-django/lottery-history-django.component";
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
 import { StorageService } from "../../service/storage.service";
+import { StoreDataService } from "../../service/store-data.service";
 import {
   NzMessageService,
   NzModalService,
@@ -70,6 +71,7 @@ export class PlayTimeComponent implements OnInit  {
 
   constructor(
     private storage: StorageService,
+    private StoreDataService: StoreDataService,
     private message: NzMessageService,
     private modalService: NzModalService,
     private nf: NzNotificationService,
@@ -99,6 +101,23 @@ export class PlayTimeComponent implements OnInit  {
       }
     });
   }
+
+  opengengduo() {
+    this.storeDataService.change.emit({
+      model1: "transaction-record",
+      model2: "betting"
+    });
+  }
+  openzuihao() {
+    this.storeDataService.change.emit({
+      model1: "transaction-record",
+      model2: "chase-number"
+    });
+  }
+
+
+
+
   sortCurIssue(data) {
     let s;
     // 当前期

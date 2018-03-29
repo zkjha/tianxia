@@ -319,6 +319,17 @@ a:hover {
   opacity: 0.9;
   height: 85px;
 }
+.fandianSilderDivParent{
+  width:580px !important;
+}
+
+.slider .ant-slider-track{
+  background-color: #9b0000 !important;
+}
+.slider .ant-slider-handle{
+  border-color: #9b0000 !important;
+}
+
 .loginBefore {
   width: 376px;
   height: 53px;
@@ -1033,10 +1044,16 @@ a:hover {
   display: block;
   width: 100%;
 }
+
+.z_footer{
+  width: 100%;
+  text-align: center;
+  background: white;
+}
+
 /*footer*/
 .footer {
   height: 105px;
-  margin-top: 20px;
   position: relative;
   background: url(/assets/head/footerbg.jpg) center no-repeat #2F2F2F;
 }
