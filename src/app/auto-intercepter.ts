@@ -8,7 +8,7 @@ import {
 } from "@angular/common/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/do";
-import { NzMessageService } from "ng-zorro-antd";
+// import { NzMessageService } from "ng-zorro-antd";
 import { Router } from "@angular/router";
 
 import {StorageService} from "./service/storage.service";
@@ -21,7 +21,7 @@ import {StorageService} from "./service/storage.service";
  */
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-  constructor(private message: NzMessageService, private router: Router, private storage: StorageService) {}
+  constructor(private router: Router, private storage: StorageService) {}
 
   // 如果需要注入service，使用这种方式，打开注释代码即可
   // private httpService: HttpService;
@@ -97,14 +97,12 @@ export class AuthInterceptor implements HttpInterceptor {
             // 已封单
             // BET_SINGLED = "2006";
             case "2006":
-              msg ? this.message.warning(msg) : this.message.warning("已封单");
+              // msg ? this.message.warning(msg) : this.message.warning("已封单");
               break;
             // 没权限操作
             // NO_AUTHORITY = "2007";
             case "2007":
-              msg
-                ? this.message.warning(msg)
-                : this.message.warning("没权限操作");
+              // msg ? this.message.warning(msg) : this.message.warning("没权限操作");
               break;
             // 返点超出范围
             // REBATE_ERROR = "2008";
@@ -129,15 +127,13 @@ export class AuthInterceptor implements HttpInterceptor {
             case "2016":
             case "2017":
             case "2018":
-              msg
-                ? this.message.warning(msg)
-                : this.message.warning("返点超出范围");
+              // msg ? this.message.warning(msg) : this.message.warning("返点超出范围");
               break;
             // 系统异常
             // SYSTEM_ERROR = "5000";  // 服务器错误
             case "5000":
               // msg ? this.message.error(msg) : this.message.error("服务器错误");
-              console.error(msg || '服务器错误！')
+              console.error(msg || '服务器错误！');
               break;
             case "3005":
               console.log("不提示！");
@@ -146,7 +142,7 @@ export class AuthInterceptor implements HttpInterceptor {
             // this.message.warning("未知的状态码，请检查后端返回状态码类型");
           }
         } else {
-          console.error('后端返回参数不合法！')
+          console.error('后端返回参数不合法！');
           // this.message.error('后端返回参数不符合要求，请检查');
         }
       }
