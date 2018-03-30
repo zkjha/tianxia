@@ -276,6 +276,7 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
   ],
   entryComponents: [
     LoadingComponent,
+    HistoryDjangoComponent,
     BettingDjangoComponent
   ],
   bootstrap: [AppComponent]

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { HistoryDjangoComponent } from '../../../ssc/django/history-django/history-django.component';
-import { HttpService } from '../../../service/http-service.service';
-import { NzModalService, NzMessageService } from 'ng-zorro-antd';
-import { StorageService } from '../../../service/storage.service';
+import {Component, OnInit} from '@angular/core';
+import {HistoryDjangoComponent} from '../../../ssc/django/history-django/history-django.component';
+import {HttpService} from '../../../service/http-service.service';
+import {NzModalService, NzMessageService} from 'ng-zorro-antd';
+import {StorageService} from '../../../service/storage.service';
 
 @Component({
   selector: "app-xiajitouzhu",
@@ -14,17 +14,16 @@ export class XiajitouzhuComponent implements OnInit {
   endTime = null;
   page = 1;
   total = 0;
-  user_name=null;
+  user_name = null;
 
   detail: any = {}; // 弹窗详情
   betList: any = [];
 
-  constructor(
-    private http: HttpService,
-    private message: NzMessageService,
-    private modalService: NzModalService,
-    private storage: StorageService
-  ) {}
+  constructor(private http: HttpService,
+              private message: NzMessageService,
+              private modalService: NzModalService,
+              private storage: StorageService) {
+  }
 
   timeChange(event) {
     this.startTime = event.start;
@@ -40,8 +39,8 @@ export class XiajitouzhuComponent implements OnInit {
       .postRx(`api/Users/team/getBetLogs`, {
         page: this.page,
         pageSize: 10,
-        status:'',
-        user_name:this.user_name,
+        status: '',
+        user_name: this.user_name,
         startTime: new Date(this.startTime).getTime() / 1000 || "",
         endTime: new Date(this.endTime).getTime() / 1000 || ""
       })
@@ -70,7 +69,7 @@ export class XiajitouzhuComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getList()
+    this.getList();
   }
 
   // 查看详情

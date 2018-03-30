@@ -43,21 +43,6 @@
   </div>
   <div class="right">
     <ul>
-      <li class="youhuiTitle">
-        <nz-popover [nzOverlayClassName]="'header-popover youhui'" [(nzVisible)]="youhui" [nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">
-            <span nz-popover >
-              <span class="bg-img">优惠活动</span>
-            </span>
-          <ng-template #nzTemplate>
-            <div class='games-lobby'>
-              <div class="right">
-                <div class="smimg" (click)="showCont(3)"><i></i><img src="assets/image/home/rotate_preview.png" alt=""/></div>
-                <div class="smimg" (click)="showCont(1)"><i></i><img src="assets/image/home/preview_register.jpg" alt=""/></div>
-              </div>
-            </div>
-          </ng-template>
-        </nz-popover>
-      </li>
       <li (click)="open('finance','weichat')">
         <span class="bg-img">充值</span>
       </li>
