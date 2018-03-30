@@ -55,26 +55,28 @@ export class LoginComponent implements OnInit {
     };
     this.http.postRx(`/api/Users/login`, params, false).subscribe(data => {
       if (data) {
+        this.storage.setStorage(null, "tip");
         this.cookie.setCookie("LURusername", value.usernameL);
         this.cookie.setCookie("LURpassword", value.passwordL);
         console.log("save user" + value.usernameL + " password" + value.passwordL);
         this.storage.setStorage(data["user_id"], "user_id");
         this.router.navigateByUrl('/home');
+        this.logShow.emit(1);
       }
     });
   }
 
   showModal = () => {
     this.isVisible = true;
-  };
+  }
 
   handleOk = e => {
     this.isVisible = false;
-  };
+  }
 
   handleCancel = e => {
     this.isVisible = false;
-  };
+  }
 }
 
 // import {StorageService} from '../service/storage.service';

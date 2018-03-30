@@ -577,3 +577,10 @@
     <script type="text/javascript">$("#a1").addClass("on").parent().show()</script>
   </div>
 </div>
+<div class="logAft" *ngIf="shohid == 1">
+  <div class="mabox">
+    <div class="heTit d-bc">{{data.title}}  <span (click)="tohome()">×</span></div>
+    <div class="cont" [innerHTML]='data.content'></div>
+    <div class="mabtn"><span class="gm-button gm-button-success d-bc d-bc" (click)="tohome()">确定</span></div>
+  </div>
+</div>
