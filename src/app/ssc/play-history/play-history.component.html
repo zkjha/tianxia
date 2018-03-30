@@ -27,7 +27,12 @@
         </div>
         <div>
           <p *ngIf='list.status == 0'>未开奖
-            <span class='lanse' (click)='revoked(list.id)'>[撤单]</span>
+            <nz-popconfirm [nzTitle]="'确定撤单？'" (nzOnConfirm)="revoked(list.id)" [nzPlacement]="'bottomRight'">
+            <span nz-popconfirm>
+              <span class="lanse">[撤单]</span>
+            </span>
+            </nz-popconfirm>
+            <!--<span class='lanse' (click)='revoked(list.id)'>[撤单]</span>-->
           </p>
           <p *ngIf='list.status == 1'>已封单</p>
           <p *ngIf='list.status == 2'>未中奖</p>

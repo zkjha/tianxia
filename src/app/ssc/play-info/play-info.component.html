@@ -28,8 +28,13 @@
           <td>{{item.winAmount}}</td>
           <td>{{getStatus(item.status)}}</td>
           <td>{{item.addTime*1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
-          <td><a target="_black" (click)="gengduo()"> 查看 </a> <a
-            href="javascript:void(0);" id="revSscheme0"  *ngIf="item.status == 0" (click)='revoked(item.id)'> |撤单</a></td>
+          <td><a target="_black" (click)="gengduo()"> 查看 </a>
+            <nz-popconfirm [nzTitle]="'确定撤单？'" (nzOnConfirm)="revoked(item.id)" [nzPlacement]="'bottomRight'">
+            <span nz-popconfirm>
+              <a href="javascript:void(0);" id="revSscheme0"  *ngIf="item.status == 0"> |撤单</a>
+            </span>
+            </nz-popconfirm>
+          </td>
         </tr>
 
         </tbody>
