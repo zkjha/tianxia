@@ -119,7 +119,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
       this.playData = this.playService.sortPlayData(
         changes.playData.currentValue
       );
-      console.log(this.playData);
+      // console.log(this.playData);
       this.init();
       this.oneAmount = this.playData.oneAmount;
       this.oneBonus = this.playData.bonus;
@@ -331,18 +331,18 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   OpenChange() {
-    console.log("1123");
+    // console.log("1123");
     switch (this.selectedOption) {
       case "元":
-        console.log("1123", "元");
+        // console.log("1123", "元");
         this.currency = 1;
         break;
       case "角":
-        console.log("1123", "jiao");
+        // console.log("1123", "jiao");
         this.currency = 0.1;
         break;
       case "分":
-        console.log("1123", "fen");
+        // console.log("1123", "fen");
         this.currency = 0.01;
         break;
     }
@@ -353,7 +353,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
   calculationAmount() {
     this.amount =
       this.quantity * this.multiple * this.currency * this.oneAmount;
-    console.log(this.amount);
+    // console.log(this.amount);
   }
 
   calcuationBonus() {
@@ -473,7 +473,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     this.betData.forEach(item => {
       allCount += item.count;
       allAmount += item.htmlData.amount;
-      console.log(allAmount);
+      // console.log(allAmount);
     });
     this.allData["allCount"] = allCount;
     this.allData["allAmount"] = allAmount;
