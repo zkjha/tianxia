@@ -256,7 +256,7 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
         pathMatch: 'full'
       }
     ]
-      , { useHash: true }
+      , { useHash: false }
       )
   ],
   providers: [
