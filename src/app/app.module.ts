@@ -197,13 +197,13 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
         ]
       },
       {
-        path: 'Help',
-        component: MobHelpComponent
-      },
-      {
         path: 'login',
         component: LoginComponent
       },
+        {
+          path: 'help',
+          component: MobHelpComponent
+        },
       {
         path: 'Caipiao',
         component: CaipiaoComponent
@@ -256,7 +256,7 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
         pathMatch: 'full'
       }
     ]
-      // , { useHash: true }
+      , { useHash: true }
       )
   ],
   providers: [
