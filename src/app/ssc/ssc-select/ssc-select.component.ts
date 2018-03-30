@@ -171,7 +171,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
       this.dfRebate = this.storage.getStorage("maxRebate");
     }
     this.oneRebate = this.dfRebate / this.playData["returnStep"] * this.playData["returnAmount"];
-    this.rebate = this.storage.setStorage('7.0', "scope");
+    this.rebate = this.storage.setStorage('0.0', "scope");
     this.rebate = this.storage.getStorage("scope");
     this.storage.setStorage(this.rebate, "rebate");
     this.calcuationBonus();
@@ -268,9 +268,8 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
           this.playData.playData[0].row[nowIndex].status = false;
         }
       });
-    }
-
-    if (this.playData.bingoType == "normal" || this.playData.bingoType == "regToCode") {
+    }else{
+      // if (this.playData.bingoType == "normal" || this.playData.bingoType == "regToCode") {
       this.playData.playData[lastIndex].row.forEach((item, nowIndex) => {
         //console.log(item);
         if (nowIndex == index) {
@@ -279,10 +278,13 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
           } else {
             this.playData.playData[lastIndex].row[nowIndex].status = true;
           }
-          this.playData.playData[lastIndex].row[nowIndex].status = true;
+          // this.playData.playData[lastIndex].row[nowIndex].status = true;
         }
       });
+      // }
+
     }
+
 
 
     this.quantity = this.playService.recalcBetCode(
@@ -321,7 +323,10 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     this.calculationAmount();
   }
 
-  changeMultiple() {
+  changeMultiple(e) {
+    if(e<0){
+      this.multiple =1;
+    }
     this.calculationAmount();
   }
 
@@ -421,7 +426,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
         // 货币
         currency: this.currency,
         // 返点
-        returnPer: this.rebate || "7.0",
+        returnPer: this.rebate ,
         // 奖金
         returnBonus: this.quantity,
         // 单注下单金额
@@ -583,7 +588,7 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
 
   initChase() {
     this.switchValue = true;
-    this.selectedPeriods = this.periods[0].value;
+    this.selectedPeriods = this.periods[1].value;
     this.periodsValue = 10;
     this.timesValue = 1;
     this.data = [];
@@ -594,7 +599,8 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
     this.getSumData();
   }
 
-  clickRadio() {
+  clickRadio(e) {
+    this.selectedPeriods = e;
     // console.log(this.selectedPeriods['value'])
     this.getChaseData(parseInt(this.selectedPeriods));
     this.getSumData();
@@ -644,6 +650,11 @@ export class SscSelectComponent implements OnInit, OnChanges, OnDestroy {
       this.timesValue = 1;
       this.chaseSpinning = false;
     });
+  }
+  //关闭追号
+  closeChase(){
+    this.onClickBetType("default");
+    this.isChased =false
   }
 
   sortData(data) {

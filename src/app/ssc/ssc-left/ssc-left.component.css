@@ -3979,9 +3979,9 @@ a:hover {
 .game-menu-panel {
 
   position: absolute;
-  top: 74px;
+  top: -98px;
   width: 310px;
-  left: 0;
+  left: 34px;
   background: #F5F5F5;
   border: 1px solid #D8D8D8;
   padding: 4px;

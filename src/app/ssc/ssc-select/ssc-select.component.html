@@ -12,8 +12,8 @@
         <div class="ball-title"><strong>{{item.titel}}</strong></div>
 
         <ul class="selectnum d-active4 ball-content">
-          <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
-            <a href="javascript:void(0);" class="ball-number" [class.ball-number-current]="list.status"
+          <li *ngFor="let list of item.row;let j=index">
+            <a href="javascript:void(0);" class="ball-number" [(ngModel)]="list.status"  [class.ball-number-current]="list.status"
                (click)="onChangeCheckbox(j,i)">{{list.data}}</a>
           </li>
         </ul>
@@ -36,9 +36,9 @@
         <div class="ball-title"><strong>{{item.titel}}</strong></div>
 
         <ul class="selectnum d-active4 ball-content">
-          <li *ngFor="let list of item.row" [class.active]="list.status">
+          <li *ngFor="let list of item.row" >
             <a href="javascript:void(0);"
-               (click)="onChangeCheckbox()" class=" ball-number ">{{list.data}}</a>
+               (click)="onChangeCheckbox()" class=" ball-number " [(ngModel)]="list.status"  [class.ball-number-current]="list.status">{{list.data}}</a>
           </li>
         </ul>
         <div class="selectrowNumber ball-control" *ngIf='i != 0'>
@@ -61,13 +61,13 @@
 
         <ul class="selectnum d-active4 ball-content">
           <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
-            <a href="javascript:void(0);" class="ball-number"
+            <a href="javascript:void(0);" class="ball-number" [(ngModel)]="list.status"  [class.ball-number-current]="list.status"
                (click)="onChangeCheckbox(j)">{{list.data}}</a>
           </li>
         </ul>
         <div class="textarea">
           <div>
-            <textarea [(ngModel)]="textareaValue" (ngModelChange)="onChangePlay()"></textarea>
+            <textarea style="width: 500px;height: 164px;" [(ngModel)]="textareaValue" (ngModelChange)="onChangePlay()"></textarea>
           </div>
           <div>
             <button (click)='clearCode()'>
@@ -83,7 +83,7 @@
   <div *ngIf='playData.isShowType == 4'>
     <div class="textarea">
       <div>
-        <textarea [(ngModel)]="textareaValue" (ngModelChange)="onChangePlay()"></textarea>
+        <textarea style="width: 500px;height: 164px;" [(ngModel)]="textareaValue" (ngModelChange)="onChangePlay()"></textarea>
       </div>
       <div>
         <button (click)='clearCode()'>
@@ -99,8 +99,8 @@
         <div class="ball-title"><strong>{{item.titel}}</strong></div>
 
         <ul class="selectnum d-active4 ball-content">
-          <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
-            <a href="javascript:void(0);" class="ball-number"
+          <li *ngFor="let list of item.row;let j=index" >
+            <a href="javascript:void(0);" class="ball-number"  [(ngModel)]="list.status" [class.ball-number-current]="list.status"
                (click)="onChangeCheckbox(j)">{{list.data}}</a>
           </li>
         </ul>
@@ -120,13 +120,15 @@
 </div>
 
 <div class="chase" *ngIf="BetType == 'chase'">
-  <div class="chase-top-title d-bc d-border">追号投注</div>
+  <div class="chase-top-title d-bc d-border">追号投注
+    <a href="javascript:void(0);" (click)="closeChase()" class="chaseClose" style="float: right;margin-right: 18px;color:white">关闭</a>
+  </div>
 
   <div>
     <div class='title'>
       <div>
         <span>连续追</span>
-        <select style="width: 60px;" (ngModelChange)='clickRadio()' [(ngModel)]="selectedPeriods">
+        <select style="width: 60px;" name="selectedPeriods" (ngModelChange)='clickRadio($event)' [(ngModel)]="selectedPeriods">
           <option *ngFor="let option of periods" value="{{option.value}}">
             {{option.label}}
           </option>
@@ -186,7 +188,7 @@
     </li>
     <span class="bei">
       <i class="anticon anticon-minus-circle" (click)="multipleEdit('cut')"></i>
-      <input style='width:80px' maxlength="1000" [(ngModel)]="multiple" (ngModelChange)="changeMultiple()">
+      <input style='width:80px' maxlength="1000" [(ngModel)]="multiple" (ngModelChange)="changeMultiple($event)">
       <i class="anticon anticon-plus-circle" (click)="multipleEdit('add')"></i>
       倍
     </span>
