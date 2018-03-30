@@ -57,7 +57,7 @@ export class AuthInterceptor implements HttpInterceptor {
             case "1000":
               // msg ? this.message.warning(msg) : this.message.warning('请先登录');
               this.storage.clear();
-              this.router.navigate(["/home"]);
+              this.router.navigate(["/login"]);
               break;
             // 参数异常
             // PARAM_ERROR = "1000";

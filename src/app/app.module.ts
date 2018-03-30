@@ -201,6 +201,10 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
         component: MobHelpComponent
       },
       {
+        path: 'login',
+        component: LoginComponent
+      },
+      {
         path: 'Caipiao',
         component: CaipiaoComponent
       }, {
@@ -248,7 +252,7 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
       },
       {
         path: '',
-        redirectTo: '/home',
+        redirectTo: '/login',
         pathMatch: 'full'
       }
     ]

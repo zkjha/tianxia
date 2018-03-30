@@ -76,7 +76,7 @@ export class LoginAfterComponent implements OnInit {
 
   loginOut() {
     this.http.postRx(`api/Users/loginOut`).subscribe(data => {
-      this.router.navigateByUrl('/home');
+      this.router.navigateByUrl('/login');
       // location.href = "/home";
       this.storage.clear();
     });

@@ -1,51 +1,23 @@
-<div class="loginBefore" [class.hidden]="loginShow">
+<div class="main">
+  <h2>登陆</h2>
   <form #form="ngForm" class="oform">
-    <div class="col1" style="margin-left: 55px;">
-      <input type="text" class="txt user" id="J-user-name" name='usernameL' [(ngModel)]="user.username" placeholder="账号">
-      <input type="password" class="txt password" id="J-user-password" name="passwordL"  [(ngModel)]="user.password" placeholder="密码">
+    <div>
+      <i class="icon iconfont icon-yonghu1"></i>
+      <input type="text" name='usernameL' [(ngModel)]="user.username" placeholder="用户名，只支持数字、字母、符号混合" id="username">
     </div>
-    <!--<div class="col2" id="J-panel-vcode" style="display:none;">-->
-      <!--<input type="text" class="txt yzm" placeholder="验证码" maxlength="5">-->
-      <!--<img ng-src="/assets/head/yzm.png" class="yzm-img">-->
-    <!--</div>-->
-    <div class="col3">
-      <div id="J-msg-show" data-display="hide" class="msg-show"></div>
-      <input id="J-form-submit" class="submit fl" type="button" (click)="getCode(form.value)" value="登 录">
-
-
-      <a href="/Login/UserRegister" class="regbtn fr" target="_blank">
-        注册
-      </a>
+    <div>
+      <i class="icon iconfont icon-mima1"></i>
+      <input name="passwordL" type="password"  [(ngModel)]="user.password" placeholder="输入密码，由字母和数字组成6-16个字符" id="password">
     </div>
-    <input name="__RequestVerificationToken" type="hidden" value="VIUVss6UUcGqA_OJEUSQcyqe4jQg_1mCLLRwmr_jfE8Op3Fhc9zropMayVst0tEHgQE2Z7myNzHuKrW-r6h9Aw2">
+    <div class="v-code">
+      <i class="icon iconfont icon-Code"></i>
+      <input name="vcode" type="text" ngModel placeholder="验证码"  (keyup.enter)="login(form.value)">
+      <!--(click)='getCode()' -->
+      <span (click)='getCode(form.value)' class="codee">验 证 码</span>
+    </div>
+    <div class="btn-login d-bc" (click)='login(form.value)'>立即登陆</div>
   </form>
-</div>
-<div [class.hidden]="loginAfter">
-  <app-login-after></app-login-after>
-</div>
-
-
-
-<div class="main" style="display: none">
-  <!--<h2>登陆</h2>-->
-  <!--<form #form="ngForm" class="oform">-->
-    <!--<div>-->
-      <!--<i class="icon iconfont icon-yonghu1"></i>-->
-      <!--<input type="text" name='usernameL' [(ngModel)]="user.username" placeholder="用户名，只支持数字、字母、符号混合" id="username">-->
-    <!--</div>-->
-    <!--<div>-->
-      <!--<i class="icon iconfont icon-mima1"></i>-->
-      <!--<input name="passwordL" type="password"  [(ngModel)]="user.password" placeholder="输入密码，由字母和数字组成6-16个字符" id="password">-->
-    <!--</div>-->
-    <!--<div class="v-code">-->
-      <!--<i class="icon iconfont icon-Code"></i>-->
-      <!--<input name="vcode" type="text" ngModel placeholder="验证码"  (keyup.enter)="login(form.value)">-->
-      <!--&lt;!&ndash;(click)='getCode()' &ndash;&gt;-->
-      <!--<span (click)='getCode(form.value)' class="codee">验 证 码</span>-->
-    <!--</div>-->
-    <!--<div class="btn-login d-bc" (click)='login(form.value)'>立即登陆</div>-->
-  <!--</form>-->
-  <div class="infor" style="display: none">
+  <div class="infor">
     <h2>点击【立即登陆】按钮，代表你同意
       <a (click)='showModal()'>《LUR游戏协议》</a>
     </h2>
@@ -60,37 +32,105 @@
   </div>
 </div>
 
-<nz-modal [nzVisible]="isVisible"  [nzFooter]='false' [nzTitle]="false" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"
-  (nzOnOk)="handleOk($event)">
-  <ng-template #modalContent>
-    <div class='ss-main'>
-      <div class='django-top'>服务条款</div>
-      <div class='ss'>
-        <p> 1.为避免于本网站投注时之争议，请会员务必于进入网站前详阅本公司所定之各项规则，客户一经“我同意”进入本网站进行投注时，即被视为已接受本公司的所有协议与规则。</p>
-        <p> 2.请定期修改自己的登陆密码及资金密码，会员有责任确保自己的帐户以及登入资料的保密性，以会员帐号及密码进行的任何网上投注，将被视为有效。敬请不定时做密码变更之动作。若帐号密码被盗用，进行的投注，本公司一概不负赔偿责任。
-        </p>
-        <p> 3.投注相关条款：①网上投注如未能成功提交，投注将被视为无效。②凡玩家于开奖途中且尚无结果前自动或强制断线时，并不影响开奖结算之结果。③若遇官网未开奖或开奖结果错误，本平台将根据实际情况做退奖退买处理；④如遇发生不可抗拒之灾害，骇客入侵，网络问题造成数据丢失的情况，以本公司公告为最终方案。⑤本公司将会对所有的电子交易进行记录，如有任何争议，本公司将会以注单记录为准。</p>
-        <p>4.若经本公司发现会员以不正当手法(利用外挂程式)进行投注或以任何非正常方式进行的个人、团体投注有损公司利益之投注情事发生，本公司保留权利取消该类注单以及注单产生之红利，并停用该会员帐号。无论代理还是会员，发现漏洞隐瞒不报，利用漏洞恶意刷钱、通过非法手段作弊、或造谣污蔑，攻击平台者，经平台核实后一律无条件永久冻结账号处理，账号所有金钱概不退还。</p>
-        <p>5.若本公司发现会员有重复申请帐号行为时，保留取消、收回会员所有优惠红利，以及优惠红利所产生的盈利之权利。每位玩家、每一住址、每一电子邮箱、每一电话号码、相同支付卡/信用卡号码，以及共享电脑环境 (例如:网吧、其他公共用电脑等)只能够拥有一个会员帐号，各项优惠只适用于每位客户在本公司唯一的帐户。</p>
-        <p>6.本平台单个账户单注每期最高奖金限额元，超出按元计算，超出的奖金无效并清0；每期最高奖金限额元，超出按元计算，超出的奖金无效并清0。如果有多个账户恶意投注同一号码行为，平台有权取消其所有注单。
-        </p>
-        <p>7.本平台任何彩种每期单挑奖金限额20000.00元，超出按20000.00元计算，超出的奖金无效并清0。如果有多个账户恶意投注同一号码行为，平台有权取消其所有注单。</p>
-        <p>单挑模式说明：彩种和玩法通过换算后属于单挑规定之内的，中奖概率低于2% 的均为单挑模式。 判定规则：投注金额除以中奖金额等于或小于2%（0.02）的均为单挑行为。 例：[五星直选]2001注以下，[四星直选]201注以下，[三星直选]21注以下，[二星直选]2注以下.......（包括任选玩法及五星组合小概率中奖的玩法等）建议会员投注时注意自己的投注以及中奖金额，如超过奖金限制，平台概不负责。如有争议，以本平台处理为准。</p>
-        <p> 8.平台取款时间为上午10:00-凌晨2:00，每日十次，每次最低100元,最高100000.00元，由于自身绑定账号错误或者提款自行取消等自身问题造成的取款次数减少失效，平台慨不负责。对于日量较大的客户，根据自身情况可向平台申请绿色VIP通道，增加提款次数和提款额度。
-        </p>
-        <p>9.平台严禁内招，首次发现冻结账号30天处理，期间不允许任何开号和招商。第二次发现直接封号或降级处理。情形严重，扰乱市场者，直接驱逐出平台，拉入平台黑名单，永久不再接纳。</p>
-        <p>10.为了防止有人恶意洗钱，会员提款必须要消费充值的30%方可进行，否则财务不予受理。
-        </p>
-        <p>11.不经核实乱放高点，恶意利用手中配额扰乱市场者，广告词中以超高返点分红为诱饵，回收全部配额处理，严重的降级或者封号。
-        </p>
-        <p>12.平台所有充值账号将不定期更换，请每次充值前务必打开充值界面获取最新收款账号，如自己充错造成的任何损失自由承担，与平台无关。
-        </p>
-        <p>13.本公司保留不定时修改或增加本协定或游戏规则或保密条例等的操作权利，更改之条款将从更改发生后立即生效，并保留一切有争议事项及最后的决策权。
-        </p>
-      </div>
-
-    </div>
 
 
-  </ng-template>
-</nz-modal>
+
+
+
+
+<!--<div class="loginBefore" [class.hidden]="loginShow">-->
+  <!--<form #form="ngForm" class="oform">-->
+    <!--<div class="col1" style="margin-left: 55px;">-->
+      <!--<input type="text" class="txt user" id="J-user-name" name='usernameL' [(ngModel)]="user.username" placeholder="账号">-->
+      <!--<input type="password" class="txt password" id="J-user-password" name="passwordL"  [(ngModel)]="user.password" placeholder="密码">-->
+    <!--</div>-->
+    <!--&lt;!&ndash;<div class="col2" id="J-panel-vcode" style="display:none;">&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="text" class="txt yzm" placeholder="验证码" maxlength="5">&ndash;&gt;-->
+      <!--&lt;!&ndash;<img ng-src="/assets/head/yzm.png" class="yzm-img">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--<div class="col3">-->
+      <!--<div id="J-msg-show" data-display="hide" class="msg-show"></div>-->
+      <!--<input id="J-form-submit" class="submit fl" type="button" (click)="getCode(form.value)" value="登 录">-->
+
+
+      <!--<a href="/Login/UserRegister" class="regbtn fr" target="_blank">-->
+        <!--注册-->
+      <!--</a>-->
+    <!--</div>-->
+    <!--<input name="__RequestVerificationToken" type="hidden" value="VIUVss6UUcGqA_OJEUSQcyqe4jQg_1mCLLRwmr_jfE8Op3Fhc9zropMayVst0tEHgQE2Z7myNzHuKrW-r6h9Aw2">-->
+  <!--</form>-->
+<!--</div>-->
+<!--<div [class.hidden]="loginAfter">-->
+  <!--<app-login-after></app-login-after>-->
+<!--</div>-->
+
+
+
+<!--<div class="main" style="display: none">-->
+  <!--&lt;!&ndash;<h2>登陆</h2>&ndash;&gt;-->
+  <!--&lt;!&ndash;<form #form="ngForm" class="oform">&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="icon iconfont icon-yonghu1"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;<input type="text" name='usernameL' [(ngModel)]="user.username" placeholder="用户名，只支持数字、字母、符号混合" id="username">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div>&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="icon iconfont icon-mima1"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;<input name="passwordL" type="password"  [(ngModel)]="user.password" placeholder="输入密码，由字母和数字组成6-16个字符" id="password">&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="v-code">&ndash;&gt;-->
+      <!--&lt;!&ndash;<i class="icon iconfont icon-Code"></i>&ndash;&gt;-->
+      <!--&lt;!&ndash;<input name="vcode" type="text" ngModel placeholder="验证码"  (keyup.enter)="login(form.value)">&ndash;&gt;-->
+      <!--&lt;!&ndash;&lt;!&ndash;(click)='getCode()' &ndash;&gt;&ndash;&gt;-->
+      <!--&lt;!&ndash;<span (click)='getCode(form.value)' class="codee">验 证 码</span>&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--&lt;!&ndash;<div class="btn-login d-bc" (click)='login(form.value)'>立即登陆</div>&ndash;&gt;-->
+  <!--&lt;!&ndash;</form>&ndash;&gt;-->
+  <!--<div class="infor" style="display: none">-->
+    <!--<h2>点击【立即登陆】按钮，代表你同意-->
+      <!--<a (click)='showModal()'>《LUR游戏协议》</a>-->
+    <!--</h2>-->
+    <!--<div class="abso">-->
+      <!--<p>-->
+        <!--<span>新亚集团 ▪ 帮助中心 ▪ 联系我们</span>-->
+        <!--<span> 2017年LUR游戏版权所有 </span>-->
+        <!--<span> 菲律宾政府合法博彩牌照认证</span>-->
+      <!--</p>-->
+      <!--<p>LUR游戏郑重提示：彩票有风险，投注需谨慎，不向未满18周岁的青少年出售彩票</p>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+<!--<nz-modal [nzVisible]="isVisible"  [nzFooter]='false' [nzTitle]="false" [nzContent]="modalContent" (nzOnCancel)="handleCancel($event)"-->
+  <!--(nzOnOk)="handleOk($event)">-->
+  <!--<ng-template #modalContent>-->
+    <!--<div class='ss-main'>-->
+      <!--<div class='django-top'>服务条款</div>-->
+      <!--<div class='ss'>-->
+        <!--<p> 1.为避免于本网站投注时之争议，请会员务必于进入网站前详阅本公司所定之各项规则，客户一经“我同意”进入本网站进行投注时，即被视为已接受本公司的所有协议与规则。</p>-->
+        <!--<p> 2.请定期修改自己的登陆密码及资金密码，会员有责任确保自己的帐户以及登入资料的保密性，以会员帐号及密码进行的任何网上投注，将被视为有效。敬请不定时做密码变更之动作。若帐号密码被盗用，进行的投注，本公司一概不负赔偿责任。-->
+        <!--</p>-->
+        <!--<p> 3.投注相关条款：①网上投注如未能成功提交，投注将被视为无效。②凡玩家于开奖途中且尚无结果前自动或强制断线时，并不影响开奖结算之结果。③若遇官网未开奖或开奖结果错误，本平台将根据实际情况做退奖退买处理；④如遇发生不可抗拒之灾害，骇客入侵，网络问题造成数据丢失的情况，以本公司公告为最终方案。⑤本公司将会对所有的电子交易进行记录，如有任何争议，本公司将会以注单记录为准。</p>-->
+        <!--<p>4.若经本公司发现会员以不正当手法(利用外挂程式)进行投注或以任何非正常方式进行的个人、团体投注有损公司利益之投注情事发生，本公司保留权利取消该类注单以及注单产生之红利，并停用该会员帐号。无论代理还是会员，发现漏洞隐瞒不报，利用漏洞恶意刷钱、通过非法手段作弊、或造谣污蔑，攻击平台者，经平台核实后一律无条件永久冻结账号处理，账号所有金钱概不退还。</p>-->
+        <!--<p>5.若本公司发现会员有重复申请帐号行为时，保留取消、收回会员所有优惠红利，以及优惠红利所产生的盈利之权利。每位玩家、每一住址、每一电子邮箱、每一电话号码、相同支付卡/信用卡号码，以及共享电脑环境 (例如:网吧、其他公共用电脑等)只能够拥有一个会员帐号，各项优惠只适用于每位客户在本公司唯一的帐户。</p>-->
+        <!--<p>6.本平台单个账户单注每期最高奖金限额元，超出按元计算，超出的奖金无效并清0；每期最高奖金限额元，超出按元计算，超出的奖金无效并清0。如果有多个账户恶意投注同一号码行为，平台有权取消其所有注单。-->
+        <!--</p>-->
+        <!--<p>7.本平台任何彩种每期单挑奖金限额20000.00元，超出按20000.00元计算，超出的奖金无效并清0。如果有多个账户恶意投注同一号码行为，平台有权取消其所有注单。</p>-->
+        <!--<p>单挑模式说明：彩种和玩法通过换算后属于单挑规定之内的，中奖概率低于2% 的均为单挑模式。 判定规则：投注金额除以中奖金额等于或小于2%（0.02）的均为单挑行为。 例：[五星直选]2001注以下，[四星直选]201注以下，[三星直选]21注以下，[二星直选]2注以下.......（包括任选玩法及五星组合小概率中奖的玩法等）建议会员投注时注意自己的投注以及中奖金额，如超过奖金限制，平台概不负责。如有争议，以本平台处理为准。</p>-->
+        <!--<p> 8.平台取款时间为上午10:00-凌晨2:00，每日十次，每次最低100元,最高100000.00元，由于自身绑定账号错误或者提款自行取消等自身问题造成的取款次数减少失效，平台慨不负责。对于日量较大的客户，根据自身情况可向平台申请绿色VIP通道，增加提款次数和提款额度。-->
+        <!--</p>-->
+        <!--<p>9.平台严禁内招，首次发现冻结账号30天处理，期间不允许任何开号和招商。第二次发现直接封号或降级处理。情形严重，扰乱市场者，直接驱逐出平台，拉入平台黑名单，永久不再接纳。</p>-->
+        <!--<p>10.为了防止有人恶意洗钱，会员提款必须要消费充值的30%方可进行，否则财务不予受理。-->
+        <!--</p>-->
+        <!--<p>11.不经核实乱放高点，恶意利用手中配额扰乱市场者，广告词中以超高返点分红为诱饵，回收全部配额处理，严重的降级或者封号。-->
+        <!--</p>-->
+        <!--<p>12.平台所有充值账号将不定期更换，请每次充值前务必打开充值界面获取最新收款账号，如自己充错造成的任何损失自由承担，与平台无关。-->
+        <!--</p>-->
+        <!--<p>13.本公司保留不定时修改或增加本协定或游戏规则或保密条例等的操作权利，更改之条款将从更改发生后立即生效，并保留一切有争议事项及最后的决策权。-->
+        <!--</p>-->
+      <!--</div>-->
+
+    <!--</div>-->
+
+
+  <!--</ng-template>-->
+<!--</nz-modal>-->

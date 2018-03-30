@@ -71,7 +71,7 @@ export class PlayTimeComponent implements OnInit  {
 
   constructor(
     private storage: StorageService,
-    private StoreDataService: StoreDataService,
+    private storeDataService: StoreDataService,
     private message: NzMessageService,
     private modalService: NzModalService,
     private nf: NzNotificationService,
