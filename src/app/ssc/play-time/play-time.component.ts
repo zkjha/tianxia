@@ -288,7 +288,7 @@ export class PlayTimeComponent implements OnInit  {
         }
         let arr = codeData.split(",");
         setTimeout(() => {
-          Tool.forEach(arr, (item, index) => {
+          arr.forEach((item, index) => {
             // console.log(index)
             // 开奖号码声音
             // this.playKJ(item, index);

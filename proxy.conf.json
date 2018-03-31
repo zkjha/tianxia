@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://47.75.185.169",
+    "target": "http://www.lurck.net",
     "secure": "false",
     "changeOrigin": true,
     "logLevel": "debug"

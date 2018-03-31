@@ -7,6 +7,9 @@ import {LoginAfterComponent} from '../login-after/login-after.component';
   styleUrls: ['./dianzi.component.css']
 })
 export class DianziComponent implements OnInit {
+  currentName = {
+    name: '电子游艺'
+  };
 
   constructor() { }
 

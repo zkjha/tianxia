@@ -6,7 +6,9 @@ import {LoginAfterComponent} from '../login-after/login-after.component';
   styleUrls: ['./youhui.component.css']
 })
 export class YouhuiComponent implements OnInit {
-
+  currentName = {
+    name: '优惠活动'
+  };
   constructor() { }
 
   ngOnInit() {
