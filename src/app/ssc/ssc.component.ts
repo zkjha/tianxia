@@ -21,6 +21,9 @@ import {PlayTimeComponent} from "./play-time/play-time.component";
   styleUrls: ['./ssc.component.css']
 })
 export class SscComponent implements OnInit {
+  currentName = {
+    name: '彩票专区'
+  };
   playData: Object = {};
   isDetail = true;
   leftNotShow =true;
