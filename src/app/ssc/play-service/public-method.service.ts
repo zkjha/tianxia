@@ -372,9 +372,9 @@ export class PublicMethodService {
     let ret = [];
 
     if (type == "group") {
-      Tool.forEach(data, (item, index) => {
+      data.forEach((item, index) => {
         if (index == 0) {
-          Tool.forEach(item.row, item2 => {
+          item.row.forEach(item2 => {
             if (item2.status) {
               ret.push("1");
             } else {
@@ -384,8 +384,8 @@ export class PublicMethodService {
         }
       });
     } else {
-      Tool.forEach(data, item => {
-        Tool.forEach(item.row, item2 => {
+      data.forEach( item => {
+        item.row.forEach(item2 => {
           if (item2.status) {
             ret.push("1");
           } else {
