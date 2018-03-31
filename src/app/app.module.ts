@@ -98,7 +98,7 @@ import {TimeComponent} from "./shared/time/time.component";
 import {LoginGuard} from "./guard/login.guard";
 import {HeaderComponent} from './header/header.component';
 import {MobHelpComponent} from "./mob-help/mob-help.component";
-// import { HomeHeaderComponent } from './home-header/home-header.component';
+import { HomeHeaderComponent } from './home-header/home-header.component';
 
 
 @NgModule({
@@ -176,7 +176,7 @@ import {MobHelpComponent} from "./mob-help/mob-help.component";
     TimeComponent,
     LoadingComponent,
     HeaderComponent,
-    // HomeHeaderComponent,
+    HomeHeaderComponent,
   ],
   imports: [
     BrowserModule,
