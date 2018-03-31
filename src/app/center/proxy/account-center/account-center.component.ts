@@ -39,11 +39,11 @@ export class AccountCenterComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.max = this.storage.getStorage('maxRebate')
+    this.max = this.storage.getStorage('maxRebate');
     this.min = this.storage.getStorage("minRebate");
-    this.maxInfo = `'高频彩范围（5~${this.max}）'`;
-    this.minInfo = `'高频彩范围（5~${this.min}）'`;
-    this.copyContent="用户名:"+this.username+",密码:"+this.password;
+    this.maxInfo = `高频彩范围(5~${this.max})`;
+    this.minInfo = `低频彩范围(5~${this.min})`;
+    this.copyContent="合成娱乐:http://www.hechengyule.com,用户名:"+this.username+",密码:"+this.password;
   }
 
   goRegister() {
