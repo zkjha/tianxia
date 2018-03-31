@@ -25,6 +25,9 @@
           <span>账号</span>
         </th>
         <th nz-th>
+          <span>qq</span>
+        </th>
+        <th nz-th>
           <span>添加时间</span>
         </th>
         <th nz-th>
@@ -44,6 +47,7 @@
     <tbody nz-tbody>
       <tr nz-tbody-tr *ngFor="let item of nzTable.data">
         <td nz-td>{{item.username}}</td>
+        <td nz-td>{{item.qq}}</td>
         <td nz-td>{{item.addTime *1000 | date:'yyyy-MM-dd HH:mm:ss'}}</td>
         <td nz-td>{{item.usableAmount}}</td>
         <td nz-td>

@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
       let params = {
         username: this.username,
       };
-      console.log("111")
       this.http.postRx(`/api/captcha/getCaptchaCode`, params).subscribe(data => {
         $(".codeeR").html(data.vcode);
       });
