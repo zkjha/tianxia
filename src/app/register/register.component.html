@@ -7,7 +7,9 @@
 <div class="header">
   <div class="w">
     <a href="" class="logo1"></a>
-    <a href="" class="logo"></a>
+    <div href="" class="logo">
+      <img src="/assets/head/logo.png">
+    </div>
     <!--登录前-->
     <div class="loginBefore">
       <form action="">
@@ -113,7 +115,9 @@
             </tr>
             <tr>
               <th class="col8">
-                &nbsp;&nbsp;&nbsp;验证码：<input type="text" class="txt code" name="checkCode" id="checkCode" value=""> <img class="ui-label" (click)="getCodeZC()" style="cursor:pointer;margin-left:10px" id="valiCodeImg" src="/Login/GetValidateCode" width="50" height="25" alt="验证码">
+                &nbsp;&nbsp;&nbsp;验证码：<input type="text" class="txt code" name="checkCode" id="checkCode" value="">
+                <span (click)='getCodeZC()' style="cursor:pointer;margin-left:10px" class="codeeR">验 证 码</span>
+                <!--<img class="ui-label" (click)="getCodeZC()" style="cursor:pointer;margin-left:10px" id="valiCodeImg" src="/Login/GetValidateCode" width="50" height="25" alt="验证码">-->
                 <span class="ui-check"></span>
                 <input type="hidden" name="keyValue" id="keyValue">
 
@@ -121,8 +125,8 @@
 
             </tr>
             <tr>
-              <th class="col1">
-                <a href="javascript:void(0);" class="btn btn-orange" id="J-button-submit-password"><span id="J-button-submit-text">提交注册</span> </a>
+              <th class="col1" style="padding: 20px 0">
+                <a href="javascript:void(0);" id="J-button-submit-password"><span id="J-button-submit-text" class="gm-button gm-button-success">提交注册</span> </a>
 
               </th>
             </tr>

@@ -2450,10 +2450,6 @@ a:hover {
   overflow: auto;
   line-height: 23px;
 }
-.game-playfoot2 {
-  border-radius: 5px;
-  border: 1px solid #AFAFAF;
-}
 .game-playfoot2 td,
 .game-playfoot2 th {
   text-align: center;
@@ -2461,7 +2457,7 @@ a:hover {
 .game-playfoot2 th {
   height: 35px;
   line-height: 35px;
-  border-bottom: 1px solid #D4D4D4;
+  /*border-bottom: 1px solid #D4D4D4;*/
 }
 .game-playfoot2 td {
   line-height: 20px;
