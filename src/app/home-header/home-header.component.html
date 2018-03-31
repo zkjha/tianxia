@@ -1,0 +1,27 @@
+<div class="nav">
+  <ul>
+    <li *ngFor="let item of navList;let i = index">
+      <a href="/{{item.href}}" class="a{{i+1}}" [class.on]="item.isSelected === 'true'" id="a{{i+1}}">
+        <span>{{item.title}}</span>
+      </a>
+
+    </li>
+  </ul>
+</div>
+<!--<div class="gamesLobbyTitel" *ngIf="item.title == '彩票专区'">-->
+  <!--<nz-popover [nzOverlayClassName]="'header-popover gamesLobby'" [(nzVisible)]="gamesLobby"-->
+              <!--[nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">-->
+    <!--<ng-template #nzTemplate>-->
+      <!--<div class='games-lobby'>-->
+        <!--<div class="left">-->
+          <!--彩票专区-->
+        <!--</div>-->
+        <!--<div class="right">-->
+          <!--<div class="item" *ngFor='let item of gameList'>-->
+            <!--<p *ngFor='let list of item.child' [routerLink]="['/home/play/content/',list.id]">{{list.title}}</p>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</ng-template>-->
+  <!--</nz-popover>-->
+<!--</div>-->

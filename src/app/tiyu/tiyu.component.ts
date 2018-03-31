@@ -6,7 +6,9 @@ import {LoginAfterComponent} from '../login-after/login-after.component';
   styleUrls: ['./tiyu.component.css']
 })
 export class TiyuComponent implements OnInit {
-
+  currentName = {
+    name: '体育博弈'
+  };
   constructor() { }
 
   ngOnInit() {

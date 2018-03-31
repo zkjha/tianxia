@@ -9,6 +9,9 @@ import Tool from 'lodash';
   styleUrls: ['./caipiao.component.css']
 })
 export class CaipiaoComponent implements OnInit {
+  currentName = {
+    name: '彩票专区'
+  };
 
   constructor(
     private http: HttpService

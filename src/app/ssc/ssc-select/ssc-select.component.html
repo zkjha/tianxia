@@ -36,9 +36,9 @@
         <div class="ball-title"><strong>{{item.titel}}</strong></div>
 
         <ul class="selectnum d-active4 ball-content">
-          <li *ngFor="let list of item.row" >
+          <li *ngFor="let list of item.row;let j =index" >
             <a href="javascript:void(0);"
-               (click)="onChangeCheckbox()" class=" ball-number " name="ball-number"  [class.ball-number-current]="list.status">{{list.data}}</a>
+               (click)="onChangeCheckbox(j,i)" class=" ball-number " name="ball-number"  [class.ball-number-current]="list.status">{{list.data}}</a>
           </li>
         </ul>
         <div class="selectrowNumber ball-control" *ngIf='i != 0'>
@@ -62,7 +62,7 @@
         <ul class="selectnum d-active4 ball-content">
           <li *ngFor="let list of item.row;let j=index" [class.active]="list.status">
             <a href="javascript:void(0);" class="ball-number" name="ball-number"  [class.ball-number-current]="list.status"
-               (click)="onChangeCheckbox(j)">{{list.data}}</a>
+               (click)="onChangeCheckbox(j,i)">{{list.data}}</a>
           </li>
         </ul>
         <div class="textarea">
