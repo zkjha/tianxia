@@ -146,7 +146,7 @@ export class PlayTimeComponent implements OnInit  {
     this.formatDuring(
       s,
       data => {
-        console.log(data)
+        // console.log(data)
         this.timeData = data;
         this._formatT = percent => `${data[0]}${data[1]}`;
         this._formatM = percent => `${data[2]}${data[3]}`;
@@ -306,7 +306,7 @@ export class PlayTimeComponent implements OnInit  {
     }, 2000);
     setTimeout(() => {
       //   console.log(index);
-      console.log(item);
+      // console.log(item);
       this.play(`assets/mp3/m_${item}.wav`);
     }, parseInt(`${index + 3}000`));
   }
