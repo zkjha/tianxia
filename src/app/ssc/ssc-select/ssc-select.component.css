@@ -1125,6 +1125,7 @@ program-chase{float:right;padding:6px 20px 0;width:270px;_display:inline}
   background: url("/assets/Images/game/un-ball-number.png") 0 0 no-repeat;
   color: #F7F6F6;
   font-size: 17px;
+  overflow: hidden;
 
 }
 
