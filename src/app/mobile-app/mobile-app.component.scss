@@ -1,0 +1,128 @@
+.mobileBox {
+    width: 1020px;
+    margin: 0 auto;
+    overflow: visible;
+    position: relative;
+    top: 50px;
+    z-index: 2;
+    .mobLef {
+        height: 100%;
+        width: 420px;
+        overflow: hidden;
+        float: left;
+        padding-left: 10px;
+        padding-top: 34px;
+        .mobileLogo {
+            float: left;
+            display: block;
+            background: url(../../assets/image/login/mobile_client.png) no-repeat bottom;
+            width: 422px;
+            height: 81px;
+        }
+        .exchange-btn {
+            display: inline-block;
+            font-size: 12px;
+            height: 32px;
+            border-radius: 18px;
+            color: #fff;
+            margin: 35px 100px 0 0;
+            overflow: hidden;
+            a {
+                display: inline-block;
+                padding: 0 10px;
+                background: #7f7f7f;
+                color: #fff;
+                height: 32px;
+                line-height: 32px;
+                float: left;
+                position: relative;
+                margin-right: 1px;
+            }
+            a.on {
+                background: #105fbe;
+            }
+        }
+        .font-show {
+            color: #333;
+            padding-top: 16px;
+            text-align: left;
+            line-height: 22px;
+            font-size: 14px;
+            width: 460px;
+            float: left;
+            ul {
+                li {
+                    padding-top: 7px;
+                    position: relative;
+                    .my-list-icon {
+                        display: inline-block;
+                        color: #fff;
+                        background: #105fbe;
+                        margin-right: 10px;
+                        position: absolute;
+                        left: 0;
+                        top: 10px;
+                        height: 18px;
+                        width: 18px;
+                        line-height: 18px;
+                        border-radius: 50%;
+                        text-align: center;
+                    }
+                    span:nth-child(2) {
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+    .mobRig {
+        float: right;
+        position: relative;
+        width: 400px;
+        height: 545px;
+        .iphone-code {
+            z-index: 2;
+            cursor: pointer;
+            position: absolute;
+            right: -65px;
+            top: 22px;
+            height: 500px;
+            .code-bg {
+                background: url(../../assets/image/login/iphone.png);
+                height: 500px;
+                width: 256px;
+                background-size: 100%;
+            }
+            .code {
+                position: absolute;
+                height: 180px;
+                width: 180px;
+                top: 100px;
+                left: 50%;
+                margin-left: -90px;
+                background-size: 100%;
+                img {
+                    border: 0 none;
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+        .android-code {
+            z-index: 3;
+            cursor: pointer;
+            position: absolute;
+            right: 124px;
+            .code-bg {
+                background: url(../../assets/image/login/android.png);
+                height: 541px;
+                width: 276px;
+            }
+        }
+    }
+}
+
+.sss{
+  font-size: 22px;
+  color: #111;
+}

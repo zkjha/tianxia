@@ -1,0 +1,97 @@
+<div class="mobileBox">
+  <div class="mobLef">
+    <!-- <div class="mobileLogo"></div> -->
+    <div class='sss'>
+      手机客户端
+    </div>
+    <div id="mobile-show-msg" class="exchange-btn">
+      <a class="on" area="load_msg" for="ios_msg" (click)="displ(1)">iPhone手机扫码安装</a>
+      <a area="load_msg" for="android_msg" class="" (click)="displ(2)">Android手机扫码安装</a>
+    </div>
+    <div id="load_msg">
+      <div id="ios_msg" style="overflow: hidden; display: block;"  state="show">
+        <div class="font-show">
+          <!--<h3 style="color:#fff">iPhone手机扫码安装</h3>-->
+          <ul>
+            <li>
+              <span class="my-list-icon">1</span>
+              <span>推荐使用&nbsp;<code class="qr_code point" name="QR_ios">QR Code</code>&nbsp;扫描右侧二维码</span>
+            </li>
+            <li>
+              <span class="my-list-icon">2</span>
+              <span>在打开的页面内点击直接安装</span>
+            </li>
+            <li>
+              <span class="my-list-icon">3</span>
+              <span>按Home键查看安装过程</span>
+            </li>
+            <li>
+              <span class="my-list-icon">4</span>
+              <span>完成安装并信任套件，操作如下：</span>
+            </li>
+            <li>
+              <font color="#fb3254">设置 &gt; 通用 &gt; 设备管理 &gt; 信任</font>
+            </li>
+            <li>
+              <span class="my-list-icon">5</span>
+              <span>
+                  立即开启应用程序<br><br>
+                  注意:<br>
+                  使用微信、QQ等一些内建QR Code扫描会有被阻挡下载之状况,<br>
+                  强烈建议使用推荐QR Code扫描器扫描
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div id="android_msg" style="overflow: hidden; display: none;">
+        <div class="font-show">
+          <ul>
+            <li>
+              <span class="my-list-icon">1</span>
+              <span>
+                  使用推荐&nbsp;<code class="qr_code point" name="QR_android">QR Code</code>&nbsp;扫描器扫描右侧二维条码，或者直接点击下载Android客户端
+              </span>
+            </li>
+            <li>
+              <span class="my-list-icon">2</span>
+              <span>
+                  在打开的页面直接点击下载安装
+              </span>
+            </li>
+            <li>
+              <span class="my-list-icon">3</span>
+              <span>
+                  系统将自动下载应用程序
+              </span>
+            </li>
+            <li>
+              <span class="my-list-icon">4</span>
+              <span>下载完成后点击安装</span>
+            </li>
+            <li>
+              <span class="my-list-icon">5</span>
+              <span>立即开启应用程序<br><br>
+                  注意:<br>
+                  使用微信、QQ等一些内建QR Code扫描会有被阻挡下载之状况,<br>
+                  强烈建议使用推荐QR Code扫描器扫描
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="mobRig">
+    <div id="iphone_code" class="iphone-code">
+      <div class="code-bg" (click)='xiazai()'></div>
+      <div class="code">
+        <img *ngIf="type == 'ios'"  src="assets/image/side-nav/qr2.jpg">
+        <img *ngIf="type == 'a'"  src="assets/image/side-nav/qr1.jpg">
+      </div>
+    </div>
+    <div id="android_code" class="android-code">
+      <div class="code-bg"></div>
+    </div>
+  </div>
+</div>

@@ -98,8 +98,9 @@ import {TimeComponent} from "./shared/time/time.component";
 import {LoginGuard} from "./guard/login.guard";
 import {HeaderComponent} from './header/header.component';
 import {MobHelpComponent} from "./mob-help/mob-help.component";
-import { HomeHeaderComponent } from './home-header/home-header.component';
+import {HomeHeaderComponent} from './home-header/home-header.component';
 import {LineSelectionComponent} from "./line-selection/line-selection.component";
+import {MobileAppComponent} from "./mobile-app/mobile-app.component";
 
 
 @NgModule({
@@ -178,7 +179,8 @@ import {LineSelectionComponent} from "./line-selection/line-selection.component"
     LoadingComponent,
     HeaderComponent,
     HomeHeaderComponent,
-    LineSelectionComponent
+    LineSelectionComponent,
+    MobileAppComponent
   ],
   imports: [
     BrowserModule,
@@ -190,82 +192,86 @@ import {LineSelectionComponent} from "./line-selection/line-selection.component"
     NgZorroAntdModule.forRoot(),
     QRCodeModule,
     RouterModule.forRoot([
-      {
-        path: 'home',
-        component: HomeComponent,
-        children: [
-          {
-            path: '',
-            component: HomeComponent
-          }
-        ]
-      },
-      {
-        path: 'login',
-        component: LoginComponent
-      },
+        {
+          path: 'home',
+          component: HomeComponent,
+          children: [
+            {
+              path: '',
+              component: HomeComponent
+            }
+          ]
+        },
+        {
+          path: 'login',
+          component: LoginComponent
+        },
         {
           path: 'help',
           component: MobHelpComponent
         },
-      {
-        path: 'Caipiao',
-        component: CaipiaoComponent
-      }, {
-        path: 'ZhenRen',
-        component: ZhenrenComponent
-      }, {
-        path: 'DianZi',
-        component: DianziComponent
-      }, {
-        path: 'Doji',
-        component: DojiComponent
-      }, {
-        path: 'TiYu',
-        component: TiyuComponent
-      }, {
-        path: 'GameBet',
-        children: [
-          {
-            path: '',
-            redirectTo: 'GameBetPage/Ssc/1',
-            pathMatch: 'full'
-          },
-          {
-            path: 'GameBetPage/Ssc/:id',
-            component: SscComponent
-          }
-        ],
-        canActivate: [LoginGuard]
-      }, {
-        path: 'Youhui',
-        component: YouhuiComponent
-      },
+        {
+          path: 'Caipiao',
+          component: CaipiaoComponent
+        }, {
+          path: 'ZhenRen',
+          component: ZhenrenComponent
+        }, {
+          path: 'DianZi',
+          component: DianziComponent
+        }, {
+          path: 'Doji',
+          component: DojiComponent
+        }, {
+          path: 'TiYu',
+          component: TiyuComponent
+        }, {
+          path: 'GameBet',
+          children: [
+            {
+              path: '',
+              redirectTo: 'GameBetPage/Ssc/1',
+              pathMatch: 'full'
+            },
+            {
+              path: 'GameBetPage/Ssc/:id',
+              component: SscComponent
+            }
+          ],
+          canActivate: [LoginGuard]
+        }, {
+          path: 'Youhui',
+          component: YouhuiComponent
+        },
         {
           path: 'lineSelection',
           component: LineSelectionComponent
         },
-      {
-        path: 'Login',
-        children: [
-          {
-            path: 'UserRegister',
-            component: RegisterComponent
-          }
-        ]
-      },
-      {
-        path: 'register',
-        component: RegisterComponent
-      },
-      {
-        path: '',
-        redirectTo: '/login',
-        pathMatch: 'full'
-      }
-    ]
+        {
+          path: 'mobile-app',
+          component: MobileAppComponent
+        },
+        {
+          path: 'Login',
+          children: [
+            {
+              path: 'UserRegister',
+              component: RegisterComponent
+            }
+          ]
+        },
+        {
+          path: 'register',
+          component: RegisterComponent
+        },
+        {
+          path: '',
+          redirectTo: '/login',
+          pathMatch: 'full'
+        }
+      ]
       // , { useHash: false }
-      )
+    )
   ],
   providers: [
     HttpService,
