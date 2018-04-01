@@ -101,7 +101,7 @@ export class HomeHeaderComponent implements OnInit {
               once = false;
               self.gamesLobby = false;
             });
-          }, 20);
+          }, 100);
         }
       }, function () {
         setTimeout(function () {
@@ -109,7 +109,7 @@ export class HomeHeaderComponent implements OnInit {
             self.gamesLobby = false;
           }
 
-        }, 200);
+        }, 500);
 
       });
     }, 1000);
