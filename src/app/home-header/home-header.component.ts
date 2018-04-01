@@ -32,10 +32,20 @@ export class HomeHeaderComponent implements OnInit {
       href: "DianZi"
     },
     {
-      title: "体育博弈",
+      title: "",
       isSelected: 'false',
-      href: "TiYu"
+      href: "#"
     },
+    {
+      title: "捕鱼游戏",
+      isSelected: 'false',
+      href: "Doji"
+    },
+    // {
+    //   title: "体育博弈",
+    //   isSelected: 'false',
+    //   href: "TiYu"
+    // },
     {
       title: "优惠活动",
       isSelected: 'false',
@@ -45,6 +55,11 @@ export class HomeHeaderComponent implements OnInit {
       title: "在线客服",
       isSelected: 'false',
       href: "help"
+    },
+    {
+      title: "下载中心",
+      isSelected: 'false',
+      href: "mobile-app"
     }
   ];
   @Input()
@@ -101,7 +116,7 @@ export class HomeHeaderComponent implements OnInit {
               once = false;
               self.gamesLobby = false;
             });
-          }, 20);
+          }, 100);
         }
       }, function () {
         setTimeout(function () {
@@ -109,7 +124,7 @@ export class HomeHeaderComponent implements OnInit {
             self.gamesLobby = false;
           }
 
-        }, 200);
+        }, 500);
 
       });
     }, 1000);

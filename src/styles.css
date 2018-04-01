@@ -505,50 +505,27 @@ a:hover {
 .nav a {
   display: block;
   height: 27px;
-  width: 98px;
+  width: 100px;
 }
 .nav a span {
   display: block;
   height: 27px;
   margin-left: -10px;
-  text-indent: -9999px;
-  background: url(/assets/head/nav1.png) 0 center no-repeat;
+  color: black;
+  z-index: 99;
+  font-size: 16px;
+  text-align: center;
+  font-family: fantasy;
 }
-.nav a.on,
-.nav a:hover {
+.nav .a5{width: 160px;}
+.nav a.on, .nav a:hover {
+  color:#fff;
   background: url(/assets/head/navhover.png) center no-repeat;
 }
-.nav a.on span,
-.nav a:hover span {
-  background-image: url(/assets/head/nav2.png);
+.nav a.on span, .nav a:hover span {
+  color:#fff;
 }
-.nav .a1 span {
-  background-position: 32px center;
-}
-.nav .a2 span {
-  background-position: -62px center;
-}
-.nav .a3 span {
-  background-position: -172px center;
-}
-.nav .a4 span {
-  background-position: -287px center;
-}
-.nav .a4 {
-  margin-right: 187px;
-}
-.nav .a5 span {
-  background-position: -548px center;
-}
-.nav .a6 span {
-  background-position: -661px center;
-}
-.nav .a7 span {
-  background-position: -776px center;
-}
-.nav .a8 span {
-  background-position: -891px center;
-}
+
 /*banner*/
 .banner {
   width: 100%!important;
