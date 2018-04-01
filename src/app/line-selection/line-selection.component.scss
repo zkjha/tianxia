@@ -1,0 +1,57 @@
+.mid {
+  height: 100%;
+  width: 100%;
+  background: url("../../assets/help/help-bg.jpg");
+  background-size:cover;
+  .title{
+    height: 100px;
+    width: 507px;
+    margin: auto;
+  }
+  .test{
+    height: 400px;
+    width: 900px;
+    margin: auto;
+    padding: 40px;
+    .ulhtml{
+      font-size: 1.2em;
+      text-align: center;
+      table{
+        width: 820px;
+      }
+      li{
+        margin: 16px auto;
+      }
+      .txt{
+        font-size: 1.4em;
+      }
+      .tips{
+        text-align: left;
+      }
+      .lihtml{
+        button{
+          margin: 0px 10px;
+        }
+        b{
+          margin: 0px 10px;
+        }
+        .line{
+          width: 500px;
+          border-radius: 10px;
+          font-weight: 700;
+          padding: 8px;
+          text-align: left;
+          background-color: #ededed;
+        }
+        .btn{
+          color: #8c8b8b;
+          margin-left: 20px;
+          &:hover {
+            color: #fff;
+            background: url(../../assets/head/navhover_header.png) center no-repeat;
+          }
+        }
+      }
+    }
+  }
+}

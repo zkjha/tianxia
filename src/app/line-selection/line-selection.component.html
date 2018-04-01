@@ -1,0 +1,56 @@
+<div class="mid">
+  <div style="height: 50px;"></div>
+  <div class="title"></div>
+  <div class="test">
+    <ul class="ulhtml">
+      <li>
+        <table>
+          <tr>
+            <td width="20%" class="txt left">
+              <span>线路检测</span>
+            </td>
+            <td width="60%" class="tips">
+              <span>温馨提示：请根据最少毫秒数.选择最快的线路进入</span>
+            </td>
+            <td width="20%">
+              <span (click)="RequestAgain()">
+                <span class="gm-button gm-button-success">重新检测</span>
+              </span>
+            </td>
+          </tr>
+        </table>
+      </li>
+      <li class="lihtml" *ngFor="let item of data" >
+        <table>
+          <tr>
+            <td width="20%">
+              <div *ngIf="!item.show">
+                <button *ngIf="item.type==0" nz-button [nzType]="'default'">测速</button>
+                <button *ngIf="item.type==1" nz-button [nzType]="'primary'" style="background-color: #45C038">急速</button>
+                <button *ngIf="item.type==2" nz-button [nzType]="'primary'">正常</button>
+                <button *ngIf="item.type==3" nz-button [nzType]="'primary'" style="background-color: #FFBE10;">延时
+                </button>
+                <button *ngIf="item.type==4" nz-button [nzType]="'primary'" style="background-color: #BE1424">超时</button>
+                <b class="ping">{{item.time}}ms</b>
+              </div>
+              <div *ngIf="item.show">
+                <button nz-button [nzType]="'default'">测速</button>
+                <b class="ping">0ms</b>
+              </div>
+            </td>
+            <td width="60%" class="line">
+              <strong *ngIf="!item.show">{{item.url}}</strong>
+              <strong *ngIf="item.show">正在进行测速...</strong>
+            </td>
+            <td width="20%">
+              <a class="btn btn-link" [href]="item.url" target="_blank">进 入</a>
+            </td>
+          </tr>
+        </table>
+      </li>
+
+
+
+    </ul>
+  </div>
+</div>

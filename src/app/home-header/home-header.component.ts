@@ -50,14 +50,14 @@ export class HomeHeaderComponent implements OnInit {
   @Input()
   public selected: any = {}
 
-  constructor(private http: HttpService,) {
+  constructor(private http: HttpService) {
   }
 
   ngOnInit() {
     const self = this;
     self.changeStatus();
     self.getNameList();
-    self.hoverShow();
+    self.hoverShow(null);
 
   }
 

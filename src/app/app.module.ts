@@ -99,6 +99,7 @@ import {LoginGuard} from "./guard/login.guard";
 import {HeaderComponent} from './header/header.component';
 import {MobHelpComponent} from "./mob-help/mob-help.component";
 import { HomeHeaderComponent } from './home-header/home-header.component';
+import {LineSelectionComponent} from "./line-selection/line-selection.component";
 
 
 @NgModule({
@@ -177,6 +178,7 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
     LoadingComponent,
     HeaderComponent,
     HomeHeaderComponent,
+    LineSelectionComponent
   ],
   imports: [
     BrowserModule,
@@ -239,6 +241,10 @@ import { HomeHeaderComponent } from './home-header/home-header.component';
         path: 'Youhui',
         component: YouhuiComponent
       },
+        {
+          path: 'lineSelection',
+          component: LineSelectionComponent
+        },
       {
         path: 'Login',
         children: [
