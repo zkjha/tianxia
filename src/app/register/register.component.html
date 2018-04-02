@@ -12,7 +12,7 @@
     </div>
 
     <app-login-after></app-login-after>
-    <app-home-header [selected]="currentName"></app-home-header>
+    <app-home-header [selected]=""></app-home-header>
 
   </div>
 </div>
@@ -41,36 +41,39 @@
       <div class="regBefore">
         <form id="J-form-password">
           <table border="0" cellspacing="0" cellpadding="0" width="100%">
-
             <tr>
               <th class="col8">
-                账户名称：<input type="text" name='usernameR' [(ngModel)]='username' placeholder="用户名，只支持数字、字母、符号混合">
+                账户名称：
+                <nz-input type="text" style="width: 50%;" name='usernameR' [(ngModel)]='username' [nzPlaceHolder]="'用户名，只支持数字、字母、符号混合'"></nz-input>
                 <span class="ui-check" style=""></span>
+              </th>
+            </tr>
+            <tr>
+              <th class="col8">
+                登录密码：
+                <nz-input name="passwordR" style="width: 50%;" type="password" [(ngModel)]='password' [nzPlaceHolder]="'输入密码，由字母和数字组成6-16个字符'"></nz-input>
+                <span class="ui-check"></span>
+              </th>
+            </tr>
+            <tr>
+              <th class="col8">
+                确认密码：
+                <nz-input name="passwordR" style="width: 50%;" type="password" [(ngModel)]='rePassword' [nzPlaceHolder]="'重复密码'"></nz-input>
+                <span class="ui-check"></span>
 
               </th>
             </tr>
             <tr>
               <th class="col8">
-                登录密码：<input name="passwordR" type="password" [(ngModel)]='password' placeholder="输入密码，由字母和数字组成6-16个字符">
+                &nbsp;&nbsp;QQ号码：
+                <nz-input name="qq" type="text" style="width: 50%;" [(ngModel)]='qq' [nzPlaceHolder]="'请输入QQ号'"></nz-input>
                 <span class="ui-check"></span>
               </th>
             </tr>
             <tr>
               <th class="col8">
-                确认密码：<input name="passwordR" type="password" [(ngModel)]='rePassword' placeholder="重复密码">
-                <span class="ui-check"></span>
-
-              </th>
-            </tr>
-            <tr>
-              <th class="col8">
-                qq号码：<input name="qq" type="text" [(ngModel)]='qq' placeholder="请输入QQ号">
-                <span class="ui-check"></span>
-              </th>
-            </tr>
-            <tr>
-              <th class="col8">
-                &nbsp;&nbsp;&nbsp;验证码：<input name="vcode" type="text" [(ngModel)]='vcode' placeholder="验证码">
+                &nbsp;&nbsp;&nbsp;&nbsp;验证码：
+                <nz-input name="vcode" style="width: 50%;" type="text" [(ngModel)]='vcode' [nzPlaceHolder]="'验证码'"></nz-input>
                 <span (click)='getCodeZC()' style="cursor:pointer;margin-left:10px" class="codeeR">验 证 码</span>
                 <span class="ui-check"></span>
                 <input type="hidden" name="keyValue" id="keyValue">

@@ -261,7 +261,7 @@ import {MobileAppComponent} from "./mobile-app/mobile-app.component";
           ]
         },
         {
-          path: 'register/:id',
+          path: 'register',
           component: RegisterComponent
         },
         {

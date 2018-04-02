@@ -2,3 +2,14 @@
   background: url("../../assets/help/help-bg.jpg");
   background-size: cover;
 }
+.codeeR{
+  cursor: pointer;
+  margin-left: 10px;
+  background: #c6212f;
+  color: #fff;
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  display: inline-block;
+  line-height: 25px;
+}
