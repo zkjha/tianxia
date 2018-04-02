@@ -10,54 +10,9 @@
     <div href="" class="logo">
       <img src="/assets/head/logo.png">
     </div>
-    <!--登录前-->
-    <div class="loginBefore">
-      <form action="">
-        <div class="col1" style="margin-left: 55px;">
-          <input type="text" class="txt user"  id="J-user-name" data-name="name" name="username" [(ngModel)]='username'  placeholder="账号"/>
-          <input type="password" class="txt password"  name='password' [(ngModel)]='password' placeholder="密码"/>
-        </div>
-        <div class="col2"  id="J-panel-vcode"  style="display:none;">
-          <input type="text" class="txt yzm" placeholder="验证码" maxlength="5"/>
-          <img src="/assets/head/yzm.png" (click)='getCodeZC()'  class="yzm-img"/>
-        </div>
-        <div class="col3">
-          <div id="J-msg-show" data-display="hide" class="msg-show"></div>
-          <input id="J-form-submit" class="submit fl" type="button" value="登 录">
 
-
-          <a href="/Login/UserRegister" class="regbtn fr" target="_blank">
-            注册
-          </a>
-        </div>
-        <input name="__RequestVerificationToken" type="hidden" value="2DvX4sSMGJgBeTdwRLl5zB97Dx2uErHpSFaU6rDQuJjveroBhzdQk0kKDrrhVJV4ZaGG-dEAvyWDScLwMFLxJA2" />
-      </form>
-    </div>
-    <!--nav-->
-    <div class="nav">
-      <ul>
-        <li>
-          <a href="/home" class="a1" id="a1"><span>首页</span></a>
-
-        </li>
-        <li><a href="/Caipiao" class="a2" id="a2"><span>彩票专区</span></a>
-        </li>
-        <li><a href="/ZhenRen" class="a3" id="a3" ><span>真人娱乐</span></a>
-        </li>
-        <li><a href="/DianZi" class="a4" id="a4"><span>电子游艺</span></a>
-        </li>
-        <!--<li><a href="/Doji" class="a5" id="a5"><span>斗鸡现场</span></a>
-        </li>-->
-        <li><a href="/TiYu" class="a6" id="a6"><span>体育博弈</span></a>
-        </li>
-        <li><a href="/Youhui" class="a7" id="a7"><span>优惠专区</span></a>
-        </li>
-
-        <li>
-          <a href="&lt;script language=&quot;javascript&quot; src=&quot;http://api.pop800.com/800.js?n=332283&amp;s=01&amp;p=l&amp;l=cn&quot;&gt;&lt;/script&gt;&lt;div style=&quot;display:none;&quot;&gt;&lt;a href=&quot;http://www.pop800.com&quot;&gt;在线客服&lt;/a&gt;&lt;/div&gt;" target="_blank" class="a8" id="a8"><span>在线客服</span></a>
-        </li>
-      </ul>
-    </div>
+    <app-login-after></app-login-after>
+    <app-home-header [selected]="currentName"></app-home-header>
 
   </div>
 </div>
@@ -89,45 +44,41 @@
 
             <tr>
               <th class="col8">
-                账户名称：<input type="text" name="userName" class="txt" id="userName" value="">
+                账户名称：<input type="text" name='usernameR' [(ngModel)]='username' placeholder="用户名，只支持数字、字母、符号混合">
                 <span class="ui-check" style=""></span>
 
               </th>
             </tr>
             <tr>
               <th class="col8">
-                登录密码：<input type="password" class="txt" name="userPassword" [(ngModel)]='password' id="userPassword" value="">
+                登录密码：<input name="passwordR" type="password" [(ngModel)]='password' placeholder="输入密码，由字母和数字组成6-16个字符">
                 <span class="ui-check"></span>
               </th>
             </tr>
             <tr>
               <th class="col8">
-                确认密码：<input type="password" class="txt" name="userPassword2" id="userPassword2" value="">
+                确认密码：<input name="passwordR" type="password" [(ngModel)]='rePassword' placeholder="重复密码">
                 <span class="ui-check"></span>
 
               </th>
             </tr>
             <tr>
               <th class="col8">
-                安全邮箱：<input type="text" class="txt" name="email" id="email" value="">
+                qq号码：<input name="qq" type="text" [(ngModel)]='qq' placeholder="请输入QQ号">
                 <span class="ui-check"></span>
               </th>
             </tr>
             <tr>
               <th class="col8">
-                &nbsp;&nbsp;&nbsp;验证码：<input type="text" class="txt code" name="checkCode" id="checkCode" value="">
+                &nbsp;&nbsp;&nbsp;验证码：<input name="vcode" type="text" [(ngModel)]='vcode' placeholder="验证码">
                 <span (click)='getCodeZC()' style="cursor:pointer;margin-left:10px" class="codeeR">验 证 码</span>
-                <!--<img class="ui-label" (click)="getCodeZC()" style="cursor:pointer;margin-left:10px" id="valiCodeImg" src="/Login/GetValidateCode" width="50" height="25" alt="验证码">-->
                 <span class="ui-check"></span>
                 <input type="hidden" name="keyValue" id="keyValue">
-
               </th>
-
             </tr>
             <tr>
               <th class="col1" style="padding: 20px 0">
                 <a href="javascript:void(0);" id="J-button-submit-password"><span id="J-button-submit-text" class="gm-button gm-button-success">提交注册</span> </a>
-
               </th>
             </tr>
           </table>

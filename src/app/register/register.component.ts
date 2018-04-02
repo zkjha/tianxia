@@ -24,17 +24,21 @@ export class RegisterComponent implements OnInit {
 
 
   ngOnInit() {
+    this.routerInfo.params.subscribe(info => {
+      this.code = info["id"];
+    });
+    this.username = "";
   }
-  getCodeZC() {
 
+  getCodeZC() {
       let params = {
         username: this.username,
       };
       this.http.postRx(`/api/captcha/getCaptchaCode`, params).subscribe(data => {
         $(".codeeR").html(data.vcode);
       });
-    }
-  // }
+  }
+
   register() {
     let params = {
       code: this.code,
