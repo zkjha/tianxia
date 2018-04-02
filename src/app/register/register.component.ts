@@ -14,17 +14,19 @@ export class RegisterComponent implements OnInit {
     private http: HttpService,
     private routerInfo: ActivatedRoute,
     private router: Router) { }
-    username = '';
-    password = '';
-    rePassword = '';
-    vcode = '';
+
+    code = "";
+    username = "";
+    password = "";
+    rePassword = "";
+    vcode = "";
+    qq = "";
+
+
   ngOnInit() {
   }
   getCodeZC() {
-    console.log($('input[name=username]').val());
-    // if ($('input[name=username]').val() === '') {
-    //   $("input[name=username]").focus();
-    // } else {
+
       let params = {
         username: this.username,
       };
@@ -33,5 +35,20 @@ export class RegisterComponent implements OnInit {
       });
     }
   // }
+  register() {
+    let params = {
+      code: this.code,
+      username: this.username,
+      password: this.password,
+      rePassword: this.rePassword,
+      vcode: this.vcode,
+      qq: this.qq
+    };
+    this.http.postRxNormal(`/api/Users/register`, params).subscribe(data => {
+      if (data["errormsg"] == null) {
+        this.router.navigateByUrl("/login");
+      }
+    });
+  }
 
 }

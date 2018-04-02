@@ -14,22 +14,22 @@ export class HomeHeaderComponent implements OnInit {
     {
       title: "首页",
       isSelected: 'true',
-      href: "home"
+      href: "/home"
     },
     {
       title: "彩票专区",
       isSelected: 'false',
-      href: "GameBet/GameBetPage/Ssc/1"
+      href: "/GameBet/GameBetPage/Ssc/1"
     },
     {
       title: "真人娱乐",
       isSelected: 'false',
-      href: "ZhenRen"
+      href: "/ZhenRen"
     },
     {
       title: "电子游艺",
       isSelected: 'false',
-      href: "DianZi"
+      href: "/DianZi"
     },
     {
       title: "",
@@ -39,7 +39,7 @@ export class HomeHeaderComponent implements OnInit {
     {
       title: "捕鱼游戏",
       isSelected: 'false',
-      href: "Doji"
+      href: "/Doji"
     },
     // {
     //   title: "体育博弈",
@@ -49,17 +49,17 @@ export class HomeHeaderComponent implements OnInit {
     {
       title: "优惠活动",
       isSelected: 'false',
-      href: "youhui"
+      href: "/Youhui"
     },
     {
       title: "在线客服",
       isSelected: 'false',
-      href: "help"
+      href: "http://chat56.live800.com/live800/chatClient/chatbox.jsp?companyID=967492&configID=160768&jid=5850814693"
     },
     {
       title: "下载中心",
       isSelected: 'false',
-      href: "mobile-app"
+      href: "/mobile-app"
     }
   ];
   @Input()

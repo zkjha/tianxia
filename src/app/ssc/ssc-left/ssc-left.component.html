@@ -1,14 +1,15 @@
 
 
-    <div class="game-menu-panel [class.hideGame]=leftMenu">
-      <span class="triangle game-menu-triangle"><span></span></span>
-      <div class="game-menu-inner">
-        <div class="game-menu-box" *ngFor='let list of gameList; let i = index'>
-          <div class="game-menu-title">{{list.title}}</div>
-          <div class="game-menu-list">
-            <a href="javascript:void (0)" routerLinkActive="active" [routerLink]="['/GameBet/GameBetPage/Ssc/',item.id]" *ngFor='let item of list.child,let j = index'>{{item.title}}</a>
-          </div>
-        </div>
+<div class="game-menu-panel [class.hideGame]=leftMenu">
+  <span class="triangle game-menu-triangle"><span></span></span>
+  <div class="game-menu-inner">
+    <div class="game-menu-box" *ngFor='let list of gameList; let i = index'>
+      <div class="game-menu-title">{{list.title}}</div>
+      <div class="game-menu-list">
+        <a href="javascript:void (0)" routerLinkActive="active" [routerLink]="['/GameBet/GameBetPage/Ssc/',item.id]"
+           *ngFor='let item of list.child,let j = index'>{{item.title}}</a>
       </div>
     </div>
+  </div>
+</div>
 

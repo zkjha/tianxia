@@ -1,14 +1,10 @@
 <div class="gamePage">
   <div class="toolbar">
-
     <div class="game-menu" id="J-top-game-menu" (click)="clickLeftMenu()">
       <span class="game-menu-text dropdown-menu-btn">游<br>戏<br>选<br>择</span>
       <app-play-left [class.hideDom]="leftNotShow" ></app-play-left>
     </div>
-
   </div>
-
-
   <!--header-->
   <div class="header">
     <div class="w">
@@ -70,7 +66,6 @@
           <div id="J-play-select" class="play-select">
             <app-ssc-detail [class.isHide]='!isDetail'
                             (gameData)="getGameData($event)"></app-ssc-detail>
-
           </div>
         </div>
         <!-- 走势图开始 -->

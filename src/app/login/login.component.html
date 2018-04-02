@@ -11,7 +11,7 @@
     </div>
     <div class="v-code">
       <i class="icon iconfont icon-Code"></i>
-      <input name="vcode" type="text" ngModel placeholder="验证码"  (keyup.enter)="login(form.value)" (click)='getCode()'>
+      <input name="vcode" type="text" ngModel placeholder="验证码"  (keyup.enter)="login(form.value)">
       <!--(click)='getCode()' -->
       <span (click)='getCode(form.value)' class="codee">验 证 码</span>
     </div>
