@@ -1,12 +1,12 @@
 <div class="nav">
   <ul>
-    <li *ngFor="let item of navList;let i = index">
-      <a href="{{item.href}}"  class="a{{i+1}}" [class.on]="item.isSelected === 'true'" id="a{{i+1}}" target="_blank">
-        <span class="a{{i+1}}">{{item.title}}</span>
-      </a>
-      <div class="gamesLobbyTitel" *ngIf="item.title == '彩票专区'">
-        <nz-popover [nzOverlayClassName]="'gamesLobby'" [(nzVisible)]="gamesLobby" [nzPlacement]="'bottomLeft'" [nzTrigger]="'focus'">
-          <span nz-popover></span>
+    <nz-popover [nzTrigger]="'hover'" [nzPlacement]="'bottomLeft'">
+      <li *ngFor="let item of navList;let i = index">
+        <a href="{{item.href}}" class="a{{i+1}}" [class.on]="item.isSelected === 'true'" id="a{{i+1}}" target="_blank">
+          <span nz-popover *ngIf="i==1">{{item.title}}</span>
+          <span class="a{{i+1}}" *ngIf="i!=1">{{item.title}}</span>
+        </a>
+        <div class="gamesLobbyTitel" *ngIf="item.title == '彩票专区'">
           <ng-template #nzTemplate>
             <div class='games-lobby'>
               <div class="left">
@@ -14,14 +14,15 @@
               </div>
               <div class="right">
                 <div class="item" *ngFor='let items of gameList'>
-                  <p *ngFor='let list of items.child' [routerLink]="['/GameBet/GameBetPage/Ssc/',list.id]">{{list.title}}</p>
+                  <p *ngFor='let list of items.child' [routerLink]="['/GameBet/GameBetPage/Ssc/',list.id]">
+                    {{list.title}}</p>
                 </div>
               </div>
             </div>
           </ng-template>
-        </nz-popover>
-      </div>
-    </li>
+        </div>
+      </li>
+    </nz-popover>
   </ul>
 </div>
 

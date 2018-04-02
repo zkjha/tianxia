@@ -72,8 +72,6 @@ export class HomeHeaderComponent implements OnInit {
     const self = this;
     self.changeStatus();
     self.getNameList();
-    self.hoverShow(null);
-
   }
 
   changeStatus() {
@@ -93,43 +91,6 @@ export class HomeHeaderComponent implements OnInit {
       this.gameList = this.sortData(data);
       // console.log(this.gameList)
     });
-  }
-
-  hoverShow(e) {
-    console.log(e);
-    const self = this;
-    let status = false;
-    let once = false;
-    setTimeout(function () {
-      $(".a2").hover(function () {
-        self.gamesLobby = true;
-        if (!once) {
-          once = true;
-          console.log("22");
-          setTimeout(function () {
-            $(".games-lobby").hover(function () {
-              console.log("234")
-              self.gamesLobby = true;
-              status = true;
-            }, function () {
-              status = false;
-              once = false;
-              self.gamesLobby = false;
-            });
-          }, 100);
-        }
-      }, function () {
-        setTimeout(function () {
-          if (!status) {
-            self.gamesLobby = false;
-          }
-
-        }, 500);
-
-      });
-    }, 1000);
-
-
   }
 
   // 数据处理
